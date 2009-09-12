@@ -19,8 +19,7 @@ public interface TopClient {
 	 * @param parser 具体的TOP响应解释器
 	 * @return 领域对象
 	 */
-	public <T> T execute(TopRequest request, TopParser<T> parser)
-			throws TopException;
+	public <T> T execute(TopRequest request, TopParser<T> parser) throws TopException;
 
 	/**
 	 * 执行TOP隐私API请求。
@@ -31,7 +30,6 @@ public interface TopClient {
 	 * @param session 用户会话授权码
 	 * @return 领域对象
 	 */
-	public <T> T execute(TopRequest request, TopParser<T> parser, String session)
-			throws TopException;
+	public <T> T execute(TopRequest request, TopParser<T> parser, String session) throws TopException;
 
 }
