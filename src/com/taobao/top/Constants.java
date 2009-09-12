@@ -14,4 +14,10 @@ public abstract class Constants {
 	/** TOP默认字符集 **/
 	public static final String DEFAULT_CHARSET = "utf-8";
 
+	/** JSON响应格式 **/
+	public static final String FORMAT_JSON = "json";
+
+	/** XML响应格式 **/
+	public static final String FORMAT_XML = "xml";
+
 }
