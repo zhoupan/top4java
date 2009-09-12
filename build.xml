@@ -3,8 +3,8 @@
 	<!-- Local system paths -->
 	<property name="src.dir" value="${basedir}/src" />
 	<property name="lib.dir" value="${basedir}/lib" />
-	<property name="output.dir" value="${basedir}/output" />
-	<property name="classes.dir" value="${output.dir}/classes" />
+	<property name="target.dir" value="${basedir}/target" />
+	<property name="classes.dir" value="${target.dir}/classes" />
 
 	<!-- Thirdparty jar files -->
 	<fileset id="jar.files" dir="${lib.dir}">
@@ -33,8 +33,8 @@
 
 	<!-- Make directory -->
 	<target name="prepare">
-		<delete dir="${output.dir}" />
-		<mkdir dir="${output.dir}" />
+		<delete dir="${target.dir}" />
+		<mkdir dir="${target.dir}" />
 	</target>
 
 	<!-- Compiles all the classes -->
@@ -54,7 +54,7 @@
 
 	<!-- Generate the top4java jar -->
 	<target name="dist" depends="compile">
-		<jar destfile="${output.dir}/top4java.jar">
+		<jar destfile="${target.dir}/top4java.jar">
 			<fileset dir="${classes.dir}" includes="**/*" />
 		</jar>
 		<delete dir="${classes.dir}" />
