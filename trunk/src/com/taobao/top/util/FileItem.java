@@ -19,7 +19,7 @@ public class FileItem {
 	private byte[] content;
 	private File file;
 
-	public FileItem(File file) throws IOException {
+	public FileItem(File file) {
 		this.file = file;
 	}
 

@@ -50,7 +50,11 @@ public abstract class WebUtils {
 	 */
 	public static String doPost(String url, Map<String, String> textParams,
 			Map<String, FileItem> fileParams) throws IOException {
-		return doPost(url, textParams, fileParams, DEFAULT_CHARSET);
+		if (fileParams == null || fileParams.isEmpty()) {
+			return doPost(url, textParams, DEFAULT_CHARSET);
+		} else {
+			return doPost(url, textParams, fileParams, DEFAULT_CHARSET);
+		}
 	}
 
 	/**
@@ -99,6 +103,7 @@ public abstract class WebUtils {
 				out.write(fileItem.getContent());
 			}
 
+			// 添加请求结束标志
 			byte[] endBoundaryBytes = ("\r\n--" + boundary + "--\r\n").getBytes(charset);
 			out.write(endBoundaryBytes);
 
@@ -202,6 +207,8 @@ public abstract class WebUtils {
 		conn.setRequestMethod(method);
 		conn.setDoInput(true);
 		conn.setDoOutput(true);
+		conn.setRequestProperty("Accept", "text/xml,text/javascript");
+		conn.setRequestProperty("User-Agent", "Top4Java");
 		conn.setRequestProperty("Content-Type", ctype);
 		return conn;
 	}
