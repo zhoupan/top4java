@@ -1,6 +1,5 @@
 package com.taobao.top.request;
 
-import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -87,7 +86,7 @@ public class ItemAddRequest implements TopUploadRequest {
 	private String increment;
 
 	/** 商品主图片 */
-	public File image;
+	public FileItem image;
 
 	/** 宝贝所属的运费模板编号 */
 	private String postageId;
@@ -217,7 +216,7 @@ public class ItemAddRequest implements TopUploadRequest {
 		this.increment = increment;
 	}
 
-	public void setImage(File image) {
+	public void setImage(FileItem image) {
 		this.image = image;
 	}
 
@@ -320,7 +319,7 @@ public class ItemAddRequest implements TopUploadRequest {
 
 	public Map<String, FileItem> getFileParams() {
 		Map<String, FileItem> params = new HashMap<String, FileItem>();
-		params.put("image", new FileItem(this.image));
+		params.put("image", this.image);
 		return params;
 	}
 

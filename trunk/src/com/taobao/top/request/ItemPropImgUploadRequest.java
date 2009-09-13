@@ -1,6 +1,5 @@
 package com.taobao.top.request;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +27,7 @@ public class ItemPropImgUploadRequest implements TopUploadRequest {
 	private Integer position;
 
 	/** 属性图片内容 */
-	public File image;
+	public FileItem image;
 
 	public void setImgId(String imgId) {
 		this.imgId = imgId;
@@ -46,7 +45,7 @@ public class ItemPropImgUploadRequest implements TopUploadRequest {
 		this.position = position;
 	}
 
-	public void setImage(File image) {
+	public void setImage(FileItem image) {
 		this.image = image;
 	}
 
@@ -67,7 +66,7 @@ public class ItemPropImgUploadRequest implements TopUploadRequest {
 
 	public Map<String, FileItem> getFileParams() {
 		Map<String, FileItem> params = new HashMap<String, FileItem>();
-		params.put("image", new FileItem(this.image));
+		params.put("image", this.image);
 		return params;
 	}
 
