@@ -13,7 +13,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ItemCatsGetRequest implements TopRequest {
 
-	/** 需要返回的字段 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 类目编号列表 */

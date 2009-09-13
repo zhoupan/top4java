@@ -33,7 +33,7 @@ public class ProductUpdateRequest implements TopUploadRequest {
 	private String price;
 
 	/** 产品描述 */
-	private String desc;
+	private String description;
 
 	/** 产品主图文件 */
 	public FileItem image;
@@ -62,8 +62,8 @@ public class ProductUpdateRequest implements TopUploadRequest {
 		this.price = price;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public void setImage(FileItem image) {
@@ -83,7 +83,7 @@ public class ProductUpdateRequest implements TopUploadRequest {
 		params.put("sale_props", this.saleProps);
 		params.put("name", this.name);
 		params.put("price", this.price);
-		params.put("desc", this.desc);
+		params.put("desc", this.description);
 
 		return params;
 	}

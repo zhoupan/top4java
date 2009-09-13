@@ -14,7 +14,7 @@ import com.taobao.top.util.TopHashMap;
 public class ItemsDownloadRequest implements TopRequest {
 
 	/** 商品所属的店铺内卖家自定义类目 */
-	private String sellercids;
+	private String sellerCids;
 
 	/** 商品所属的类目编号 */
 	private String cid;
@@ -31,8 +31,8 @@ public class ItemsDownloadRequest implements TopRequest {
 	/** 开始时间最大值 */
 	private Date endDate;
 
-	public void setSellercids(String sellercids) {
-		this.sellercids = sellercids;
+	public void setSellerCids(String sellerCids) {
+		this.sellerCids = sellerCids;
 	}
 
 	public void setCid(String cid) {
@@ -62,7 +62,7 @@ public class ItemsDownloadRequest implements TopRequest {
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
 
-		params.put("seller_cids", this.sellercids);
+		params.put("seller_cids", this.sellerCids);
 		params.put("cid", this.cid);
 		params.put("q", this.query);
 		params.put("approve_status", this.approveStatus);

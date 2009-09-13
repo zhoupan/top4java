@@ -15,7 +15,7 @@ public class ItemSkuAddRequest implements TopRequest {
 	/** SKU所属商品编号 */
 	private String iid;
 
-	/** SKU属性串 */
+	/** SKU的属性串 */
 	private String props;
 
 	/** SKU的库存数量 */

@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class TradeRatesGetRequest implements TopRequest {
 
-	/** 评价数据结构字段列表 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 评价类型 */

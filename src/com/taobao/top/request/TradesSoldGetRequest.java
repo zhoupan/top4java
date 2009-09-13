@@ -13,7 +13,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class TradesSoldGetRequest implements TopRequest {
 
-	/** 需要返回的交易数据结构字段 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 查询交易创建时间开始 */
@@ -38,7 +38,7 @@ public class TradesSoldGetRequest implements TopRequest {
 	private String type;
 
 	/** 评价状态 */
-	private String Ratestatus;
+	private String rateStatus;
 
 	/** 买家昵称 */
 	private String buyerNick;
@@ -75,8 +75,8 @@ public class TradesSoldGetRequest implements TopRequest {
 		this.type = type;
 	}
 
-	public void setRatestatus(String ratestatus) {
-		this.Ratestatus = ratestatus;
+	public void setRateStatus(String rateStatus) {
+		this.rateStatus = rateStatus;
 	}
 
 	public void setBuyerNick(String buyerNick) {
@@ -99,7 +99,7 @@ public class TradesSoldGetRequest implements TopRequest {
 		params.put("status", this.status);
 		params.put("buyer_nick", this.buyerNick);
 		params.put("type", this.type);
-		params.put("rate_status", this.Ratestatus);
+		params.put("rate_status", this.rateStatus);
 
 		return params;
 	}

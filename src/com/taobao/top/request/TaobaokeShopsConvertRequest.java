@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class TaobaokeShopsConvertRequest implements TopRequest {
 
-	/** 需返回的字段列表 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 店铺编号串 */

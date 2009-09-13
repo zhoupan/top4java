@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ItemsInstockGetRequest implements TopRequest {
 
-	/** 需要返回的商品对象字段 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 搜索字段 */

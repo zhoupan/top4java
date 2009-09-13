@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class TaobaokeItemsGetRequest implements TopRequest {
 
-	/** 需要返回的字段 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 输入格式：mm_会员id_网站id_广告位id */
@@ -46,7 +46,7 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 	private String orderBy;
 
 	/** 是否查询消保卖家 */
-	private Boolean isGuarantee;
+	private Boolean guarantee;
 
 	/** 起始佣金选项 */
 	private String startCommission;
@@ -116,8 +116,8 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 		this.orderBy = orderBy;
 	}
 
-	public void setIsGuarantee(Boolean isGuarantee) {
-		this.isGuarantee = isGuarantee;
+	public void setGuarantee(Boolean guarantee) {
+		this.guarantee = guarantee;
 	}
 
 	public void setStartCommission(String startCommission) {
@@ -170,7 +170,7 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 		params.put("start_credit", this.startCredit);
 		params.put("end_credit", this.endCredit);
 		params.put("sort", this.orderBy);
-		params.put("is_guarantee", this.isGuarantee);
+		params.put("is_guarantee", this.guarantee);
 		params.put("start_commission", this.startCommission);
 		params.put("end_commission", this.endCommission);
 		params.put("start_commissionRate", this.startCommissionRate);

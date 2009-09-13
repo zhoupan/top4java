@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class TaobaokeItemsConvertRequest implements TopRequest {
 
-	/** 需返回的字段列表 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 商品编号串 */
@@ -50,7 +50,7 @@ public class TaobaokeItemsConvertRequest implements TopRequest {
 		params.put("fields", this.fields);
 		params.put("iids", this.iids);
 		params.put("nick", this.nick);
-		params.put("outerCode", this.outerCode);
+		params.put("outer_code", this.outerCode);
 
 		return params;
 	}

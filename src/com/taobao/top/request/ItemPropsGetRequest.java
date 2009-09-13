@@ -13,7 +13,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ItemPropsGetRequest implements TopRequest {
 
-	/** 返回的字段 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 叶子类目编号 */
@@ -23,25 +23,25 @@ public class ItemPropsGetRequest implements TopRequest {
 	private String pid;
 
 	/** 父属性编号 */
-	private String Parentpid;
+	private String parentPid;
 
 	/** 是否关键属性 */
-	private Boolean isKeyProp;
+	private Boolean keyProp;
 
 	/** 是否销售属性 */
-	private Boolean isSaleProp;
+	private Boolean saleProp;
 
 	/** 是否颜色属性 */
-	private Boolean isColorProp;
+	private Boolean colorProp;
 
 	/** 是否枚举属性 */
-	private Boolean isEnumProp;
+	private Boolean enumProp;
 
 	/** 是否是卖家可以自行输入的属性 */
-	private Boolean isInputProp;
+	private Boolean inputProp;
 
 	/** 是否商品属性 */
-	private Boolean isItemProp;
+	private Boolean itemProp;
 
 	/** 增量时间戳 */
 	private Date dateTime;
@@ -58,32 +58,32 @@ public class ItemPropsGetRequest implements TopRequest {
 		this.pid = pid;
 	}
 
-	public void setParentpid(String parentpid) {
-		this.Parentpid = parentpid;
+	public void setParentPid(String parentPid) {
+		this.parentPid = parentPid;
 	}
 
-	public void setIsKeyProp(Boolean isKeyProp) {
-		this.isKeyProp = isKeyProp;
+	public void setKeyProp(Boolean keyProp) {
+		this.keyProp = keyProp;
 	}
 
-	public void setIsSaleProp(Boolean isSaleProp) {
-		this.isSaleProp = isSaleProp;
+	public void setSaleProp(Boolean saleProp) {
+		this.saleProp = saleProp;
 	}
 
-	public void setIsColorProp(Boolean isColorProp) {
-		this.isColorProp = isColorProp;
+	public void setColorProp(Boolean colorProp) {
+		this.colorProp = colorProp;
 	}
 
-	public void setIsEnumProp(Boolean isEnumProp) {
-		this.isEnumProp = isEnumProp;
+	public void setEnumProp(Boolean enumProp) {
+		this.enumProp = enumProp;
 	}
 
-	public void setIsInputProp(Boolean isInputProp) {
-		this.isInputProp = isInputProp;
+	public void setInputProp(Boolean inputProp) {
+		this.inputProp = inputProp;
 	}
 
-	public void setIsItemProp(Boolean isItemProp) {
-		this.isItemProp = isItemProp;
+	public void setItemProp(Boolean itemProp) {
+		this.itemProp = itemProp;
 	}
 
 	public void setDateTime(Date dateTime) {
@@ -100,13 +100,13 @@ public class ItemPropsGetRequest implements TopRequest {
 		params.put("fields", this.fields);
 		params.put("cid", this.leafCid);
 		params.put("pid", this.pid);
-		params.put("parent_pid", this.Parentpid);
-		params.put("is_key_prop", this.isKeyProp);
-		params.put("is_sale_prop", this.isSaleProp);
-		params.put("is_color_prop", this.isColorProp);
-		params.put("is_enum_prop", this.isEnumProp);
-		params.put("is_input_prop", this.isInputProp);
-		params.put("is_item_prop", this.isItemProp);
+		params.put("parent_pid", this.parentPid);
+		params.put("is_key_prop", this.keyProp);
+		params.put("is_sale_prop", this.saleProp);
+		params.put("is_color_prop", this.colorProp);
+		params.put("is_enum_prop", this.enumProp);
+		params.put("is_input_prop", this.inputProp);
+		params.put("is_item_prop", this.itemProp);
 		params.put("datetime", this.dateTime);
 
 		return params;

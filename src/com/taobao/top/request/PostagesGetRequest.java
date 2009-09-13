@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class PostagesGetRequest implements TopRequest {
 
-	/** 需要返回的字段 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	public void setFields(String fields) {
@@ -25,9 +25,7 @@ public class PostagesGetRequest implements TopRequest {
 
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
-
 		params.put("fields", this.fields);
-
 		return params;
 	}
 

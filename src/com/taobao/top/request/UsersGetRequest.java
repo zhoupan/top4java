@@ -12,10 +12,10 @@ import com.taobao.top.util.TopHashMap;
  */
 public class UsersGetRequest implements TopRequest {
 
-	/** 需要返回的用户字段列表 */
+	/** 要返回的字段列表 */
 	private String fields;
 
-	/** 用户昵称，多个用逗号分隔 */
+	/** 用户昵称列表 */
 	private String nicks;
 
 	public void setFields(String fields) {

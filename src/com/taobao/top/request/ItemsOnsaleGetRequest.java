@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ItemsOnsaleGetRequest implements TopRequest {
 
-	/** 需要返回的商品对象字段 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 搜索字段 */
@@ -22,7 +22,7 @@ public class ItemsOnsaleGetRequest implements TopRequest {
 	private String cid;
 
 	/** 卖家店铺内自定义类目编号 */
-	private String Sellercids;
+	private String sellerCids;
 
 	/** 页码 */
 	private Integer pageNo;
@@ -51,8 +51,8 @@ public class ItemsOnsaleGetRequest implements TopRequest {
 		this.cid = cid;
 	}
 
-	public void setSellercids(String sellercids) {
-		this.Sellercids = sellercids;
+	public void setSellerCids(String sellerCids) {
+		this.sellerCids = sellerCids;
 	}
 
 	public void setPageNo(Integer pageNo) {
@@ -85,7 +85,7 @@ public class ItemsOnsaleGetRequest implements TopRequest {
 		params.put("fields", this.fields);
 		params.put("q", this.query);
 		params.put("cid", this.cid);
-		params.put("seller_cids", this.Sellercids);
+		params.put("seller_cids", this.sellerCids);
 		params.put("page_no", this.pageNo);
 		params.put("page_size", this.pageSize);
 		params.put("has_discount", this.hasDiscount);

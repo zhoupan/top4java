@@ -43,9 +43,9 @@ public class ItemExtraAddRequest implements TopRequest {
 	private String skuPrices;
 
 	/** SKU的备注串 */
-	private String Skumemos;
+	private String skuMemos;
 
-	/** SKU编号串 */
+	/** SKU的编号串 */
 	private String skuIds;
 
 	public void setIid(String iid) {
@@ -88,8 +88,8 @@ public class ItemExtraAddRequest implements TopRequest {
 		this.skuPrices = skuPrices;
 	}
 
-	public void setSkumemos(String skumemos) {
-		this.Skumemos = skumemos;
+	public void setSkuMemos(String skuMemos) {
+		this.skuMemos = skuMemos;
 	}
 
 	public void setSkuIds(String skuIds) {
@@ -113,7 +113,7 @@ public class ItemExtraAddRequest implements TopRequest {
 		params.put("sku_properties", this.skuProps);
 		params.put("sku_quantities", this.skuQuantities);
 		params.put("sku_prices", this.skuPrices);
-		params.put("sku_memos", this.Skumemos);
+		params.put("sku_memos", this.skuMemos);
 		params.put("sku_ids", this.skuIds);
 
 		return params;

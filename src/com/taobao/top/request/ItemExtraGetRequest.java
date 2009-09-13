@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ItemExtraGetRequest implements TopRequest {
 
-	/** 需要返回的商品对象字段，商品结构体中所有字段均可返回 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 昵称 */

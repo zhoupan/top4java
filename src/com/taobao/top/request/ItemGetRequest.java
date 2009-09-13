@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ItemGetRequest implements TopRequest {
 
-	/** 需要返回的商品对象字段，商品结构体中所有字段均可返回 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 卖家昵称 */
@@ -22,7 +22,7 @@ public class ItemGetRequest implements TopRequest {
 	private String iid;
 
 	/** 商品数字编号 */
-	private Long Numiid;
+	private Long numIid;
 
 	public void setFields(String fields) {
 		this.fields = fields;
@@ -36,8 +36,8 @@ public class ItemGetRequest implements TopRequest {
 		this.iid = iid;
 	}
 
-	public void setNumiid(Long numiid) {
-		this.Numiid = numiid;
+	public void setNumIid(Long numIid) {
+		this.numIid = numIid;
 	}
 
 	public String getApiName() {
@@ -50,7 +50,7 @@ public class ItemGetRequest implements TopRequest {
 		params.put("fields", this.fields);
 		params.put("nick", this.nick);
 		params.put("iid", this.iid);
-		params.put("num_iid", this.Numiid);
+		params.put("num_iid", this.numIid);
 
 		return params;
 	}
