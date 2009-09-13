@@ -19,7 +19,7 @@ public class SysUtilsTest {
 	}
 
 	@Test
-	public void signTopRequestWithChineseParameters() throws Exception {
+	public void signTopRequestWithChineseCharacters() throws Exception {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("nick", "风胜");
 		params.put("fields", "nick,sex");

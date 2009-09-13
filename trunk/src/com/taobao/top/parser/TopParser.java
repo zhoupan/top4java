@@ -1,7 +1,7 @@
 package com.taobao.top.parser;
 
 /**
- * OP响应解释器接口。响应格式可以是JSON, XML等等。
+ * TOP响应解释器接口。响应格式可以是JSON, XML等等。
  * 
  * @author carver.gu
  * @since 1.0, Sep 12, 2009
