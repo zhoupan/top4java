@@ -11,15 +11,14 @@ import com.taobao.top.parser.TopParser;
 import com.taobao.top.request.TopRequest;
 import com.taobao.top.request.TopUploadRequest;
 import com.taobao.top.util.FileItem;
+import com.taobao.top.util.TestUtils;
 import com.taobao.top.util.TopHashMap;
 
 public class TopRestClientTest {
 
-	private static final String TOP_TEST_URL = "http://gw.sandbox.taobao.com/router/rest";
-
 	@Test
 	public void getUserByJson() throws TopException {
-		TopClient client = new TopRestClient(TOP_TEST_URL, "test", "test");
+		TopClient client = TestUtils.getTestClient("json");
 		TopRequest request = new TopRequest() {
 			public Map<String, String> getTextParams() {
 				TopHashMap params = new TopHashMap();
@@ -43,7 +42,7 @@ public class TopRestClientTest {
 
 	@Test
 	public void addItemByJson() throws TopException {
-		TopClient client = new TopRestClient(TOP_TEST_URL, "test", "test");
+		TopClient client = TestUtils.getTestClient("json");
 		TopUploadRequest request = new TopUploadRequest() {
 			public Map<String, String> getTextParams() {
 				TopHashMap params = new TopHashMap();

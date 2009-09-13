@@ -1,4 +1,4 @@
-﻿package com.taobao.top.request;
+package com.taobao.top.request;
 
 import java.util.Date;
 import java.util.Map;

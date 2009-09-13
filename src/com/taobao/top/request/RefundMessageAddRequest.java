@@ -1,4 +1,4 @@
-﻿package com.taobao.top.request;
+package com.taobao.top.request;
 
 import java.util.HashMap;
 import java.util.Map;
