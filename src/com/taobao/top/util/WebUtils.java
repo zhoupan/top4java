@@ -69,6 +69,55 @@ public abstract class WebUtils {
 		return doGet(url, params, DEFAULT_CHARSET);
 	}
 
+	/**
+	 * 执行HTTP POST请求。
+	 * 
+	 * @param url 请求地址
+	 * @param params 请求参数
+	 * @param charset 字符集，如UTF-8, GBK, GB2312
+	 * @return 响应字符串
+	 * @throws IOException
+	 */
+	public static String doPost(String url, Map<String, String> params, String charset)
+			throws IOException {
+		HttpURLConnection conn = null;
+		OutputStream out = null;
+		InputStream in = null;
+		String rsp = null;
+
+		try {
+			String ctype = "application/x-www-form-urlencoded;charset=" + charset;
+			conn = getConnection(new URL(url), METHOD_POST, ctype);
+			out = conn.getOutputStream();
+			String query = buildQuery(params, charset);
+			out.write(query.getBytes(charset));
+			in = conn.getInputStream();
+			rsp = getResponseAsString(in, charset);
+		} finally {
+			if (in != null) {
+				in.close();
+			}
+			if (out != null) {
+				out.close();
+			}
+			if (conn != null) {
+				conn.disconnect();
+			}
+		}
+
+		return rsp;
+	}
+
+	/**
+	 * 执行带文件上传的HTTP POST请求。
+	 * 
+	 * @param url 请求地址
+	 * @param textParams 文本请求参数
+	 * @param fileParams 文件请求参数
+	 * @param charset 字符集，如UTF-8, GBK, GB2312
+	 * @return 响应字符串
+	 * @throws IOException
+	 */
 	public static String doPost(String url, Map<String, String> textParams,
 			Map<String, FileItem> fileParams, String charset) throws IOException {
 		String boundary = System.currentTimeMillis() + ""; // 随机分隔线
@@ -126,7 +175,7 @@ public abstract class WebUtils {
 
 	private static byte[] getTextEntry(String fieldName, String fieldValue, String charset)
 			throws IOException {
-		StringBuffer entry = new StringBuffer();
+		StringBuilder entry = new StringBuilder();
 		entry.append("Content-Disposition:form-data;name=\"");
 		entry.append(fieldName);
 		entry.append("\"\r\nContent-Type:text/plain\r\n\r\n");
@@ -136,7 +185,7 @@ public abstract class WebUtils {
 
 	private static byte[] getFileEntry(String fieldName, String fileName, String mimeType,
 			String charset) throws IOException {
-		StringBuffer entry = new StringBuffer();
+		StringBuilder entry = new StringBuilder();
 		entry.append("Content-Disposition:form-data;name=\"");
 		entry.append(fieldName);
 		entry.append("\";filename=\"");
@@ -147,36 +196,15 @@ public abstract class WebUtils {
 		return entry.toString().getBytes(charset);
 	}
 
-	public static String doPost(String url, Map<String, String> params, String charset)
-			throws IOException {
-		HttpURLConnection conn = null;
-		OutputStream out = null;
-		InputStream in = null;
-		String rsp = null;
-
-		try {
-			String ctype = "application/x-www-form-urlencoded;charset=" + charset;
-			conn = getConnection(new URL(url), METHOD_POST, ctype);
-			out = conn.getOutputStream();
-			String query = buildQuery(params, charset);
-			out.write(query.getBytes(charset));
-			in = conn.getInputStream();
-			rsp = getResponseAsString(in, charset);
-		} finally {
-			if (in != null) {
-				in.close();
-			}
-			if (out != null) {
-				out.close();
-			}
-			if (conn != null) {
-				conn.disconnect();
-			}
-		}
-
-		return rsp;
-	}
-
+	/**
+	 * 执行HTTP GET请求。
+	 * 
+	 * @param url 请求地址
+	 * @param params 请求参数
+	 * @param charset 字符集，如UTF-8, GBK, GB2312
+	 * @return 响应字符串
+	 * @throws IOException
+	 */
 	public static String doGet(String url, Map<String, String> params, String charset)
 			throws IOException {
 		HttpURLConnection conn = null;
@@ -234,7 +262,7 @@ public abstract class WebUtils {
 	}
 
 	private static String buildQuery(Map<String, String> params, String charset) throws IOException {
-		if (params == null) {
+		if (params == null || params.isEmpty()) {
 			return null;
 		}
 
