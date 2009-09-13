@@ -2,6 +2,7 @@ package com.taobao.top.request;
 
 import java.util.Map;
 
+import com.taobao.top.domain.PostageMode;
 import com.taobao.top.util.TopHashMap;
 
 /**
@@ -39,20 +40,8 @@ public class PostageUpdateRequest implements TopRequest {
 	/** EMS加件费用 */
 	private String emsIncrease;
 
-	/** 运费子模板编号 */
-	private String postageModeId;
-
 	/** 运费方式 */
-	private String postageModeType;
-
-	/** 目的地值 */
-	private String postageModeDest;
-
-	/** 运费方式单价数量串 */
-	private String postageModePrice;
-
-	/** 运费方式加件费用数量串 */
-	private String postageModeIncrease;
+	private PostageMode postageMode;
 
 	public void setName(String name) {
 		this.name = name;
@@ -90,24 +79,8 @@ public class PostageUpdateRequest implements TopRequest {
 		this.emsIncrease = emsIncrease;
 	}
 
-	public void setPostageModeId(String postageModeId) {
-		this.postageModeId = postageModeId;
-	}
-
-	public void setPostageModeType(String postageModeType) {
-		this.postageModeType = postageModeType;
-	}
-
-	public void setPostageModeDest(String postageModeDest) {
-		this.postageModeDest = postageModeDest;
-	}
-
-	public void setPostageModePrice(String postageModePrice) {
-		this.postageModePrice = postageModePrice;
-	}
-
-	public void setPostageModeIncrease(String postageModeIncrease) {
-		this.postageModeIncrease = postageModeIncrease;
+	public void setPostageMode(PostageMode postageMode) {
+		this.postageMode = postageMode;
 	}
 
 	public String getApiName() {
@@ -126,11 +99,13 @@ public class PostageUpdateRequest implements TopRequest {
 		params.put("express_increase", this.expressIncrease);
 		params.put("ems_price", this.emsPrice);
 		params.put("ems_increase", this.emsIncrease);
-		params.put("Postage_mode.id", this.postageModeId);
-		params.put("postage_mode.type", this.postageModeType);
-		params.put("postage_mode.dest", this.postageModeDest);
-		params.put("postage_mode.price", this.postageModePrice);
-		params.put("postage_mode.increase", this.postageModeIncrease);
+		if (this.postageMode != null) {
+			params.put("postage_mode.id", this.postageMode.getId());
+			params.put("postage_mode.type", this.postageMode.getType());
+			params.put("postage_mode.dest", this.postageMode.getDest());
+			params.put("postage_mode.price", this.postageMode.getPrice());
+			params.put("postage_mode.increase", this.postageMode.getIncrease());
+		}
 
 		return params;
 	}

@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ItemSkuGetRequest implements TopRequest {
 
-	/** 需要返回的字段 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** SKU的编号 */

@@ -33,8 +33,8 @@ public class TradeMemoUpdateRequest implements TopRequest {
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
 
-		params.put("memo", this.memo);
 		params.put("tid", this.tid);
+		params.put("memo", this.memo);
 
 		return params;
 	}

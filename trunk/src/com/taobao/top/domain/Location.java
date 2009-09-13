@@ -9,22 +9,22 @@
 public class Location extends BaseObject {
 
 	/** 详细地址 */
-	public String address;
+	private String address;
 
 	/** 国家名称 */
-	public String country;
+	private String country;
 
 	/** 所在省份 */
-	public String state;
+	private String state;
 
 	/** 所在城市 */
-	public String city;
+	private String city;
 
 	/** 区/县 */
-	public String district;
+	private String district;
 
 	/** 邮政编码 */
-	public String zip;
+	private String zip;
 
 	public String getAddress() {
 		return this.address;

@@ -58,7 +58,7 @@ public class TradeAddRequest implements TopRequest {
 	private String areaCode;
 
 	/** 物流方式 */
-	private String logisticstype;
+	private String logisticsType;
 
 	/** 物流费用 */
 	private String logisticsFee;
@@ -143,8 +143,8 @@ public class TradeAddRequest implements TopRequest {
 		this.areaCode = areaCode;
 	}
 
-	public void setLogisticstype(String logisticstype) {
-		this.logisticstype = logisticstype;
+	public void setLogisticsType(String logisticsType) {
+		this.logisticsType = logisticsType;
 	}
 
 	public void setLogisticsFee(String logisticsFee) {
@@ -205,7 +205,7 @@ public class TradeAddRequest implements TopRequest {
 		params.put("snapshot", this.snapshot);
 		params.put("division_code", this.areaCode);
 		params.put("post_fee", this.logisticsFee);
-		params.put("logistic.type", this.logisticstype);
+		params.put("logistic.type", this.logisticsType);
 		params.put("save_deliver_addr", this.saveDeliverAddress);
 
 		if (this.location != null) {

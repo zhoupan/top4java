@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class TaobaokeReportGetRequest implements TopRequest {
 
-	/** 需返回的字段列表 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 需要查询报表的日期 */

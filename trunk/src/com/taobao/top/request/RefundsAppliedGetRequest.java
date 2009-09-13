@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class RefundsAppliedGetRequest implements TopRequest {
 
-	/** 需要返回的字段 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 退款状态 */

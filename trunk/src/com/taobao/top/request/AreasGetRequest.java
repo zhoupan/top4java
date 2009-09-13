@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class AreasGetRequest implements TopRequest {
 
-	/** 查询字段 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	public void setFields(String fields) {

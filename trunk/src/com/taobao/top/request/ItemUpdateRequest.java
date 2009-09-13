@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.taobao.top.domain.Location;
 import com.taobao.top.util.FileItem;
 import com.taobao.top.util.TopHashMap;
 
@@ -37,13 +38,10 @@ public class ItemUpdateRequest implements TopUploadRequest {
 	private String title;
 
 	/** 商品描述 */
-	private String desc;
+	private String description;
 
-	/** 所在地省份 */
-	private String locationState;
-
-	/** 所在地城市 */
-	private String locationCity;
+	/** 所在地 */
+	private Location location;
 
 	/** 运费承担方式 */
 	private String freightPayer;
@@ -106,10 +104,10 @@ public class ItemUpdateRequest implements TopUploadRequest {
 	private String skuQuantities;
 
 	/** 更新的SKU的价格串 */
-	private String Skuprices;
+	private String skuPrices;
 
 	/** 更新的SKU的属性串 */
-	private String Skuprops;
+	private String skuProps;
 
 	/** 宝贝所属的运费模板编号 */
 	private String postageId;
@@ -148,16 +146,12 @@ public class ItemUpdateRequest implements TopUploadRequest {
 		this.title = title;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public void setLocationState(String locationState) {
-		this.locationState = locationState;
-	}
-
-	public void setLocationCity(String locationCity) {
-		this.locationCity = locationCity;
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 
 	public void setFreightPayer(String freightPayer) {
@@ -240,12 +234,12 @@ public class ItemUpdateRequest implements TopUploadRequest {
 		this.skuQuantities = skuQuantities;
 	}
 
-	public void setSkuprices(String skuprices) {
-		this.Skuprices = skuprices;
+	public void setSkuPrices(String skuPrices) {
+		this.skuPrices = skuPrices;
 	}
 
-	public void setSkuprops(String skuprops) {
-		this.Skuprops = skuprops;
+	public void setSkuProps(String skuProps) {
+		this.skuProps = skuProps;
 	}
 
 	public void setPostageId(String postageId) {
@@ -274,9 +268,11 @@ public class ItemUpdateRequest implements TopUploadRequest {
 		params.put("num", this.num);
 		params.put("price", this.price);
 		params.put("title", this.title);
-		params.put("desc", this.desc);
-		params.put("location.state", this.locationState);
-		params.put("location.city", this.locationCity);
+		params.put("desc", this.description);
+		if (this.location != null) {
+			params.put("location.state", this.location.getState());
+			params.put("location.city", this.location.getCity());
+		}
 		params.put("freight_payer", this.freightPayer);
 		params.put("valid_thru", this.validTerm);
 		params.put("has_invoice", this.hasInvoice);
@@ -296,8 +292,8 @@ public class ItemUpdateRequest implements TopUploadRequest {
 		params.put("input_pids", this.inputPids);
 		params.put("input_str", this.inputStrs);
 		params.put("sku_quantities", this.skuQuantities);
-		params.put("sku_prices", this.Skuprices);
-		params.put("sku_properties", this.Skuprops);
+		params.put("sku_prices", this.skuPrices);
+		params.put("sku_properties", this.skuProps);
 		params.put("postage_id", this.postageId);
 		params.put("lang", this.language);
 		params.put("outer_id", this.outerId);

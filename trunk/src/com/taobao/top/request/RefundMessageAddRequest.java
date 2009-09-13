@@ -14,12 +14,16 @@ import com.taobao.top.util.TopHashMap;
  */
 public class RefundMessageAddRequest implements TopUploadRequest {
 
+	/** 退款编号 */
 	private String rid;
 
+	/** 退款留言内容 */
 	private String content;
 
+	/** 用户昵称 */
 	private String ownerNick;
 
+	/** 留言凭证 */
 	public FileItem image;
 
 	public void setRid(String rid) {

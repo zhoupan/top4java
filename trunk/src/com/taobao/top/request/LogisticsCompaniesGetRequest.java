@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class LogisticsCompaniesGetRequest implements TopRequest {
 
-	/** 需要返回的字段列表 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 是否查询推荐物流公司 */

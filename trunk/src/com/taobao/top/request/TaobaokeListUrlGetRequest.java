@@ -42,7 +42,7 @@ public class TaobaokeListUrlGetRequest implements TopRequest {
 
 		params.put("q", this.query);
 		params.put("nick", this.nick);
-		params.put("outerCode", this.outerCode);
+		params.put("outer_code", this.outerCode);
 
 		return params;
 	}

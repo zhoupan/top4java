@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class UserGetRequest implements TopRequest {
 
-	/** 需要返回的用户字段列表 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 用户昵称 */

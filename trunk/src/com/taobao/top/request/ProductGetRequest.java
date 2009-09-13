@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ProductGetRequest implements TopRequest {
 
-	/** 要返回的产品字段列表 */
+	/** 要返回的字段列表 */
 	private String fields;
 
 	/** 产品编号 */

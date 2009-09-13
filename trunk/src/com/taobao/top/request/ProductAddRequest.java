@@ -24,13 +24,13 @@ public class ProductAddRequest implements TopUploadRequest {
 	private String props;
 
 	/** 绑定属性串 */
-	private String Bindprops;
+	private String bindProps;
 
 	/** 销售属性串 */
-	private String Saleprops;
+	private String saleProps;
 
 	/** 用户自定义属性串 */
-	private String Inputprops;
+	private String inputProps;
 
 	/** 产品名称 */
 	private String name;
@@ -39,7 +39,7 @@ public class ProductAddRequest implements TopUploadRequest {
 	private String price;
 
 	/** 产品描述 */
-	private String desc;
+	private String description;
 
 	/** 产品主图 */
 	public FileItem image;
@@ -56,16 +56,16 @@ public class ProductAddRequest implements TopUploadRequest {
 		this.props = props;
 	}
 
-	public void setBindprops(String bindprops) {
-		this.Bindprops = bindprops;
+	public void setBindProps(String bindProps) {
+		this.bindProps = bindProps;
 	}
 
-	public void setSaleprops(String saleprops) {
-		this.Saleprops = saleprops;
+	public void setSaleProps(String saleProps) {
+		this.saleProps = saleProps;
 	}
 
-	public void setInputprops(String inputprops) {
-		this.Inputprops = inputprops;
+	public void setInputProps(String inputProps) {
+		this.inputProps = inputProps;
 	}
 
 	public void setName(String name) {
@@ -76,8 +76,8 @@ public class ProductAddRequest implements TopUploadRequest {
 		this.price = price;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public void setImage(FileItem image) {
@@ -94,12 +94,12 @@ public class ProductAddRequest implements TopUploadRequest {
 		params.put("cid", this.cid);
 		params.put("outer_id", this.outerId);
 		params.put("props", this.props);
-		params.put("binds", this.Bindprops);
-		params.put("sale_props", this.Saleprops);
-		params.put("customer_props", this.Inputprops);
+		params.put("binds", this.bindProps);
+		params.put("sale_props", this.saleProps);
+		params.put("customer_props", this.inputProps);
 		params.put("name", this.name);
 		params.put("price", this.price);
-		params.put("desc", this.desc);
+		params.put("desc", this.description);
 
 		return params;
 	}

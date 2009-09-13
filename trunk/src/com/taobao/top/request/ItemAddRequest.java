@@ -65,7 +65,7 @@ public class ItemAddRequest implements TopUploadRequest {
 	private Boolean hasShowcase;
 
 	/** 店铺类目列表 */
-	private String Sellercids;
+	private String sellerCids;
 
 	/** 是否支持会员打折 */
 	private Boolean hasDiscount;
@@ -103,17 +103,17 @@ public class ItemAddRequest implements TopUploadRequest {
 	/** 用户自行输入的类目属性别名串 */
 	private String inputStrs;
 
-	/** 更新的sku的属性串 */
-	private String Skuprops;
+	/** SKU的属性串 */
+	private String skuProps;
 
 	/** SKU的数量串 */
 	private String skuQuantities;
 
 	/** SKU的价格串 */
-	private String Skuprices;
+	private String skuPrices;
 
 	/** SKU的外部编号串 */
-	private String skuouterIds;
+	private String skuOuterIds;
 
 	/** 商品文字的版本 */
 	private String language;
@@ -188,8 +188,8 @@ public class ItemAddRequest implements TopUploadRequest {
 		this.hasShowcase = hasShowcase;
 	}
 
-	public void setSellercids(String sellercids) {
-		this.Sellercids = sellercids;
+	public void setSellerCids(String sellerCids) {
+		this.sellerCids = sellerCids;
 	}
 
 	public void setHasDiscount(Boolean hasDiscount) {
@@ -240,20 +240,20 @@ public class ItemAddRequest implements TopUploadRequest {
 		this.inputStrs = inputStrs;
 	}
 
-	public void setSkuprops(String skuprops) {
-		this.Skuprops = skuprops;
+	public void setSkuProps(String skuProps) {
+		this.skuProps = skuProps;
 	}
 
 	public void setSkuQuantities(String skuQuantities) {
 		this.skuQuantities = skuQuantities;
 	}
 
-	public void setSkuprices(String skuprices) {
-		this.Skuprices = skuprices;
+	public void setSkuPrices(String skuPrices) {
+		this.skuPrices = skuPrices;
 	}
 
-	public void setSkuouterIds(String skuouterIds) {
-		this.skuouterIds = skuouterIds;
+	public void setSkuOuterIds(String skuOuterIds) {
+		this.skuOuterIds = skuOuterIds;
 	}
 
 	public void setLanguage(String language) {
@@ -294,7 +294,7 @@ public class ItemAddRequest implements TopUploadRequest {
 		params.put("has_warranty", this.hasWarranty);
 		params.put("auto_repost", this.autoRepost);
 		params.put("has_showcase", this.hasShowcase);
-		params.put("seller_cids", this.Sellercids);
+		params.put("seller_cids", this.sellerCids);
 		params.put("has_discount", this.hasDiscount);
 		params.put("post_fee", this.postFee);
 		params.put("express_fee", this.expressFee);
@@ -306,10 +306,10 @@ public class ItemAddRequest implements TopUploadRequest {
 		params.put("property_alias", this.propAlias);
 		params.put("input_pids", this.inputPids);
 		params.put("input_str", this.inputStrs);
-		params.put("sku_properties", this.Skuprops);
+		params.put("sku_properties", this.skuProps);
 		params.put("sku_quantities", this.skuQuantities);
-		params.put("sku_prices", this.Skuprices);
-		params.put("sku_outer_ids", this.skuouterIds);
+		params.put("sku_prices", this.skuPrices);
+		params.put("sku_outer_ids", this.skuOuterIds);
 		params.put("lang", this.language);
 		params.put("outer_id", this.outerId);
 		params.put("product_id", this.productId);

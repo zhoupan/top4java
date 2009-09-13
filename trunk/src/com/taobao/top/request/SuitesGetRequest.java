@@ -21,9 +21,7 @@ public class SuitesGetRequest implements TopRequest {
 
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
-
 		params.put("service_code", this.serviceCode);
-
 		return params;
 	}
 
