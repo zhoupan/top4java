@@ -1,6 +1,5 @@
 package com.taobao.top.request;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,10 +24,30 @@ public class ItemImgUploadRequest implements TopUploadRequest {
 	private Integer position;
 
 	/** 商品图片内容 */
-	public File image;
+	public FileItem image;
 
 	/** 是否将该图片设为主图 */
-	private Boolean isPrimary;
+	private Boolean primary;
+
+	public void setImgId(String imgId) {
+		this.imgId = imgId;
+	}
+
+	public void setIid(String iid) {
+		this.iid = iid;
+	}
+
+	public void setPosition(Integer position) {
+		this.position = position;
+	}
+
+	public void setImage(FileItem image) {
+		this.image = image;
+	}
+
+	public void setPrimary(Boolean primary) {
+		this.primary = primary;
+	}
 
 	public String getApiName() {
 		return "taobao.item.img.upload";
@@ -40,14 +59,14 @@ public class ItemImgUploadRequest implements TopUploadRequest {
 		params.put("itemimg_id", this.imgId);
 		params.put("iid", this.iid);
 		params.put("position", this.position);
-		params.put("is_major", this.isPrimary);
+		params.put("is_major", this.primary);
 
 		return params;
 	}
 
 	public Map<String, FileItem> getFileParams() {
 		Map<String, FileItem> params = new HashMap<String, FileItem>();
-		params.put("image", new FileItem(this.image));
+		params.put("image", this.image);
 		return params;
 	}
 

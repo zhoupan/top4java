@@ -64,7 +64,7 @@ public class ItemUpdateRequest implements TopUploadRequest {
 	private Boolean hasShowcase;
 
 	/** 店铺类目列表 */
-	private String Sellercids;
+	private String sellerCids;
 
 	/** 是否支持会员打折 */
 	private Boolean hasDiscount;
@@ -184,8 +184,8 @@ public class ItemUpdateRequest implements TopUploadRequest {
 		this.hasShowcase = hasShowcase;
 	}
 
-	public void setSellercids(String sellercids) {
-		this.Sellercids = sellercids;
+	public void setSellerCids(String sellerCids) {
+		this.sellerCids = sellerCids;
 	}
 
 	public void setHasDiscount(Boolean hasDiscount) {
@@ -283,7 +283,7 @@ public class ItemUpdateRequest implements TopUploadRequest {
 		params.put("has_warranty", this.hasWarranty);
 		params.put("auto_repost", this.autoRepost);
 		params.put("has_showcase", this.hasShowcase);
-		params.put("seller_cids", this.Sellercids);
+		params.put("seller_cids", this.sellerCids);
 		params.put("has_discount", this.hasDiscount);
 		params.put("post_fee", this.postFee);
 		params.put("express_fee", this.expressFee);
