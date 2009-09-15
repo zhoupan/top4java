@@ -84,8 +84,22 @@ public class TopRestClient implements TopClient {
 			throw new TopException(e);
 		}
 
-		// FIXME parse error response
+		tryParseException(rsp);
 		return parser.parse(rsp);
+	}
+
+	/**
+	 * 尝试把错误响应转化为异常。
+	 * 
+	 * @param rsp API响应字符串
+	 * @throws TopException
+	 */
+	private void tryParseException(String rsp) throws TopException {
+		if (Constants.FORMAT_JSON.equals(this.format)) {
+			// 为了避免二次解释JSON，采用startsWith判断
+			if (rsp.startsWith("{\"error_rsp\":")) {
+			}
+		}
 	}
 
 }
