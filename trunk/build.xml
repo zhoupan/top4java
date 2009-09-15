@@ -9,8 +9,8 @@
 	<!-- Thirdparty jar files -->
 	<fileset id="jar.files" dir="${lib.dir}">
 		<patternset>
-			<include name="commons-logging-1.0.4.jar" />
-			<include name="log4j-1.2.14.jar" />
+			<include name="commons-logging-1.1.1.jar" />
+			<include name="log4j-1.2.15.jar" />
 		</patternset>
 	</fileset>
 
@@ -25,7 +25,7 @@
 		<fileset refid="jar.files" />
 		<fileset dir="${lib.dir}">
 			<patternset>
-				<include name="junit.jar" />
+				<include name="junit-4.7.jar" />
 			</patternset>
 		</fileset>
 		<pathelement location="${classes.dir}" />
