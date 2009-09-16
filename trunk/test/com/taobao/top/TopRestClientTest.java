@@ -17,8 +17,8 @@ import com.taobao.top.util.TopHashMap;
 public class TopRestClientTest {
 
 	@Test
-	public void getUserByJson() throws TopException {
-		TopClient client = TestUtils.getTestClient("json");
+	public void getUser() throws TopException {
+		TopClient client = TestUtils.getTestClient();
 		TopRequest request = new TopRequest() {
 			public Map<String, String> getTextParams() {
 				TopHashMap params = new TopHashMap();
@@ -41,8 +41,8 @@ public class TopRestClientTest {
 	}
 
 	@Test
-	public void addItemByJson() throws TopException {
-		TopClient client = TestUtils.getTestClient("json");
+	public void addItem() throws TopException {
+		TopClient client = TestUtils.getTestClient();
 		TopUploadRequest request = new TopUploadRequest() {
 			public Map<String, String> getTextParams() {
 				TopHashMap params = new TopHashMap();
