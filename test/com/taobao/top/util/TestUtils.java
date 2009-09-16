@@ -13,7 +13,7 @@ public abstract class TestUtils {
 
 	private static final String TOP_TEST_URL = "http://gw.sandbox.taobao.com/router/rest";
 
-	public static TopClient getTestClient(String format) {
+	public static TopClient getTestClient() {
 		return new TopRestClient(TOP_TEST_URL, "test", "test");
 	}
 
