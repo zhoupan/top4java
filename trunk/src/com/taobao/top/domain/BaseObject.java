@@ -1,14 +1,21 @@
-package com.taobao.top.domain;
+﻿package com.taobao.top.domain;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
  * 基础对象。
  * 
  * @author carver.gu
- * @since 1.0, Sep 12, 2009
+ * @since 1.0, Sep 17, 2009
  */
 public abstract class BaseObject {
 
+	/** 对象创建时间 */
+	@JsonProperty("created")
 	private String created;
+
+	/** 对象修改时间 */
+	@JsonProperty("modified")
 	private String modified;
 
 	public String getCreated() {
@@ -26,5 +33,4 @@ public abstract class BaseObject {
 	public void setModified(String modified) {
 		this.modified = modified;
 	}
-
 }

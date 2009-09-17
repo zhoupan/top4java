@@ -1,0 +1,130 @@
+﻿package com.taobao.top.domain;
+
+import java.util.List;
+
+import org.codehaus.jackson.annotate.JsonProperty;
+
+/**
+ * 留言/凭证。
+ * 
+ * @author carver.gu
+ * @since 1.0, Sep 17, 2009
+ */
+public class RefundMessage extends BaseObject {
+
+	/** 留言编号 */
+	@JsonProperty("message_id")
+	private Long msgId;
+
+	/** 留言内容 */
+	@JsonProperty("content")
+	private String msgContent;
+
+	/** 留言类型。 */
+	private String msgType;
+
+	/** 凭证附件地址（图片） */
+	@JsonProperty("picture_urls")
+	private List<PictureUrl> picUrls;
+
+	/** 退款编号 */
+	@JsonProperty("refund_id")
+	private Long refundId;
+
+	/** 留言者编号 */
+	@JsonProperty("owner_id")
+	private Long ownerId;
+
+	/** 留言者昵称 */
+	@JsonProperty("owner_nick")
+	private String ownerNick;
+
+	/** 留言者身份 */
+	@JsonProperty("owner_role")
+	private String ownerRole;
+
+	public Long getMsgId() {
+		return this.msgId;
+	}
+
+	public void setMsgId(Long msgId) {
+		this.msgId = msgId;
+	}
+
+	public String getMsgContent() {
+		return this.msgContent;
+	}
+
+	public void setMsgContent(String msgContent) {
+		this.msgContent = msgContent;
+	}
+
+	public String getMsgType() {
+		return this.msgType;
+	}
+
+	public void setMsgType(String msgType) {
+		this.msgType = msgType;
+	}
+
+	public List<PictureUrl> getPicUrls() {
+		return this.picUrls;
+	}
+
+	public void setPicUrls(List<PictureUrl> picUrls) {
+		this.picUrls = picUrls;
+	}
+
+	public Long getRefundId() {
+		return this.refundId;
+	}
+
+	public void setRefundId(Long refundId) {
+		this.refundId = refundId;
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+	}
+
+	public String getOwnerNick() {
+		return this.ownerNick;
+	}
+
+	public void setOwnerNick(String ownerNick) {
+		this.ownerNick = ownerNick;
+	}
+
+	public String getOwnerRole() {
+		return this.ownerRole;
+	}
+
+	public void setOwnerRole(String ownerRole) {
+		this.ownerRole = ownerRole;
+	}
+
+}
+
+/**
+ * 图片地址。
+ * 
+ * @author carver.gu
+ * @since 1.0, Sep 17, 2009
+ */
+class PictureUrl {
+	/** 图片地址。 */
+	@JsonProperty("url")
+	private String url;
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+}
