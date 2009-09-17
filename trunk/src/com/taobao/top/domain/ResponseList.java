@@ -17,6 +17,7 @@ public class ResponseList<T> {
 	private Long totalResults;
 
 	/** 解释后的具体对象 */
+	@JsonProperty("users")
 	private List<T> content;
 
 	public Long getTotalResults() {
