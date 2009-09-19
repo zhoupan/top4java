@@ -1,6 +1,8 @@
 ﻿package com.taobao.top.domain;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import java.util.Date;
+
+import com.taobao.top.mapping.JsonProperty;
 
 /**
  * 基础对象。
@@ -12,25 +14,25 @@ public abstract class BaseObject {
 
 	/** 对象创建时间 */
 	@JsonProperty("created")
-	private String created;
+	private Date created;
 
 	/** 对象修改时间 */
 	@JsonProperty("modified")
-	private String modified;
+	private Date modified;
 
-	public String getCreated() {
+	public Date getCreated() {
 		return this.created;
 	}
 
-	public void setCreated(String created) {
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
-	public String getModified() {
+	public Date getModified() {
 		return this.modified;
 	}
 
-	public void setModified(String modified) {
+	public void setModified(Date modified) {
 		this.modified = modified;
 	}
 }

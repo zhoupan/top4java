@@ -2,7 +2,7 @@
 
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.taobao.top.mapping.JsonProperty;
 
 /**
  * TOP响应列表。
@@ -17,7 +17,6 @@ public class ResponseList<T> {
 	private Long totalResults;
 
 	/** 解释后的具体对象 */
-	@JsonProperty("users")
 	private List<T> content;
 
 	public Long getTotalResults() {

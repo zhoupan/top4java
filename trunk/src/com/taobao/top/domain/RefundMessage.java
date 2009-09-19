@@ -2,7 +2,7 @@
 
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.taobao.top.mapping.JsonProperty;
 
 /**
  * 留言/凭证。
@@ -24,8 +24,8 @@ public class RefundMessage extends BaseObject {
 	private String msgType;
 
 	/** 凭证附件地址（图片） */
-	@JsonProperty("picture_urls")
-	private List<PictureUrl> picUrls;
+	@JsonProperty("picture_urls/url")
+	private List<String> picUrls;
 
 	/** 退款编号 */
 	@JsonProperty("refund_id")
@@ -67,11 +67,11 @@ public class RefundMessage extends BaseObject {
 		this.msgType = msgType;
 	}
 
-	public List<PictureUrl> getPicUrls() {
+	public List<String> getPicUrls() {
 		return this.picUrls;
 	}
 
-	public void setPicUrls(List<PictureUrl> picUrls) {
+	public void setPicUrls(List<String> picUrls) {
 		this.picUrls = picUrls;
 	}
 
@@ -107,24 +107,4 @@ public class RefundMessage extends BaseObject {
 		this.ownerRole = ownerRole;
 	}
 
-}
-
-/**
- * 图片地址。
- * 
- * @author carver.gu
- * @since 1.0, Sep 17, 2009
- */
-class PictureUrl {
-	/** 图片地址。 */
-	@JsonProperty("url")
-	private String url;
-
-	public String getUrl() {
-		return this.url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
 }

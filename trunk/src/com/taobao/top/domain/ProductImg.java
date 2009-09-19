@@ -1,6 +1,6 @@
 ﻿package com.taobao.top.domain;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.taobao.top.mapping.JsonProperty;
 
 /**
  * 产品图片。
