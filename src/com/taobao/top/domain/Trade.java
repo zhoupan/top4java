@@ -86,11 +86,11 @@ public class Trade extends BaseObject {
 
 	/** 卖家是否已评价 */
 	@JsonProperty("seller_rate")
-	private Boolean sellerRate;
+	private Boolean sellerRated;
 
 	/** 买家是否已评价 */
 	@JsonProperty("buyer_rate")
-	private Boolean buyerRate;
+	private Boolean buyerRated;
 
 	/** 买家备注 */
 	@JsonProperty("buyer_memo")
@@ -364,20 +364,20 @@ public class Trade extends BaseObject {
 		this.status = status;
 	}
 
-	public Boolean getSellerRate() {
-		return this.sellerRate;
+	public Boolean getSellerRated() {
+		return this.sellerRated;
 	}
 
-	public void setSellerRate(Boolean sellerRate) {
-		this.sellerRate = sellerRate;
+	public void setSellerRated(Boolean sellerRated) {
+		this.sellerRated = sellerRated;
 	}
 
-	public Boolean getBuyerRate() {
-		return this.buyerRate;
+	public Boolean getBuyerRated() {
+		return this.buyerRated;
 	}
 
-	public void setBuyerRate(Boolean buyerRate) {
-		this.buyerRate = buyerRate;
+	public void setBuyerRated(Boolean buyerRated) {
+		this.buyerRated = buyerRated;
 	}
 
 	public String getBuyerMemo() {
