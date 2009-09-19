@@ -1,8 +1,9 @@
 ﻿package com.taobao.top.domain;
 
+import java.util.Date;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.taobao.top.mapping.JsonProperty;
 
 /**
  * 商品。
@@ -74,11 +75,11 @@ public class Item extends BaseObject {
 
 	/** 上架时间 */
 	@JsonProperty("list_time")
-	private String enlistTime;
+	private Date enlistTime;
 
 	/** 下架时间 */
 	@JsonProperty("delist_time")
-	private String delistTime;
+	private Date delistTime;
 
 	/** 商品新旧程度 */
 	@JsonProperty("stuff_status")
@@ -300,19 +301,19 @@ public class Item extends BaseObject {
 		this.validTerm = validTerm;
 	}
 
-	public String getEnlistTime() {
+	public Date getEnlistTime() {
 		return this.enlistTime;
 	}
 
-	public void setEnlistTime(String enlistTime) {
+	public void setEnlistTime(Date enlistTime) {
 		this.enlistTime = enlistTime;
 	}
 
-	public String getDelistTime() {
+	public Date getDelistTime() {
 		return this.delistTime;
 	}
 
-	public void setDelistTime(String delistTime) {
+	public void setDelistTime(Date delistTime) {
 		this.delistTime = delistTime;
 	}
 

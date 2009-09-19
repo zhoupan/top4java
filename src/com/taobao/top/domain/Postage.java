@@ -2,7 +2,7 @@
 
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.taobao.top.mapping.JsonProperty;
 
 /**
  * 运费模板。

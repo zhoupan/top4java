@@ -1,6 +1,6 @@
 ﻿package com.taobao.top.domain;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.taobao.top.mapping.JsonProperty;
 
 /**
  * 商品类目。
@@ -40,7 +40,7 @@ public class ItemCategory extends BaseObject {
 
 	/** 类目下商品的数量 */
 	@JsonProperty("count")
-	private Integer itemCount;
+	private Long itemCount;
 
 	public Long getCid() {
 		return this.cid;
@@ -106,11 +106,11 @@ public class ItemCategory extends BaseObject {
 		this.url = url;
 	}
 
-	public Integer getItemCount() {
+	public Long getItemCount() {
 		return this.itemCount;
 	}
 
-	public void setItemCount(Integer itemCount) {
+	public void setItemCount(Long itemCount) {
 		this.itemCount = itemCount;
 	}
 
