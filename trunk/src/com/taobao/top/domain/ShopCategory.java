@@ -24,7 +24,7 @@ public class ShopCategory extends BaseObject {
 
 	/** 该类目是否为父类目 */
 	@JsonProperty("is_parent")
-	private Boolean isParent;
+	private Boolean parent;
 
 	public Long getCid() {
 		return this.cid;
@@ -51,11 +51,11 @@ public class ShopCategory extends BaseObject {
 	}
 
 	public Boolean isParent() {
-		return this.isParent;
+		return this.parent;
 	}
 
 	public void setParent(Boolean isParent) {
-		this.isParent = isParent;
+		this.parent = isParent;
 	}
 
 }

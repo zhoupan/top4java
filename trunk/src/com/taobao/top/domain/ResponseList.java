@@ -1,8 +1,7 @@
 ﻿package com.taobao.top.domain;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import com.taobao.top.mapping.JsonProperty;
 
 /**
  * TOP响应列表。
@@ -13,7 +12,6 @@ import com.taobao.top.mapping.JsonProperty;
 public class ResponseList<T> {
 
 	/** 所有记录数 */
-	@JsonProperty("totalResults")
 	private Long totalResults;
 
 	/** 解释后的具体对象 */
@@ -33,6 +31,13 @@ public class ResponseList<T> {
 
 	public void setContent(List<T> content) {
 		this.content = content;
+	}
+
+	public void addContent(T content) {
+		if (this.content == null) {
+			this.content = new ArrayList<T>();
+		}
+		this.content.add(content);
 	}
 
 	/**

@@ -20,7 +20,7 @@ public class ConfirmFee extends BaseObject {
 
 	/** 是否是最后一笔订单 */
 	@JsonProperty("is_last_detail_order")
-	private Boolean isLastOrder;
+	private Boolean lastOrder;
 
 	public String getFee() {
 		return this.fee;
@@ -39,11 +39,11 @@ public class ConfirmFee extends BaseObject {
 	}
 
 	public Boolean isLastOrder() {
-		return this.isLastOrder;
+		return this.lastOrder;
 	}
 
 	public void setLastOrder(Boolean isLastOrder) {
-		this.isLastOrder = isLastOrder;
+		this.lastOrder = isLastOrder;
 	}
 
 }

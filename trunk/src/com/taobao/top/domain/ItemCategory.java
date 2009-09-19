@@ -24,7 +24,7 @@ public class ItemCategory extends BaseObject {
 
 	/** 该类目是否为父类目 */
 	@JsonProperty("is_parent")
-	private Boolean isParent;
+	private Boolean parent;
 
 	/** 类目状态 */
 	@JsonProperty("status")
@@ -74,12 +74,12 @@ public class ItemCategory extends BaseObject {
 		this.parentCid = parentCid;
 	}
 
-	public Boolean getIsParent() {
-		return this.isParent;
+	public Boolean isParent() {
+		return this.parent;
 	}
 
-	public void setIsParent(Boolean isParent) {
-		this.isParent = isParent;
+	public void setParent(Boolean isParent) {
+		this.parent = isParent;
 	}
 
 	public String getStatus() {

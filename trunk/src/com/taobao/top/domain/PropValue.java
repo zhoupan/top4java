@@ -28,7 +28,7 @@ public class PropValue extends BaseObject {
 
 	/** 属性值名称 */
 	@JsonProperty("name")
-	private String Name;
+	private String name;
 
 	/** 属性值别名 */
 	@JsonProperty("name_alias")
@@ -44,7 +44,7 @@ public class PropValue extends BaseObject {
 
 	/** 是否为父类目属性 */
 	@JsonProperty("is_parent")
-	private Boolean isParent;
+	private Boolean parent;
 
 	public Long getCid() {
 		return this.cid;
@@ -79,11 +79,11 @@ public class PropValue extends BaseObject {
 	}
 
 	public String getName() {
-		return this.Name;
+		return this.name;
 	}
 
 	public void setName(String name) {
-		this.Name = name;
+		this.name = name;
 	}
 
 	public String getAlias() {
@@ -111,11 +111,11 @@ public class PropValue extends BaseObject {
 	}
 
 	public Boolean isParent() {
-		return this.isParent;
+		return this.parent;
 	}
 
 	public void setParent(Boolean isParent) {
-		this.isParent = isParent;
+		this.parent = isParent;
 	}
 
 }

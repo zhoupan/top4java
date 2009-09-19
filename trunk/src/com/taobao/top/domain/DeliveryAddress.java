@@ -28,7 +28,7 @@ public class DeliveryAddress extends BaseObject {
 
 	/** 是否作为默认收货地址 */
 	@JsonProperty("is_default")
-	private Boolean isDefault;
+	private Boolean defaulted;
 
 	/** 收货人地址信息 */
 	@JsonProperty("location")
@@ -67,11 +67,11 @@ public class DeliveryAddress extends BaseObject {
 	}
 
 	public Boolean isDefault() {
-		return this.isDefault;
+		return this.defaulted;
 	}
 
 	public void setDefault(Boolean isDefault) {
-		this.isDefault = isDefault;
+		this.defaulted = isDefault;
 	}
 
 	public Location getLocation() {

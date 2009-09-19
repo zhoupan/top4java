@@ -22,27 +22,27 @@ public class ItemProp extends BaseObject {
 
 	/** 是否关键属性 */
 	@JsonProperty("is_key_prop")
-	private Boolean isKeyProp;
+	private Boolean keyProp;
 
 	/** 是否销售属性 */
 	@JsonProperty("is_sale_prop")
-	private Boolean isSaleProp;
+	private Boolean saleProp;
 
 	/** 是否颜色属性 */
 	@JsonProperty("is_color_prop")
-	private Boolean isColorProp;
+	private Boolean colorProp;
 
 	/** 是否是可枚举属性 */
 	@JsonProperty("is_enum_prop")
-	private Boolean isEnumProp;
+	private Boolean enumProp;
 
 	/** 是否是卖家可以自行输入的属性 */
 	@JsonProperty("is_input_prop")
-	private String isInputProp;
+	private String inputProp;
 
 	/** 是否商品属性 */
 	@JsonProperty("is_item_prop")
-	private String isItemProp;
+	private String itemProp;
 
 	/** 子属性的模板 */
 	@JsonProperty("child_template")
@@ -50,11 +50,11 @@ public class ItemProp extends BaseObject {
 
 	/** 发布产品或商品时是否为必选属性 */
 	@JsonProperty("must")
-	private Boolean isMust;
+	private Boolean must;
 
 	/** 发布产品或商品时是否可以多选 */
 	@JsonProperty("multi")
-	private Boolean isMulti;
+	private Boolean multi;
 
 	/** 上级属性编号 */
 	@JsonProperty("parent_pid")
@@ -93,51 +93,51 @@ public class ItemProp extends BaseObject {
 	}
 
 	public Boolean isKeyProp() {
-		return this.isKeyProp;
+		return this.keyProp;
 	}
 
 	public void setKeyProp(Boolean isKeyProp) {
-		this.isKeyProp = isKeyProp;
+		this.keyProp = isKeyProp;
 	}
 
 	public Boolean isSaleProp() {
-		return this.isSaleProp;
+		return this.saleProp;
 	}
 
 	public void setSaleProp(Boolean isSaleProp) {
-		this.isSaleProp = isSaleProp;
+		this.saleProp = isSaleProp;
 	}
 
 	public Boolean isColorProp() {
-		return this.isColorProp;
+		return this.colorProp;
 	}
 
 	public void setColorProp(Boolean isColorProp) {
-		this.isColorProp = isColorProp;
+		this.colorProp = isColorProp;
 	}
 
 	public Boolean isEnumProp() {
-		return this.isEnumProp;
+		return this.enumProp;
 	}
 
 	public void setEnumProp(Boolean isEnumProp) {
-		this.isEnumProp = isEnumProp;
+		this.enumProp = isEnumProp;
 	}
 
 	public String isInputProp() {
-		return this.isInputProp;
+		return this.inputProp;
 	}
 
 	public void setInputProp(String isInputProp) {
-		this.isInputProp = isInputProp;
+		this.inputProp = isInputProp;
 	}
 
 	public String isItemProp() {
-		return this.isItemProp;
+		return this.itemProp;
 	}
 
 	public void setItemProp(String isItemProp) {
-		this.isItemProp = isItemProp;
+		this.itemProp = isItemProp;
 	}
 
 	public String getChildPropTemplate() {
@@ -149,19 +149,19 @@ public class ItemProp extends BaseObject {
 	}
 
 	public Boolean isMust() {
-		return this.isMust;
+		return this.must;
 	}
 
 	public void setMust(Boolean isMust) {
-		this.isMust = isMust;
+		this.must = isMust;
 	}
 
 	public Boolean isMulti() {
-		return this.isMulti;
+		return this.multi;
 	}
 
 	public void setMulti(Boolean isMulti) {
-		this.isMulti = isMulti;
+		this.multi = isMulti;
 	}
 
 	public Long getParentPid() {
