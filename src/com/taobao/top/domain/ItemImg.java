@@ -1,4 +1,4 @@
-﻿package com.taobao.top.domain;
+package com.taobao.top.domain;
 
 import com.taobao.top.mapping.JsonProperty;
 
