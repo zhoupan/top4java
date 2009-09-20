@@ -11,6 +11,7 @@
 		<patternset>
 			<include name="commons-logging-1.1.1.jar" />
 			<include name="log4j-1.2.15.jar" />
+			<include name="json-1.0.jar" />
 		</patternset>
 	</fileset>
 
