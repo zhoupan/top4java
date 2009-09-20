@@ -1,5 +1,7 @@
 package com.taobao.top.parser;
 
+import com.taobao.top.TopException;
+
 /**
  * TOP响应解释器接口。响应格式可以是JSON, XML等等。
  * 
@@ -14,6 +16,6 @@ public interface TopParser<T> {
 	 * @param body 响应字符串
 	 * @return 领域对象
 	 */
-	public T parse(String body);
+	public T parse(String body) throws TopException;
 
 }
