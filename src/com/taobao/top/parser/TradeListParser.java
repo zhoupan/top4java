@@ -25,7 +25,7 @@ public class TradeListParser implements TopParser<ResponseList<Trade>> {
 			JSONObject json = new JSONObject(body);
 			JSONObject rspJson = json.getJSONObject("rsp");
 			rsp.setTotalResults(rspJson.getLong("totalResults"));
-			JSONArray tradesJson = json.getJSONArray("trades");
+			JSONArray tradesJson = rspJson.getJSONArray("trades");
 			List<Trade> trades = new ArrayList<Trade>();
 			for (int i = 0; i < tradesJson.length(); i++) {
 				JSONObject tradeJson = tradesJson.getJSONObject(i);
@@ -43,8 +43,10 @@ public class TradeListParser implements TopParser<ResponseList<Trade>> {
 					order.setItemTitle(orderJson.getString("title"));
 					order.setItemPrice(orderJson.getString("price"));
 					order.setItemNum(orderJson.getInt("num"));
+					orders.add(order);
 				}
 				trade.setOrders(orders);
+				rsp.setContent(trades);
 			}
 		} catch (Exception e) {
 			throw new TopException(e);
