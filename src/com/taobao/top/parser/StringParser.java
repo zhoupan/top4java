@@ -8,8 +8,8 @@ package com.taobao.top.parser;
  */
 public class StringParser implements TopParser<String> {
 
-	public String parse(String body) {
-		return body;
+	public String parse(String rsp) {
+		return rsp;
 	}
 
 }
