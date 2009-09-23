@@ -10,15 +10,15 @@ import com.taobao.top.util.TopHashMap;
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
  */
-public class LogisticsOrderAddRequest implements TopRequest {
+public class DeliverySendRequest implements TopRequest {
 
 	/** 交易编号 */
 	private String tid;
 
 	/** 物流运单号 */
-	private String outSid;
+	private String sid;
 
-	/** 调用者IP地址 */
+	/** 发货类型 */
 	private String orderType;
 
 	/** 物流公司代码 */
@@ -49,8 +49,8 @@ public class LogisticsOrderAddRequest implements TopRequest {
 		this.tid = tid;
 	}
 
-	public void setOutSid(String outSid) {
-		this.outSid = outSid;
+	public void setSid(String sid) {
+		this.sid = sid;
 	}
 
 	public void setOrderType(String orderType) {
@@ -97,7 +97,7 @@ public class LogisticsOrderAddRequest implements TopRequest {
 		TopHashMap params = new TopHashMap();
 
 		params.put("tid", this.tid);
-		params.put("out_sid", this.outSid);
+		params.put("out_sid", this.sid);
 		params.put("order_type", this.orderType);
 		params.put("company_code", this.companyCode);
 		params.put("seller_name", this.sellerName);
