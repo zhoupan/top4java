@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * JSON类型注解。
  * 
- * @author fengsheng
+ * @author carver.gu
  * @since 1.0, Sep 23, 2009
  */
 @Retention(RetentionPolicy.RUNTIME)
