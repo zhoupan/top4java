@@ -16,6 +16,7 @@ import java.util.Map;
 
 import com.taobao.top.Constants;
 import com.taobao.top.TopException;
+import com.taobao.top.domain.BaseObject;
 import com.taobao.top.util.StrUtils;
 
 public abstract class Converter {
@@ -153,14 +154,15 @@ public abstract class Converter {
 	}
 
 	private static <T> Field getDeclaredField(Class<T> clazz, String name)
-			throws SecurityException, NoSuchFieldException {
-		Field field = null;
-		try {
+			throws NoSuchFieldException {
+		Field field;
+
+		if ("created".equals(name) || "modified".equals(name)) {
+			field = BaseObject.class.getDeclaredField(name);
+		} else {
 			field = clazz.getDeclaredField(name);
-		} catch (NoSuchFieldException e) {
-			Class<? super T> superClass = clazz.getSuperclass();
-			field = superClass.getDeclaredField(name);
 		}
+
 		return field;
 	}
 

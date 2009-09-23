@@ -159,15 +159,15 @@ public class Item extends BaseObject {
 
 	/** 虚拟商品的状态字段 */
 	@JsonProperty("is_virtural")
-	private String isVirtural;
+	private String virtural;
 
 	/** 是否在淘宝显示 */
 	@JsonProperty("is_taobao")
-	private String isTaobao;
+	private Boolean taobao;
 
 	/** 是否在外部网店显示 */
 	@JsonProperty("is_ex")
-	private String isExternal;
+	private Boolean external;
 
 	/** 商品图片列表(包括主图) */
 	@JsonProperty("itemimg")
@@ -469,28 +469,28 @@ public class Item extends BaseObject {
 		this.outerId = outerId;
 	}
 
-	public String isVirtural() {
-		return this.isVirtural;
+	public String getVirtural() {
+		return this.virtural;
 	}
 
-	public void setVirtural(String isVirtural) {
-		this.isVirtural = isVirtural;
+	public void setVirtural(String virtural) {
+		this.virtural = virtural;
 	}
 
-	public String isTaobao() {
-		return this.isTaobao;
+	public Boolean isTaobao() {
+		return this.taobao;
 	}
 
-	public void setTaobao(String isTaobao) {
-		this.isTaobao = isTaobao;
+	public void setTaobao(Boolean taobao) {
+		this.taobao = taobao;
 	}
 
-	public String isExternal() {
-		return this.isExternal;
+	public Boolean isExternal() {
+		return this.external;
 	}
 
-	public void setExternal(String isExternal) {
-		this.isExternal = isExternal;
+	public void setExternal(Boolean external) {
+		this.external = external;
 	}
 
 	public List<ItemImg> getItemImgs() {

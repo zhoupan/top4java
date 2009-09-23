@@ -45,11 +45,12 @@ public class ResponseList<T> {
 	 * 
 	 * @return 第一个对象或者null
 	 */
-	public T GetFirst() {
+	public T getFirst() {
 		if (content != null && !content.isEmpty()) {
 			return content.get(0);
 		} else {
 			return null;
 		}
 	}
+
 }
