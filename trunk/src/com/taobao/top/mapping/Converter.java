@@ -73,7 +73,7 @@ public abstract class Converter {
 
 		try {
 			rsp = clazz.newInstance();
-			BeanInfo beanInfo = Introspector.getBeanInfo(rsp.getClass());
+			BeanInfo beanInfo = Introspector.getBeanInfo(clazz);
 			PropertyDescriptor[] pds = beanInfo.getPropertyDescriptors();
 
 			for (PropertyDescriptor pd : pds) {
