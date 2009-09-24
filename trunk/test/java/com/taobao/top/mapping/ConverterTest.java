@@ -25,7 +25,7 @@ public class ConverterTest {
 	public void parseOrders() throws Exception {
 		String json = TestUtils.readResource("orders.json");
 		long begin = System.currentTimeMillis();
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < 500; i++) {
 			Converter.toResponseList(json, Order.class);
 		}
 		long end = System.currentTimeMillis();
