@@ -181,16 +181,32 @@ public abstract class Converter {
 					method.invoke(rsp, value.toString());
 				} else if (Long.class.isAssignableFrom(typeClass)) {
 					Object value = reader.getPrimitiveObject(name);
-					method.invoke(rsp, Long.valueOf(value.toString()));
+					if (value instanceof Long) {
+						method.invoke(rsp, (Long) value);
+					} else {
+						method.invoke(rsp, Long.valueOf(value.toString()));
+					}
 				} else if (Integer.class.isAssignableFrom(typeClass)) {
 					Object value = reader.getPrimitiveObject(name);
-					method.invoke(rsp, Integer.valueOf(value.toString()));
+					if (value instanceof Integer) {
+						method.invoke(rsp, (Integer) value);
+					} else {
+						method.invoke(rsp, Integer.valueOf(value.toString()));
+					}
 				} else if (Boolean.class.isAssignableFrom(typeClass)) {
 					Object value = reader.getPrimitiveObject(name);
-					method.invoke(rsp, Boolean.valueOf(value.toString()));
+					if (value instanceof Boolean) {
+						method.invoke(rsp, (Boolean) value);
+					} else {
+						method.invoke(rsp, Boolean.valueOf(value.toString()));
+					}
 				} else if (Double.class.isAssignableFrom(typeClass)) {
 					Object value = reader.getPrimitiveObject(name);
-					method.invoke(rsp, Double.valueOf(value.toString()));
+					if (value instanceof Double) {
+						method.invoke(rsp, (Double) value);
+					} else {
+						method.invoke(rsp, Double.valueOf(value.toString()));
+					}
 				} else if (Date.class.isAssignableFrom(typeClass)) {
 					DateFormat format = new SimpleDateFormat(Constants.DATE_TIME_FORMAT);
 					Object value = reader.getPrimitiveObject(name);
