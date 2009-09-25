@@ -2,6 +2,7 @@ package com.taobao.top.domain;
 
 import java.util.List;
 
+import com.taobao.top.mapping.JsonClass;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
@@ -10,6 +11,7 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Sep 17, 2009
  */
+@JsonClass("products")
 public class Product extends BaseObject {
 
 	/** 产品编号 */

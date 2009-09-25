@@ -2,6 +2,7 @@ package com.taobao.top.domain;
 
 import java.util.List;
 
+import com.taobao.top.mapping.JsonClass;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
@@ -10,6 +11,7 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Sep 17, 2009
  */
+@JsonClass("trades")
 public class Trade extends BaseObject {
 
 	/** 淘宝交易编号（父订单的交易编号） */

@@ -1,5 +1,6 @@
 package com.taobao.top.domain;
 
+import com.taobao.top.mapping.JsonClass;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
@@ -8,6 +9,7 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Sep 17, 2009
  */
+@JsonClass("confirmFees")
 public class ConfirmFee extends BaseObject {
 
 	/** 确认收货的金额 */
