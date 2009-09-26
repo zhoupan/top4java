@@ -43,7 +43,7 @@ public class FileItem {
 	 * 基于文件名、字节流和媒体类型的构造器。
 	 * 
 	 * @param fileName 文件名
-	 * @param content 字节流
+	 * @param content 文件字节流
 	 * @param mimeType 媒体类型
 	 */
 	public FileItem(String fileName, byte[] content, String mimeType) {
