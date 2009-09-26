@@ -18,7 +18,7 @@ public class LogisticsOrder extends BaseObject {
 
 	/** 具体一个物流公司的运单号码 */
 	@JsonProperty("out_sid")
-	private String outSid;
+	private String sid;
 
 	/** 卖家昵称 */
 	@JsonProperty("seller_nick")
@@ -84,12 +84,12 @@ public class LogisticsOrder extends BaseObject {
 		this.tid = tid;
 	}
 
-	public String getOutSid() {
-		return this.outSid;
+	public String getSid() {
+		return this.sid;
 	}
 
-	public void setOutSid(String outSid) {
-		this.outSid = outSid;
+	public void setSid(String sid) {
+		this.sid = sid;
 	}
 
 	public String getSellerNick() {
