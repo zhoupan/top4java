@@ -52,6 +52,10 @@ public class TaobaokeItem extends BaseObject {
 	@JsonProperty("commission_volume")
 	private String commissionVolume;
 
+	/** 淘宝客推广链接 */
+	@JsonProperty("list_url_by_q")
+	private String promotionUrl;
+
 	public String getIid() {
 		return this.iid;
 	}
@@ -130,6 +134,14 @@ public class TaobaokeItem extends BaseObject {
 
 	public void setCommissionVolume(String commissionVolume) {
 		this.commissionVolume = commissionVolume;
+	}
+
+	public String getPromotionUrl() {
+		return this.promotionUrl;
+	}
+
+	public void setPromotionUrl(String promotionUrl) {
+		this.promotionUrl = promotionUrl;
 	}
 
 }

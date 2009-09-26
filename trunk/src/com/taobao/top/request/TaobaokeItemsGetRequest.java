@@ -15,8 +15,8 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 	/** 要返回的字段列表 */
 	private String fields;
 
-	/** 输入格式：mm_会员id_网站id_广告位id */
-	private String pid;
+	/** 用户昵称 */
+	private String nick;
 
 	/** 商品标题中包含的关键字 */
 	private String keyword;
@@ -76,8 +76,8 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 		this.fields = fields;
 	}
 
-	public void setPid(String pid) {
-		this.pid = pid;
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 
 	public void setKeyword(String keyword) {
@@ -160,7 +160,7 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 		TopHashMap params = new TopHashMap();
 
 		params.put("fields", this.fields);
-		params.put("pid", this.pid);
+		params.put("nick", this.nick);
 		params.put("keyword", this.keyword);
 		params.put("cid", this.cid);
 		params.put("start_price", this.startPrice);
