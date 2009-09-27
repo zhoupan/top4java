@@ -8,6 +8,8 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.Map.Entry;
 
+import sun.misc.BASE64Encoder;
+
 import com.taobao.top.Constants;
 
 /**
@@ -56,6 +58,28 @@ public abstract class SysUtils {
 		}
 
 		return sign.toString();
+	}
+
+	/**
+	 * 验证TOP回调地址的签名是否合法。
+	 * 
+	 * @param topParams TOP私有参数（未经Base64解密后的）
+	 * @param topSession TOP私有会话码
+	 * @param topSign TOP回调签名（经过URL反编码的）
+	 * @param appKey 应用公钥
+	 * @param appSecret 应用密钥
+	 * @return 验证成功返回true，否则返回false
+	 * @throws NoSuchAlgorithmException
+	 * @throws IOException
+	 */
+	public static boolean VerifyTopResponse(String topParams, String topSession, String topSign,
+			String appKey, String appSecret) throws NoSuchAlgorithmException, IOException {
+		StringBuilder result = new StringBuilder();
+		MessageDigest md5 = MessageDigest.getInstance("MD5");
+		result.append(appKey).append(topParams).append(topSession).append(appSecret);
+		byte[] bytes = md5.digest(result.toString().getBytes(Constants.DEFAULT_CHARSET));
+		BASE64Encoder encoder = new BASE64Encoder();
+		return encoder.encode(bytes).equals(topSign);
 	}
 
 	/**
