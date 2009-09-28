@@ -84,6 +84,7 @@ import com.taobao.top.request.ItemDelistRequest;
 import com.taobao.top.request.ItemEnlistRequest;
 import com.taobao.top.request.ItemGetRequest;
 import com.taobao.top.request.ItemImgDeleteRequest;
+import com.taobao.top.request.ItemImgJointRequest;
 import com.taobao.top.request.ItemImgUploadRequest;
 import com.taobao.top.request.ItemPropImgDeleteRequest;
 import com.taobao.top.request.ItemPropImgUploadRequest;
@@ -323,6 +324,11 @@ public class TopJsonRestClient {
 
 	/** TOP API: taobao.item.img.upload **/
 	public ItemImg uploadItemImg(ItemImgUploadRequest request, String session) throws TopException {
+		return client.execute(request, new ItemImgJsonParser(), session);
+	}
+
+	/** TOP API: taobao.item.joint.img **/
+	public ItemImg jointItemImg(ItemImgJointRequest request, String session) throws TopException {
 		return client.execute(request, new ItemImgJsonParser(), session);
 	}
 
