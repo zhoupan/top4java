@@ -9,7 +9,7 @@ import com.taobao.top.parser.TopParser;
 import com.taobao.top.request.TopRequest;
 import com.taobao.top.request.TopUploadRequest;
 import com.taobao.top.util.StrUtils;
-import com.taobao.top.util.SysUtils;
+import com.taobao.top.util.TopUtils;
 import com.taobao.top.util.TopHashMap;
 import com.taobao.top.util.WebUtils;
 
@@ -71,7 +71,7 @@ public class TopRestClient implements TopClient {
 
 		// 添加签名参数
 		try {
-			params.put(SIGN, SysUtils.signTopRequest(params, appSecret));
+			params.put(SIGN, TopUtils.signTopRequest(params, appSecret));
 		} catch (Exception e) {
 			throw new TopException(e);
 		}

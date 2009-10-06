@@ -60,7 +60,7 @@ public class FileItem {
 
 	public String getMimeType() throws IOException {
 		if (this.mimeType == null) {
-			this.mimeType = SysUtils.getMimeType(getContent());
+			this.mimeType = TopUtils.getMimeType(getContent());
 		}
 		return this.mimeType;
 	}

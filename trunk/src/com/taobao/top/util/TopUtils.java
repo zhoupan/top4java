@@ -3,11 +3,13 @@ package com.taobao.top.util;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.Map.Entry;
 
+import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 import com.taobao.top.Constants;
@@ -18,7 +20,7 @@ import com.taobao.top.Constants;
  * @author carver.gu
  * @since 1.0, Sep 12, 2009
  */
-public abstract class SysUtils {
+public abstract class TopUtils {
 
 	/**
 	 * 给TOP请求签名。
@@ -72,7 +74,7 @@ public abstract class SysUtils {
 	 * @throws NoSuchAlgorithmException
 	 * @throws IOException
 	 */
-	public static boolean VerifyTopResponse(String topParams, String topSession, String topSign,
+	public static boolean verifyTopResponse(String topParams, String topSession, String topSign,
 			String appKey, String appSecret) throws NoSuchAlgorithmException, IOException {
 		StringBuilder result = new StringBuilder();
 		MessageDigest md5 = MessageDigest.getInstance("MD5");
@@ -80,6 +82,35 @@ public abstract class SysUtils {
 		byte[] bytes = md5.digest(result.toString().getBytes(Constants.DEFAULT_CHARSET));
 		BASE64Encoder encoder = new BASE64Encoder();
 		return encoder.encode(bytes).equals(topSign);
+	}
+
+	/**
+	 * 解释TOP回调参数为键值对。
+	 * 
+	 * @param topParams 经过Base64编码的字符串
+	 * @return 键值对参数
+	 * @throws IOException
+	 */
+	public static Map<String, String> decodeTopParams(String topParams) throws IOException {
+		if (StrUtils.isEmpty(topParams)) {
+			return null;
+		}
+
+		Map<String, String> result = new HashMap<String, String>();
+
+		BASE64Decoder decoder = new BASE64Decoder();
+		byte[] buffer = decoder.decodeBuffer(topParams);
+		String originTopParams = new String(buffer, Constants.DEFAULT_CHARSET);
+
+		String[] pairs = originTopParams.split("&");
+		for (String pair : pairs) {
+			String[] params = pair.split("=");
+			if (params != null && params.length == 2) {
+				result.put(params[0], params[1]);
+			}
+		}
+
+		return result;
 	}
 
 	/**
