@@ -16,6 +16,10 @@ public class Order extends BaseObject {
 	@JsonProperty("iid")
 	private String iid;
 
+	/** 子订单编号 */
+	@JsonProperty("tid")
+	private String oid;
+
 	/** 商品的最小属性单元SKU的编号 */
 	@JsonProperty("sku_id ")
 	private String skuId;
@@ -55,10 +59,6 @@ public class Order extends BaseObject {
 	/** 退款状态 */
 	@JsonProperty("refund_status")
 	private String refundStatus;
-
-	/** 子订单编号 */
-	@JsonProperty("tid")
-	private String childOid;
 
 	/** 商家外部编码 */
 	@JsonProperty("outer_iid")
@@ -188,12 +188,12 @@ public class Order extends BaseObject {
 		this.refundStatus = refundStatus;
 	}
 
-	public String getChildOid() {
-		return this.childOid;
+	public String getOid() {
+		return this.oid;
 	}
 
-	public void setChildOid(String childOid) {
-		this.childOid = childOid;
+	public void setOid(String oid) {
+		this.oid = oid;
 	}
 
 	public String getOuterIid() {
