@@ -18,7 +18,7 @@ public class Order extends BaseObject {
 
 	/** 子订单编号 */
 	@JsonProperty("tid")
-	private String oid;
+	private Long oid;
 
 	/** 商品的最小属性单元SKU的编号 */
 	@JsonProperty("sku_id ")
@@ -188,11 +188,11 @@ public class Order extends BaseObject {
 		this.refundStatus = refundStatus;
 	}
 
-	public String getOid() {
+	public Long getOid() {
 		return this.oid;
 	}
 
-	public void setOid(String oid) {
+	public void setOid(Long oid) {
 		this.oid = oid;
 	}
 
