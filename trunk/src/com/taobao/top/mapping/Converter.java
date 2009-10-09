@@ -40,14 +40,15 @@ public abstract class Converter {
 	 * @throws TopException
 	 */
 	public static <T> ResponseList<T> toResponseList(String rsp, Class<T> clazz) throws TopException {
+		ResponseList<T> rspList = new ResponseList<T>();
+
 		JSONReader reader = new JSONReader();
 		Map<?, ?> rootJson = (Map<?, ?>) reader.read(rsp);
 		Map<?, ?> rspJson = (Map<?, ?>) rootJson.get("rsp");
 		if (rspJson == null || rspJson.isEmpty()) {
-			return null;
+			return rspList;
 		}
 
-		ResponseList<T> rspList = new ResponseList<T>();
 		Object totalResults = rspJson.get("totalResults");
 		if (totalResults != null) {
 			if (totalResults instanceof Long) {

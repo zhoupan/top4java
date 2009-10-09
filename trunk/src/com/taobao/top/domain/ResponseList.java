@@ -53,4 +53,13 @@ public class ResponseList<T> {
 		}
 	}
 
+	/**
+	 * 判断响应列表是否为空。
+	 * 
+	 * @return true/false
+	 */
+	public boolean isEmpty() {
+		return content == null || content.isEmpty();
+	}
+
 }
