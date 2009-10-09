@@ -6,7 +6,7 @@ package com.taobao.top;
  * @author carver.gu
  * @since 1.0, Sep 12, 2009
  */
-public class TopException extends Exception {
+public class TopException extends RuntimeException {
 
 	private static final long serialVersionUID = -238091758285157331L;
 
