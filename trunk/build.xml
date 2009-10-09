@@ -48,7 +48,7 @@
 			</fileset>
 		</copy>
 
-		<javac srcdir="${src.dir}" destdir="${classes.dir}/">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}/" debug="true">
 			<classpath refid="class.path" />
 		</javac>
 	</target>
