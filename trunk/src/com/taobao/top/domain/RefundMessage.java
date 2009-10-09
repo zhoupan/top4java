@@ -23,6 +23,7 @@ public class RefundMessage extends BaseObject {
 	private String msgContent;
 
 	/** 留言类型。 */
+	@JsonProperty("message_type")
 	private String msgType;
 
 	/** 凭证附件地址（图片） */

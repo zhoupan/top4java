@@ -48,6 +48,10 @@ public class Order extends BaseObject {
 	@JsonProperty("pic_path")
 	private String itemImgUrl;
 
+	/** 商品备注 */
+	@JsonProperty("item_memo")
+	private String itemMemo;
+
 	/** 卖家昵称 */
 	@JsonProperty("seller_nick")
 	private String sellerNick;
@@ -162,6 +166,14 @@ public class Order extends BaseObject {
 
 	public void setItemImgUrl(String itemImgUrl) {
 		this.itemImgUrl = itemImgUrl;
+	}
+
+	public String getItemMemo() {
+		return this.itemMemo;
+	}
+
+	public void setItemMemo(String itemMemo) {
+		this.itemMemo = itemMemo;
 	}
 
 	public String getSellerNick() {
