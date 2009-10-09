@@ -92,6 +92,10 @@ public class Refund extends BaseObject {
 	@JsonProperty("good_return_time")
 	private String goodReturnTime;
 
+	/** 物流方式名称 */
+	@JsonProperty("shipping_type")
+	private String logisticsType;
+
 	/** 物流公司名称 */
 	@JsonProperty("company_name")
 	private String logisticsCompany;
@@ -266,6 +270,14 @@ public class Refund extends BaseObject {
 
 	public void setGoodReturnTime(String goodReturnTime) {
 		this.goodReturnTime = goodReturnTime;
+	}
+
+	public String getLogisticsType() {
+		return this.logisticsType;
+	}
+
+	public void setLogisticsType(String logisticsType) {
+		this.logisticsType = logisticsType;
 	}
 
 	public String getLogisticsCompany() {

@@ -1,5 +1,6 @@
 package com.taobao.top.domain;
 
+import java.util.Date;
 import java.util.List;
 
 import com.taobao.top.mapping.JsonClass;
@@ -216,7 +217,7 @@ public class Trade extends BaseObject {
 
 	/** 超时到期时间 */
 	@JsonProperty("timeout_action_time")
-	private String timeoutActionTime;
+	private Date timeout;
 
 	/** 订单列表 */
 	@JsonProperty("orders")
@@ -622,12 +623,12 @@ public class Trade extends BaseObject {
 		this.codFee = codFee;
 	}
 
-	public String getTimeoutActionTime() {
-		return this.timeoutActionTime;
+	public Date getTimeout() {
+		return this.timeout;
 	}
 
-	public void setTimeoutActionTime(String timeoutActionTime) {
-		this.timeoutActionTime = timeoutActionTime;
+	public void setTimeout(Date timeout) {
+		this.timeout = timeout;
 	}
 
 	public List<Order> getOrders() {
