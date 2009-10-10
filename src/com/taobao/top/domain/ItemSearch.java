@@ -20,7 +20,7 @@ public class ItemSearch extends BaseObject {
 
 	/** 商品分类列表 */
 	@JsonProperty("category_list")
-	private List<ItemCategory> itemCats;
+	private List<ItemCat> itemCats;
 
 	public List<Item> getItems() {
 		return this.items;
@@ -30,11 +30,11 @@ public class ItemSearch extends BaseObject {
 		this.items = items;
 	}
 
-	public List<ItemCategory> getItemCats() {
+	public List<ItemCat> getItemCats() {
 		return this.itemCats;
 	}
 
-	public void setItemCats(List<ItemCategory> itemCats) {
+	public void setItemCats(List<ItemCat> itemCats) {
 		this.itemCats = itemCats;
 	}
 
