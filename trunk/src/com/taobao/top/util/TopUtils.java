@@ -162,4 +162,28 @@ public abstract class TopUtils {
 		return mimeType;
 	}
 
+	/**
+	 * 清除字典中值为空的项。
+	 * 
+	 * @param <V> 泛型
+	 * @param map 待清除的字典
+	 * @return 清除后的字典
+	 */
+	public static <V> Map<String, V> cleanupMap(Map<String, V> map) {
+		if (map == null || map.isEmpty()) {
+			return null;
+		}
+
+		Map<String, V> result = new HashMap<String, V>(map.size());
+		Set<Entry<String, V>> entries = map.entrySet();
+
+		for (Entry<String, V> entry : entries) {
+			if (entry.getValue() != null) {
+				result.put(entry.getKey(), entry.getValue());
+			}
+		}
+
+		return result;
+	}
+
 }

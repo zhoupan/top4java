@@ -2,15 +2,16 @@ package com.taobao.top;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.taobao.top.parser.TopParser;
 import com.taobao.top.request.TopRequest;
 import com.taobao.top.request.TopUploadRequest;
-import com.taobao.top.util.StrUtils;
-import com.taobao.top.util.TopUtils;
+import com.taobao.top.util.FileItem;
 import com.taobao.top.util.TopHashMap;
+import com.taobao.top.util.TopUtils;
 import com.taobao.top.util.WebUtils;
 
 /**
@@ -54,24 +55,20 @@ public class TopRestClient implements TopClient {
 	}
 
 	public <T> T execute(TopRequest request, TopParser<T> parser, String session) throws TopException {
-		TopHashMap params = new TopHashMap(request.getTextParams());
+		TopHashMap textParams = new TopHashMap(request.getTextParams());
 
 		// 添加协议级请求参数
-		params.put(METHOD, request.getApiName());
-		params.put(VERSION, "1.0");
-		params.put(APP_KEY, appKey);
-		params.put(FORMAT, format);
-		params.put(PARTNER_ID, "300");
-		params.put(TIMESTAMP, new Date());
-
-		// 添加用户会话授权码
-		if (!StrUtils.isEmpty(session)) {
-			params.put(SESSION, session);
-		}
+		textParams.put(METHOD, request.getApiName());
+		textParams.put(VERSION, "1.0");
+		textParams.put(APP_KEY, appKey);
+		textParams.put(FORMAT, format);
+		textParams.put(PARTNER_ID, "300");
+		textParams.put(TIMESTAMP, new Date());
+		textParams.put(SESSION, session);
 
 		// 添加签名参数
 		try {
-			params.put(SIGN, TopUtils.signTopRequest(params, appSecret));
+			textParams.put(SIGN, TopUtils.signTopRequest(textParams, appSecret));
 		} catch (Exception e) {
 			throw new TopException(e);
 		}
@@ -81,9 +78,10 @@ public class TopRestClient implements TopClient {
 			// 是否需要上传文件
 			if (request instanceof TopUploadRequest) {
 				TopUploadRequest uRequest = (TopUploadRequest) request;
-				rsp = WebUtils.doPost(serverUrl, params, uRequest.getFileParams());
+				Map<String, FileItem> fileParams = TopUtils.cleanupMap(uRequest.getFileParams());
+				rsp = WebUtils.doPost(serverUrl, textParams, fileParams);
 			} else {
-				rsp = WebUtils.doPost(serverUrl, params);
+				rsp = WebUtils.doPost(serverUrl, textParams);
 			}
 		} catch (IOException e) {
 			throw new TopException(e);

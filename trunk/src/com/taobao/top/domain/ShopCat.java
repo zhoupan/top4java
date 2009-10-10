@@ -10,7 +10,7 @@ import com.taobao.top.mapping.JsonProperty;
  * @since 1.0, Sep 17, 2009
  */
 @JsonClass("shop_cats")
-public class ShopCategory extends BaseObject {
+public class ShopCat extends BaseObject {
 
 	/** 卖家自定义类目编号 */
 	@JsonProperty("cid")

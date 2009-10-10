@@ -37,6 +37,10 @@ public class TopHashMap extends HashMap<String, String> {
 			strValue = ((Integer) value).toString();
 		} else if (value instanceof Long) {
 			strValue = ((Long) value).toString();
+		} else if (value instanceof Float) {
+			strValue = ((Float) value).toString();
+		} else if (value instanceof Double) {
+			strValue = ((Double) value).toString();
 		} else if (value instanceof Boolean) {
 			strValue = ((Boolean) value).toString();
 		} else if (value instanceof Date) {
