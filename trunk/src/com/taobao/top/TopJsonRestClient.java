@@ -1,6 +1,7 @@
 package com.taobao.top;
 
 import com.taobao.top.domain.Area;
+import com.taobao.top.domain.CategoryStat;
 import com.taobao.top.domain.ConfirmFee;
 import com.taobao.top.domain.DeliveryAddress;
 import com.taobao.top.domain.Item;
@@ -8,6 +9,7 @@ import com.taobao.top.domain.ItemCategory;
 import com.taobao.top.domain.ItemImg;
 import com.taobao.top.domain.ItemProp;
 import com.taobao.top.domain.ItemSearch;
+import com.taobao.top.domain.ItemStat;
 import com.taobao.top.domain.LogisticsCompany;
 import com.taobao.top.domain.LogisticsOrder;
 import com.taobao.top.domain.Order;
@@ -29,8 +31,10 @@ import com.taobao.top.domain.TaobaokeReport;
 import com.taobao.top.domain.TaobaokeShop;
 import com.taobao.top.domain.Trade;
 import com.taobao.top.domain.TradeRate;
+import com.taobao.top.domain.TradeStat;
 import com.taobao.top.domain.User;
 import com.taobao.top.parser.AreaListJsonParser;
+import com.taobao.top.parser.CategoryStatListJsonParser;
 import com.taobao.top.parser.ConfirmFeeJsonParser;
 import com.taobao.top.parser.DeliveryAddressListJsonParser;
 import com.taobao.top.parser.ItemCatListJsonParser;
@@ -40,6 +44,7 @@ import com.taobao.top.parser.ItemListJsonParser;
 import com.taobao.top.parser.ItemPropJsonParser;
 import com.taobao.top.parser.ItemPropListJsonParser;
 import com.taobao.top.parser.ItemSearchListJsonParser;
+import com.taobao.top.parser.ItemStatListJsonParser;
 import com.taobao.top.parser.LogisticsCompanyListJsonParser;
 import com.taobao.top.parser.LogisticsOrderJsonParser;
 import com.taobao.top.parser.LogisticsOrderListJsonParser;
@@ -71,9 +76,11 @@ import com.taobao.top.parser.TradeJsonParser;
 import com.taobao.top.parser.TradeListJsonParser;
 import com.taobao.top.parser.TradeRateJsonParser;
 import com.taobao.top.parser.TradeRateListJsonParser;
+import com.taobao.top.parser.TradeStatListJsonParser;
 import com.taobao.top.parser.UserJsonParser;
 import com.taobao.top.parser.UserListJsonParser;
 import com.taobao.top.request.AreasGetRequest;
+import com.taobao.top.request.CatStatsGetRequest;
 import com.taobao.top.request.DeliveryAddressesGetRequest;
 import com.taobao.top.request.DeliverySendRequest;
 import com.taobao.top.request.ItemAddRequest;
@@ -98,6 +105,7 @@ import com.taobao.top.request.ItemSkuAddRequest;
 import com.taobao.top.request.ItemSkuGetRequest;
 import com.taobao.top.request.ItemSkuUpdateRequest;
 import com.taobao.top.request.ItemSkusGetRequest;
+import com.taobao.top.request.ItemStatsGetRequest;
 import com.taobao.top.request.ItemUpdateRequest;
 import com.taobao.top.request.ItemsAllGetRequest;
 import com.taobao.top.request.ItemsCustomGetRequest;
@@ -151,6 +159,7 @@ import com.taobao.top.request.TradeMemoUpdateRequest;
 import com.taobao.top.request.TradeRateAddRequest;
 import com.taobao.top.request.TradeRateBatchAddRequest;
 import com.taobao.top.request.TradeRatesGetRequest;
+import com.taobao.top.request.TradeStatsGetRequest;
 import com.taobao.top.request.TradesBoughtGetRequest;
 import com.taobao.top.request.TradesGetRequest;
 import com.taobao.top.request.TradesSoldGetRequest;
@@ -600,6 +609,21 @@ public class TopJsonRestClient {
 	/** TOP API: taobao.sellercats.list.get **/
 	public ResponseList<SellerItemCategory> getSellerItemCats(SellerItemCatsGetRequest request) throws TopException {
 		return client.execute(request, new SellerItemCategoryListJsonParser());
+	}
+
+	/** TOP API: taobao.itemstats.get **/
+	public ResponseList<ItemStat> getItemStats(ItemStatsGetRequest request, String session) throws TopException {
+		return client.execute(request, new ItemStatListJsonParser());
+	}
+
+	/** TOP API: taobao.tradestats.get **/
+	public ResponseList<TradeStat> getTradeStats(TradeStatsGetRequest request, String session) throws TopException {
+		return client.execute(request, new TradeStatListJsonParser());
+	}
+
+	/** TOP API: taotao.catstats.get **/
+	public ResponseList<CategoryStat> getCatStats(CatStatsGetRequest request, String session) throws TopException {
+		return client.execute(request, new CategoryStatListJsonParser());
 	}
 
 }
