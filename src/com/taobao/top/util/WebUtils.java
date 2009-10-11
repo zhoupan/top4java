@@ -321,10 +321,12 @@ public abstract class WebUtils {
 	 */
 	public static String decodeParameter(String value, String charset) {
 		String result = null;
-		try {
-			result = URLDecoder.decode(value, charset);
-		} catch (IOException e) {
-			throw new RuntimeException(e);
+		if (!StrUtils.isEmpty(value)) {
+			try {
+				result = URLDecoder.decode(value, charset);
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
 		}
 		return result;
 	}
