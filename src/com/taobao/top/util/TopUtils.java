@@ -100,7 +100,7 @@ public abstract class TopUtils {
 
 		BASE64Decoder decoder = new BASE64Decoder();
 		byte[] buffer = decoder.decodeBuffer(topParams);
-		String originTopParams = new String(buffer);
+		String originTopParams = new String(buffer, "GBK");
 
 		String[] pairs = originTopParams.split("&");
 		for (String pair : pairs) {
