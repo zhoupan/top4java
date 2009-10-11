@@ -8,6 +8,7 @@ import java.io.OutputStream;
 import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.Map;
 import java.util.Set;
@@ -299,6 +300,33 @@ public abstract class WebUtils {
 		}
 
 		return writer.toString();
+	}
+
+	/**
+	 * 使用默认的UTF-8字符集反编码请求参数值。
+	 * 
+	 * @param value 参数值
+	 * @return 反编码后的参数值
+	 */
+	public static String decodeParameter(String value) {
+		return decodeParameter(value, Constants.DEFAULT_CHARSET);
+	}
+
+	/**
+	 * 使用指定的字符集反编码请求参数值。
+	 * 
+	 * @param value 参数值
+	 * @param charset 字符集
+	 * @return 反编码后的参数值
+	 */
+	public static String decodeParameter(String value, String charset) {
+		String result = null;
+		try {
+			result = URLDecoder.decode(value, charset);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		return result;
 	}
 
 }
