@@ -17,7 +17,7 @@ public class ItemPropsGetRequest implements TopRequest {
 	private String fields;
 
 	/** 叶子类目编号 */
-	private String leafCid;
+	private String cid;
 
 	/** 属性编号 */
 	private String pid;
@@ -50,8 +50,8 @@ public class ItemPropsGetRequest implements TopRequest {
 		this.fields = fields;
 	}
 
-	public void setLeafCid(String leafCid) {
-		this.leafCid = leafCid;
+	public void setCid(String cid) {
+		this.cid = cid;
 	}
 
 	public void setPid(String pid) {
@@ -98,7 +98,7 @@ public class ItemPropsGetRequest implements TopRequest {
 		TopHashMap params = new TopHashMap();
 
 		params.put("fields", this.fields);
-		params.put("cid", this.leafCid);
+		params.put("cid", this.cid);
 		params.put("pid", this.pid);
 		params.put("parent_pid", this.parentPid);
 		params.put("is_key_prop", this.keyProp);
