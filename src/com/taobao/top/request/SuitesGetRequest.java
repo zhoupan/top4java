@@ -15,6 +15,10 @@ public class SuitesGetRequest implements TopRequest {
 	/** 用户订购服务的服务码 */
 	private String serviceCode;
 
+	public void setServiceCode(String serviceCode) {
+		this.serviceCode = serviceCode;
+	}
+
 	public String getApiName() {
 		return "taobao.suites.get";
 	}
