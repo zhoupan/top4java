@@ -17,7 +17,7 @@ public class ItemApiTest {
 	@Test
 	public void getItemProps() {
 		ItemPropsGetRequest req = new ItemPropsGetRequest();
-		req.setLeafCid("111703");
+		req.setCid("111703");
 		req.setFields("name");
 		TopClient client = TestUtils.getTestClient();
 		String rsp = client.execute(req, new StringParser());
