@@ -60,4 +60,25 @@
 		</jar>
 		<delete dir="${classes.dir}" />
 	</target>
+
+	<target name="dist-core" depends="compile">
+		<jar destfile="${target.dir}/top4java-core.jar">
+			<fileset dir="${classes.dir}">
+				<include name="**/*" />
+				<exclude name="com/taobao/top/parser/json/**" />
+				<exclude name="com/taobao/top/TopJsonRestClient.class" />
+			</fileset>
+		</jar>
+		<delete dir="${classes.dir}" />
+	</target>
+
+	<target name="dist-json" depends="compile">
+		<jar destfile="${target.dir}/top4java-json.jar">
+			<fileset dir="${classes.dir}">
+				<include name="com/taobao/top/parser/json/**" />
+				<include name="com/taobao/top/TopJsonRestClient.class" />
+			</fileset>
+		</jar>
+		<delete dir="${classes.dir}" />
+	</target>
 </project>
