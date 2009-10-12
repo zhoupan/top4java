@@ -91,7 +91,7 @@ public class ItemPropsGetRequest implements TopRequest {
 	}
 
 	public String getApiName() {
-		return "taobao.itemprops.get.v2";
+		return "taobao.itemprops.get";
 	}
 
 	public Map<String, String> getTextParams() {

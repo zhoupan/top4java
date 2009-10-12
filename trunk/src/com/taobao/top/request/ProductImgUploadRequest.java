@@ -27,7 +27,27 @@ public class ProductImgUploadRequest implements TopUploadRequest {
 	private Integer position;
 
 	/** 是否将该图片设为主图 */
-	private Boolean isPrimary;
+	private Boolean primary;
+
+	public void setImgId(String imgId) {
+		this.imgId = imgId;
+	}
+
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
+
+	public void setImage(FileItem image) {
+		this.image = image;
+	}
+
+	public void setPosition(Integer position) {
+		this.position = position;
+	}
+
+	public void setPrimary(Boolean primary) {
+		this.primary = primary;
+	}
 
 	public String getApiName() {
 		return "taobao.product.img.upload";
@@ -39,7 +59,7 @@ public class ProductImgUploadRequest implements TopUploadRequest {
 		params.put("pic_id", this.imgId);
 		params.put("product_id", this.productId);
 		params.put("position", this.position);
-		params.put("is_major", this.isPrimary);
+		params.put("is_major", this.primary);
 
 		return params;
 	}
