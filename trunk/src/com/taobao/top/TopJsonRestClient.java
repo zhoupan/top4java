@@ -67,11 +67,11 @@ import com.taobao.top.request.ItemUpdateRequest;
 import com.taobao.top.request.ItemsAllGetRequest;
 import com.taobao.top.request.ItemsCustomGetRequest;
 import com.taobao.top.request.ItemsGetRequest;
-import com.taobao.top.request.ItemsInstockGetRequest;
+import com.taobao.top.request.ItemsInventoryGetRequest;
 import com.taobao.top.request.ItemsOnsaleGetRequest;
 import com.taobao.top.request.ItemsSearchRequest;
 import com.taobao.top.request.LogisticsCompaniesGetRequest;
-import com.taobao.top.request.LogisticsOrderDetailsGetRequest;
+import com.taobao.top.request.LogisticsOrdersDetailGetRequest;
 import com.taobao.top.request.LogisticsOrdersGetRequest;
 import com.taobao.top.request.OrdersGetRequest;
 import com.taobao.top.request.PostageAddRequest;
@@ -208,12 +208,12 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectJsonParser<ProductPropImg>(ProductPropImg.class), session);
 	}
 
-	/** TOP API: taobao.itemprops.get.v2 **/
+	/** TOP API: taobao.itemprops.get **/
 	public ResponseList<ItemProp> getItemProps(ItemPropsGetRequest request) throws TopException {
 		return client.execute(request, new ObjectListJsonParser<ItemProp>(ItemProp.class));
 	}
 
-	/** TOP API: taobao.itemcats.get.v2 **/
+	/** TOP API: taobao.itemcats.get **/
 	public ResponseList<ItemCat> getItemCats(ItemCatsGetRequest request) throws TopException {
 		return client.execute(request, new ObjectListJsonParser<ItemCat>(ItemCat.class));
 	}
@@ -248,7 +248,7 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectListJsonParser<Item>(Item.class));
 	}
 
-	/** TOP API: taobao.fullitems.get **/
+	/** TOP API: taobao.items.custom.get **/
 	public ResponseList<Item> getCustomItems(ItemsCustomGetRequest request, String session) throws TopException {
 		return client.execute(request, new ObjectListJsonParser<Item>(Item.class), session);
 	}
@@ -263,8 +263,8 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectListJsonParser<Item>(Item.class), session);
 	}
 
-	/** TOP API: taobao.items.instock.get **/
-	public ResponseList<Item> getInstockItems(ItemsInstockGetRequest request, String session) throws TopException {
+	/** TOP API: taobao.items.inventory.get **/
+	public ResponseList<Item> getInventoryItems(ItemsInventoryGetRequest request, String session) throws TopException {
 		return client.execute(request, new ObjectListJsonParser<Item>(Item.class), session);
 	}
 
@@ -323,7 +323,7 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectListJsonParser<Sku>(Sku.class));
 	}
 
-	/** TOP API: taobao.fullskus.get **/
+	/** TOP API: taobao.skus.custom.get **/
 	public ResponseList<Sku> getCustomSkus(SkusCustomGetRequest request, String session) throws TopException {
 		return client.execute(request, new ObjectListJsonParser<Sku>(Sku.class), session);
 	}
@@ -348,12 +348,12 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectJsonParser<Item>(Item.class), session);
 	}
 
-	/** TOP API: taobao.item.update.showcase **/
+	/** TOP API: taobao.item.recommend.add **/
 	public Item addRecommendItem(ItemRecommendAddRequest request, String session) throws TopException {
 		return client.execute(request, new ObjectJsonParser<Item>(Item.class), session);
 	}
 
-	/** TOP API: taobao.item.update.revokeShowcase **/
+	/** TOP API: taobao.item.recommend.delete **/
 	public Item deleteRecommendItem(ItemRecommendDeleteRequest request, String session) throws TopException {
 		return client.execute(request, new ObjectJsonParser<Item>(Item.class), session);
 	}
@@ -514,12 +514,12 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectListJsonParser<Area>(Area.class));
 	}
 
-	/** TOP API: taobao.logisticcompanies.get **/
+	/** TOP API: taobao.logistics.companies.get **/
 	public ResponseList<LogisticsCompany> getLogisticsCompanies(LogisticsCompaniesGetRequest request) throws TopException {
 		return client.execute(request, new ObjectListJsonParser<LogisticsCompany>(LogisticsCompany.class));
 	}
 
-	/** TOP API: taobao.shippings.send.get **/
+	/** TOP API: taobao.logistics.orders.get **/
 	public ResponseList<LogisticsOrder> getLogisticsOrders(LogisticsOrdersGetRequest request, String session) throws TopException {
 		return client.execute(request, new ObjectListJsonParser<LogisticsOrder>(LogisticsOrder.class), session);
 	}
@@ -529,8 +529,8 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectJsonParser<LogisticsOrder>(LogisticsOrder.class), session);
 	}
 
-	/** TOP API: taobao.shippings.send.fullinfo.get **/
-	public ResponseList<LogisticsOrder> getLogisticsOrderDetails(LogisticsOrderDetailsGetRequest request, String session) throws TopException {
+	/** TOP API: taobao.logistics.orders.detail.get **/
+	public ResponseList<LogisticsOrder> getDetailLogisticsOrders(LogisticsOrdersDetailGetRequest request, String session) throws TopException {
 		return client.execute(request, new ObjectListJsonParser<LogisticsOrder>(LogisticsOrder.class), session);
 	}
 

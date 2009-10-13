@@ -6,12 +6,12 @@ import java.util.Map;
 import com.taobao.top.util.TopHashMap;
 
 /**
- * TOP API: taobao.shippings.send.fullinfo.get
+ * TOP API: taobao.logistics.orders.detail.get
  * 
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
  */
-public class LogisticsOrderDetailsGetRequest implements TopRequest {
+public class LogisticsOrdersDetailGetRequest implements TopRequest {
 
 	/** 要返回的字段列表 */
 	private String fields;
@@ -98,7 +98,7 @@ public class LogisticsOrderDetailsGetRequest implements TopRequest {
 	}
 
 	public String getApiName() {
-		return "taobao.shippings.send.fullinfo.get";
+		return "taobao.logistics.orders.detail.get";
 	}
 
 	public Map<String, String> getTextParams() {
