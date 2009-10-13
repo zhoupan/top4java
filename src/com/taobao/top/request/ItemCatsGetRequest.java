@@ -6,7 +6,7 @@ import java.util.Map;
 import com.taobao.top.util.TopHashMap;
 
 /**
- * TOP API: taobao.itemcats.get.v2
+ * TOP API: taobao.itemcats.get
  * 
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
@@ -42,7 +42,7 @@ public class ItemCatsGetRequest implements TopRequest {
 	}
 
 	public String getApiName() {
-		return "taobao.itemcats.get.v2";
+		return "taobao.itemcats.get";
 	}
 
 	public Map<String, String> getTextParams() {

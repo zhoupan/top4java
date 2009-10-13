@@ -5,12 +5,12 @@ import java.util.Map;
 import com.taobao.top.util.TopHashMap;
 
 /**
- * TOP API: taobao.items.instock.get
+ * TOP API: taobao.items.inventory.get
  * 
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
  */
-public class ItemsInstockGetRequest implements TopRequest {
+public class ItemsInventoryGetRequest implements TopRequest {
 
 	/** 要返回的字段列表 */
 	private String fields;
@@ -55,7 +55,7 @@ public class ItemsInstockGetRequest implements TopRequest {
 	}
 
 	public String getApiName() {
-		return "taobao.items.instock.get";
+		return "taobao.items.inventory.get";
 	}
 
 	public Map<String, String> getTextParams() {

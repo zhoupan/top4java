@@ -5,7 +5,7 @@ import java.util.Map;
 import com.taobao.top.util.TopHashMap;
 
 /**
- * TOP API: taobao.logisticcompanies.get
+ * TOP API: taobao.logistics.companies.get
  * 
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
@@ -34,7 +34,7 @@ public class LogisticsCompaniesGetRequest implements TopRequest {
 	}
 
 	public String getApiName() {
-		return "taobao.logisticcompanies.get";
+		return "taobao.logistics.companies.get";
 	}
 
 	public Map<String, String> getTextParams() {

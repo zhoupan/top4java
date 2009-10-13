@@ -5,7 +5,7 @@ import java.util.Map;
 import com.taobao.top.util.TopHashMap;
 
 /**
- * TOP API: taobao.item.update.revokeShowcase
+ * TOP API: taobao.item.recommend.delete
  * 
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
@@ -20,7 +20,7 @@ public class ItemRecommendDeleteRequest implements TopRequest {
 	}
 
 	public String getApiName() {
-		return "taobao.item.update.revokeShowcase";
+		return "taobao.item.recommend.delete";
 	}
 
 	public Map<String, String> getTextParams() {

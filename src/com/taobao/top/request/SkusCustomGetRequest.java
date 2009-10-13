@@ -5,7 +5,7 @@ import java.util.Map;
 import com.taobao.top.util.TopHashMap;
 
 /**
- * TOP API: taobao.fullskus.get
+ * TOP API: taobao.skus.custom.get
  * 
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
@@ -27,7 +27,7 @@ public class SkusCustomGetRequest implements TopRequest {
 	}
 
 	public String getApiName() {
-		return "taobao.fullskus.get";
+		return "taobao.skus.custom.get";
 	}
 
 	public Map<String, String> getTextParams() {

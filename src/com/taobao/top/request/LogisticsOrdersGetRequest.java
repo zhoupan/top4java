@@ -6,7 +6,7 @@ import java.util.Map;
 import com.taobao.top.util.TopHashMap;
 
 /**
- * TOP API: taobao.shippings.send.get
+ * TOP API: taobao.logistics.orders.get
  * 
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
@@ -98,7 +98,7 @@ public class LogisticsOrdersGetRequest implements TopRequest {
 	}
 
 	public String getApiName() {
-		return "taobao.shippings.send.get";
+		return "taobao.logistics.orders.get";
 	}
 
 	public Map<String, String> getTextParams() {

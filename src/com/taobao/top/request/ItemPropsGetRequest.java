@@ -6,7 +6,7 @@ import java.util.Map;
 import com.taobao.top.util.TopHashMap;
 
 /**
- * TOP API: taobao.itemprops.get.v2
+ * TOP API: taobao.itemprops.get
  * 
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
