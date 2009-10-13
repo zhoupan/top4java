@@ -81,7 +81,7 @@ public class JsonConverter implements Converter {
 	 * @return 领域对象
 	 * @throws TopException
 	 */
-	private <T> T fromJson(final Map<?, ?> json, Class<T> clazz) throws TopException {
+	public <T> T fromJson(final Map<?, ?> json, Class<T> clazz) throws TopException {
 		return Converters.convert(clazz, new Reader() {
 			public boolean hasReturnField(Object name) {
 				return json.containsKey(name);
@@ -109,12 +109,16 @@ public class JsonConverter implements Converter {
 					listObjs = new ArrayList<Object>();
 					List<?> tmpList = (List<?>) tmp;
 					for (Object subTmp : tmpList) {
-						if (subTmp instanceof Map<?, ?>) {
+						if (subTmp instanceof Map<?, ?>) {// object
 							Map<?, ?> subMap = (Map<?, ?>) subTmp;
 							Object subObj = fromJson(subMap, subType);
 							if (subObj != null) {
 								listObjs.add(subObj);
 							}
+						} else if (subTmp instanceof List<?>) {// array
+							// TODO not support yet
+						} else {// boolean, long, double, string, null
+							listObjs.add(subTmp);
 						}
 					}
 				}

@@ -110,10 +110,12 @@ public class Converters {
 						ParameterizedType paramType = (ParameterizedType) fieldType;
 						Type[] genericTypes = paramType.getActualTypeArguments();
 						if (genericTypes != null && genericTypes.length > 0) {
-							Class<?> subType = (Class<?>) genericTypes[0];
-							List<?> listObjs = reader.getListObjects(name, subType);
-							if (listObjs != null) {
-								method.invoke(rsp, reader.getListObjects(name, subType));
+							if (genericTypes[0] instanceof Class<?>) {
+								Class<?> subType = (Class<?>) genericTypes[0];
+								List<?> listObjs = reader.getListObjects(name, subType);
+								if (listObjs != null) {
+									method.invoke(rsp, reader.getListObjects(name, subType));
+								}
 							}
 						}
 					}
