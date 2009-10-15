@@ -29,10 +29,18 @@ public class TopUtilsTest {
 	}
 
 	@Test
+	public void getTopContext() throws IOException {
+		TopContext context = TopUtils.getTopContext("TOP-10494706797fe768ea671256897b15e70eppPa2C16t9cUF0kl847ehc9dt7H0fx-END");
+		System.out.println(context.getSessionKey());
+		System.out.println(context.getUserId());
+		System.out.println(context.getUserNick());
+	}
+
+	@Test
 	public void decodeTopParams() throws IOException {
-		String topParams = "aWZyYW1lPTEmdHM9MTI1NDgzMjI5NDU1MiZ2aWV3X21vZGU9ZnVsbCZ2aWV3X3dpZHRoPTAmdmlzaXRvcl9pZD0yMjY3MDQ1OCZ2aXNpdG9yX25pY2s9aHowNzk5";
+		String topParams = "aWZyYW1lPTAmdHM9MTI1NTYxNjE1NjY5NiZ2aWV3X21vZGU9ZnVsbCZ2aWV3X3dpZHRoPTAmdmlzaXRvcl9pZD0yMjg0NDI5NzUmdmlzaXRvcl9uaWNrPbfnyqQ";
 		Map<String, String> map = TopUtils.decodeTopParams(topParams);
-		Assert.assertEquals("hz0799", map.get("visitor_nick"));
+		Assert.assertEquals("228442975", map.get("visitor_id"));
 	}
 
 }
