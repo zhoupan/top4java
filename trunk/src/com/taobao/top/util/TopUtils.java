@@ -85,6 +85,38 @@ public abstract class TopUtils {
 	}
 
 	/**
+	 * 获取TOP容器回调上下文，主要用于客户端应用。
+	 * 
+	 * @param authCode 授权码
+	 * @return TOP容器上下文
+	 * @throws IOException 如果授权码已经过期或者容器不可访问
+	 */
+	public static TopContext getTopContext(String authCode) throws IOException {
+		String url = Constants.TOP_AUTH_URL + authCode;
+		String rsp = WebUtils.doGet(url, null, "GBK");
+		if (StrUtils.isEmpty(rsp)) {
+			return null;
+		}
+
+		TopContext context = new TopContext();
+		String[] pairs = rsp.split("&");
+		if (pairs != null && pairs.length > 0) {
+			for (String pair : pairs) {
+				String[] param = pair.split("=");
+				if (param != null && param.length == 2) {
+					if ("top_parameters".equals(param[0])) {
+						context.addParameters(decodeTopParams(param[1]));
+					} else {
+						context.addParameter(param[0], param[1]);
+					}
+				}
+			}
+		}
+
+		return context;
+	}
+
+	/**
 	 * 解释TOP回调参数为键值对。
 	 * 
 	 * @param topParams 经过Base64编码的字符串

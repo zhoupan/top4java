@@ -17,4 +17,7 @@ public abstract class Constants {
 	/** TOP JSON 应格式 */
 	public static final String FORMAT_JSON = "json";
 
+	/** TOP获取客户端应用授权码地址 */
+	public static final String TOP_AUTH_URL = "http://container.open.taobao.com/container?authcode=";
+
 }

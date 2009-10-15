@@ -244,6 +244,9 @@ public abstract class WebUtils {
 
 	private static URL buildGetUrl(String strUrl, String query) throws IOException {
 		URL url = new URL(strUrl);
+		if (StrUtils.isEmpty(query)) {
+			return url;
+		}
 
 		if (StrUtils.isEmpty(url.getQuery())) {
 			if (strUrl.endsWith("?")) {
