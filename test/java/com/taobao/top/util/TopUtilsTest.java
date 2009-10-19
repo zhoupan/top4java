@@ -30,7 +30,7 @@ public class TopUtilsTest {
 
 	@Test
 	public void getTopContext() throws IOException {
-		TopContext context = TopUtils.getTopContext("TOP-10494706797fe768ea671256897b15e70eppPa2C16t9cUF0kl847ehc9dt7H0fx-END");
+		TopContext context = TopUtils.getTopContext("TOP-10132037c7f1a3241a9ec89db3018b1474jBFuIQHT19SdTx9aLZYiryryfo1TC4-END");
 		System.out.println(context.getSessionKey());
 		System.out.println(context.getUserId());
 		System.out.println(context.getUserNick());
