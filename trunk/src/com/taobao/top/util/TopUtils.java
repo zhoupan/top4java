@@ -99,17 +99,13 @@ public abstract class TopUtils {
 		}
 
 		TopContext context = new TopContext();
-		String[] pairs = rsp.split("&");
-		if (pairs != null && pairs.length > 0) {
-			for (String pair : pairs) {
-				String[] param = pair.split("=");
-				if (param != null && param.length == 2) {
-					if ("top_parameters".equals(param[0])) {
-						context.addParameters(decodeTopParams(param[1]));
-					} else {
-						context.addParameter(param[0], param[1]);
-					}
-				}
+
+		Set<Entry<String, String>> params = splitUrlQuery(rsp).entrySet();
+		for (Entry<String, String> param : params) {
+			if ("top_parameters".equals(param.getKey())) {
+				context.addParameters(decodeTopParams(param.getValue()));
+			} else {
+				context.addParameter(param.getKey(), param.getValue());
 			}
 		}
 
@@ -119,8 +115,8 @@ public abstract class TopUtils {
 	/**
 	 * 解释TOP回调参数为键值对。
 	 * 
-	 * @param topParams 经过Base64编码的字符串
-	 * @return 键值对参数
+	 * @param topParams 经过BASE64编码的字符串
+	 * @return 键值对
 	 * @throws IOException
 	 */
 	public static Map<String, String> decodeTopParams(String topParams) throws IOException {
@@ -128,17 +124,23 @@ public abstract class TopUtils {
 			return null;
 		}
 
-		Map<String, String> result = new HashMap<String, String>();
-
 		BASE64Decoder decoder = new BASE64Decoder();
 		byte[] buffer = decoder.decodeBuffer(topParams);
 		String originTopParams = new String(buffer, "GBK");
 
-		String[] pairs = originTopParams.split("&");
-		for (String pair : pairs) {
-			String[] params = pair.split("=");
-			if (params != null && params.length == 2) {
-				result.put(params[0], params[1]);
+		return splitUrlQuery(originTopParams);
+	}
+
+	private static Map<String, String> splitUrlQuery(String query) {
+		Map<String, String> result = new HashMap<String, String>();
+
+		String[] pairs = query.split("&");
+		if (pairs != null && pairs.length > 0) {
+			for (String pair : pairs) {
+				String[] param = pair.split("=", 2);
+				if (param != null && param.length == 2) {
+					result.put(param[0], param[1]);
+				}
 			}
 		}
 
