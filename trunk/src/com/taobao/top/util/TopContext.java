@@ -14,19 +14,19 @@ public class TopContext {
 	private Map<String, String> parameters = new HashMap<String, String>();
 
 	public String getAppKey() {
-		return this.parameters.get("top_appkey");
+		return getParameter("top_appkey");
 	}
 
 	public String getSessionKey() {
-		return this.parameters.get("top_session");
+		return getParameter("top_session");
 	}
 
 	public String getSignature() {
-		return this.parameters.get("top_sign");
+		return getParameter("top_sign");
 	}
 
 	public Long getUserId() {
-		String userId = this.parameters.get("visitor_id");
+		String userId = getParameter("visitor_id");
 		if (StrUtils.isEmpty(userId)) {
 			return null;
 		} else {
@@ -35,11 +35,7 @@ public class TopContext {
 	}
 
 	public String getUserNick() {
-		return this.parameters.get("visitor_nick");
-	}
-
-	public Map<String, String> getParameters() {
-		return this.parameters;
+		return getParameter("visitor_nick");
 	}
 
 	public String getParameter(String key) {
