@@ -82,7 +82,11 @@ public class Order extends BaseObject {
 
 	/** 订单超时到期时间 */
 	@JsonProperty("timeout_action_time")
-	private String orderTimeout;
+	private String timeout;
+
+	/** 订单快照信息 */
+	@JsonProperty("snapshot")
+	private String snapshot;
 
 	/** 订单快照地址 */
 	@JsonProperty("snapshot_url")
@@ -240,12 +244,20 @@ public class Order extends BaseObject {
 		this.orderStatus = orderStatus;
 	}
 
-	public String getOrderTimeout() {
-		return this.orderTimeout;
+	public String getTimeout() {
+		return this.timeout;
 	}
 
-	public void setOrderTimeout(String orderTimeout) {
-		this.orderTimeout = orderTimeout;
+	public void setTimeout(String timeout) {
+		this.timeout = timeout;
+	}
+
+	public String getSnapshot() {
+		return this.snapshot;
+	}
+
+	public void setSnapshot(String snapshot) {
+		this.snapshot = snapshot;
 	}
 
 	public String getSnapshotUrl() {

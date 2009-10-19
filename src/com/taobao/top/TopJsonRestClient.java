@@ -26,6 +26,7 @@ import com.taobao.top.domain.SellerItemCat;
 import com.taobao.top.domain.Shop;
 import com.taobao.top.domain.ShopCat;
 import com.taobao.top.domain.Sku;
+import com.taobao.top.domain.Tadget;
 import com.taobao.top.domain.TaobaokeItem;
 import com.taobao.top.domain.TaobaokeReport;
 import com.taobao.top.domain.TaobaokeShop;
@@ -100,6 +101,7 @@ import com.taobao.top.request.ShopCatsGetRequest;
 import com.taobao.top.request.ShopGetRequest;
 import com.taobao.top.request.ShopUpdateRequest;
 import com.taobao.top.request.SkusCustomGetRequest;
+import com.taobao.top.request.SubappApplyRequest;
 import com.taobao.top.request.TaobaokeItemsConvertRequest;
 import com.taobao.top.request.TaobaokeItemsGetRequest;
 import com.taobao.top.request.TaobaokeListUrlGetRequest;
@@ -116,6 +118,7 @@ import com.taobao.top.request.TradeMemoUpdateRequest;
 import com.taobao.top.request.TradeRateAddRequest;
 import com.taobao.top.request.TradeRateBatchAddRequest;
 import com.taobao.top.request.TradeRatesGetRequest;
+import com.taobao.top.request.TradeSnapshotGetRequest;
 import com.taobao.top.request.TradeStatsGetRequest;
 import com.taobao.top.request.TradesBoughtGetRequest;
 import com.taobao.top.request.TradesGetRequest;
@@ -494,6 +497,11 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectJsonParser<ConfirmFee>(ConfirmFee.class), session);
 	}
 
+	/** TOP API: taobao.trade.snapshot.get **/
+	public Trade getTradeSnapshot(TradeSnapshotGetRequest request, String session) throws TopException {
+		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class), session);
+	}
+
 	/** TOP API: taobao.traderate.add **/
 	public TradeRate addTradeRate(TradeRateAddRequest request, String session) throws TopException {
 		return client.execute(request, new ObjectJsonParser<TradeRate>(TradeRate.class), session);
@@ -582,6 +590,11 @@ public class TopJsonRestClient {
 	/** TOP API: taotao.catstats.get **/
 	public ResponseList<CatStat> getCatStats(CatStatsGetRequest request, String session) throws TopException {
 		return client.execute(request, new ObjectListJsonParser<CatStat>(CatStat.class));
+	}
+
+	/** TOP API: taobao.app.subapp.apply */
+	public Tadget applySubapp(SubappApplyRequest request, String session) throws TopException {
+		return client.execute(request, new ObjectJsonParser<Tadget>(Tadget.class), session);
 	}
 
 }

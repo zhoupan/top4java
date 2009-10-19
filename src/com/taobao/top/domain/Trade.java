@@ -79,6 +79,10 @@ public class Trade extends BaseObject {
 	@JsonProperty("adjust_fee")
 	private String adjustFee;
 
+	/** 交易快照信息 */
+	@JsonProperty("snapshot")
+	private String snapshot;
+
 	/** 交易快照地址 */
 	@JsonProperty("snapshot_url")
 	private String snapshotUrl;
@@ -349,6 +353,14 @@ public class Trade extends BaseObject {
 
 	public void setAdjustFee(String adjustFee) {
 		this.adjustFee = adjustFee;
+	}
+
+	public String getSnapshot() {
+		return this.snapshot;
+	}
+
+	public void setSnapshot(String snapshot) {
+		this.snapshot = snapshot;
 	}
 
 	public String getSnapshotUrl() {
