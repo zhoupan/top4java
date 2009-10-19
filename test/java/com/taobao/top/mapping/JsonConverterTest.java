@@ -6,7 +6,7 @@ import com.taobao.top.domain.Order;
 import com.taobao.top.parser.json.JsonConverter;
 import com.taobao.top.util.TestUtils;
 
-public class ConverterTest {
+public class JsonConverterTest {
 
 	@Test
 	public void parseOrders() throws Exception {
