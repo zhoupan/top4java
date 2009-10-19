@@ -43,7 +43,7 @@ public class ItemsGetRequest implements TopRequest {
 	/** 商品属性 */
 	private String props;
 
-	/** 可以根据产品编号搜索属于这个SPU的商品 */
+	/** 产品编号 */
 	private String productId;
 
 	/** 旺旺在线状态 */
@@ -52,8 +52,64 @@ public class ItemsGetRequest implements TopRequest {
 	/** 免运费 */
 	private String postFree;
 
-	/** 所有地 */
+	/** 所在地 */
 	public Location location;
+
+	public void setFields(String fields) {
+		this.fields = fields;
+	}
+
+	public void setQuery(String query) {
+		this.query = query;
+	}
+
+	public void setNicks(String nicks) {
+		this.nicks = nicks;
+	}
+
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
+
+	public void setStartPrice(String startPrice) {
+		this.startPrice = startPrice;
+	}
+
+	public void setEndPrice(String endPrice) {
+		this.endPrice = endPrice;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+	}
+
+	public void setProps(String props) {
+		this.props = props;
+	}
+
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
+
+	public void setWwStatus(String wwStatus) {
+		this.wwStatus = wwStatus;
+	}
+
+	public void setPostFree(String postFree) {
+		this.postFree = postFree;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
 
 	public String getApiName() {
 		return "taobao.items.get";
