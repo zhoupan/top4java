@@ -42,6 +42,10 @@ public class TopContext {
 		return this.parameters;
 	}
 
+	public String getParameter(String key) {
+		return this.parameters.get(key);
+	}
+
 	public void addParameters(Map<String, String> parameters) {
 		this.parameters.putAll(parameters);
 	}
