@@ -68,12 +68,12 @@ public class DeliveryAddress extends BaseObject {
 		this.mobile = mobile;
 	}
 
-	public Boolean isDefault() {
+	public Boolean isDefaulted() {
 		return this.defaulted;
 	}
 
-	public void setDefault(Boolean isDefault) {
-		this.defaulted = isDefault;
+	public void setDefaulted(Boolean defaulted) {
+		this.defaulted = defaulted;
 	}
 
 	public Location getLocation() {
