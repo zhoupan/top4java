@@ -16,6 +16,10 @@ public class ItemCat extends BaseObject {
 	@JsonProperty("cid")
 	private Long cid;
 
+	/** 类目编号（冗余字段，兼容TOP有两个商品类目类的错误） */
+	@JsonProperty("category_id")
+	private Long categoryId;
+
 	/** 类目名称 */
 	@JsonProperty("name")
 	private String name;
@@ -52,8 +56,12 @@ public class ItemCat extends BaseObject {
 		this.cid = cid;
 	}
 
-	public void setCategoryId(Long cid) {
-		this.cid = cid;
+	public Long getCategoryId() {
+		return this.categoryId;
+	}
+
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public String getName() {
@@ -61,10 +69,6 @@ public class ItemCat extends BaseObject {
 	}
 
 	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setCategoryName(String name) {
 		this.name = name;
 	}
 
