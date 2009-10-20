@@ -36,10 +36,9 @@ public class TopUtilsTest {
 		String appKey = "12005818";
 		String appSecret = "e3b73237ac865e97ce5f2889f8c798a3";
 		boolean result = TopUtils.verifyTopResponse(topParams, topSession, topSign, appKey, appSecret);
-		System.out.println(result);
+		Assert.assertTrue(result);
 	}
 
-	@Test
 	public void getTopContext() throws IOException {
 		TopContext context = TopUtils.getTopContext("TOP-10356f7818a59c68b88589edb9738db38cpqXGmiGw3OuMi18m0Pvdx9h8YdIQdj-END");
 		System.out.println(context.getSessionKey());
