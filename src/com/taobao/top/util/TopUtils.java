@@ -1,6 +1,7 @@
 package com.taobao.top.util;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
@@ -47,7 +48,7 @@ public abstract class TopUtils {
 
 		// 第三步：使用MD5加密
 		MessageDigest md5 = MessageDigest.getInstance("MD5");
-		byte[] bytes = md5.digest(query.toString().getBytes(Constants.DEFAULT_CHARSET));
+		byte[] bytes = md5.digest(query.toString().getBytes(Constants.CHARSET_UTF8));
 
 		// 第四步：把二进制转化为大写的十六进制
 		StringBuilder sign = new StringBuilder();
@@ -65,7 +66,7 @@ public abstract class TopUtils {
 	/**
 	 * 验证TOP回调地址的签名是否合法。
 	 * 
-	 * @param topParams TOP私有参数（未经Base64解密后的）
+	 * @param topParams TOP私有参数（未经BASE64解密，但已经过URL反编码后的）
 	 * @param topSession TOP私有会话码
 	 * @param topSign TOP回调签名（经过URL反编码的）
 	 * @param appKey 应用公钥
@@ -79,7 +80,7 @@ public abstract class TopUtils {
 		StringBuilder result = new StringBuilder();
 		MessageDigest md5 = MessageDigest.getInstance("MD5");
 		result.append(appKey).append(topParams).append(topSession).append(appSecret);
-		byte[] bytes = md5.digest(result.toString().getBytes(Constants.DEFAULT_CHARSET));
+		byte[] bytes = md5.digest(result.toString().getBytes(Constants.CHARSET_UTF8));
 		BASE64Encoder encoder = new BASE64Encoder();
 		return encoder.encode(bytes).equals(topSign);
 	}
@@ -93,7 +94,7 @@ public abstract class TopUtils {
 	 */
 	public static TopContext getTopContext(String authCode) throws IOException {
 		String url = Constants.TOP_AUTH_URL + authCode;
-		String rsp = WebUtils.doGet(url, null, "GBK");
+		String rsp = WebUtils.doGet(url, null, Constants.CHARSET_GBK);
 		if (StrUtils.isEmpty(rsp)) {
 			return null;
 		}
@@ -125,8 +126,8 @@ public abstract class TopUtils {
 		}
 
 		BASE64Decoder decoder = new BASE64Decoder();
-		byte[] buffer = decoder.decodeBuffer(topParams);
-		String originTopParams = new String(buffer, "GBK");
+		byte[] buffer = decoder.decodeBuffer(URLDecoder.decode(topParams, Constants.CHARSET_UTF8));
+		String originTopParams = new String(buffer, Constants.CHARSET_GBK);
 
 		return splitUrlQuery(originTopParams);
 	}
