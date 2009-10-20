@@ -38,9 +38,10 @@ public class TopUtilsTest {
 
 	@Test
 	public void decodeTopParams() throws IOException {
-		String topParams = "aWZyYW1lPTAmdHM9MTI1NTYxNjE1NjY5NiZ2aWV3X21vZGU9ZnVsbCZ2aWV3X3dpZHRoPTAmdmlzaXRvcl9pZD0yMjg0NDI5NzUmdmlzaXRvcl9uaWNrPbfnyqQ";
+		String topParams = "aWZyYW1lPTEmdHM9MTI1NjAwNDg5Mzk4MCZ2aWV3X21vZGU9ZnVsbCZ2aWV3X3dpZHRoPTAmdmlzaXRvcl9pZD0yMzQxOTA1NCZ2aXNpdG9yX25pY2s908C649K7yfo%3D";
 		Map<String, String> map = TopUtils.decodeTopParams(topParams);
-		Assert.assertEquals("228442975", map.get("visitor_id"));
+		Assert.assertEquals("23419054", map.get("visitor_id"));
+		Assert.assertEquals("永恒一生", map.get("visitor_nick"));
 	}
 
 }

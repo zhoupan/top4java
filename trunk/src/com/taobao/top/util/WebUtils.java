@@ -24,7 +24,7 @@ import com.taobao.top.Constants;
  */
 public abstract class WebUtils {
 
-	private static final String DEFAULT_CHARSET = Constants.DEFAULT_CHARSET;
+	private static final String DEFAULT_CHARSET = Constants.CHARSET_UTF8;
 	private static final String METHOD_POST = "POST";
 	private static final String METHOD_GET = "GET";
 
@@ -93,7 +93,7 @@ public abstract class WebUtils {
 			String query = buildQuery(params, charset);
 			out.write(query.getBytes(charset));
 			in = conn.getInputStream();
-			rsp = getResponseAsString(in, charset);
+			rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
 		} finally {
 			if (in != null) {
 				in.close();
@@ -107,6 +107,28 @@ public abstract class WebUtils {
 		}
 
 		return rsp;
+	}
+
+	private static String getResponseCharset(String ctype) {
+		String charset = DEFAULT_CHARSET;
+
+		if (!StrUtils.isEmpty(ctype)) {
+			String[] params = ctype.split(";");
+			for (String param : params) {
+				param = param.trim();
+				if (param.startsWith("charset")) {
+					String[] pair = param.split("=", 2);
+					if (pair.length == 2) {
+						if (!StrUtils.isEmpty(pair[1])) {
+							charset = pair[1].trim();
+						}
+					}
+					break;
+				}
+			}
+		}
+
+		return charset;
 	}
 
 	/**
@@ -158,7 +180,7 @@ public abstract class WebUtils {
 			out.write(endBoundaryBytes);
 
 			in = conn.getInputStream();
-			rsp = getResponseAsString(in, charset);
+			rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
 		} finally {
 			if (in != null) {
 				in.close();
@@ -217,7 +239,7 @@ public abstract class WebUtils {
 			String query = buildQuery(params, charset);
 			conn = getConnection(buildGetUrl(url, query), METHOD_GET, ctype);
 			in = conn.getInputStream();
-			rsp = getResponseAsString(in, charset);
+			rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
 		} finally {
 			if (in != null) {
 				in.close();
@@ -312,7 +334,7 @@ public abstract class WebUtils {
 	 * @return 反编码后的参数值
 	 */
 	public static String decodeParameter(String value) {
-		return decodeParameter(value, Constants.DEFAULT_CHARSET);
+		return decodeParameter(value, DEFAULT_CHARSET);
 	}
 
 	/**
