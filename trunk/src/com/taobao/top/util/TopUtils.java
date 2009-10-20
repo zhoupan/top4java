@@ -1,7 +1,6 @@
 package com.taobao.top.util;
 
 import java.io.IOException;
-import java.net.URLDecoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
@@ -64,11 +63,11 @@ public abstract class TopUtils {
 	}
 
 	/**
-	 * 验证TOP回调地址的签名是否合法。
+	 * 验证TOP回调地址的签名是否合法。要求所有参数均为已URL反编码的。
 	 * 
-	 * @param topParams TOP私有参数（未经BASE64解密，但已经过URL反编码后的）
+	 * @param topParams TOP私有参数（未经BASE64解密）
 	 * @param topSession TOP私有会话码
-	 * @param topSign TOP回调签名（经过URL反编码的）
+	 * @param topSign TOP回调签名
 	 * @param appKey 应用公钥
 	 * @param appSecret 应用密钥
 	 * @return 验证成功返回true，否则返回false
@@ -86,7 +85,7 @@ public abstract class TopUtils {
 	}
 
 	/**
-	 * 获取TOP容器回调上下文，主要用于客户端应用。
+	 * 获取TOP容器回调上下文，仅用于客户端应用。
 	 * 
 	 * @param authCode 授权码
 	 * @return TOP容器上下文
@@ -94,7 +93,7 @@ public abstract class TopUtils {
 	 */
 	public static TopContext getTopContext(String authCode) throws IOException {
 		String url = Constants.TOP_AUTH_URL + authCode;
-		String rsp = WebUtils.doGet(url, null, Constants.CHARSET_GBK);
+		String rsp = WebUtils.doGet(url, null, Constants.CHARSET_UTF8);
 		if (StrUtils.isEmpty(rsp)) {
 			return null;
 		}
@@ -126,7 +125,7 @@ public abstract class TopUtils {
 		}
 
 		BASE64Decoder decoder = new BASE64Decoder();
-		byte[] buffer = decoder.decodeBuffer(URLDecoder.decode(topParams, Constants.CHARSET_UTF8));
+		byte[] buffer = decoder.decodeBuffer(WebUtils.decodeParameter(topParams));
 		String originTopParams = new String(buffer, Constants.CHARSET_GBK);
 
 		return splitUrlQuery(originTopParams);
