@@ -150,7 +150,7 @@ public abstract class WebUtils {
 		String rsp = null;
 
 		try {
-			String ctype = "multipart/form-data;charset=utf-8;boundary=" + boundary;
+			String ctype = "multipart/form-data;charset=" + charset + ";boundary=" + boundary;
 			conn = getConnection(new URL(url), METHOD_POST, ctype);
 			out = conn.getOutputStream();
 

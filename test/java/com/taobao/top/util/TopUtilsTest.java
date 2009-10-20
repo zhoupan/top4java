@@ -29,8 +29,19 @@ public class TopUtilsTest {
 	}
 
 	@Test
+	public void verifyTopResponse() throws Exception {
+		String topParams = "aWZyYW1lPTAmdHM9MTI1NjA1NTAyMjY5OCZ2aWV3X21vZGU9ZnVsbCZ2aWV3X3dpZHRoPTAmdmlzaXRvcl9pZD0yMjg0NDI5NzUmdmlzaXRvcl9uaWNrPbfnyqQ=";
+		String topSession = "1115284df03d32c5a48c824a961d11817";
+		String topSign = "duQxTJrj+lKz+ssGFDlpYw==";
+		String appKey = "12005818";
+		String appSecret = "e3b73237ac865e97ce5f2889f8c798a3";
+		boolean result = TopUtils.verifyTopResponse(topParams, topSession, topSign, appKey, appSecret);
+		System.out.println(result);
+	}
+
+	@Test
 	public void getTopContext() throws IOException {
-		TopContext context = TopUtils.getTopContext("TOP-10132037c7f1a3241a9ec89db3018b1474jBFuIQHT19SdTx9aLZYiryryfo1TC4-END");
+		TopContext context = TopUtils.getTopContext("TOP-10356f7818a59c68b88589edb9738db38cpqXGmiGw3OuMi18m0Pvdx9h8YdIQdj-END");
 		System.out.println(context.getSessionKey());
 		System.out.println(context.getUserId());
 		System.out.println(context.getUserNick());
