@@ -15,9 +15,14 @@ import com.taobao.top.TopRestClient;
 public abstract class TestUtils {
 
 	private static final String TOP_TEST_URL = "http://gw.api.tbsandbox.com/router/rest";
+	private static final String TOP_ONLINE_URL = "http://gw.api.taobao.com/router/rest";
 
 	public static TopClient getTestClient() {
-		return new TopRestClient(TOP_TEST_URL, "test", "test");
+		return new TopRestClient(TOP_TEST_URL, "12011932", "a12489406d7a8de453bc9d3b15229cba");
+	}
+
+	public static TopClient getOnlineClient() {
+		return new TopRestClient(TOP_ONLINE_URL, "12011932", "a12489406d7a8de453bc9d3b15229cba");
 	}
 
 	public static String readResource(String fileName) throws IOException {
