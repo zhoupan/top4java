@@ -48,12 +48,6 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 	/** 是否查询消保卖家 */
 	private Boolean guarantee;
 
-	/** 起始佣金选项 */
-	private String startCommission;
-
-	/** 最高佣金选项 */
-	private String endCommission;
-
 	/** 起始佣金比率选项 */
 	private String startCommissionRate;
 
@@ -120,14 +114,6 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 		this.guarantee = guarantee;
 	}
 
-	public void setStartCommission(String startCommission) {
-		this.startCommission = startCommission;
-	}
-
-	public void setEndCommission(String endCommission) {
-		this.endCommission = endCommission;
-	}
-
 	public void setStartCommissionRate(String startCommissionRate) {
 		this.startCommissionRate = startCommissionRate;
 	}
@@ -171,8 +157,6 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 		params.put("end_credit", this.endCredit);
 		params.put("sort", this.orderBy);
 		params.put("is_guarantee", this.guarantee);
-		params.put("start_commission", this.startCommission);
-		params.put("end_commission", this.endCommission);
 		params.put("start_commissionRate", this.startCommissionRate);
 		params.put("end_commissionRate", this.endCommissionRate);
 		params.put("start_commissionNum", this.startCommissionNum);
