@@ -124,6 +124,9 @@ public class ItemAddRequest implements TopUploadRequest {
 	/** 商品所属的产品编号 */
 	private String productId;
 
+	/** 商口图片空间相对地址 */
+	private String picPath;
+
 	public void setApproveStatus(String approveStatus) {
 		this.approveStatus = approveStatus;
 	}
@@ -268,6 +271,10 @@ public class ItemAddRequest implements TopUploadRequest {
 		this.productId = productId;
 	}
 
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
+	}
+
 	public String getApiName() {
 		return "taobao.item.add";
 	}
@@ -313,6 +320,7 @@ public class ItemAddRequest implements TopUploadRequest {
 		params.put("lang", this.language);
 		params.put("outer_id", this.outerId);
 		params.put("product_id", this.productId);
+		params.put("pic_path", this.picPath);
 
 		return params;
 	}

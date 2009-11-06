@@ -118,6 +118,9 @@ public class ItemUpdateRequest implements TopUploadRequest {
 	/** 商家外部编码 */
 	private String outerId;
 
+	/** 商口图片空间相对地址 */
+	private String picPath;
+
 	public void setIid(String iid) {
 		this.iid = iid;
 	}
@@ -254,6 +257,10 @@ public class ItemUpdateRequest implements TopUploadRequest {
 		this.outerId = outerId;
 	}
 
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
+	}
+
 	public String getApiName() {
 		return "taobao.item.update";
 	}
@@ -297,6 +304,7 @@ public class ItemUpdateRequest implements TopUploadRequest {
 		params.put("postage_id", this.postageId);
 		params.put("lang", this.language);
 		params.put("outer_id", this.outerId);
+		params.put("pic_path", this.picPath);
 
 		return params;
 	}
