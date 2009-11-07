@@ -11,8 +11,8 @@ import java.util.Map;
  */
 public class TopContext {
 
-	public static final String APP_KEY = "top_appkey";
-	public static final String SESSION_KEY = "top_session";
+	public static final String APPKEY = "top_appkey";
+	public static final String SESSION = "top_session";
 	public static final String SIGNATURE = "top_sign";
 	public static final String PARAMETERS = "top_parameters";
 	public static final String USER_ID = "visitor_id";
@@ -26,7 +26,7 @@ public class TopContext {
 	 * @return 应用编号
 	 */
 	public String getAppKey() {
-		return getParameter(APP_KEY);
+		return getParameter(APPKEY);
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class TopContext {
 	 * @return 授权码
 	 */
 	public String getSessionKey() {
-		return getParameter(SESSION_KEY);
+		return getParameter(SESSION);
 	}
 
 	/**
