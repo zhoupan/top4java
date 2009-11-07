@@ -102,7 +102,7 @@ public abstract class TopUtils {
 
 		Set<Entry<String, String>> params = splitUrlQuery(rsp).entrySet();
 		for (Entry<String, String> param : params) {
-			if ("top_parameters".equals(param.getKey())) {
+			if (TopContext.PARAMETERS.equals(param.getKey())) {
 				context.addParameters(decodeTopParams(param.getValue()));
 			} else {
 				context.addParameter(param.getKey(), param.getValue());

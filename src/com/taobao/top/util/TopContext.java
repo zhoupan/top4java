@@ -11,6 +11,13 @@ import java.util.Map;
  */
 public class TopContext {
 
+	public static final String APP_KEY = "top_appkey";
+	public static final String SESSION_KEY = "top_session";
+	public static final String SIGNATURE = "top_sign";
+	public static final String PARAMETERS = "top_parameters";
+	public static final String USER_ID = "visitor_id";
+	public static final String USER_NICK = "visitor_nick";
+
 	private Map<String, String> parameters = new HashMap<String, String>();
 
 	/**
@@ -19,7 +26,7 @@ public class TopContext {
 	 * @return 应用编号
 	 */
 	public String getAppKey() {
-		return getParameter("top_appkey");
+		return getParameter(APP_KEY);
 	}
 
 	/**
@@ -28,7 +35,7 @@ public class TopContext {
 	 * @return 授权码
 	 */
 	public String getSessionKey() {
-		return getParameter("top_session");
+		return getParameter(SESSION_KEY);
 	}
 
 	/**
@@ -37,7 +44,7 @@ public class TopContext {
 	 * @return 回调签名
 	 */
 	public String getSignature() {
-		return getParameter("top_sign");
+		return getParameter(SIGNATURE);
 	}
 
 	/**
@@ -46,7 +53,7 @@ public class TopContext {
 	 * @return 淘宝用户编号
 	 */
 	public Long getUserId() {
-		String userId = getParameter("visitor_id");
+		String userId = getParameter(USER_ID);
 		if (StrUtils.isEmpty(userId)) {
 			return null;
 		} else {
@@ -60,7 +67,7 @@ public class TopContext {
 	 * @return 淘宝用户昵称
 	 */
 	public String getUserNick() {
-		return getParameter("visitor_nick");
+		return getParameter(USER_NICK);
 	}
 
 	/**
@@ -73,13 +80,24 @@ public class TopContext {
 		return this.parameters.get(key);
 	}
 
-	protected void addParameters(Map<String, String> parameters) {
+	/**
+	 * 批量添加参数。
+	 * 
+	 * @param parameters 参数映射
+	 */
+	public void addParameters(Map<String, String> parameters) {
 		if (parameters != null && !parameters.isEmpty()) {
 			this.parameters.putAll(parameters);
 		}
 	}
 
-	protected void addParameter(String key, String value) {
+	/**
+	 * 添加一个参数。
+	 * 
+	 * @param key 参数名
+	 * @param value 参数值
+	 */
+	public void addParameter(String key, String value) {
 		this.parameters.put(key, value);
 	}
 
