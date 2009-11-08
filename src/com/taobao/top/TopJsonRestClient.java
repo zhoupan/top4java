@@ -262,8 +262,8 @@ public class TopJsonRestClient {
 	}
 
 	/** TOP API: taobao.items.search **/
-	public ResponseList<ItemSearch> searchItems(ItemsSearchRequest request) throws TopException {
-		return client.execute(request, new ObjectListJsonParser<ItemSearch>(ItemSearch.class));
+	public ItemSearch searchItems(ItemsSearchRequest request) throws TopException {
+		return client.execute(request, new ObjectJsonParser<ItemSearch>(ItemSearch.class));
 	}
 
 	/** TOP API: taobao.items.onsale.get **/
