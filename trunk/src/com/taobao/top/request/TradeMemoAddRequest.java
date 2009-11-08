@@ -13,12 +13,12 @@ import com.taobao.top.util.TopHashMap;
 public class TradeMemoAddRequest implements TopRequest {
 
 	/** 交易编号 */
-	private String tid;
+	private Long tid;
 
 	/** 备注内容 */
 	private String memo;
 
-	public void setTid(String tid) {
+	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 
