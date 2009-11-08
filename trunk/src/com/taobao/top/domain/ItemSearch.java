@@ -38,7 +38,7 @@ public class ItemSearch extends BaseObject {
 		this.itemCats = itemCats;
 	}
 
-	public boolean isEmpty() {
+	public boolean checkEmpty() {
 		return items == null || items.isEmpty();
 	}
 

@@ -3,6 +3,8 @@ package com.taobao.top.request;
 import org.junit.Test;
 
 import com.taobao.top.TopClient;
+import com.taobao.top.TopJsonRestClient;
+import com.taobao.top.domain.ItemSearch;
 import com.taobao.top.parser.StringParser;
 import com.taobao.top.util.TestUtils;
 
@@ -21,6 +23,17 @@ public class ItemApiTest {
 		req.setFields("name");
 		TopClient client = TestUtils.getTestClient();
 		String rsp = client.execute(req, new StringParser());
+		System.out.println(rsp);
+	}
+
+	@Test
+	public void searchItems() {
+		ItemsSearchRequest req = new ItemsSearchRequest();
+		req.setFields("iid,title");
+		req.setQuery("欧莱雅 复颜清乳柔肤水 200ml 保湿滋润补水抗皱紧致");
+		req.setNicks("绿贝壳化妆品专营店");
+		TopJsonRestClient client = TestUtils.getOnlineJsonClient();
+		ItemSearch rsp = client.searchItems(req);
 		System.out.println(rsp);
 	}
 
