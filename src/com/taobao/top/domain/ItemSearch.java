@@ -38,4 +38,8 @@ public class ItemSearch extends BaseObject {
 		this.itemCats = itemCats;
 	}
 
+	public boolean isEmpty() {
+		return items == null || items.isEmpty();
+	}
+
 }
