@@ -22,14 +22,20 @@ public class JSONWriter {
 
     private StringBuffer buf = new StringBuffer();
     private Stack<Object> calls = new Stack<Object>();
-    boolean emitClassName = true;
-    
+    private boolean emitClassName = true;
+    private DateFormat format;
+
     public JSONWriter(boolean emitClassName) {
         this.emitClassName = emitClassName;
     }
-    
+
     public JSONWriter() {
         this(false);
+    }
+
+    public JSONWriter(DateFormat format) {
+        this(false);
+        this.format = format;
     }
 
     public String write(Object object) {
@@ -167,7 +173,9 @@ public class JSONWriter {
 	}
 
     private void date(Date date) {
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        if (this.format == null) {
+            this.format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        }
         add("\"");
         add(format.format(date));
         add("\"");
