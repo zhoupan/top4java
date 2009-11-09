@@ -37,4 +37,14 @@ public class ItemApiTest {
 		System.out.println(rsp);
 	}
 
+	@Test
+	public void getTaobaokeItems() {
+		TopJsonRestClient client = TestUtils.getOnlineJsonClient();
+		TaobaokeItemsGetRequest req = new TaobaokeItemsGetRequest();
+		req.setFields("iid,title,nick");
+		req.setCid("0");
+		req.setNick("hz0799");
+		System.out.println(client.getResponse(req));
+	}
+
 }
