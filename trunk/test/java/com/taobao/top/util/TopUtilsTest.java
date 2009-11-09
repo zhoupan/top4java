@@ -54,4 +54,10 @@ public class TopUtilsTest {
 		Assert.assertEquals("永恒一生", map.get("visitor_nick"));
 	}
 
+	@Test
+	public void getSandboxAuthCode() throws IOException {
+		String code = TopUtils.getSandboxAuthCode("test", "tbtest520", "http://www.google.com/");
+		System.out.println(code);
+	}
+
 }

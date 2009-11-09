@@ -20,7 +20,12 @@ public abstract class Constants {
 	/** TOP JSON 应格式 */
 	public static final String FORMAT_JSON = "json";
 
-	/** TOP获取客户端应用授权码地址 */
-	public static final String TOP_AUTH_URL = "http://container.open.taobao.com/container?authcode=";
+	/** TOP正式环境授权相关地址 */
+	public static final String PRODUCT_AUTHORIZE_URL = "http://auth.open.taobao.com/";
+	public static final String PRODUCT_CONTAINER_URL = "http://container.open.taobao.com/container";
+
+	/** TOP沙箱环境授权相关地址 */
+	public static final String SANDBOX_AUTHORIZE_URL = "http://open.taobao.com/isv/authorize.php";
+	public static final String SANDBOX_CONTAINER_URL = "http://container.api.tbsandbox.com/container";
 
 }
