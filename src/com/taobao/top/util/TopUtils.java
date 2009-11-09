@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
@@ -85,14 +87,14 @@ public abstract class TopUtils {
 	}
 
 	/**
-	 * 获取TOP容器回调上下文，仅用于客户端应用。
+	 * 获取TOP容器回调上下文，仅用于正式环境下的客户端应用。
 	 * 
 	 * @param authCode 授权码
 	 * @return TOP容器上下文
 	 * @throws IOException 如果授权码已经过期或者容器不可访问
 	 */
 	public static TopContext getTopContext(String authCode) throws IOException {
-		String url = Constants.TOP_AUTH_URL + authCode;
+		String url = getProductClientSessionUrl(authCode);
 		String rsp = WebUtils.doGet(url, null, Constants.CHARSET_UTF8);
 		if (StrUtils.isEmpty(rsp)) {
 			return null;
@@ -100,8 +102,8 @@ public abstract class TopUtils {
 
 		TopContext context = new TopContext();
 
-		Set<Entry<String, String>> params = splitUrlQuery(rsp).entrySet();
-		for (Entry<String, String> param : params) {
+		Set<Entry<String, String>> paramSet = splitUrlQuery(rsp).entrySet();
+		for (Entry<String, String> param : paramSet) {
 			if (TopContext.PARAMETERS.equals(param.getKey())) {
 				context.addParameters(decodeTopParams(param.getValue()));
 			} else {
@@ -129,6 +131,69 @@ public abstract class TopUtils {
 		String originTopParams = new String(buffer, Constants.CHARSET_GBK);
 
 		return splitUrlQuery(originTopParams);
+	}
+
+	/**
+	 * 获取沙箱环境下的授权码。
+	 * 
+	 * @param appKey 应用编号
+	 * @param nick 淘宝用户昵称
+	 * @param callbackUrl 回调地址
+	 * @return 授权码
+	 * @throws IOException
+	 */
+	public static String getSandboxAuthCode(String appKey, String nick, String callbackUrl)
+			throws IOException {
+		Map<String, String> authParams = new HashMap<String, String>();
+		authParams.put("appkey", appKey);
+		authParams.put("nick", nick);
+		authParams.put("url", callbackUrl);
+
+		String response = WebUtils.doPost(Constants.SANDBOX_AUTHORIZE_URL, authParams);
+		String authRegex = "<input type=\"text\" id=\"autoInput\" value=\"(.+?)\" style=\".+?\">";
+		Pattern pattern = Pattern.compile(authRegex);
+		Matcher matcher = pattern.matcher(response);
+		if (matcher.find()) {
+			return matcher.group(1);
+		} else {
+			return null;
+		}
+	}
+
+	/**
+	 * 根据授权码获取沙箱环境SessionKey的地址。
+	 * 
+	 * @param authCode 授权码
+	 * @return 地址
+	 */
+	public static String getSandboxSessionUrl(String authCode) {
+		StringBuilder url = new StringBuilder(Constants.SANDBOX_CONTAINER_URL);
+		url.append("?authcode=").append(authCode);
+		return url.toString();
+	}
+
+	/**
+	 * 根据应用编号获取正式环境WEB应用SessionKey的地址。
+	 * 
+	 * @param appKey 应用编号
+	 * @return 地址
+	 */
+	public static String getProductWebSessionUrl(String appKey) {
+		StringBuilder url = new StringBuilder(Constants.PRODUCT_CONTAINER_URL);
+		url.append("?appkey=").append(appKey);
+		return url.toString();
+	}
+
+	/**
+	 * 根据应用编号获取正式环境客户端应用SessionKey的地址。
+	 * 
+	 * @param authCode 授权码
+	 * @return 地址
+	 */
+	public static String getProductClientSessionUrl(String authCode) {
+		StringBuilder url = new StringBuilder(Constants.PRODUCT_CONTAINER_URL);
+		url.append("?authcode=").append(authCode);
+		return url.toString();
 	}
 
 	private static Map<String, String> splitUrlQuery(String query) {
