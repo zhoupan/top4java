@@ -81,17 +81,30 @@ public abstract class WebUtils {
 	 */
 	public static String doPost(String url, Map<String, String> params, String charset)
 			throws IOException {
+		String ctype = "application/x-www-form-urlencoded;charset=" + charset;
+		String query = buildQuery(params, charset);
+		return doPost(url, ctype, query.getBytes(charset));
+	}
+
+	/**
+	 * 执行HTTP POST请求。
+	 * 
+	 * @param url 请求地址
+	 * @param ctype 请求类型
+	 * @param content 请求字节数组
+	 * @return 响应字符串
+	 * @throws IOException
+	 */
+	public static String doPost(String url, String ctype, byte[] content) throws IOException {
 		HttpURLConnection conn = null;
 		OutputStream out = null;
 		InputStream in = null;
 		String rsp = null;
 
 		try {
-			String ctype = "application/x-www-form-urlencoded;charset=" + charset;
 			conn = getConnection(new URL(url), METHOD_POST, ctype);
 			out = conn.getOutputStream();
-			String query = buildQuery(params, charset);
-			out.write(query.getBytes(charset));
+			out.write(content);
 			in = conn.getInputStream();
 			rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
 		} finally {
