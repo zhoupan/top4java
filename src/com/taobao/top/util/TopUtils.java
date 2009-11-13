@@ -31,10 +31,9 @@ public abstract class TopUtils {
 	 * @param secret 签名密钥
 	 * @return 签名
 	 * @throws IOException
-	 * @throws NoSuchAlgorithmException
 	 */
 	public static String signTopRequest(Map<String, String> params, String secret)
-			throws IOException, NoSuchAlgorithmException {
+			throws IOException {
 		// 第一步：把字典按Key的字母顺序排序
 		Map<String, String> sortedParams = new TreeMap<String, String>(params);
 		Set<Entry<String, String>> paramSet = sortedParams.entrySet();
@@ -48,7 +47,7 @@ public abstract class TopUtils {
 		}
 
 		// 第三步：使用MD5加密
-		MessageDigest md5 = MessageDigest.getInstance("MD5");
+		MessageDigest md5 = getMd5MessageDigest();
 		byte[] bytes = md5.digest(query.toString().getBytes(Constants.CHARSET_UTF8));
 
 		// 第四步：把二进制转化为大写的十六进制
@@ -73,17 +72,24 @@ public abstract class TopUtils {
 	 * @param appKey 应用公钥
 	 * @param appSecret 应用密钥
 	 * @return 验证成功返回true，否则返回false
-	 * @throws NoSuchAlgorithmException
 	 * @throws IOException
 	 */
 	public static boolean verifyTopResponse(String topParams, String topSession, String topSign,
-			String appKey, String appSecret) throws NoSuchAlgorithmException, IOException {
+			String appKey, String appSecret) throws IOException {
 		StringBuilder result = new StringBuilder();
-		MessageDigest md5 = MessageDigest.getInstance("MD5");
+		MessageDigest md5 = getMd5MessageDigest();
 		result.append(appKey).append(topParams).append(topSession).append(appSecret);
 		byte[] bytes = md5.digest(result.toString().getBytes(Constants.CHARSET_UTF8));
 		BASE64Encoder encoder = new BASE64Encoder();
 		return encoder.encode(bytes).equals(topSign);
+	}
+
+	private static MessageDigest getMd5MessageDigest() throws IOException {
+		try {
+			return MessageDigest.getInstance("MD5");
+		} catch (NoSuchAlgorithmException e) {
+			throw new IOException(e);
+		}
 	}
 
 	/**
