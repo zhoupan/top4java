@@ -28,6 +28,8 @@ public abstract class WebUtils {
 	private static final String METHOD_POST = "POST";
 	private static final String METHOD_GET = "GET";
 
+	private WebUtils() {}
+
 	/**
 	 * 执行HTTP POST请求。
 	 * 

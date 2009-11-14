@@ -24,6 +24,8 @@ import com.taobao.top.Constants;
  */
 public abstract class TopUtils {
 
+	private TopUtils() {}
+
 	/**
 	 * 给TOP请求签名。
 	 * 

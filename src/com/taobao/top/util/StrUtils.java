@@ -8,6 +8,8 @@ package com.taobao.top.util;
  */
 public abstract class StrUtils {
 
+	private StrUtils() {}
+
 	/**
 	 * 检查指定的字符串是否为空。
 	 * <ul>
