@@ -275,7 +275,7 @@ public abstract class WebUtils {
 		conn.setDoOutput(true);
 		conn.setConnectTimeout(10000);
 		conn.setReadTimeout(3000);
-		conn.setRequestProperty("Accept", "text/xml,text/javascript");
+		conn.setRequestProperty("Accept", "text/xml,text/javascript,text/html");
 		conn.setRequestProperty("User-Agent", "Top4Java");
 		conn.setRequestProperty("Content-Type", ctype);
 		return conn;
