@@ -14,6 +14,7 @@ public class TradePriceUpdateRequest implements TopRequest {
 
 	private Long tid;
 	private Integer type;
+	private String nick;
 	private String callbackUrl;
 
 	public void setTid(Long tid) {
@@ -22,6 +23,10 @@ public class TradePriceUpdateRequest implements TopRequest {
 
 	public void setType(Integer type) {
 		this.type = type;
+	}
+
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 
 	public void setCallbackUrl(String callbackUrl) {
@@ -36,6 +41,7 @@ public class TradePriceUpdateRequest implements TopRequest {
 		TopHashMap params = new TopHashMap();
 		params.put("biz_order_id", tid);
 		params.put("biz_type", type);
+		params.put("nick", nick);
 		params.put("callback_url", callbackUrl);
 		return params;
 	}
