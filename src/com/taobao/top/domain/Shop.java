@@ -40,6 +40,10 @@ public class Shop extends BaseObject {
 	@JsonProperty("pic_path")
 	private String logoUrl;
 
+	/** 剩余橱窗推荐数 */
+	@JsonProperty("remain_count")
+	private Integer remainShowcase;
+
 	public Long getSid() {
 		return this.sid;
 	}
@@ -94,6 +98,14 @@ public class Shop extends BaseObject {
 
 	public void setLogoUrl(String logoUrl) {
 		this.logoUrl = logoUrl;
+	}
+
+	public Integer getRemainShowcase() {
+		return this.remainShowcase;
+	}
+
+	public void setRemainShowcase(Integer remainShowcase) {
+		this.remainShowcase = remainShowcase;
 	}
 
 }

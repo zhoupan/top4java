@@ -5,11 +5,9 @@ import java.util.List;
 import org.junit.Test;
 
 import com.taobao.top.TopException;
-import com.taobao.top.domain.Album;
 import com.taobao.top.domain.Area;
 import com.taobao.top.domain.CatStat;
 import com.taobao.top.domain.ConfirmFee;
-import com.taobao.top.domain.DeliveryAddress;
 import com.taobao.top.domain.Item;
 import com.taobao.top.domain.ItemCat;
 import com.taobao.top.domain.ItemImg;
@@ -20,6 +18,7 @@ import com.taobao.top.domain.Location;
 import com.taobao.top.domain.LogisticsCompany;
 import com.taobao.top.domain.LogisticsOrder;
 import com.taobao.top.domain.Order;
+import com.taobao.top.domain.PicUrl;
 import com.taobao.top.domain.Postage;
 import com.taobao.top.domain.PostageMode;
 import com.taobao.top.domain.Product;
@@ -30,7 +29,8 @@ import com.taobao.top.domain.PropValue;
 import com.taobao.top.domain.Refund;
 import com.taobao.top.domain.RefundMessage;
 import com.taobao.top.domain.RefundTimeout;
-import com.taobao.top.domain.SellerItemCat;
+import com.taobao.top.domain.SellerCat;
+import com.taobao.top.domain.ShippingAddress;
 import com.taobao.top.domain.Shop;
 import com.taobao.top.domain.ShopCat;
 import com.taobao.top.domain.Sku;
@@ -64,11 +64,10 @@ public class ConvertersTest {
 			}
 		};
 
-		Converters.convert(Album.class, reader);
 		Converters.convert(Area.class, reader);
 		Converters.convert(CatStat.class, reader);
 		Converters.convert(ConfirmFee.class, reader);
-		Converters.convert(DeliveryAddress.class, reader);
+		Converters.convert(ShippingAddress.class, reader);
 		Converters.convert(Item.class, reader);
 		Converters.convert(ItemCat.class, reader);
 		Converters.convert(ItemImg.class, reader);
@@ -89,7 +88,7 @@ public class ConvertersTest {
 		Converters.convert(Refund.class, reader);
 		Converters.convert(RefundMessage.class, reader);
 		Converters.convert(RefundTimeout.class, reader);
-		Converters.convert(SellerItemCat.class, reader);
+		Converters.convert(SellerCat.class, reader);
 		Converters.convert(Shop.class, reader);
 		Converters.convert(ShopCat.class, reader);
 		Converters.convert(Sku.class, reader);
@@ -103,6 +102,7 @@ public class ConvertersTest {
 		Converters.convert(TradeStat.class, reader);
 		Converters.convert(User.class, reader);
 		Converters.convert(UserCredit.class, reader);
+		Converters.convert(PicUrl.class, reader);
 	}
 
 }

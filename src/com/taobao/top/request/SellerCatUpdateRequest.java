@@ -10,7 +10,7 @@ import com.taobao.top.util.TopHashMap;
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
  */
-public class SellerItemCatUpdateRequest implements TopRequest {
+public class SellerCatUpdateRequest implements TopRequest {
 
 	/** 卖家自定义类目名称 */
 	private String name;

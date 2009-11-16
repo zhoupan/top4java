@@ -102,7 +102,7 @@ public class PostageUpdateRequest implements TopRequest {
 		if (this.postageMode != null) {
 			params.put("postage_mode.id", this.postageMode.getId());
 			params.put("postage_mode.type", this.postageMode.getType());
-			params.put("postage_mode.dest", this.postageMode.getDest());
+			params.put("postage_mode.dest", this.postageMode.getDests());
 			params.put("postage_mode.price", this.postageMode.getPrice());
 			params.put("postage_mode.increase", this.postageMode.getIncrease());
 		}

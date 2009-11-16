@@ -27,8 +27,8 @@ public class RefundMessage extends BaseObject {
 	private String msgType;
 
 	/** 凭证附件地址（图片） */
-	@JsonProperty("picture_urls/url")
-	private List<String> picUrls;
+	@JsonProperty("picture_urls")
+	private List<PicUrl> picUrls;
 
 	/** 退款编号 */
 	@JsonProperty("refund_id")
@@ -70,11 +70,11 @@ public class RefundMessage extends BaseObject {
 		this.msgType = msgType;
 	}
 
-	public List<String> getPicUrls() {
+	public List<PicUrl> getPicUrls() {
 		return this.picUrls;
 	}
 
-	public void setPicUrls(List<String> picUrls) {
+	public void setPicUrls(List<PicUrl> picUrls) {
 		this.picUrls = picUrls;
 	}
 

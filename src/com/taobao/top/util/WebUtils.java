@@ -336,9 +336,8 @@ public abstract class WebUtils {
 		StringWriter writer = new StringWriter();
 
 		char[] chars = new char[512];
-		int count = 0;
-		while ((count = reader.read(chars)) > 0) {
-			writer.write(chars, 0, count);
+		while (reader.read(chars) > 0) {
+			writer.write(chars);
 		}
 
 		return writer.toString();

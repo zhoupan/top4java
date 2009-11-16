@@ -14,11 +14,11 @@ public class TaobaokeShop extends BaseObject {
 
 	/** 店铺用户名 */
 	@JsonProperty("user_id")
-	private Long uid;
+	private Long userId;
 
 	/** 店铺名称 */
 	@JsonProperty("shop_title")
-	private String title;
+	private String shopTitle;
 
 	/** 店铺推广地址 */
 	@JsonProperty("click_url")
@@ -28,20 +28,20 @@ public class TaobaokeShop extends BaseObject {
 	@JsonProperty("shop_commission_rate")
 	private String commissionRate;
 
-	public Long getUid() {
-		return this.uid;
+	public Long getUserId() {
+		return this.userId;
 	}
 
-	public void setUid(Long uid) {
-		this.uid = uid;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
-	public String getTitle() {
-		return this.title;
+	public String getShopTitle() {
+		return this.shopTitle;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setShopTitle(String shopTitle) {
+		this.shopTitle = shopTitle;
 	}
 
 	public String getClickUrl() {

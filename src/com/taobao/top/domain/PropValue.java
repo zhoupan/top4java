@@ -18,23 +18,23 @@ public class PropValue extends BaseObject {
 
 	/** 属性编号 */
 	@JsonProperty("pid")
-	private Long pid;
+	private Long propId;
 
 	/** 属性名 */
 	@JsonProperty("prop_name")
-	private String propname;
+	private String propName;
 
 	/** 属性值编号 */
 	@JsonProperty("vid")
-	private Long vid;
+	private Long valueId;
 
 	/** 属性值名称 */
 	@JsonProperty("name")
-	private String name;
+	private String valueName;
 
 	/** 属性值别名 */
 	@JsonProperty("name_alias")
-	private String alias;
+	private String valueAlias;
 
 	/** 属性值状态 */
 	@JsonProperty("status")
@@ -56,44 +56,44 @@ public class PropValue extends BaseObject {
 		this.cid = cid;
 	}
 
-	public Long getPid() {
-		return this.pid;
+	public Long getPropId() {
+		return this.propId;
 	}
 
-	public void setPid(Long pid) {
-		this.pid = pid;
+	public void setPropId(Long propId) {
+		this.propId = propId;
 	}
 
-	public String getPropname() {
-		return this.propname;
+	public String getPropName() {
+		return this.propName;
 	}
 
-	public void setPropname(String propname) {
-		this.propname = propname;
+	public void setPropName(String propName) {
+		this.propName = propName;
 	}
 
-	public Long getVid() {
-		return this.vid;
+	public Long getValueId() {
+		return this.valueId;
 	}
 
-	public void setVid(Long vid) {
-		this.vid = vid;
+	public void setValueId(Long valueId) {
+		this.valueId = valueId;
 	}
 
-	public String getName() {
-		return this.name;
+	public String getValueName() {
+		return this.valueName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setValueName(String valueName) {
+		this.valueName = valueName;
 	}
 
-	public String getAlias() {
-		return this.alias;
+	public String getValueAlias() {
+		return this.valueAlias;
 	}
 
-	public void setAlias(String alias) {
-		this.alias = alias;
+	public void setValueAlias(String valueAlias) {
+		this.valueAlias = valueAlias;
 	}
 
 	public String getStatus() {

@@ -44,12 +44,16 @@ public class Trade extends BaseObject {
 	private String iid;
 
 	/** 商品价格 */
+	@JsonProperty("item_url")
+	private String itemUrl;
+
+	/** 商品路径 */
 	@JsonProperty("price")
 	private String itemPrice;
 
 	/** 商品图片绝对地址 */
 	@JsonProperty("pic_path")
-	private String itemPicUrl;
+	private String itemImgUrl;
 
 	/** 商品购买数量 */
 	@JsonProperty("num")
@@ -208,8 +212,8 @@ public class Trade extends BaseObject {
 	private String availableConfirmFee;
 
 	/** 是否包含邮费 */
-	@JsonProperty("has_postFee")
-	private String hasPostFee;
+	@JsonProperty("has_post_fee")
+	private Boolean hasPostFee;
 
 	/** 卖家实际收到的支付宝打款金额 */
 	@JsonProperty("received_payment")
@@ -222,6 +226,10 @@ public class Trade extends BaseObject {
 	/** 超时到期时间 */
 	@JsonProperty("timeout_action_time")
 	private Date timeout;
+
+	/** 交易路径 */
+	@JsonProperty("trade_url")
+	private Date tradeUrl;
 
 	/** 订单列表 */
 	@JsonProperty("orders")
@@ -283,6 +291,14 @@ public class Trade extends BaseObject {
 		this.iid = iid;
 	}
 
+	public String getItemUrl() {
+		return this.itemUrl;
+	}
+
+	public void setItemUrl(String itemUrl) {
+		this.itemUrl = itemUrl;
+	}
+
 	public String getItemPrice() {
 		return this.itemPrice;
 	}
@@ -291,12 +307,12 @@ public class Trade extends BaseObject {
 		this.itemPrice = itemPrice;
 	}
 
-	public String getItemPicUrl() {
-		return this.itemPicUrl;
+	public String getItemImgUrl() {
+		return this.itemImgUrl;
 	}
 
-	public void setItemPicUrl(String itemPicUrl) {
-		this.itemPicUrl = itemPicUrl;
+	public void setItemImgUrl(String itemImgUrl) {
+		this.itemImgUrl = itemImgUrl;
 	}
 
 	public Integer getItemNum() {
@@ -611,11 +627,11 @@ public class Trade extends BaseObject {
 		this.availableConfirmFee = availableConfirmFee;
 	}
 
-	public String getHasPostFee() {
+	public Boolean getHasPostFee() {
 		return this.hasPostFee;
 	}
 
-	public void setHasPostFee(String hasPostFee) {
+	public void setHasPostFee(Boolean hasPostFee) {
 		this.hasPostFee = hasPostFee;
 	}
 
@@ -641,6 +657,14 @@ public class Trade extends BaseObject {
 
 	public void setTimeout(Date timeout) {
 		this.timeout = timeout;
+	}
+
+	public Date getTradeUrl() {
+		return this.tradeUrl;
+	}
+
+	public void setTradeUrl(Date tradeUrl) {
+		this.tradeUrl = tradeUrl;
 	}
 
 	public List<Order> getOrders() {

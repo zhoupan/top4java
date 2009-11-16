@@ -10,7 +10,7 @@ import com.taobao.top.util.TopHashMap;
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
  */
-public class SellerItemCatsGetRequest implements TopRequest {
+public class SellerCatsGetRequest implements TopRequest {
 
 	/** 卖家昵称 */
 	private String nick;
