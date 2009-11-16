@@ -84,6 +84,14 @@ public class User extends BaseObject {
 	@JsonProperty("alipay_bind")
 	private String alipayBind;
 
+	/** 支付宝数字编号 */
+	@JsonProperty("alipay_no")
+	private String alipayNo;
+
+	/** 支付宝邮件账号 */
+	@JsonProperty("alipay_account")
+	private String alipayAccount;
+
 	/** 是否参加消保 */
 	@JsonProperty("consumer_protection")
 	private String consumerProtection;
@@ -230,6 +238,22 @@ public class User extends BaseObject {
 
 	public void setAlipayBind(String alipayBind) {
 		this.alipayBind = alipayBind;
+	}
+
+	public String getAlipayNo() {
+		return this.alipayNo;
+	}
+
+	public void setAlipayNo(String alipayNo) {
+		this.alipayNo = alipayNo;
+	}
+
+	public String getAlipayAccount() {
+		return this.alipayAccount;
+	}
+
+	public void setAlipayAccount(String alipayAccount) {
+		this.alipayAccount = alipayAccount;
 	}
 
 	public String getConsumerProtection() {

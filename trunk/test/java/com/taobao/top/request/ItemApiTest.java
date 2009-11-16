@@ -4,7 +4,9 @@ import org.junit.Test;
 
 import com.taobao.top.TopClient;
 import com.taobao.top.TopJsonRestClient;
+import com.taobao.top.domain.AuthorizeCats;
 import com.taobao.top.domain.ItemSearch;
+import com.taobao.top.domain.ResponseList;
 import com.taobao.top.parser.StringParser;
 import com.taobao.top.util.TestUtils;
 
@@ -33,8 +35,8 @@ public class ItemApiTest {
 		req.setQuery("欧莱雅 复颜清乳柔肤水 200ml 保湿滋润补水抗皱紧致");
 		req.setNicks("绿贝壳化妆品专营店");
 		TopJsonRestClient client = TestUtils.getOnlineJsonClient();
-		ItemSearch rsp = client.searchItems(req);
-		System.out.println(rsp);
+		ResponseList<ItemSearch> rsp = client.searchItems(req);
+		System.out.println(rsp.getTotalResults());
 	}
 
 	@Test
@@ -45,6 +47,14 @@ public class ItemApiTest {
 		req.setCid("0");
 		req.setNick("hz0799");
 		System.out.println(client.getResponse(req));
+	}
+
+	public void getAuthorizeItemCats() {
+		ItemCatsAuthorizeGetRequest req = new ItemCatsAuthorizeGetRequest();
+		req.setFields("brand.vid,brand.name,item_cat.cid,item_cat.name");
+		TopJsonRestClient client = TestUtils.getOnlineJsonClient();
+		AuthorizeCats rsp = client.getAuthorizeItemCats(req, "2bf49d6fbf750f02224f3e0535f153bbc");
+		System.out.println(rsp);
 	}
 
 }

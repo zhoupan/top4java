@@ -75,11 +75,11 @@ public class Product extends BaseObject {
 	private String primaryImgUrl;
 
 	/** 产品的子图片 */
-	@JsonProperty("productImg")
+	@JsonProperty("product_img")
 	private List<ProductImg> imgs;
 
 	/** 产品的属性图片 */
-	@JsonProperty("productPropImg")
+	@JsonProperty("product_prop_img")
 	private List<ProductPropImg> propImgs;
 
 	public Long getId() {

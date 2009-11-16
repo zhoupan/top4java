@@ -107,6 +107,10 @@ public class Item extends BaseObject {
 	@JsonProperty("ems_fee")
 	private String emsFee;
 
+	/** 是否已出价 */
+	@JsonProperty("has_bid")
+	private Boolean hasBid;
+
 	/** 支持会员打折 */
 	@JsonProperty("has_discount")
 	private Boolean hasDiscount;
@@ -171,12 +175,16 @@ public class Item extends BaseObject {
 	@JsonProperty("is_ex")
 	private Boolean external;
 
+	/** 是否定时 */
+	@JsonProperty("is_timing")
+	private Boolean timing;
+
 	/** 商品图片列表(包括主图) */
-	@JsonProperty("itemimg")
+	@JsonProperty("item_img")
 	private List<ItemImg> itemImgs;
 
 	/** 商品属性图片列表 */
-	@JsonProperty("propimg")
+	@JsonProperty("prop_img")
 	private List<PropImg> propImgs;
 
 	/** SKU列表 */
@@ -493,6 +501,22 @@ public class Item extends BaseObject {
 
 	public void setExternal(Boolean external) {
 		this.external = external;
+	}
+
+	public Boolean getHasBid() {
+		return this.hasBid;
+	}
+
+	public void setHasBid(Boolean hasBid) {
+		this.hasBid = hasBid;
+	}
+
+	public Boolean isTiming() {
+		return this.timing;
+	}
+
+	public void setTiming(Boolean timing) {
+		this.timing = timing;
 	}
 
 	public List<ItemImg> getItemImgs() {

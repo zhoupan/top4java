@@ -10,7 +10,7 @@ import com.taobao.top.util.TopHashMap;
  * @author carver.gu
  * @since 1.0, Sep 13, 2009
  */
-public class DeliveryAddressesGetRequest implements TopRequest {
+public class ShippingAddressesGetRequest implements TopRequest {
 
 	/** 要返回的字段列表 */
 	private String fields;

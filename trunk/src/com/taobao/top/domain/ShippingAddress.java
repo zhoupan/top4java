@@ -10,7 +10,7 @@ import com.taobao.top.mapping.JsonProperty;
  * @since 1.0, Sep 17, 2009
  */
 @JsonClass("shipping_addresses")
-public class DeliveryAddress extends BaseObject {
+public class ShippingAddress extends BaseObject {
 
 	/** 收货地址编号 */
 	@JsonProperty("address_id")

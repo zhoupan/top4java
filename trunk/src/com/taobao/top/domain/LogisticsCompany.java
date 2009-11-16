@@ -24,6 +24,14 @@ public class LogisticsCompany extends BaseObject {
 	@JsonProperty("company_name")
 	private String companyName;
 
+	/** 派送范围 */
+	@JsonProperty("send_area")
+	private String sendArea;
+
+	/** 不派送范围 */
+	@JsonProperty("not_send_area")
+	private String unsendArea;
+
 	public Long getCompanyId() {
 		return this.companyId;
 	}
@@ -46,6 +54,22 @@ public class LogisticsCompany extends BaseObject {
 
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
+	}
+
+	public String getSendArea() {
+		return this.sendArea;
+	}
+
+	public void setSendArea(String sendArea) {
+		this.sendArea = sendArea;
+	}
+
+	public String getUnsendArea() {
+		return this.unsendArea;
+	}
+
+	public void setUnsendArea(String unsendArea) {
+		this.unsendArea = unsendArea;
 	}
 
 }

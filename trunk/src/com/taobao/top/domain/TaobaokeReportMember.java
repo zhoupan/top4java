@@ -32,15 +32,15 @@ public class TaobaokeReportMember extends BaseObject {
 
 	/** 商品编号 */
 	@JsonProperty("auction_id")
-	private Long auctionId;
+	private Long itemId;
 
 	/** 商品标题 */
 	@JsonProperty("auction_title")
-	private String auctionTitle;
+	private String itemTitle;
 
 	/** 商品成交数量 */
 	@JsonProperty("auction_number")
-	private Long auctionNumber;
+	private Long itemNum;
 
 	/** 所购买商品的类目编号 */
 	@JsonProperty("category_id")
@@ -102,28 +102,28 @@ public class TaobaokeReportMember extends BaseObject {
 		this.payPrice = payPrice;
 	}
 
-	public Long getAuctionId() {
-		return this.auctionId;
+	public Long getItemId() {
+		return this.itemId;
 	}
 
-	public void setAuctionId(Long auctionId) {
-		this.auctionId = auctionId;
+	public void setItemId(Long itemId) {
+		this.itemId = itemId;
 	}
 
-	public String getAuctionTitle() {
-		return this.auctionTitle;
+	public String getItemTitle() {
+		return this.itemTitle;
 	}
 
-	public void setAuctionTitle(String auctionTitle) {
-		this.auctionTitle = auctionTitle;
+	public void setItemTitle(String itemTitle) {
+		this.itemTitle = itemTitle;
 	}
 
-	public Long getAuctionNumber() {
-		return this.auctionNumber;
+	public Long getItemNum() {
+		return this.itemNum;
 	}
 
-	public void setAuctionNumber(Long auctionNumber) {
-		this.auctionNumber = auctionNumber;
+	public void setItemNum(Long itemNum) {
+		this.itemNum = itemNum;
 	}
 
 	public Long getCategoryId() {

@@ -1,9 +1,9 @@
 package com.taobao.top;
 
 import com.taobao.top.domain.Area;
+import com.taobao.top.domain.AuthorizeCats;
 import com.taobao.top.domain.CatStat;
 import com.taobao.top.domain.ConfirmFee;
-import com.taobao.top.domain.DeliveryAddress;
 import com.taobao.top.domain.Item;
 import com.taobao.top.domain.ItemCat;
 import com.taobao.top.domain.ItemImg;
@@ -22,7 +22,8 @@ import com.taobao.top.domain.PropValue;
 import com.taobao.top.domain.Refund;
 import com.taobao.top.domain.RefundMessage;
 import com.taobao.top.domain.ResponseList;
-import com.taobao.top.domain.SellerItemCat;
+import com.taobao.top.domain.SellerCat;
+import com.taobao.top.domain.ShippingAddress;
 import com.taobao.top.domain.Shop;
 import com.taobao.top.domain.ShopCat;
 import com.taobao.top.domain.Sku;
@@ -39,9 +40,9 @@ import com.taobao.top.parser.json.ObjectJsonParser;
 import com.taobao.top.parser.json.ObjectListJsonParser;
 import com.taobao.top.request.AreasGetRequest;
 import com.taobao.top.request.CatStatsGetRequest;
-import com.taobao.top.request.DeliveryAddressesGetRequest;
 import com.taobao.top.request.DeliverySendRequest;
 import com.taobao.top.request.ItemAddRequest;
+import com.taobao.top.request.ItemCatsAuthorizeGetRequest;
 import com.taobao.top.request.ItemCatsGetRequest;
 import com.taobao.top.request.ItemCatsListRequest;
 import com.taobao.top.request.ItemDeleteRequest;
@@ -94,9 +95,10 @@ import com.taobao.top.request.RefundMessageAddRequest;
 import com.taobao.top.request.RefundMessagesGetRequest;
 import com.taobao.top.request.RefundsAppliedGetRequest;
 import com.taobao.top.request.RefundsReceivedGetRequest;
-import com.taobao.top.request.SellerItemCatAddRequest;
-import com.taobao.top.request.SellerItemCatUpdateRequest;
-import com.taobao.top.request.SellerItemCatsGetRequest;
+import com.taobao.top.request.SellerCatAddRequest;
+import com.taobao.top.request.SellerCatUpdateRequest;
+import com.taobao.top.request.SellerCatsGetRequest;
+import com.taobao.top.request.ShippingAddressesGetRequest;
 import com.taobao.top.request.ShopCatsGetRequest;
 import com.taobao.top.request.ShopGetRequest;
 import com.taobao.top.request.ShopUpdateRequest;
@@ -221,6 +223,11 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectListJsonParser<ItemCat>(ItemCat.class));
 	}
 
+	/** TOP API: taobao.itemcats.authorize.get **/
+	public AuthorizeCats getAuthorizeItemCats(ItemCatsAuthorizeGetRequest request, String session) throws TopException {
+		return client.execute(request, new ObjectJsonParser<AuthorizeCats>(AuthorizeCats.class), session);
+	}
+
 	/** TOP API: taobao.itempropvalues.get **/
 	public ResponseList<PropValue> getItemPropValues(ItemPropValuesGetRequest request) throws TopException {
 		return client.execute(request, new ObjectListJsonParser<PropValue>(PropValue.class));
@@ -262,8 +269,8 @@ public class TopJsonRestClient {
 	}
 
 	/** TOP API: taobao.items.search **/
-	public ItemSearch searchItems(ItemsSearchRequest request) throws TopException {
-		return client.execute(request, new ObjectJsonParser<ItemSearch>(ItemSearch.class));
+	public ResponseList<ItemSearch> searchItems(ItemsSearchRequest request) throws TopException {
+		return client.execute(request, new ObjectListJsonParser<ItemSearch>(ItemSearch.class));
 	}
 
 	/** TOP API: taobao.items.onsale.get **/
@@ -548,8 +555,8 @@ public class TopJsonRestClient {
 	}
 
 	/** TOP API: taobao.shipping.addresses.get **/
-	public ResponseList<DeliveryAddress> getDeliveryAddresses(DeliveryAddressesGetRequest request, String session) throws TopException {
-		return client.execute(request, new ObjectListJsonParser<DeliveryAddress>(DeliveryAddress.class), session);
+	public ResponseList<ShippingAddress> getShippingAddresses(ShippingAddressesGetRequest request, String session) throws TopException {
+		return client.execute(request, new ObjectListJsonParser<ShippingAddress>(ShippingAddress.class), session);
 	}
 
 	/** TOP API: taobao.shop.get **/
@@ -568,18 +575,18 @@ public class TopJsonRestClient {
 	}
 
 	/** TOP API: taobao.sellercats.list.add **/
-	public SellerItemCat addSellerItemCat(SellerItemCatAddRequest request, String session) throws TopException {
-		return client.execute(request, new ObjectJsonParser<SellerItemCat>(SellerItemCat.class), session);
+	public SellerCat addSellerCat(SellerCatAddRequest request, String session) throws TopException {
+		return client.execute(request, new ObjectJsonParser<SellerCat>(SellerCat.class), session);
 	}
 
 	/** TOP API: taobao.sellercats.list.update **/
-	public SellerItemCat updateSellerItemCat(SellerItemCatUpdateRequest request, String session) throws TopException {
-		return client.execute(request, new ObjectJsonParser<SellerItemCat>(SellerItemCat.class), session);
+	public SellerCat updateSellerCat(SellerCatUpdateRequest request, String session) throws TopException {
+		return client.execute(request, new ObjectJsonParser<SellerCat>(SellerCat.class), session);
 	}
 
 	/** TOP API: taobao.sellercats.list.get **/
-	public ResponseList<SellerItemCat> getSellerItemCats(SellerItemCatsGetRequest request) throws TopException {
-		return client.execute(request, new ObjectListJsonParser<SellerItemCat>(SellerItemCat.class));
+	public ResponseList<SellerCat> getSellerCats(SellerCatsGetRequest request) throws TopException {
+		return client.execute(request, new ObjectListJsonParser<SellerCat>(SellerCat.class));
 	}
 
 	/** TOP API: taobao.itemstats.get **/

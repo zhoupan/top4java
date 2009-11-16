@@ -32,7 +32,7 @@ public class PostageMode extends BaseObject {
 
 	/** 运费方式地区列表 */
 	@JsonProperty("dest")
-	private String dest;
+	private String dests;
 
 	public Long getPostageId() {
 		return this.postageId;
@@ -74,12 +74,12 @@ public class PostageMode extends BaseObject {
 		this.increase = increase;
 	}
 
-	public String getDest() {
-		return this.dest;
+	public String getDests() {
+		return this.dests;
 	}
 
-	public void setDest(String dests) {
-		this.dest = dests;
+	public void setDests(String dests) {
+		this.dests = dests;
 	}
 
 }
