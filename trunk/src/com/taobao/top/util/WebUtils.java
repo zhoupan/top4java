@@ -107,8 +107,10 @@ public abstract class WebUtils {
 			conn = getConnection(new URL(url), METHOD_POST, ctype);
 			out = conn.getOutputStream();
 			out.write(content);
-			in = conn.getInputStream();
-			rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
+			if (HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
+				in = conn.getInputStream();
+				rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
+			}
 		} finally {
 			if (in != null) {
 				in.close();
@@ -194,8 +196,10 @@ public abstract class WebUtils {
 			byte[] endBoundaryBytes = ("\r\n--" + boundary + "--\r\n").getBytes(charset);
 			out.write(endBoundaryBytes);
 
-			in = conn.getInputStream();
-			rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
+			if (HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
+				in = conn.getInputStream();
+				rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
+			}
 		} finally {
 			if (in != null) {
 				in.close();
