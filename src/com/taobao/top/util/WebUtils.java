@@ -257,8 +257,10 @@ public abstract class WebUtils {
 			String ctype = "application/x-www-form-urlencoded;charset=" + charset;
 			String query = buildQuery(params, charset);
 			conn = getConnection(buildGetUrl(url, query), METHOD_GET, ctype);
-			in = conn.getInputStream();
-			rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
+			if (HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
+				in = conn.getInputStream();
+				rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
+			}
 		} finally {
 			if (in != null) {
 				in.close();
