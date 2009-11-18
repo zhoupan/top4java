@@ -16,13 +16,13 @@ public class RefundGetRequest implements TopRequest {
 	private String fields;
 
 	/** 退款单号 */
-	private String rid;
+	private Long rid;
 
 	public void setFields(String fields) {
 		this.fields = fields;
 	}
 
-	public void setRid(String rid) {
+	public void setRid(Long rid) {
 		this.rid = rid;
 	}
 

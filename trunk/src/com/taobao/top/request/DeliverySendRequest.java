@@ -13,7 +13,7 @@ import com.taobao.top.util.TopHashMap;
 public class DeliverySendRequest implements TopRequest {
 
 	/** 交易编号 */
-	private String tid;
+	private Long tid;
 
 	/** 物流运单号 */
 	private String sid;
@@ -28,7 +28,7 @@ public class DeliverySendRequest implements TopRequest {
 	private String sellerName;
 
 	/** 卖家区域县级行政区编号 */
-	private String sellerAreaId;
+	private Long sellerAreaId;
 
 	/** 卖家地址 */
 	private String sellerAddress;
@@ -45,7 +45,7 @@ public class DeliverySendRequest implements TopRequest {
 	/** 卖家备注 */
 	private String sellerMemo;
 
-	public void setTid(String tid) {
+	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 
@@ -65,7 +65,7 @@ public class DeliverySendRequest implements TopRequest {
 		this.sellerName = sellerName;
 	}
 
-	public void setSellerAreaId(String sellerAreaId) {
+	public void setSellerAreaId(Long sellerAreaId) {
 		this.sellerAreaId = sellerAreaId;
 	}
 

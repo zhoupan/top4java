@@ -19,7 +19,7 @@ public class ProductsSearchRequest implements TopRequest {
 	private String query;
 
 	/** 类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 关键属性串 */
 	private String props;
@@ -38,7 +38,7 @@ public class ProductsSearchRequest implements TopRequest {
 		this.query = query;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 

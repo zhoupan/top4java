@@ -17,13 +17,13 @@ public class ItemPropsGetRequest implements TopRequest {
 	private String fields;
 
 	/** 叶子类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 属性编号 */
-	private String pid;
+	private Long pid;
 
 	/** 父属性编号 */
-	private String parentPid;
+	private Long parentPid;
 
 	/** 是否关键属性 */
 	private Boolean keyProp;
@@ -50,15 +50,15 @@ public class ItemPropsGetRequest implements TopRequest {
 		this.fields = fields;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 
-	public void setPid(String pid) {
+	public void setPid(Long pid) {
 		this.pid = pid;
 	}
 
-	public void setParentPid(String parentPid) {
+	public void setParentPid(Long parentPid) {
 		this.parentPid = parentPid;
 	}
 

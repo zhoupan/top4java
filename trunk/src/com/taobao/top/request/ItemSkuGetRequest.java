@@ -16,7 +16,7 @@ public class ItemSkuGetRequest implements TopRequest {
 	private String fields;
 
 	/** SKU的编号 */
-	private String skuId;
+	private Long skuId;
 
 	/** SKU所属用户的昵称 */
 	private String nick;
@@ -25,7 +25,7 @@ public class ItemSkuGetRequest implements TopRequest {
 		this.fields = fields;
 	}
 
-	public void setSkuId(String skuId) {
+	public void setSkuId(Long skuId) {
 		this.skuId = skuId;
 	}
 

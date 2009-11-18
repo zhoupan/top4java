@@ -19,7 +19,7 @@ public class ItemsOnsaleGetRequest implements TopRequest {
 	private String query;
 
 	/** 类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 卖家店铺内自定义类目编号 */
 	private String sellerCids;
@@ -47,7 +47,7 @@ public class ItemsOnsaleGetRequest implements TopRequest {
 		this.query = query;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 

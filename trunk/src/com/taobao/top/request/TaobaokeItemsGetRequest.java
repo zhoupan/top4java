@@ -22,7 +22,7 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 	private String keyword;
 
 	/** 商品所属分类编号 */
-	private String cid;
+	private Long cid;
 
 	/** 起始价格 */
 	private String startPrice;
@@ -78,7 +78,7 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 		this.keyword = keyword;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 

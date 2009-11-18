@@ -20,7 +20,7 @@ public class ItemCatsGetRequest implements TopRequest {
 	private String cids;
 
 	/** 父商品类目编号 */
-	private String parentCid;
+	private Long parentCid;
 
 	/** 时间戳 */
 	private Date dateTime;
@@ -33,7 +33,7 @@ public class ItemCatsGetRequest implements TopRequest {
 		this.cids = cids;
 	}
 
-	public void setParentCid(String parentCid) {
+	public void setParentCid(Long parentCid) {
 		this.parentCid = parentCid;
 	}
 

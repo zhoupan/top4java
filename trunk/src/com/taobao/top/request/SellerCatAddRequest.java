@@ -19,7 +19,7 @@ public class SellerCatAddRequest implements TopRequest {
 	private String picUrl;
 
 	/** 父类目编号 */
-	private String parentCid;
+	private Long parentCid;
 
 	/** 该类目在页面上的排序位置 */
 	private Integer position;
@@ -32,7 +32,7 @@ public class SellerCatAddRequest implements TopRequest {
 		this.picUrl = picUrl;
 	}
 
-	public void setParentCid(String parentCid) {
+	public void setParentCid(Long parentCid) {
 		this.parentCid = parentCid;
 	}
 

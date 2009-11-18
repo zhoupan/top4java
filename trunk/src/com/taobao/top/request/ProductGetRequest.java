@@ -16,10 +16,10 @@ public class ProductGetRequest implements TopRequest {
 	private String fields;
 
 	/** 产品编号 */
-	private String productId;
+	private Long productId;
 
 	/** 商品类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 关键属性列表 */
 	private String props;
@@ -28,11 +28,11 @@ public class ProductGetRequest implements TopRequest {
 		this.fields = fields;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 

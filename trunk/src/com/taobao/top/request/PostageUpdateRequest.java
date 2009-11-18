@@ -20,7 +20,7 @@ public class PostageUpdateRequest implements TopRequest {
 	private String memo;
 
 	/** 邮费模板编号 */
-	private String postageId;
+	private Long postageId;
 
 	/** 平邮费用 */
 	private String postPrice;
@@ -51,7 +51,7 @@ public class PostageUpdateRequest implements TopRequest {
 		this.memo = memo;
 	}
 
-	public void setPostageId(String postageId) {
+	public void setPostageId(Long postageId) {
 		this.postageId = postageId;
 	}
 

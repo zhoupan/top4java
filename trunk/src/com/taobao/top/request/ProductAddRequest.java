@@ -15,7 +15,7 @@ import com.taobao.top.util.TopHashMap;
 public class ProductAddRequest implements TopUploadRequest {
 
 	/** 类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 外部产品编号 */
 	private String outerId;
@@ -44,7 +44,7 @@ public class ProductAddRequest implements TopUploadRequest {
 	/** 产品主图 */
 	public FileItem image;
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 

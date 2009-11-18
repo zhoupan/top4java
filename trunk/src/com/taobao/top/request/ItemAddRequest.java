@@ -20,7 +20,7 @@ public class ItemAddRequest implements TopUploadRequest {
 	private String approveStatus;
 
 	/** 叶子类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 商品属性列表 */
 	private String props;
@@ -89,7 +89,7 @@ public class ItemAddRequest implements TopUploadRequest {
 	public FileItem image;
 
 	/** 宝贝所属的运费模板编号 */
-	private String postageId;
+	private Long postageId;
 
 	/** 商品的积分返点比例 */
 	private Integer auctionPoint;
@@ -122,7 +122,7 @@ public class ItemAddRequest implements TopUploadRequest {
 	private String outerId;
 
 	/** 商品所属的产品编号 */
-	private String productId;
+	private Long productId;
 
 	/** 商口图片空间相对地址 */
 	private String picPath;
@@ -131,7 +131,7 @@ public class ItemAddRequest implements TopUploadRequest {
 		this.approveStatus = approveStatus;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 
@@ -223,7 +223,7 @@ public class ItemAddRequest implements TopUploadRequest {
 		this.image = image;
 	}
 
-	public void setPostageId(String postageId) {
+	public void setPostageId(Long postageId) {
 		this.postageId = postageId;
 	}
 
@@ -267,7 +267,7 @@ public class ItemAddRequest implements TopUploadRequest {
 		this.outerId = outerId;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 

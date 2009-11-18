@@ -41,7 +41,7 @@ public class Item extends BaseObject {
 
 	/** 商品所属的叶子类目 */
 	@JsonProperty("cid")
-	private String cid;
+	private Long cid;
 
 	/** 商品所属的店铺内卖家自定义类目列表 */
 	@JsonProperty("seller_cids")
@@ -145,11 +145,11 @@ public class Item extends BaseObject {
 
 	/** 宝贝所属的运费模板编号 */
 	@JsonProperty("postage_id")
-	private String postageId;
+	private Long postageId;
 
 	/** 宝贝所属产品的编号 */
 	@JsonProperty("product_id")
-	private String productId;
+	private Long productId;
 
 	/** 返点比例 */
 	@JsonProperty("auction_point")
@@ -239,11 +239,11 @@ public class Item extends BaseObject {
 		this.type = type;
 	}
 
-	public String getCid() {
+	public Long getCid() {
 		return this.cid;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 
@@ -439,19 +439,19 @@ public class Item extends BaseObject {
 		this.approveStatus = approveStatus;
 	}
 
-	public String getPostageId() {
+	public Long getPostageId() {
 		return this.postageId;
 	}
 
-	public void setPostageId(String postageId) {
+	public void setPostageId(Long postageId) {
 		this.postageId = postageId;
 	}
 
-	public String getProductId() {
+	public Long getProductId() {
 		return this.productId;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 

@@ -13,9 +13,9 @@ import com.taobao.top.util.TopHashMap;
 public class PostageDeleteRequest implements TopRequest {
 
 	/** 邮费模板编号 */
-	private String postageId;
+	private Long postageId;
 
-	public void setPostageId(String postageId) {
+	public void setPostageId(Long postageId) {
 		this.postageId = postageId;
 	}
 

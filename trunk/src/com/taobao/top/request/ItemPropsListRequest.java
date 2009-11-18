@@ -13,9 +13,9 @@ import com.taobao.top.util.TopHashMap;
 public class ItemPropsListRequest implements TopRequest {
 
 	/** 叶子类目编号 */
-	private String cid;
+	private Long cid;
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 

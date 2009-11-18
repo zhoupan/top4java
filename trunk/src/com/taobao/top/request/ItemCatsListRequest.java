@@ -13,12 +13,12 @@ import com.taobao.top.util.TopHashMap;
 public class ItemCatsListRequest implements TopRequest {
 
 	/** 父商品类目编号 */
-	private String parentCid;
+	private Long parentCid;
 
 	/** 类目编号列表 */
 	private String cids;
 
-	public void setParentCid(String parentCid) {
+	public void setParentCid(Long parentCid) {
 		this.parentCid = parentCid;
 	}
 
