@@ -15,7 +15,7 @@ import com.taobao.top.util.TopHashMap;
 public class ProductUpdateRequest implements TopUploadRequest {
 
 	/** 产品编号 */
-	private String productId;
+	private Long productId;
 
 	/** 外部产品编号 */
 	private String outerId;
@@ -38,7 +38,7 @@ public class ProductUpdateRequest implements TopUploadRequest {
 	/** 产品主图文件 */
 	public FileItem image;
 
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 

@@ -13,10 +13,10 @@ import com.taobao.top.util.TopHashMap;
 public class TradeRateAddRequest implements TopRequest {
 
 	/** 交易编号 */
-	private String tid;
+	private Long tid;
 
 	/** 子订单编号 */
-	private String orderId;
+	private Long orderId;
 
 	/** 评价内容 */
 	private String content;
@@ -30,11 +30,11 @@ public class TradeRateAddRequest implements TopRequest {
 	/** 评价者角色 */
 	private String role;
 
-	public void setTid(String tid) {
+	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 
-	public void setOrderId(String orderId) {
+	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
 	}
 

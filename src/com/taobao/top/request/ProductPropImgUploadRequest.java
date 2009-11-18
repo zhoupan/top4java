@@ -15,10 +15,10 @@ import com.taobao.top.util.TopHashMap;
 public class ProductPropImgUploadRequest implements TopUploadRequest {
 
 	/** 产品属性图片编号 */
-	private String imgId;
+	private Long imgId;
 
 	/** 产品编号 */
-	private String productId;
+	private Long productId;
 
 	/** 属性串 */
 	private String props;
@@ -29,11 +29,11 @@ public class ProductPropImgUploadRequest implements TopUploadRequest {
 	/** 图片序号 */
 	private Integer position;
 
-	public void setImgId(String imgId) {
+	public void setImgId(Long imgId) {
 		this.imgId = imgId;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 

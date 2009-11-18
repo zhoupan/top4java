@@ -13,19 +13,19 @@ import com.taobao.top.util.TopHashMap;
 public class ItemPropListRequest implements TopRequest {
 
 	/** 叶子类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 类目属性编号 */
-	private String pid;
+	private Long pid;
 
 	/** 类目子属性路径 */
 	private String childPropPath;
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 
-	public void setPid(String pid) {
+	public void setPid(Long pid) {
 		this.pid = pid;
 	}
 

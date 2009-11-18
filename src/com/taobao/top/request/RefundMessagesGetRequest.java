@@ -16,7 +16,7 @@ public class RefundMessagesGetRequest implements TopRequest {
 	private String fields;
 
 	/** 退款单号 */
-	private String rid;
+	private Long rid;
 
 	/** 页码 */
 	private Integer pageNo;
@@ -28,7 +28,7 @@ public class RefundMessagesGetRequest implements TopRequest {
 		this.fields = fields;
 	}
 
-	public void setRid(String rid) {
+	public void setRid(Long rid) {
 		this.rid = rid;
 	}
 

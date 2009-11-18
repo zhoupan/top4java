@@ -13,12 +13,12 @@ import com.taobao.top.util.TopHashMap;
 public class TradeConfirmFeeGetRequest implements TopRequest {
 
 	/** 交易编号 */
-	private String tid;
+	private Long tid;
 
 	/** 是否为子订单 */
 	private Boolean childOrder;
 
-	public void setTid(String tid) {
+	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 

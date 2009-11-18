@@ -16,7 +16,7 @@ public class CatStat extends BaseObject {
 
 	/** 类目编号 */
 	@JsonProperty("cid")
-	private String cid;
+	private Long cid;
 
 	/** 类目名称 */
 	@JsonProperty("cat_name")
@@ -38,11 +38,11 @@ public class CatStat extends BaseObject {
 	@JsonProperty("created")
 	private Date date;
 
-	public String getCid() {
+	public Long getCid() {
 		return this.cid;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 

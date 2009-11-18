@@ -19,22 +19,22 @@ public class TradeAddRequest implements TopRequest {
 	private String iids;
 
 	/** 商品销售属性列表 */
-	private String skuIds;
+	private String itemSkuIds;
 
 	/** 商品价格列表 */
-	private String prices;
+	private String itemPrices;
 
 	/** 商品购买数量列表 */
-	private String nums;
+	private String itemNums;
 
 	/** 商品标题列表 */
-	private String titles;
+	private String itemTitles;
 
 	/** 订单备注列表 */
-	private String memos;
+	private String itemMemos;
 
 	/** 商品折扣金额列表 */
-	private String discountFees;
+	private String itemDiscountFees;
 
 	/** 支付标题 */
 	private String payTitle;
@@ -81,6 +81,9 @@ public class TradeAddRequest implements TopRequest {
 	/** 店铺促销信息 */
 	private String shopPromotion;
 
+	/** 交易备注 */
+	private String tradeMemo;
+
 	/** 子订单快照信息 */
 	public Map<String, String> orderSnapshots;
 
@@ -91,28 +94,28 @@ public class TradeAddRequest implements TopRequest {
 		this.iids = iids;
 	}
 
-	public void setSkuIds(String skuIds) {
-		this.skuIds = skuIds;
+	public void setItemSkuIds(String itemSkuIds) {
+		this.itemSkuIds = itemSkuIds;
 	}
 
-	public void setPrices(String prices) {
-		this.prices = prices;
+	public void setItemPrices(String itemPrices) {
+		this.itemPrices = itemPrices;
 	}
 
-	public void setNums(String nums) {
-		this.nums = nums;
+	public void setItemNums(String itemNums) {
+		this.itemNums = itemNums;
 	}
 
-	public void setTitles(String titles) {
-		this.titles = titles;
+	public void setItemTitles(String itemTitles) {
+		this.itemTitles = itemTitles;
 	}
 
-	public void setMemos(String memos) {
-		this.memos = memos;
+	public void setItemMemos(String itemMemos) {
+		this.itemMemos = itemMemos;
 	}
 
-	public void setDiscountFees(String discountFees) {
-		this.discountFees = discountFees;
+	public void setItemDiscountFees(String itemDiscountFees) {
+		this.itemDiscountFees = itemDiscountFees;
 	}
 
 	public void setPayTitle(String payTitle) {
@@ -175,6 +178,10 @@ public class TradeAddRequest implements TopRequest {
 		this.shopPromotion = shopPromotion;
 	}
 
+	public void setTradeMemo(String tradeMemo) {
+		this.tradeMemo = tradeMemo;
+	}
+
 	public void setOrderSnapshots(Map<String, String> orderSnapshots) {
 		this.orderSnapshots = orderSnapshots;
 	}
@@ -191,12 +198,12 @@ public class TradeAddRequest implements TopRequest {
 		TopHashMap params = new TopHashMap();
 
 		params.put("iids", this.iids);
-		params.put("prices", this.prices);
-		params.put("nums", this.nums);
-		params.put("sku_ids", this.skuIds);
-		params.put("titles", this.titles);
-		params.put("order_memos", this.memos);
-		params.put("discount_fees", this.discountFees);
+		params.put("prices", this.itemPrices);
+		params.put("nums", this.itemNums);
+		params.put("sku_ids", this.itemSkuIds);
+		params.put("titles", this.itemTitles);
+		params.put("order_memos", this.itemMemos);
+		params.put("discount_fees", this.itemDiscountFees);
 		params.put("pay_title", this.payTitle);
 		params.put("seller_nick", this.sellerNick);
 		params.put("buyer_nick", this.buyerNick);
@@ -218,6 +225,7 @@ public class TradeAddRequest implements TopRequest {
 
 		params.put("receiver_name", this.receiverName);
 		params.put("shop_promotion", this.shopPromotion);
+		params.put("trade_memo", this.tradeMemo);
 		params.put("phone", this.phone);
 		params.put("mobile", this.mobile);
 

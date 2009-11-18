@@ -22,7 +22,7 @@ public class Order extends BaseObject {
 
 	/** 商品的最小属性单元SKU的编号 */
 	@JsonProperty("sku_id ")
-	private String skuId;
+	private Long skuId;
 
 	/** SKU的值 */
 	@JsonProperty("sku_properties_name")
@@ -116,11 +116,11 @@ public class Order extends BaseObject {
 		this.iid = iid;
 	}
 
-	public String getSkuId() {
+	public Long getSkuId() {
 		return this.skuId;
 	}
 
-	public void setSkuId(String skuId) {
+	public void setSkuId(Long skuId) {
 		this.skuId = skuId;
 	}
 

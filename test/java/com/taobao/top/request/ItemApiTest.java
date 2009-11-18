@@ -21,7 +21,7 @@ public class ItemApiTest {
 	@Test
 	public void getItemProps() {
 		ItemPropsGetRequest req = new ItemPropsGetRequest();
-		req.setCid("111703");
+		req.setCid(111703L);
 		req.setFields("name");
 		TopClient client = TestUtils.getTestClient();
 		String rsp = client.execute(req, new StringParser());
@@ -44,7 +44,7 @@ public class ItemApiTest {
 		TopJsonRestClient client = TestUtils.getOnlineJsonClient();
 		TaobaokeItemsGetRequest req = new TaobaokeItemsGetRequest();
 		req.setFields("iid,title,nick");
-		req.setCid("0");
+		req.setCid(0L);
 		req.setNick("hz0799");
 		System.out.println(client.getResponse(req));
 	}

@@ -13,16 +13,16 @@ import com.taobao.top.util.TopHashMap;
 public class ProductImgDeleteRequest implements TopRequest {
 
 	/** 产品多图图片编号 */
-	private String imgId;
+	private Long imgId;
 
 	/** 产品编号 */
-	private String productId;
+	private Long productId;
 
-	public void setImgId(String imgId) {
+	public void setImgId(Long imgId) {
 		this.imgId = imgId;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 

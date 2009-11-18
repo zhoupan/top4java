@@ -16,7 +16,7 @@ public class SellerCatUpdateRequest implements TopRequest {
 	private String name;
 
 	/** 卖家自定义类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 该类目的链接图片地址 */
 	private String picUrl;
@@ -28,7 +28,7 @@ public class SellerCatUpdateRequest implements TopRequest {
 		this.name = name;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 

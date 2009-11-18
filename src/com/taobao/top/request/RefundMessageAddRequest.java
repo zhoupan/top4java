@@ -15,7 +15,7 @@ import com.taobao.top.util.TopHashMap;
 public class RefundMessageAddRequest implements TopUploadRequest {
 
 	/** 退款编号 */
-	private String rid;
+	private Long rid;
 
 	/** 退款留言内容 */
 	private String content;
@@ -26,7 +26,7 @@ public class RefundMessageAddRequest implements TopUploadRequest {
 	/** 留言凭证 */
 	public FileItem image;
 
-	public void setRid(String rid) {
+	public void setRid(Long rid) {
 		this.rid = rid;
 	}
 

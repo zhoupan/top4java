@@ -17,7 +17,7 @@ public class ItemsDownloadRequest implements TopRequest {
 	private String sellerCids;
 
 	/** 商品所属的类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 匹配关键词 */
 	private String query;
@@ -35,7 +35,7 @@ public class ItemsDownloadRequest implements TopRequest {
 		this.sellerCids = sellerCids;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 

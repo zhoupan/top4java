@@ -17,7 +17,7 @@ public class LogisticsOrdersDetailGetRequest implements TopRequest {
 	private String fields;
 
 	/** 交易编号 */
-	private String tid;
+	private Long tid;
 
 	/** 买家昵称 */
 	private String buyerNick;
@@ -53,7 +53,7 @@ public class LogisticsOrdersDetailGetRequest implements TopRequest {
 		this.fields = fields;
 	}
 
-	public void setTid(String tid) {
+	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 

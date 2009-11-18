@@ -23,7 +23,7 @@ public class ItemsSearchRequest implements TopRequest {
 	private String nicks;
 
 	/** 商品所属类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 商品最低价格 */
 	private String startPrice;
@@ -43,8 +43,8 @@ public class ItemsSearchRequest implements TopRequest {
 	/** 商品属性 */
 	private String props;
 
-	/** 可以根据产品编号搜索属于这个SPU的商品 */
-	private String productId;
+	/** 产品编号 */
+	private Long productId;
 
 	/** 旺旺在线状态 */
 	private String wwStatus;
@@ -67,7 +67,7 @@ public class ItemsSearchRequest implements TopRequest {
 		this.nicks = nicks;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 
@@ -95,7 +95,7 @@ public class ItemsSearchRequest implements TopRequest {
 		this.props = props;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 

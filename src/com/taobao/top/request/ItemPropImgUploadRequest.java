@@ -15,7 +15,7 @@ import com.taobao.top.util.TopHashMap;
 public class ItemPropImgUploadRequest implements TopUploadRequest {
 
 	/** 属性图片编号 */
-	private String imgId;
+	private Long imgId;
 
 	/** 商品编号 */
 	private String iid;
@@ -29,7 +29,7 @@ public class ItemPropImgUploadRequest implements TopUploadRequest {
 	/** 属性图片内容 */
 	public FileItem image;
 
-	public void setImgId(String imgId) {
+	public void setImgId(Long imgId) {
 		this.imgId = imgId;
 	}
 

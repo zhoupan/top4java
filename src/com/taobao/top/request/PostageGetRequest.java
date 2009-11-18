@@ -16,7 +16,7 @@ public class PostageGetRequest implements TopRequest {
 	private String fields;
 
 	/** 模板编号 */
-	private String postageId;
+	private Long postageId;
 
 	/** 卖家昵称 */
 	private String nick;
@@ -25,7 +25,7 @@ public class PostageGetRequest implements TopRequest {
 		this.fields = fields;
 	}
 
-	public void setPostageId(String postageId) {
+	public void setPostageId(Long postageId) {
 		this.postageId = postageId;
 	}
 

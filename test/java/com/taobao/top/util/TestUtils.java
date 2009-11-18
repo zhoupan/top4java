@@ -17,9 +17,14 @@ public abstract class TestUtils {
 
 	private static final String TOP_TEST_URL = "http://gw.api.tbsandbox.com/router/rest";
 	private static final String TOP_ONLINE_URL = "http://gw.api.taobao.com/router/rest";
+	private static final String TOP_PRIVATE_URL = "http://192.168.208.110:8080/top/private/services/rest";
 
 	public static TopClient getTestClient() {
 		return new TopRestClient(TOP_TEST_URL, "12011932", "a12489406d7a8de453bc9d3b15229cba");
+	}
+
+	public static TopClient getPrivateClient() {
+		return new TopRestClient(TOP_PRIVATE_URL, "27230", "55a3e494ecb821697286527ce5186055");
 	}
 
 	public static TopClient getOnlineClient() {

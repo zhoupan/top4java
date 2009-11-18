@@ -16,13 +16,13 @@ public class TradeSnapshotGetRequest implements TopRequest {
 	private String fields;
 
 	/** 交易编号 */
-	private String tid;
+	private Long tid;
 
 	public void setFields(String fields) {
 		this.fields = fields;
 	}
 
-	public void setTid(String tid) {
+	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 

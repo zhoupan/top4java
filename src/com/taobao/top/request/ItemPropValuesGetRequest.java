@@ -17,7 +17,7 @@ public class ItemPropValuesGetRequest implements TopRequest {
 	private String fields;
 
 	/** 叶子类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 属性和属性值编号串 */
 	private String pvs;
@@ -29,7 +29,7 @@ public class ItemPropValuesGetRequest implements TopRequest {
 		this.fields = fields;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 

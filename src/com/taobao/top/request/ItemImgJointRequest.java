@@ -13,7 +13,7 @@ import com.taobao.top.util.TopHashMap;
 public class ItemImgJointRequest implements TopRequest {
 
 	/** 商品图片编号 */
-	private String imgId;
+	private Long imgId;
 
 	/** 商品编号 */
 	private String iid;
@@ -24,7 +24,7 @@ public class ItemImgJointRequest implements TopRequest {
 	/** 商品图片地址 */
 	private String url;
 
-	public void setImgId(String imgId) {
+	public void setImgId(Long imgId) {
 		this.imgId = imgId;
 	}
 

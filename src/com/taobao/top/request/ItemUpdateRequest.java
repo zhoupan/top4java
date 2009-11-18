@@ -23,7 +23,7 @@ public class ItemUpdateRequest implements TopUploadRequest {
 	private String approveStatus;
 
 	/** 叶子类目编号 */
-	private String cid;
+	private Long cid;
 
 	/** 商品属性列表 */
 	private String props;
@@ -110,7 +110,7 @@ public class ItemUpdateRequest implements TopUploadRequest {
 	private String skuProps;
 
 	/** 宝贝所属的运费模板编号 */
-	private String postageId;
+	private Long postageId;
 
 	/** 商品文字的版本 */
 	private String language;
@@ -129,7 +129,7 @@ public class ItemUpdateRequest implements TopUploadRequest {
 		this.approveStatus = approveStatus;
 	}
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 
@@ -245,7 +245,7 @@ public class ItemUpdateRequest implements TopUploadRequest {
 		this.skuProps = skuProps;
 	}
 
-	public void setPostageId(String postageId) {
+	public void setPostageId(Long postageId) {
 		this.postageId = postageId;
 	}
 
