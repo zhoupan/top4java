@@ -6,11 +6,15 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.taobao.top.TopClient;
 import com.taobao.top.domain.Location;
+import com.taobao.top.domain.Trade;
 import com.taobao.top.parser.StringParser;
+import com.taobao.top.parser.json.ObjectJsonParser;
 import com.taobao.top.util.TestUtils;
 
 /**
@@ -21,7 +25,18 @@ import com.taobao.top.util.TestUtils;
  */
 public class TradeApiTest {
 
-	private TopClient client = TestUtils.getPrivateClient();
+	private static TopClient client = TestUtils.getPrivateClient();
+	private static Trade trade;
+
+	@BeforeClass
+	public static void beforeClass() {
+		trade = addTrade();
+	}
+
+	@AfterClass
+	public static void afterClass() {
+		closeTrade();
+	}
 
 	@Test
 	public void getSoldTrades() throws Exception {
@@ -62,37 +77,9 @@ public class TradeApiTest {
 		System.out.println(rsp);
 	}
 
-	@Test
 	public void addSingleTrade() {
-		TradeAddRequest request = new TradeAddRequest();
-		request.setItemTitles("山寨版测试机器");
-		request.setIids("2ed1ec695bfe3ad769e04fa6d42c2ebb");
-		request.setItemSkuIds("5979494");
-		request.setItemPrices("222.22");
-		request.setItemNums("2");
-		request.setSellerNick("tbtest1063");
-		Location location = new Location();
-		location.setState("地球省");
-		location.setCity("火星市");
-		location.setDistrict("山寨区");
-		location.setAddress("911号");
-		location.setZip("123456");
-		request.setLocation(location);
-		request.setAreaCode("123456");
-		request.setReceiverName("任我行");
-		request.setPhone("123456789");
-		request.setMobile("123654789");
-		request.setTradeMemo("i love you");
-		request.setType("independent_simple_trade");
-		request.setLogisticsType("post");
-		request.setLogisticsFee("10.0");
-		request.setSnapshot("snapshot");
-		Map<String, String> orderSnap = new HashMap<String, String>();
-		orderSnap.put("snapshot_29e5b5d76cb3dc2b627cb3f94988592f_", "xxx");
-		request.setOrderSnapshots(orderSnap);
-		TopRequest proxy = new TopRequestProxy(request, "tbtest561");
-		String rsp = client.execute(proxy, new StringParser());
-		System.out.println(rsp);
+		Trade trade = addTrade();
+		System.out.println(trade.getTid());
 	}
 
 	@Test
@@ -129,10 +116,10 @@ public class TradeApiTest {
 	}
 
 	@Test
-	public void closeTrade() {
-		TradeCloseRequest req = new TradeCloseRequest();
-		req.setTid(2231978082L);
-		req.setReason("I don't want to pay you");
+	public void addTradeMemo() {
+		TradeMemoAddRequest req = new TradeMemoAddRequest();
+		req.setTid(trade.getTid());
+		req.setMemo("i love you");
 		TopRequest proxy = new TopRequestProxy(req, "tbtest1063");
 		String rsp = client.execute(proxy, new StringParser());
 		System.out.println(rsp);
@@ -154,7 +141,7 @@ public class TradeApiTest {
 	public void getTrade() {
 		TradeGetRequest req = new TradeGetRequest();
 		req.setFields("orders,buyer_nick,post_fee,type,seller_nick,iid,tid,sid,created,title,pic_path,payment,created,price,num,tid,refund_status,sku_id,modified,total_fee,seller_memo");
-		req.setTid(2231878770L);
+		req.setTid(trade.getTid());
 		TopRequest proxy = new TopRequestProxy(req, "tbtest1063");
 		String rsp = client.execute(proxy, new StringParser());
 		System.out.println(rsp);
@@ -198,16 +185,6 @@ public class TradeApiTest {
 		req.setTid(11459832L);
 		req.setChildOrder(true);
 		TopRequest proxy = new TopRequestProxy(req, "tbtest5");
-		String rsp = client.execute(proxy, new StringParser());
-		System.out.println(rsp);
-	}
-
-	@Test
-	public void addTradeMemo() {
-		TradeMemoAddRequest req = new TradeMemoAddRequest();
-		req.setTid(2231958349L);
-		req.setMemo("i love you");
-		TopRequest proxy = new TopRequestProxy(req, "tbtest1063");
 		String rsp = client.execute(proxy, new StringParser());
 		System.out.println(rsp);
 	}
@@ -272,6 +249,46 @@ public class TradeApiTest {
 		req.setRid(127305L);
 		req.setPageSize(1);
 		TopRequest proxy = new TopRequestProxy(req, "tbtest1202");
+		String rsp = client.execute(proxy, new StringParser());
+		System.out.println(rsp);
+	}
+
+	private static Trade addTrade() {
+		TradeAddRequest request = new TradeAddRequest();
+		request.setItemTitles("你信春哥还是曾哥");
+		request.setIids("20ee6454727484dd0581aad0dda0c338");
+		request.setItemSkuIds("5946542");
+		request.setItemPrices("222.22");
+		request.setItemNums("2");
+		request.setSellerNick("tbtest1063");
+		Location location = new Location();
+		location.setState("地球省");
+		location.setCity("火星市");
+		location.setDistrict("山寨区");
+		location.setAddress("911号");
+		location.setZip("123456");
+		request.setLocation(location);
+		request.setAreaCode("123456");
+		request.setReceiverName("任我行");
+		request.setPhone("123456789");
+		request.setMobile("123654789");
+		request.setTradeMemo("i love you");
+		request.setType("independent_simple_trade");
+		request.setLogisticsType("post");
+		request.setLogisticsFee("10.0");
+		request.setSnapshot("snapshot");
+		Map<String, String> orderSnap = new HashMap<String, String>();
+		orderSnap.put("snapshot_29e5b5d76cb3dc2b627cb3f94988592f_", "xxx");
+		request.setOrderSnapshots(orderSnap);
+		TopRequest proxy = new TopRequestProxy(request, "tbtest561");
+		return client.execute(proxy, new ObjectJsonParser<Trade>(Trade.class));
+	}
+
+	private static void closeTrade() {
+		TradeCloseRequest req = new TradeCloseRequest();
+		req.setTid(trade.getTid());
+		req.setReason("I don't want to pay you");
+		TopRequest proxy = new TopRequestProxy(req, "tbtest1063");
 		String rsp = client.execute(proxy, new StringParser());
 		System.out.println(rsp);
 	}
