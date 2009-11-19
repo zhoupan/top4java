@@ -57,4 +57,13 @@ public class ItemApiTest {
 		System.out.println(rsp);
 	}
 
+	@Test
+	public void getItemCats() {
+		ItemCatsGetRequest req = new ItemCatsGetRequest();
+		req.setCids("50008898");
+		TopClient client = TestUtils.getPrivateClient();
+		String rsp = client.execute(req, new StringParser());
+		System.out.println(rsp);
+	}
+
 }
