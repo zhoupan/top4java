@@ -349,8 +349,18 @@ public abstract class WebUtils {
 	 * @param value 参数值
 	 * @return 反编码后的参数值
 	 */
-	public static String decodeParameter(String value) {
-		return decodeParameter(value, DEFAULT_CHARSET);
+	public static String decode(String value) {
+		return decode(value, DEFAULT_CHARSET);
+	}
+
+	/**
+	 * 使用默认的UTF-8字符集编码请求参数值。
+	 * 
+	 * @param value 参数值
+	 * @return 编码后的参数值
+	 */
+	public static String encode(String value) {
+		return encode(value, DEFAULT_CHARSET);
 	}
 
 	/**
@@ -360,11 +370,30 @@ public abstract class WebUtils {
 	 * @param charset 字符集
 	 * @return 反编码后的参数值
 	 */
-	public static String decodeParameter(String value, String charset) {
+	public static String decode(String value, String charset) {
 		String result = null;
 		if (!StrUtils.isEmpty(value)) {
 			try {
 				result = URLDecoder.decode(value, charset);
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * 使用指定的字符集编码请求参数值。
+	 * 
+	 * @param value 参数值
+	 * @param charset 字符集
+	 * @return 编码后的参数值
+	 */
+	public static String encode(String value, String charset) {
+		String result = null;
+		if (!StrUtils.isEmpty(value)) {
+			try {
+				result = URLEncoder.encode(value, charset);
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
