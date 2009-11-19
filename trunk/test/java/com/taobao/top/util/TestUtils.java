@@ -53,4 +53,8 @@ public abstract class TestUtils {
 		return out.toString();
 	}
 
+	public static FileItem GetResourceAsFileItem(String fileName) {
+		return null;
+	}
+
 }

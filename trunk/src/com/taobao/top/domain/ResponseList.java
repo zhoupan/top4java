@@ -62,4 +62,15 @@ public class ResponseList<T> {
 		return content == null || content.isEmpty();
 	}
 
+	/**
+	 * 获取实际返回的记录数。
+	 */
+	public long getReturnResults() {
+		if (isEmpty()) {
+			return 0;
+		} else {
+			return content.size();
+		}
+	}
+
 }
