@@ -110,7 +110,7 @@ public abstract class TopUtils {
 
 		TopContext context = new TopContext();
 
-		Set<Entry<String, String>> paramSet = splitUrlQuery(rsp).entrySet();
+		Set<Entry<String, String>> paramSet = WebUtils.splitUrlQuery(rsp).entrySet();
 		for (Entry<String, String> param : paramSet) {
 			if (TopContext.PARAMETERS.equals(param.getKey())) {
 				context.addParameters(decodeTopParams(param.getValue()));
@@ -138,7 +138,7 @@ public abstract class TopUtils {
 		byte[] buffer = decoder.decodeBuffer(WebUtils.decodeParameter(topParams));
 		String originTopParams = new String(buffer, Constants.CHARSET_GBK);
 
-		return splitUrlQuery(originTopParams);
+		return WebUtils.splitUrlQuery(originTopParams);
 	}
 
 	/**
@@ -202,22 +202,6 @@ public abstract class TopUtils {
 		StringBuilder url = new StringBuilder(Constants.PRODUCT_CONTAINER_URL);
 		url.append("?authcode=").append(authCode);
 		return url.toString();
-	}
-
-	private static Map<String, String> splitUrlQuery(String query) {
-		Map<String, String> result = new HashMap<String, String>();
-
-		String[] pairs = query.split("&");
-		if (pairs != null && pairs.length > 0) {
-			for (String pair : pairs) {
-				String[] param = pair.split("=", 2);
-				if (param != null && param.length == 2) {
-					result.put(param[0], param[1]);
-				}
-			}
-		}
-
-		return result;
 	}
 
 	/**
