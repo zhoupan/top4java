@@ -15,6 +15,7 @@ import com.taobao.top.domain.Location;
 import com.taobao.top.domain.Trade;
 import com.taobao.top.parser.StringParser;
 import com.taobao.top.parser.json.ObjectJsonParser;
+import com.taobao.top.util.DateUtils;
 import com.taobao.top.util.TestUtils;
 
 /**
@@ -42,10 +43,9 @@ public class TradeApiTest {
 	public void getSoldTrades() throws Exception {
 		TradesSoldGetRequest req = new TradesSoldGetRequest();
 		req.setFields("seller_nick,buyer_nick,title,type,created,sid,tid,seller_rate,buyer_rate,status,payment,discount_fee,adjust_fee,post_fee,total_fee,pay_time,end_time,modified,consign_time,buyer_obtain_point_fee,point_fee,real_point_fee,received_payment,commission_fee,buyer_memo,seller_memo,alipay_no,buyer_message,pic_path,iid,num,price,cod_fee,shipping_type,orders");
-		DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		req.setStartCreated(format.parse("2009-11-12"));
-		req.setEndCreated(new Date());
-		req.setPageSize(1);
+		req.setStartCreated(DateUtils.getYesterdayStart());
+		req.setEndCreated(DateUtils.getYesterdayEnd());
+		req.setPageSize(10);
 		TopRequest proxy = new TopRequestProxy(req, "tbtest1063");
 		String rsp = client.execute(proxy, new StringParser());
 		System.out.println(rsp);
@@ -55,10 +55,9 @@ public class TradeApiTest {
 	public void getBoughtTrades() throws Exception {
 		TradesBoughtGetRequest req = new TradesBoughtGetRequest();
 		req.setFields("seller_nick,buyer_nick,title,type,created,sid,tid,seller_rate,buyer_rate,status,payment,discount_fee,adjust_fee,post_fee,total_fee,pay_time,end_time,modified,consign_time,buyer_obtain_point_fee,point_fee,real_point_fee,received_payment,commission_fee,buyer_memo,seller_memo,alipay_no,buyer_message,pic_path,iid,num,price,cod_fee,shipping_type,orders");
-		DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		req.setStartCreated(format.parse("2009-01-10"));
-		req.setEndCreated(format.parse("2009-09-11"));
-		req.setPageSize(1);
+		req.setStartCreated(DateUtils.getYesterdayStart());
+		req.setEndCreated(DateUtils.getYesterdayEnd());
+		req.setPageSize(10);
 		TopRequest proxy = new TopRequestProxy(req, "tbtest1063");
 		String rsp = client.execute(proxy, new StringParser());
 		System.out.println(rsp);
@@ -68,10 +67,9 @@ public class TradeApiTest {
 	public void getIncrementSoldTrades() throws Exception {
 		TradesSoldIncrementGetRequest req = new TradesSoldIncrementGetRequest();
 		req.setFields("seller_nick,buyer_nick,title,type,created,sid,tid,seller_rate,buyer_rate,status,payment,discount_fee,adjust_fee,post_fee,total_fee,pay_time,end_time,modified,consign_time,buyer_obtain_point_fee,point_fee,real_point_fee,received_payment,commission_fee,buyer_memo,seller_memo,alipay_no,buyer_message,pic_path,iid,num,price,cod_fee,shipping_type,orders");
-		DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		req.setStartModified(format.parse("2009-11-10"));
-		req.setEndModified(format.parse("2009-11-11"));
-		req.setPageSize(1);
+		req.setStartModified(DateUtils.getYesterdayStart());
+		req.setEndModified(DateUtils.getYesterdayEnd());
+		req.setPageSize(10);
 		TopRequest proxy = new TopRequestProxy(req, "tbtest1063");
 		String rsp = client.execute(proxy, new StringParser());
 		System.out.println(rsp);
@@ -204,7 +202,7 @@ public class TradeApiTest {
 		RefundsAppliedGetRequest req = new RefundsAppliedGetRequest();
 		req.setFields("refund_id,tid,title,buyer_nick,seller_nick,total_fee,status,created,refund_fee");
 		req.setStatus("SUCCESS");
-		req.setPageSize(1);
+		req.setPageSize(10);
 		TopRequest proxy = new TopRequestProxy(req, "tbtest561");
 		String rsp = client.execute(proxy, new StringParser());
 		System.out.println(rsp);
@@ -215,7 +213,7 @@ public class TradeApiTest {
 		RefundsReceivedGetRequest req = new RefundsReceivedGetRequest();
 		req.setFields("refund_id,tid,title,buyer_nick,seller_nick,total_fee,status,created,refund_fee,oid,good_status,company_name,sid,payment,reason,desc,has_good_return,modified,order_status");
 		req.setStatus("SUCCESS");
-		req.setPageSize(1);
+		req.setPageSize(10);
 		TopRequest proxy = new TopRequestProxy(req, "tbtest561");
 		String rsp = client.execute(proxy, new StringParser());
 		System.out.println(rsp);
@@ -247,7 +245,7 @@ public class TradeApiTest {
 		RefundMessagesGetRequest req = new RefundMessagesGetRequest();
 		req.setFields("id,refund_id,owner_id,owner_nick,owner_role,content,pic_urls,created");
 		req.setRid(127305L);
-		req.setPageSize(1);
+		req.setPageSize(10);
 		TopRequest proxy = new TopRequestProxy(req, "tbtest1202");
 		String rsp = client.execute(proxy, new StringParser());
 		System.out.println(rsp);
