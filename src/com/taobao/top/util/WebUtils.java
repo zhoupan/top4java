@@ -10,6 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
@@ -368,6 +369,28 @@ public abstract class WebUtils {
 				throw new RuntimeException(e);
 			}
 		}
+		return result;
+	}
+
+	/**
+	 * 从URL中提取所有的参数。
+	 * 
+	 * @param query URL地址
+	 * @return 参数映射
+	 */
+	public static Map<String, String> splitUrlQuery(String query) {
+		Map<String, String> result = new HashMap<String, String>();
+
+		String[] pairs = query.split("&");
+		if (pairs != null && pairs.length > 0) {
+			for (String pair : pairs) {
+				String[] param = pair.split("=", 2);
+				if (param != null && param.length == 2) {
+					result.put(param[0], param[1]);
+				}
+			}
+		}
+
 		return result;
 	}
 
