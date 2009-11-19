@@ -100,21 +100,14 @@ public abstract class WebUtils {
 	public static String doPost(String url, String ctype, byte[] content) throws IOException {
 		HttpURLConnection conn = null;
 		OutputStream out = null;
-		InputStream in = null;
 		String rsp = null;
 
 		try {
 			conn = getConnection(new URL(url), METHOD_POST, ctype);
 			out = conn.getOutputStream();
 			out.write(content);
-			if (HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
-				in = conn.getInputStream();
-				rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
-			}
+			rsp = getResponseAsString(conn);
 		} finally {
-			if (in != null) {
-				in.close();
-			}
 			if (out != null) {
 				out.close();
 			}
@@ -163,7 +156,6 @@ public abstract class WebUtils {
 		String boundary = System.currentTimeMillis() + ""; // 随机分隔线
 		HttpURLConnection conn = null;
 		OutputStream out = null;
-		InputStream in = null;
 		String rsp = null;
 
 		try {
@@ -196,14 +188,8 @@ public abstract class WebUtils {
 			byte[] endBoundaryBytes = ("\r\n--" + boundary + "--\r\n").getBytes(charset);
 			out.write(endBoundaryBytes);
 
-			if (HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
-				in = conn.getInputStream();
-				rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
-			}
+			rsp = getResponseAsString(conn);
 		} finally {
-			if (in != null) {
-				in.close();
-			}
 			if (out != null) {
 				out.close();
 			}
@@ -250,21 +236,14 @@ public abstract class WebUtils {
 	public static String doGet(String url, Map<String, String> params, String charset)
 			throws IOException {
 		HttpURLConnection conn = null;
-		InputStream in = null;
 		String rsp = null;
 
 		try {
 			String ctype = "application/x-www-form-urlencoded;charset=" + charset;
 			String query = buildQuery(params, charset);
 			conn = getConnection(buildGetUrl(url, query), METHOD_GET, ctype);
-			if (HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
-				in = conn.getInputStream();
-				rsp = getResponseAsString(in, getResponseCharset(conn.getContentType()));
-			}
+			rsp = getResponseAsString(conn);
 		} finally {
-			if (in != null) {
-				in.close();
-			}
 			if (conn != null) {
 				conn.disconnect();
 			}
@@ -337,17 +316,30 @@ public abstract class WebUtils {
 		return query.toString();
 	}
 
-	private static String getResponseAsString(InputStream in, String charset) throws IOException {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(in, charset));
-		StringWriter writer = new StringWriter();
+	private static String getResponseAsString(HttpURLConnection conn) throws IOException {
+		if (HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
+			InputStream in = null;
+			try {
+				in = conn.getInputStream();
+				String charset = getResponseCharset(conn.getContentType());
+				BufferedReader reader = new BufferedReader(new InputStreamReader(in, charset));
+				StringWriter writer = new StringWriter();
 
-		char[] chars = new char[256];
-		int count = 0;
-		while ((count = reader.read(chars)) > 0) {
-			writer.write(chars, 0, count);
+				char[] chars = new char[256];
+				int count = 0;
+				while ((count = reader.read(chars)) > 0) {
+					writer.write(chars, 0, count);
+				}
+
+				return writer.toString();
+			} finally {
+				if (in != null) {
+					in.close();
+				}
+			}
+		} else {
+			throw new IOException(conn.getResponseCode() + ":" + conn.getResponseMessage());
 		}
-
-		return writer.toString();
 	}
 
 	/**
