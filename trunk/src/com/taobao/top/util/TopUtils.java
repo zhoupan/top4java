@@ -149,8 +149,7 @@ public abstract class TopUtils {
 	 * @return 应用的上下文
 	 * @throws IOException
 	 */
-	public static String getSandboxContext(String appKey, String nick)
-			throws IOException {
+	public static TopContext getSandboxContext(String appKey, String nick) throws IOException {
 		Map<String, String> authParams = new HashMap<String, String>();
 		authParams.put("appkey", appKey);
 		authParams.put("nick", nick);
@@ -163,7 +162,19 @@ public abstract class TopUtils {
 		if (matcher.find()) {
 			String authCode = matcher.group(1);
 			String sessionUrl = getSandboxSessionUrl(authCode);
-			return WebUtils.doGet(sessionUrl, null);
+			String rsp = WebUtils.doGet(sessionUrl, null);
+			TopContext context = new TopContext();
+
+			Set<Entry<String, String>> paramSet = WebUtils.splitUrlQuery(rsp).entrySet();
+			for (Entry<String, String> param : paramSet) {
+				if (TopContext.PARAMETERS.equals(param.getKey())) {
+					context.addParameters(decodeTopParams(param.getValue()));
+				} else {
+					context.addParameter(param.getKey(), param.getValue());
+				}
+			}
+
+			return context;
 		} else {
 			return null;
 		}
