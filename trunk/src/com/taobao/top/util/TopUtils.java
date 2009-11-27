@@ -142,14 +142,14 @@ public abstract class TopUtils {
 	}
 
 	/**
-	 * 获取沙箱环境下客户端应用的会话码。
+	 * 获取沙箱环境下客户端应用的上下文。
 	 * 
 	 * @param appKey 应用编码
 	 * @param nick 用户昵称
-	 * @return 会话码
+	 * @return 应用的上下文
 	 * @throws IOException
 	 */
-	public static String getSandboxSessionKey(String appKey, String nick)
+	public static String getSandboxContext(String appKey, String nick)
 			throws IOException {
 		Map<String, String> authParams = new HashMap<String, String>();
 		authParams.put("appkey", appKey);
