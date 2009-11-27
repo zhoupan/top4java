@@ -156,6 +156,7 @@ public abstract class TopUtils {
 		authParams.put("appkey", appKey);
 		authParams.put("nick", nick);
 		authParams.put("url", callbackUrl);
+		authParams.put("zhxz", "1");
 
 		String response = WebUtils.doPost(Constants.SANDBOX_AUTHORIZE_URL, authParams);
 		String authRegex = "<input type=\"text\" id=\"autoInput\" value=\"(.+?)\" style=\".+?\">";
@@ -166,6 +167,20 @@ public abstract class TopUtils {
 		} else {
 			return null;
 		}
+	}
+
+	/**
+	 * 获取沙箱环境下客户端应用的会话码。
+	 * 
+	 * @param appKey 应用编码
+	 * @param nick 用户昵称
+	 * @return 会话码
+	 * @throws IOException
+	 */
+	public static String getSandboxSessionKey(String appKey, String nick) throws IOException {
+		String authCode = getSandboxAuthCode(appKey, nick, null);
+		String sessionUrl = getSandboxSessionUrl(authCode);
+		return WebUtils.doGet(sessionUrl, null);
 	}
 
 	/**

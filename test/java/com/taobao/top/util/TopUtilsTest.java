@@ -60,4 +60,10 @@ public class TopUtilsTest {
 		System.out.println(code);
 	}
 
+	@Test
+	public void getSandboxSessionKey() throws IOException {
+		String session = TopUtils.getSandboxSessionKey("12006610", "sandbox_c_1");
+		System.out.println(session);
+	}
+
 }
