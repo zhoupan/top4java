@@ -55,14 +55,8 @@ public class TopUtilsTest {
 	}
 
 	@Test
-	public void getSandboxAuthCode() throws IOException {
-		String code = TopUtils.getSandboxAuthCode("test", "tbtest520", "http://www.google.com/");
-		System.out.println(code);
-	}
-
-	@Test
 	public void getSandboxSessionKey() throws IOException {
-		String session = TopUtils.getSandboxSessionKey("12006610", "sandbox_c_1");
+		String session = TopUtils.getSandboxSessionKey("12006610", "alipublic01");
 		System.out.println(session);
 	}
 

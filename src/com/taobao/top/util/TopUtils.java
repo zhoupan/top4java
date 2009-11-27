@@ -142,34 +142,6 @@ public abstract class TopUtils {
 	}
 
 	/**
-	 * 获取沙箱环境下的授权码。
-	 * 
-	 * @param appKey 应用编号
-	 * @param nick 淘宝用户昵称
-	 * @param callbackUrl 回调地址
-	 * @return 授权码
-	 * @throws IOException
-	 */
-	public static String getSandboxAuthCode(String appKey, String nick, String callbackUrl)
-			throws IOException {
-		Map<String, String> authParams = new HashMap<String, String>();
-		authParams.put("appkey", appKey);
-		authParams.put("nick", nick);
-		authParams.put("url", callbackUrl);
-		authParams.put("zhxz", "1");
-
-		String response = WebUtils.doPost(Constants.SANDBOX_AUTHORIZE_URL, authParams);
-		String authRegex = "<input type=\"text\" id=\"autoInput\" value=\"(.+?)\" style=\".+?\">";
-		Pattern pattern = Pattern.compile(authRegex);
-		Matcher matcher = pattern.matcher(response);
-		if (matcher.find()) {
-			return matcher.group(1);
-		} else {
-			return null;
-		}
-	}
-
-	/**
 	 * 获取沙箱环境下客户端应用的会话码。
 	 * 
 	 * @param appKey 应用编码
@@ -177,10 +149,24 @@ public abstract class TopUtils {
 	 * @return 会话码
 	 * @throws IOException
 	 */
-	public static String getSandboxSessionKey(String appKey, String nick) throws IOException {
-		String authCode = getSandboxAuthCode(appKey, nick, null);
-		String sessionUrl = getSandboxSessionUrl(authCode);
-		return WebUtils.doGet(sessionUrl, null);
+	public static String getSandboxSessionKey(String appKey, String nick)
+			throws IOException {
+		Map<String, String> authParams = new HashMap<String, String>();
+		authParams.put("appkey", appKey);
+		authParams.put("nick", nick);
+		authParams.put("zhxz", "1");
+
+		String response = WebUtils.doPost(Constants.SANDBOX_AUTHORIZE_URL, authParams);
+		String authRegex = "<input type=\"text\" id=\"autoInput\" value=\"(.+?)\" style=\".+?\">";
+		Pattern pattern = Pattern.compile(authRegex);
+		Matcher matcher = pattern.matcher(response);
+		if (matcher.find()) {
+			String authCode = matcher.group(1);
+			String sessionUrl = getSandboxSessionUrl(authCode);
+			return WebUtils.doGet(sessionUrl, null);
+		} else {
+			return null;
+		}
 	}
 
 	/**
