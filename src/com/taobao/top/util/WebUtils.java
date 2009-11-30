@@ -44,36 +44,6 @@ public abstract class WebUtils {
 	}
 
 	/**
-	 * 执行带文件上传的HTTP POST请求。
-	 * 
-	 * @param url 请求地址
-	 * @param textParams 文本请求参数
-	 * @param fileParams 文件请求参数
-	 * @return 响应字符串
-	 * @throws IOException
-	 */
-	public static String doPost(String url, Map<String, String> textParams,
-			Map<String, FileItem> fileParams) throws IOException {
-		if (fileParams == null || fileParams.isEmpty()) {
-			return doPost(url, textParams, DEFAULT_CHARSET);
-		} else {
-			return doPost(url, textParams, fileParams, DEFAULT_CHARSET);
-		}
-	}
-
-	/**
-	 * 执行HTTP GET请求。
-	 * 
-	 * @param url 请求地址
-	 * @param params 请求参数
-	 * @return 响应字符串
-	 * @throws IOException
-	 */
-	public static String doGet(String url, Map<String, String> params) throws IOException {
-		return doGet(url, params, DEFAULT_CHARSET);
-	}
-
-	/**
 	 * 执行HTTP POST请求。
 	 * 
 	 * @param url 请求地址
@@ -120,26 +90,22 @@ public abstract class WebUtils {
 		return rsp;
 	}
 
-	private static String getResponseCharset(String ctype) {
-		String charset = DEFAULT_CHARSET;
-
-		if (!StrUtils.isEmpty(ctype)) {
-			String[] params = ctype.split(";");
-			for (String param : params) {
-				param = param.trim();
-				if (param.startsWith("charset")) {
-					String[] pair = param.split("=", 2);
-					if (pair.length == 2) {
-						if (!StrUtils.isEmpty(pair[1])) {
-							charset = pair[1].trim();
-						}
-					}
-					break;
-				}
-			}
+	/**
+	 * 执行带文件上传的HTTP POST请求。
+	 * 
+	 * @param url 请求地址
+	 * @param textParams 文本请求参数
+	 * @param fileParams 文件请求参数
+	 * @return 响应字符串
+	 * @throws IOException
+	 */
+	public static String doPost(String url, Map<String, String> textParams,
+			Map<String, FileItem> fileParams) throws IOException {
+		if (fileParams == null || fileParams.isEmpty()) {
+			return doPost(url, textParams, DEFAULT_CHARSET);
+		} else {
+			return doPost(url, textParams, fileParams, DEFAULT_CHARSET);
 		}
-
-		return charset;
 	}
 
 	/**
@@ -230,6 +196,18 @@ public abstract class WebUtils {
 	 * 
 	 * @param url 请求地址
 	 * @param params 请求参数
+	 * @return 响应字符串
+	 * @throws IOException
+	 */
+	public static String doGet(String url, Map<String, String> params) throws IOException {
+		return doGet(url, params, DEFAULT_CHARSET);
+	}
+
+	/**
+	 * 执行HTTP GET请求。
+	 * 
+	 * @param url 请求地址
+	 * @param params 请求参数
 	 * @param charset 字符集，如UTF-8, GBK, GB2312
 	 * @return 响应字符串
 	 * @throws IOException
@@ -259,8 +237,6 @@ public abstract class WebUtils {
 		conn.setRequestMethod(method);
 		conn.setDoInput(true);
 		conn.setDoOutput(true);
-		conn.setConnectTimeout(10000);
-		conn.setReadTimeout(5000);
 		conn.setRequestProperty("Accept", "text/xml,text/javascript,text/html");
 		conn.setRequestProperty("User-Agent", "Top4Java");
 		conn.setRequestProperty("Content-Type", ctype);
@@ -341,6 +317,28 @@ public abstract class WebUtils {
 		} else {
 			throw new IOException(conn.getResponseCode() + ":" + conn.getResponseMessage());
 		}
+	}
+
+	private static String getResponseCharset(String ctype) {
+		String charset = DEFAULT_CHARSET;
+
+		if (!StrUtils.isEmpty(ctype)) {
+			String[] params = ctype.split(";");
+			for (String param : params) {
+				param = param.trim();
+				if (param.startsWith("charset")) {
+					String[] pair = param.split("=", 2);
+					if (pair.length == 2) {
+						if (!StrUtils.isEmpty(pair[1])) {
+							charset = pair[1].trim();
+						}
+					}
+					break;
+				}
+			}
+		}
+
+		return charset;
 	}
 
 	/**
