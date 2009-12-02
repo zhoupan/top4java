@@ -294,28 +294,36 @@ public abstract class WebUtils {
 	}
 
 	private static String getResponseAsString(HttpURLConnection conn) throws IOException {
-		if (HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
-			InputStream in = null;
-			try {
-				in = conn.getInputStream();
-				String charset = getResponseCharset(conn.getContentType());
-				BufferedReader reader = new BufferedReader(new InputStreamReader(in, charset));
-				StringWriter writer = new StringWriter();
-
-				char[] chars = new char[256];
-				int count = 0;
-				while ((count = reader.read(chars)) > 0) {
-					writer.write(chars, 0, count);
-				}
-
-				return writer.toString();
-			} finally {
-				if (in != null) {
-					in.close();
-				}
-			}
+		String charset = getResponseCharset(conn.getContentType());
+		InputStream es = conn.getErrorStream();
+		if (es == null) {
+			return getStreamAsString(conn.getInputStream(), charset);
 		} else {
-			throw new IOException(conn.getResponseCode() + ":" + conn.getResponseMessage());
+			String msg = getStreamAsString(es, charset);
+			if (StrUtils.isEmpty(msg)) {
+				throw new IOException(conn.getResponseCode() + ":" + conn.getResponseMessage());
+			} else {
+				throw new IOException(msg);
+			}
+		}
+	}
+
+	private static String getStreamAsString(InputStream stream, String charset) throws IOException {
+		try {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(stream, charset));
+			StringWriter writer = new StringWriter();
+
+			char[] chars = new char[256];
+			int count = 0;
+			while ((count = reader.read(chars)) > 0) {
+				writer.write(chars, 0, count);
+			}
+
+			return writer.toString();
+		} finally {
+			if (stream != null) {
+				stream.close();
+			}
 		}
 	}
 
