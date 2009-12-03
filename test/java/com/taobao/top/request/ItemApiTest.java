@@ -480,10 +480,10 @@ public class ItemApiTest {
 		req.setEmsIncrease("10");
 		PostageMode mode = new PostageMode();
 		mode.setType("post;express;ems");
-		mode.setDests("710000;810000,820000;140000");
+		mode.setDests("810000,820000");
 		mode.setPrice("11;15;20");
 		mode.setIncrease("2;5;7");
-		req.setPostageMode(mode);
+		req.addPostageMode(mode);
 		TopRequest proxy = new TopRequestProxy(req, "tbtest561");
 		Postage postage = client.execute(proxy, new ObjectJsonParser<Postage>(Postage.class));
 		Assert.assertNotNull(postage);
