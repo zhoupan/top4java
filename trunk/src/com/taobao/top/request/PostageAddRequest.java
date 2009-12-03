@@ -1,5 +1,7 @@
 package com.taobao.top.request;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import com.taobao.top.domain.PostageMode;
@@ -38,7 +40,7 @@ public class PostageAddRequest implements TopRequest {
 	private String emsIncrease;
 
 	/** 运费方式 */
-	private PostageMode postageMode;
+	private List<PostageMode> postageModes;
 
 	public void setName(String name) {
 		this.name = name;
@@ -72,8 +74,15 @@ public class PostageAddRequest implements TopRequest {
 		this.emsIncrease = emsIncrease;
 	}
 
-	public void setPostageMode(PostageMode postageMode) {
-		this.postageMode = postageMode;
+	public void setPostageModes(List<PostageMode> postageModes) {
+		this.postageModes = postageModes;
+	}
+
+	public void addPostageMode(PostageMode postageMode) {
+		if (this.postageModes == null) {
+			this.postageModes = new ArrayList<PostageMode>();
+		}
+		this.postageModes.add(postageMode);
 	}
 
 	public String getApiName() {
@@ -91,11 +100,33 @@ public class PostageAddRequest implements TopRequest {
 		params.put("express_increase", this.expressIncrease);
 		params.put("ems_price", this.emsPrice);
 		params.put("ems_increase", this.emsIncrease);
-		if (this.postageMode != null) {
-			params.put("postage_mode.type", this.postageMode.getType());
-			params.put("postage_mode.dest", this.postageMode.getDests());
-			params.put("postage_mode.price", this.postageMode.getPrice());
-			params.put("postage_mode.increase", this.postageMode.getIncrease());
+
+		if (this.postageModes != null) {
+			StringBuilder types = new StringBuilder();
+			StringBuilder dests = new StringBuilder();
+			StringBuilder prices = new StringBuilder();
+			StringBuilder increases = new StringBuilder();
+
+			boolean hasPostageMode = false;
+			for (PostageMode postageMode : postageModes) {
+				if (hasPostageMode) {
+					types.append(";");
+					dests.append(";");
+					prices.append(";");
+					increases.append(";");
+				} else {
+					hasPostageMode = true;
+				}
+				types.append(postageMode.getType());
+				dests.append(postageMode.getDests());
+				prices.append(postageMode.getPrice());
+				increases.append(postageMode.getIncrease());
+			}
+
+			params.put("postage_mode_types", types);
+			params.put("postage_mode_dests", dests);
+			params.put("postage_mode_prices", prices);
+			params.put("postage_mode_increases", increases);
 		}
 
 		return params;
