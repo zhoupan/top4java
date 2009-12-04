@@ -19,6 +19,7 @@ public class TopContext {
 	public static final String USER_NICK = "visitor_nick";
 
 	private Map<String, String> parameters = new HashMap<String, String>();
+	private String callbackUrl;
 
 	/**
 	 * 获取应用编号。
@@ -99,6 +100,17 @@ public class TopContext {
 	 */
 	public void addParameter(String key, String value) {
 		this.parameters.put(key, value);
+	}
+
+	/**
+	 * 获取TOP回调过来的URL参数。
+	 */
+	public String getCallbackUrl() {
+		return this.callbackUrl;
+	}
+
+	public void setCallbackUrl(String callbackUrl) {
+		this.callbackUrl = callbackUrl;
 	}
 
 }

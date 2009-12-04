@@ -163,7 +163,9 @@ public abstract class TopUtils {
 			String authCode = matcher.group(1);
 			String sessionUrl = getSandboxSessionUrl(authCode);
 			String rsp = WebUtils.doGet(sessionUrl, null);
+
 			TopContext context = new TopContext();
+			context.setCallbackUrl(rsp);
 
 			Set<Entry<String, String>> paramSet = WebUtils.splitUrlQuery(rsp).entrySet();
 			for (Entry<String, String> param : paramSet) {
