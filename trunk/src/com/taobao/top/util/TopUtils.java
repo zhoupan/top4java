@@ -90,7 +90,7 @@ public abstract class TopUtils {
 		try {
 			return MessageDigest.getInstance("MD5");
 		} catch (NoSuchAlgorithmException e) {
-			throw new IOException(e);
+			throw new IOException(e.getMessage());
 		}
 	}
 
