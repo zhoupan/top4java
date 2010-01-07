@@ -18,12 +18,10 @@ public class TopRequestProxy implements TopRequest {
 		this.nick = nick;
 	}
 
-	@Override
 	public String getApiName() {
 		return request.getApiName();
 	}
 
-	@Override
 	public Map<String, String> getTextParams() {
 		Map<String, String> params = request.getTextParams();
 		params.put("session", "xxx");

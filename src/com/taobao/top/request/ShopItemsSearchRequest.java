@@ -89,12 +89,10 @@ public class ShopItemsSearchRequest implements TopRequest {
 		this.sortType = sortType;
 	}
 
-	@Override
 	public String getApiName() {
 		return "taobao.item.shopitem.search";
 	}
 
-	@Override
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
 		params.put("shop_id", this.shopId);
