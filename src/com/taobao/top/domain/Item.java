@@ -179,6 +179,18 @@ public class Item extends BaseObject {
 	@JsonProperty("is_timing")
 	private Boolean timing;
 
+	/** 商品所属卖家的信用等级数 */
+	@JsonProperty("score")
+	private Long score;
+
+	/** 商品30天成交量 */
+	@JsonProperty("volume")
+	private Long volume;
+
+	/** 商品30天成交量 */
+	@JsonProperty("one_station")
+	private Boolean oneStation;
+
 	/** 商品图片列表(包括主图) */
 	@JsonProperty("item_img")
 	private List<ItemImg> itemImgs;
@@ -517,6 +529,30 @@ public class Item extends BaseObject {
 
 	public void setTiming(Boolean timing) {
 		this.timing = timing;
+	}
+
+	public Long getScore() {
+		return this.score;
+	}
+
+	public void setScore(Long score) {
+		this.score = score;
+	}
+
+	public Long getVolume() {
+		return this.volume;
+	}
+
+	public void setVolume(Long volume) {
+		this.volume = volume;
+	}
+
+	public Boolean isOneStation() {
+		return this.oneStation;
+	}
+
+	public void setOneStation(Boolean oneStation) {
+		this.oneStation = oneStation;
 	}
 
 	public List<ItemImg> getItemImgs() {
