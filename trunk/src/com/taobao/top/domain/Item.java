@@ -187,7 +187,7 @@ public class Item extends BaseObject {
 	@JsonProperty("volume")
 	private Long volume;
 
-	/** 商品30天成交量 */
+	/** 是否淘1站商品 */
 	@JsonProperty("one_station")
 	private Boolean oneStation;
 
