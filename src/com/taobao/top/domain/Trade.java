@@ -113,11 +113,11 @@ public class Trade extends BaseObject {
 
 	/** 付款时间 */
 	@JsonProperty("pay_time")
-	private String payTime;
+	private Date payTime;
 
 	/** 交易成功时间 */
 	@JsonProperty("end_time")
-	private String endTime;
+	private Date endTime;
 
 	/** 买家获得积分，返点的积分 */
 	@JsonProperty("buyer_obtain_point_fee")
@@ -427,19 +427,19 @@ public class Trade extends BaseObject {
 		this.sellerMemo = sellerMemo;
 	}
 
-	public String getPayTime() {
+	public Date getPayTime() {
 		return this.payTime;
 	}
 
-	public void setPayTime(String payTime) {
+	public void setPayTime(Date payTime) {
 		this.payTime = payTime;
 	}
 
-	public String getEndTime() {
+	public Date getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(String endTime) {
+	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
 
