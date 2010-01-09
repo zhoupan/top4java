@@ -73,4 +73,18 @@ public class ResponseList<T> {
 		}
 	}
 
+	/**
+	 * 获取返回记录的总页数。
+	 */
+	public long getPageCount(long pageSize) {
+		if (this.totalResults != null) {
+			if (this.totalResults % pageSize == 0) {
+				return this.totalResults / pageSize;
+			} else {
+				return this.totalResults / pageSize + 1;
+			}
+		}
+		return 0L;
+	}
+
 }
