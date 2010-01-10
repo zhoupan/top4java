@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("prop_values")
 public class PropValue extends BaseObject {
 
+	private static final long serialVersionUID = 6376141493101433282L;
+
 	/** 类目编号 */
 	@JsonProperty("cid")
 	private Long cid;

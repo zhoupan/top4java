@@ -8,7 +8,9 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Nov 16, 2009
  */
-public class PicUrl {
+public class PicUrl extends BaseObject {
+
+	private static final long serialVersionUID = -5338320202369196055L;
 
 	/** 图片地址 */
 	@JsonProperty("url")

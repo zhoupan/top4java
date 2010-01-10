@@ -10,6 +10,8 @@ import com.taobao.top.mapping.JsonProperty;
  */
 public class RefundTimeout extends BaseObject {
 
+	private static final long serialVersionUID = -2593436128910555625L;
+
 	/** 提醒的类型 */
 	@JsonProperty("remind_type")
 	private Integer remindType;

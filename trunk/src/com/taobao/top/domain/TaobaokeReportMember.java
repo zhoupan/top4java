@@ -10,6 +10,8 @@ import com.taobao.top.mapping.JsonProperty;
  */
 public class TaobaokeReportMember extends BaseObject {
 
+	private static final long serialVersionUID = -7603395468941827238L;
+
 	/** 应用授权码 */
 	@JsonProperty("app_key")
 	private String appKey;

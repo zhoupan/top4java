@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("seller_cats")
 public class SellerCat extends BaseObject {
 
+	private static final long serialVersionUID = 8462310788210003306L;
+
 	/** 卖家自定义商品类目编号 */
 	@JsonProperty("cid")
 	private Long cid;

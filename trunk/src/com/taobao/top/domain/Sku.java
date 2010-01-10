@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("skus")
 public class Sku extends BaseObject {
 
+	private static final long serialVersionUID = 6393837539041536403L;
+
 	/** SKU的编号 */
 	@JsonProperty("sku_id")
 	private Long skuId;

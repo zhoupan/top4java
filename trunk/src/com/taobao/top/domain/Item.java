@@ -15,6 +15,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("items")
 public class Item extends BaseObject {
 
+	private static final long serialVersionUID = -1538047880272114216L;
+
 	/** 商品编号 */
 	@JsonProperty("iid")
 	private String iid;

@@ -1,5 +1,6 @@
 package com.taobao.top.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.taobao.top.mapping.JsonProperty;
@@ -10,7 +11,9 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Sep 17, 2009
  */
-public abstract class BaseObject {
+public abstract class BaseObject implements Serializable {
+
+	private static final long serialVersionUID = 1267265573776714314L;
 
 	/** 对象创建时间 */
 	@JsonProperty("created")

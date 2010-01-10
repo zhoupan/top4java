@@ -8,7 +8,9 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Nov 16, 2009
  */
-public class Brand {
+public class Brand extends BaseObject {
+
+	private static final long serialVersionUID = -5591129713165873417L;
 
 	/** 属性编号 */
 	@JsonProperty("pid")

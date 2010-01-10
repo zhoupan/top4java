@@ -14,6 +14,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("refundMessages")
 public class RefundMessage extends BaseObject {
 
+	private static final long serialVersionUID = 3814583502849124589L;
+
 	/** 留言编号 */
 	@JsonProperty("message_id")
 	private Long msgId;

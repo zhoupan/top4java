@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("logistic_companies")
 public class LogisticsCompany extends BaseObject {
 
+	private static final long serialVersionUID = 832695257977044931L;
+
 	/** 物流公司标识 */
 	@JsonProperty("company_id")
 	private Long companyId;

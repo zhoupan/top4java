@@ -10,6 +10,8 @@ import com.taobao.top.mapping.JsonProperty;
  */
 public class UserCredit extends BaseObject {
 
+	private static final long serialVersionUID = -9142047595896849206L;
+
 	/** 信用等级。 */
 	@JsonProperty("level")
 	private Integer level;

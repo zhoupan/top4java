@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("taobaokeItems")
 public class TaobaokeItem extends BaseObject {
 
+	private static final long serialVersionUID = -5332351372151412576L;
+
 	/** 淘宝客商品编号 */
 	@JsonProperty("id")
 	private String iid;

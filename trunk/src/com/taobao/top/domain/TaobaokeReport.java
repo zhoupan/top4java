@@ -14,6 +14,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("taobaokeReports")
 public class TaobaokeReport extends BaseObject {
 
+	private static final long serialVersionUID = 6051941235416084047L;
+
 	/** 淘宝客报表成员列表 */
 	@JsonProperty("members")
 	private List<TaobaokeReportMember> members;

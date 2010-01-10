@@ -12,7 +12,9 @@ import com.taobao.top.mapping.JsonProperty;
  * @since 1.0, Nov 16, 2009
  */
 @JsonClass("authorizes")
-public class AuthorizeCats {
+public class AuthorizeCats extends BaseObject {
+
+	private static final long serialVersionUID = -3663119779869534880L;
 
 	/** 品牌列表 */
 	@JsonProperty("brands")
