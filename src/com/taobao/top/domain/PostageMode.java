@@ -10,6 +10,8 @@ import com.taobao.top.mapping.JsonProperty;
  */
 public class PostageMode extends BaseObject {
 
+	private static final long serialVersionUID = -3374353869722058383L;
+
 	/** 运费模板编号 */
 	@JsonProperty("postage_id")
 	private Long postageId;

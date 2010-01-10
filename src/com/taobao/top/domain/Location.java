@@ -10,6 +10,8 @@ import com.taobao.top.mapping.JsonProperty;
  */
 public class Location extends BaseObject {
 
+	private static final long serialVersionUID = 1682099788733138762L;
+
 	/** 邮政编码 */
 	@JsonProperty("zip")
 	private String zip;

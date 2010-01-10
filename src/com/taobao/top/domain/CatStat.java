@@ -14,6 +14,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("cat_stats")
 public class CatStat extends BaseObject {
 
+	private static final long serialVersionUID = -7351925392462948115L;
+
 	/** 类目编号 */
 	@JsonProperty("cid")
 	private Long cid;

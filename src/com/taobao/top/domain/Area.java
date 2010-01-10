@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("areas")
 public class Area extends BaseObject {
 
+	private static final long serialVersionUID = -1796691576824903680L;
+
 	/** 标准行政区域代码 */
 	@JsonProperty("area_id")
 	private Long areaId;

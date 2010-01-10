@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("taobaokeShops")
 public class TaobaokeShop extends BaseObject {
 
+	private static final long serialVersionUID = -5046791339573535264L;
+
 	/** 店铺用户名 */
 	@JsonProperty("user_id")
 	private Long userId;

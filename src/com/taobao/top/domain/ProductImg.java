@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("productImgs")
 public class ProductImg extends BaseObject {
 
+	private static final long serialVersionUID = -7015925506622054033L;
+
 	/** 产品图片编号 */
 	@JsonProperty("pic_id")
 	private Long imgId;

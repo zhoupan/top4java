@@ -15,6 +15,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("trades")
 public class Trade extends BaseObject {
 
+	private static final long serialVersionUID = 2497316227780926696L;
+
 	/** 淘宝交易编号（父订单的交易编号） */
 	@JsonProperty("tid")
 	private Long tid;

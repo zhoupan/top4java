@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("refunds")
 public class Refund extends BaseObject {
 
+	private static final long serialVersionUID = 3278878772200421453L;
+
 	/** 退款单号 */
 	@JsonProperty("refund_id")
 	private Long rid;

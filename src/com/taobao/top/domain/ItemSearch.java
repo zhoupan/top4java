@@ -14,6 +14,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("itemsearchs")
 public class ItemSearch extends BaseObject {
 
+	private static final long serialVersionUID = 3890051998325964871L;
+
 	/** 商品列表 */
 	@JsonProperty("item_list")
 	private List<Item> items;

@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("rates")
 public class TradeRate extends BaseObject {
 
+	private static final long serialVersionUID = -409724160384665041L;
+
 	/** 交易编号 */
 	@JsonProperty("tid")
 	private Long tid;

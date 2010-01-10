@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("tadgets")
 public class Tadget extends BaseObject {
 
+	private static final long serialVersionUID = -4461405693501985919L;
+
 	/** 应用编号 */
 	@JsonProperty("app_key")
 	private String appKey;

@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("shipping_addresses")
 public class ShippingAddress extends BaseObject {
 
+	private static final long serialVersionUID = 3177405140684269764L;
+
 	/** 收货地址编号 */
 	@JsonProperty("address_id")
 	private Long addressId;

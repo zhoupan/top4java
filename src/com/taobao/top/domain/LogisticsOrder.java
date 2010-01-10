@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("ship")
 public class LogisticsOrder extends BaseObject {
 
+	private static final long serialVersionUID = -4528583832286920840L;
+
 	/** 交易编号 */
 	@JsonProperty("tid")
 	private Long tid;

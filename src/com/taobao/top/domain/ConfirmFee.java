@@ -12,6 +12,8 @@ import com.taobao.top.mapping.JsonProperty;
 @JsonClass("confirmFees")
 public class ConfirmFee extends BaseObject {
 
+	private static final long serialVersionUID = -1818193268707776628L;
+
 	/** 确认收货的金额 */
 	@JsonProperty("confirm_fee")
 	private String fee;
