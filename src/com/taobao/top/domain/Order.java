@@ -14,6 +14,8 @@ public class Order extends BaseObject {
 
 	private static final long serialVersionUID = 8390770640216030615L;
 
+	private Long tid;
+
 	/** 商品编号 */
 	@JsonProperty("iid")
 	private String iid;
@@ -109,6 +111,14 @@ public class Order extends BaseObject {
 	/** 卖家优惠金额 */
 	@JsonProperty("adjust_fee")
 	private String adjustFee;
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+	}
 
 	public String getIid() {
 		return this.iid;
