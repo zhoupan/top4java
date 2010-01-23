@@ -27,6 +27,10 @@ public class JsonConverter implements Converter {
 
 		JSONReader reader = new JSONReader();
 		Map<?, ?> rootJson = (Map<?, ?>) reader.read(rsp);
+		if (rootJson == null) {
+			return rspList;
+		}
+
 		Map<?, ?> rspJson = (Map<?, ?>) rootJson.get("rsp");
 		if (rspJson == null || rspJson.isEmpty()) {
 			return rspList;
