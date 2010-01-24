@@ -95,19 +95,19 @@ public class Item extends BaseObject {
 
 	/** 商品价格 */
 	@JsonProperty("price")
-	private Number price;
+	private String price;
 
 	/** 平邮费用 */
 	@JsonProperty("post_fee")
-	private Number postFee;
+	private String postFee;
 
 	/** 快递费用 */
 	@JsonProperty("express_fee")
-	private Number expressFee;
+	private String expressFee;
 
 	/** EMS费用 */
 	@JsonProperty("ems_fee")
-	private Number emsFee;
+	private String emsFee;
 
 	/** 是否已出价 */
 	@JsonProperty("has_bid")
@@ -357,35 +357,35 @@ public class Item extends BaseObject {
 		this.location = location;
 	}
 
-	public Number getPrice() {
+	public String getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(Number price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 
-	public Number getPostFee() {
+	public String getPostFee() {
 		return this.postFee;
 	}
 
-	public void setPostFee(Number postFee) {
+	public void setPostFee(String postFee) {
 		this.postFee = postFee;
 	}
 
-	public Number getExpressFee() {
+	public String getExpressFee() {
 		return this.expressFee;
 	}
 
-	public void setExpressFee(Number expressFee) {
+	public void setExpressFee(String expressFee) {
 		this.expressFee = expressFee;
 	}
 
-	public Number getEmsFee() {
+	public String getEmsFee() {
 		return this.emsFee;
 	}
 
-	public void setEmsFee(Number emsFee) {
+	public void setEmsFee(String emsFee) {
 		this.emsFee = emsFee;
 	}
 
