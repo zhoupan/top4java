@@ -45,13 +45,13 @@ public class Trade extends BaseObject {
 	@JsonProperty("iid")
 	private String iid;
 
-	/** 商品价格 */
+	/** 商品路径 */
 	@JsonProperty("item_url")
 	private String itemUrl;
 
-	/** 商品路径 */
+	/** 商品价格 */
 	@JsonProperty("price")
-	private String itemPrice;
+	private Number itemPrice;
 
 	/** 商品图片绝对地址 */
 	@JsonProperty("pic_path")
@@ -75,15 +75,15 @@ public class Trade extends BaseObject {
 
 	/** 买家实付金额（包含物流费用） */
 	@JsonProperty("payment")
-	private String payment;
+	private Number payment;
 
 	/** 系统优惠金额 */
 	@JsonProperty("discount_fee")
-	private String discountFee;
+	private Number discountFee;
 
 	/** 卖家优惠金额 */
 	@JsonProperty("adjust_fee")
-	private String adjustFee;
+	private Number adjustFee;
 
 	/** 交易快照信息 */
 	@JsonProperty("snapshot")
@@ -123,23 +123,23 @@ public class Trade extends BaseObject {
 
 	/** 买家获得积分，返点的积分 */
 	@JsonProperty("buyer_obtain_point_fee")
-	private String buyerObtainPointFee;
+	private Number buyerObtainPointFee;
 
 	/** 买家使用积分 */
 	@JsonProperty("point_fee")
-	private String buyerUsePointFee;
+	private Number buyerUsePointFee;
 
 	/** 买家实际使用积分 */
 	@JsonProperty("real_point_fee")
-	private String buyerRealPointFee;
+	private Number buyerRealPointFee;
 
 	/** 金额 */
 	@JsonProperty("total_fee")
-	private String totalFee;
+	private Number totalFee;
 
 	/** 邮费 */
 	@JsonProperty("post_fee")
-	private String postFee;
+	private Number postFee;
 
 	/** 买家支付宝账号 */
 	@JsonProperty("buyer_alipay_no")
@@ -187,7 +187,7 @@ public class Trade extends BaseObject {
 
 	/** 交易佣金 */
 	@JsonProperty("commission_fee")
-	private String commissionFee;
+	private Number commissionFee;
 
 	/** 卖家支付宝账号 */
 	@JsonProperty("seller_alipay_no")
@@ -211,7 +211,7 @@ public class Trade extends BaseObject {
 
 	/** 能够确认收货的实付款 */
 	@JsonProperty("available_confirm_fee")
-	private String availableConfirmFee;
+	private Number availableConfirmFee;
 
 	/** 是否包含邮费 */
 	@JsonProperty("has_post_fee")
@@ -219,11 +219,11 @@ public class Trade extends BaseObject {
 
 	/** 卖家实际收到的支付宝打款金额 */
 	@JsonProperty("received_payment")
-	private String receivedPayment;
+	private Number receivedPayment;
 
 	/** 货到付款服务费 */
 	@JsonProperty("cod_fee")
-	private String codFee;
+	private Number codFee;
 
 	/** 超时到期时间 */
 	@JsonProperty("timeout_action_time")
@@ -301,11 +301,11 @@ public class Trade extends BaseObject {
 		this.itemUrl = itemUrl;
 	}
 
-	public String getItemPrice() {
+	public Number getItemPrice() {
 		return this.itemPrice;
 	}
 
-	public void setItemPrice(String itemPrice) {
+	public void setItemPrice(Number itemPrice) {
 		this.itemPrice = itemPrice;
 	}
 
@@ -349,27 +349,27 @@ public class Trade extends BaseObject {
 		this.alipayNo = alipayNo;
 	}
 
-	public String getPayment() {
+	public Number getPayment() {
 		return this.payment;
 	}
 
-	public void setPayment(String payment) {
+	public void setPayment(Number payment) {
 		this.payment = payment;
 	}
 
-	public String getDiscountFee() {
+	public Number getDiscountFee() {
 		return this.discountFee;
 	}
 
-	public void setDiscountFee(String discountFee) {
+	public void setDiscountFee(Number discountFee) {
 		this.discountFee = discountFee;
 	}
 
-	public String getAdjustFee() {
+	public Number getAdjustFee() {
 		return this.adjustFee;
 	}
 
-	public void setAdjustFee(String adjustFee) {
+	public void setAdjustFee(Number adjustFee) {
 		this.adjustFee = adjustFee;
 	}
 
@@ -445,43 +445,43 @@ public class Trade extends BaseObject {
 		this.endTime = endTime;
 	}
 
-	public String getBuyerObtainPointFee() {
+	public Number getBuyerObtainPointFee() {
 		return this.buyerObtainPointFee;
 	}
 
-	public void setBuyerObtainPointFee(String buyerObtainPointFee) {
+	public void setBuyerObtainPointFee(Number buyerObtainPointFee) {
 		this.buyerObtainPointFee = buyerObtainPointFee;
 	}
 
-	public String getBuyerUsePointFee() {
+	public Number getBuyerUsePointFee() {
 		return this.buyerUsePointFee;
 	}
 
-	public void setBuyerUsePointFee(String buyerUsePointFee) {
+	public void setBuyerUsePointFee(Number buyerUsePointFee) {
 		this.buyerUsePointFee = buyerUsePointFee;
 	}
 
-	public String getBuyerRealPointFee() {
+	public Number getBuyerRealPointFee() {
 		return this.buyerRealPointFee;
 	}
 
-	public void setBuyerRealPointFee(String buyerRealPointFee) {
+	public void setBuyerRealPointFee(Number buyerRealPointFee) {
 		this.buyerRealPointFee = buyerRealPointFee;
 	}
 
-	public String getTotalFee() {
+	public Number getTotalFee() {
 		return this.totalFee;
 	}
 
-	public void setTotalFee(String totalFee) {
+	public void setTotalFee(Number totalFee) {
 		this.totalFee = totalFee;
 	}
 
-	public String getPostFee() {
+	public Number getPostFee() {
 		return this.postFee;
 	}
 
-	public void setPostFee(String postFee) {
+	public void setPostFee(Number postFee) {
 		this.postFee = postFee;
 	}
 
@@ -573,11 +573,11 @@ public class Trade extends BaseObject {
 		this.buyerEmail = buyerEmail;
 	}
 
-	public String getCommissionFee() {
+	public Number getCommissionFee() {
 		return this.commissionFee;
 	}
 
-	public void setCommissionFee(String commissionFee) {
+	public void setCommissionFee(Number commissionFee) {
 		this.commissionFee = commissionFee;
 	}
 
@@ -621,11 +621,11 @@ public class Trade extends BaseObject {
 		this.sellerEmail = sellerEmail;
 	}
 
-	public String getAvailableConfirmFee() {
+	public Number getAvailableConfirmFee() {
 		return this.availableConfirmFee;
 	}
 
-	public void setAvailableConfirmFee(String availableConfirmFee) {
+	public void setAvailableConfirmFee(Number availableConfirmFee) {
 		this.availableConfirmFee = availableConfirmFee;
 	}
 
@@ -637,19 +637,19 @@ public class Trade extends BaseObject {
 		this.hasPostFee = hasPostFee;
 	}
 
-	public String getReceivedPayment() {
+	public Number getReceivedPayment() {
 		return this.receivedPayment;
 	}
 
-	public void setReceivedPayment(String receivedPayment) {
+	public void setReceivedPayment(Number receivedPayment) {
 		this.receivedPayment = receivedPayment;
 	}
 
-	public String getCodFee() {
+	public Number getCodFee() {
 		return this.codFee;
 	}
 
-	public void setCodFee(String codFee) {
+	public void setCodFee(Number codFee) {
 		this.codFee = codFee;
 	}
 
