@@ -8,6 +8,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -97,6 +98,13 @@ public class Converters {
 						method.invoke(rsp, (Double) value);
 					} else {
 						method.invoke(rsp, Double.valueOf(value.toString()));
+					}
+				} else if (Number.class.isAssignableFrom(typeClass)) {
+					Object value = reader.getPrimitiveObject(name);
+					if (value instanceof Number) {
+						method.invoke(rsp, (Number) value);
+					} else {
+						method.invoke(rsp, DecimalFormat.getInstance().parse(value.toString()));
 					}
 				} else if (Date.class.isAssignableFrom(typeClass)) {
 					DateFormat format = new SimpleDateFormat(Constants.DATE_TIME_FORMAT);

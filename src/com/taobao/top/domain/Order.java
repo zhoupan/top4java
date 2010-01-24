@@ -46,7 +46,7 @@ public class Order extends BaseObject {
 
 	/** 商品价格 */
 	@JsonProperty("price")
-	private String itemPrice;
+	private Number itemPrice;
 
 	/** 商品图片的绝对路径 */
 	@JsonProperty("pic_path")
@@ -98,19 +98,19 @@ public class Order extends BaseObject {
 
 	/** 应付金额 */
 	@JsonProperty("total_fee")
-	private String totalFee;
+	private Number totalFee;
 
 	/** 实付金额 */
 	@JsonProperty("payment")
-	private String payment;
+	private Number payment;
 
 	/** 系统优惠金额 */
 	@JsonProperty("discount_fee")
-	private String discountFee;
+	private Number discountFee;
 
 	/** 卖家优惠金额 */
 	@JsonProperty("adjust_fee")
-	private String adjustFee;
+	private Number adjustFee;
 
 	public Long getTid() {
 		return this.tid;
@@ -168,11 +168,11 @@ public class Order extends BaseObject {
 		this.itemTitle = itemTitle;
 	}
 
-	public String getItemPrice() {
+	public Number getItemPrice() {
 		return this.itemPrice;
 	}
 
-	public void setItemPrice(String itemPrice) {
+	public void setItemPrice(Number itemPrice) {
 		this.itemPrice = itemPrice;
 	}
 
@@ -280,35 +280,35 @@ public class Order extends BaseObject {
 		this.snapshotUrl = snapshotUrl;
 	}
 
-	public String getTotalFee() {
+	public Number getTotalFee() {
 		return this.totalFee;
 	}
 
-	public void setTotalFee(String totalFee) {
+	public void setTotalFee(Number totalFee) {
 		this.totalFee = totalFee;
 	}
 
-	public String getPayment() {
+	public Number getPayment() {
 		return this.payment;
 	}
 
-	public void setPayment(String payment) {
+	public void setPayment(Number payment) {
 		this.payment = payment;
 	}
 
-	public String getDiscountFee() {
+	public Number getDiscountFee() {
 		return this.discountFee;
 	}
 
-	public void setDiscountFee(String discountFee) {
+	public void setDiscountFee(Number discountFee) {
 		this.discountFee = discountFee;
 	}
 
-	public String getAdjustFee() {
+	public Number getAdjustFee() {
 		return this.adjustFee;
 	}
 
-	public void setAdjustFee(String adjustFee) {
+	public void setAdjustFee(Number adjustFee) {
 		this.adjustFee = adjustFee;
 	}
 
