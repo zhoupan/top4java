@@ -112,6 +112,14 @@ public class Order extends BaseObject {
 	@JsonProperty("adjust_fee")
 	private String adjustFee;
 
+	/** 买家是否已评价 **/
+	@JsonProperty("buyer_rate")
+	private String buyerRate;
+
+	/** 卖家是否已评价 **/
+	@JsonProperty("seller_rate")
+	private String sellerRate;
+
 	public Long getTid() {
 		return this.tid;
 	}
@@ -310,6 +318,22 @@ public class Order extends BaseObject {
 
 	public void setAdjustFee(String adjustFee) {
 		this.adjustFee = adjustFee;
+	}
+
+	public String getBuyerRate() {
+		return this.buyerRate;
+	}
+
+	public void setBuyerRate(String buyerRate) {
+		this.buyerRate = buyerRate;
+	}
+
+	public String getSellerRate() {
+		return this.sellerRate;
+	}
+
+	public void setSellerRate(String sellerRate) {
+		this.sellerRate = sellerRate;
 	}
 
 }
