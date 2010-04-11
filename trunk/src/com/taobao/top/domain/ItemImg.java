@@ -13,23 +13,23 @@ public class ItemImg extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("position")
-	private Integer position;
+	@JsonProperty("created")
+	private Date created;
 
 	@JsonProperty("id")
 	private Long id;
 
+	@JsonProperty("position")
+	private Integer position;
+
 	@JsonProperty("url")
 	private String url;
 
-	@JsonProperty("created")
-	private Date created;
-
-	public Integer getPosition() {
-		return this.position;
+	public Date getCreated() {
+		return this.created;
 	}
-	public void setPosition(Integer position) {
-		this.position = position;
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
 	public Long getId() {
@@ -39,18 +39,18 @@ public class ItemImg extends BaseObject {
 		this.id = id;
 	}
 
+	public Integer getPosition() {
+		return this.position;
+	}
+	public void setPosition(Integer position) {
+		this.position = position;
+	}
+
 	public String getUrl() {
 		return this.url;
 	}
 	public void setUrl(String url) {
 		this.url = url;
-	}
-
-	public Date getCreated() {
-		return this.created;
-	}
-	public void setCreated(Date created) {
-		this.created = created;
 	}
 
 }

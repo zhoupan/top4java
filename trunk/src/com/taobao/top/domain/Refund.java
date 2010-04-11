@@ -13,47 +13,62 @@ public class Refund extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("refund_fee")
-	private String refundFee;
-
-	@JsonProperty("desc")
-	private String desc;
-
-	@JsonProperty("reason")
-	private String reason;
-
-	@JsonProperty("iid")
-	private String iid;
-
-	@JsonProperty("good_status")
-	private String goodStatus;
-
-	@JsonProperty("good_return_time")
-	private String goodReturnTime;
-
-	@JsonProperty("has_good_return")
-	private Boolean hasGoodReturn;
-
-	@JsonProperty("title")
-	private String title;
-
-	@JsonProperty("created")
-	private Date created;
+	@JsonProperty("address")
+	private String address;
 
 	@JsonProperty("alipay_no")
 	private String alipayNo;
 
+	@JsonProperty("buyer_nick")
+	private String buyerNick;
+
 	@JsonProperty("company_name")
 	private String companyName;
 
-	@JsonProperty("total_fee")
-	private String totalFee;
+	@JsonProperty("created")
+	private Date created;
+
+	@JsonProperty("desc")
+	private String desc;
+
+	@JsonProperty("good_return_time")
+	private String goodReturnTime;
+
+	@JsonProperty("good_status")
+	private String goodStatus;
+
+	@JsonProperty("has_good_return")
+	private Boolean hasGoodReturn;
+
+	@JsonProperty("iid")
+	private String iid;
+
+	@JsonProperty("modified")
+	private Date modified;
+
+	@JsonProperty("num")
+	private Integer num;
 
 	@JsonProperty("oid")
 	private Long oid;
 
-	@JsonProperty("tid")
-	private Long tid;
+	@JsonProperty("order_status")
+	private String orderStatus;
+
+	@JsonProperty("payment")
+	private String payment;
+
+	@JsonProperty("price")
+	private String price;
+
+	@JsonProperty("reason")
+	private String reason;
+
+	@JsonProperty("refund_fee")
+	private String refundFee;
+
+	@JsonProperty("refund_id")
+	private Long refundId;
 
 	@JsonProperty("refund_remind_timeout")
 	private RefundRemindTimeout refundRemindTimeout;
@@ -61,100 +76,29 @@ public class Refund extends BaseObject {
 	@JsonProperty("seller_nick")
 	private String sellerNick;
 
-	@JsonProperty("refund_id")
-	private Long refundId;
+	@JsonProperty("shipping_type")
+	private String shippingType;
 
 	@JsonProperty("sid")
 	private String sid;
 
-	@JsonProperty("payment")
-	private String payment;
-
 	@JsonProperty("status")
 	private String status;
 
-	@JsonProperty("shipping_type")
-	private String shippingType;
+	@JsonProperty("tid")
+	private Long tid;
 
-	@JsonProperty("buyer_nick")
-	private String buyerNick;
+	@JsonProperty("title")
+	private String title;
 
-	@JsonProperty("num")
-	private Integer num;
+	@JsonProperty("total_fee")
+	private String totalFee;
 
-	@JsonProperty("price")
-	private String price;
-
-	@JsonProperty("address")
-	private String address;
-
-	@JsonProperty("order_status")
-	private String orderStatus;
-
-	@JsonProperty("modified")
-	private Date modified;
-
-	public String getRefundFee() {
-		return this.refundFee;
+	public String getAddress() {
+		return this.address;
 	}
-	public void setRefundFee(String refundFee) {
-		this.refundFee = refundFee;
-	}
-
-	public String getDesc() {
-		return this.desc;
-	}
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
-
-	public String getReason() {
-		return this.reason;
-	}
-	public void setReason(String reason) {
-		this.reason = reason;
-	}
-
-	public String getIid() {
-		return this.iid;
-	}
-	public void setIid(String iid) {
-		this.iid = iid;
-	}
-
-	public String getGoodStatus() {
-		return this.goodStatus;
-	}
-	public void setGoodStatus(String goodStatus) {
-		this.goodStatus = goodStatus;
-	}
-
-	public String getGoodReturnTime() {
-		return this.goodReturnTime;
-	}
-	public void setGoodReturnTime(String goodReturnTime) {
-		this.goodReturnTime = goodReturnTime;
-	}
-
-	public Boolean getHasGoodReturn() {
-		return this.hasGoodReturn;
-	}
-	public void setHasGoodReturn(Boolean hasGoodReturn) {
-		this.hasGoodReturn = hasGoodReturn;
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public Date getCreated() {
-		return this.created;
-	}
-	public void setCreated(Date created) {
-		this.created = created;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getAlipayNo() {
@@ -164,6 +108,13 @@ public class Refund extends BaseObject {
 		this.alipayNo = alipayNo;
 	}
 
+	public String getBuyerNick() {
+		return this.buyerNick;
+	}
+	public void setBuyerNick(String buyerNick) {
+		this.buyerNick = buyerNick;
+	}
+
 	public String getCompanyName() {
 		return this.companyName;
 	}
@@ -171,11 +122,60 @@ public class Refund extends BaseObject {
 		this.companyName = companyName;
 	}
 
-	public String getTotalFee() {
-		return this.totalFee;
+	public Date getCreated() {
+		return this.created;
 	}
-	public void setTotalFee(String totalFee) {
-		this.totalFee = totalFee;
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public String getDesc() {
+		return this.desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public String getGoodReturnTime() {
+		return this.goodReturnTime;
+	}
+	public void setGoodReturnTime(String goodReturnTime) {
+		this.goodReturnTime = goodReturnTime;
+	}
+
+	public String getGoodStatus() {
+		return this.goodStatus;
+	}
+	public void setGoodStatus(String goodStatus) {
+		this.goodStatus = goodStatus;
+	}
+
+	public Boolean getHasGoodReturn() {
+		return this.hasGoodReturn;
+	}
+	public void setHasGoodReturn(Boolean hasGoodReturn) {
+		this.hasGoodReturn = hasGoodReturn;
+	}
+
+	public String getIid() {
+		return this.iid;
+	}
+	public void setIid(String iid) {
+		this.iid = iid;
+	}
+
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
+	}
+
+	public Integer getNum() {
+		return this.num;
+	}
+	public void setNum(Integer num) {
+		this.num = num;
 	}
 
 	public Long getOid() {
@@ -185,11 +185,46 @@ public class Refund extends BaseObject {
 		this.oid = oid;
 	}
 
-	public Long getTid() {
-		return this.tid;
+	public String getOrderStatus() {
+		return this.orderStatus;
 	}
-	public void setTid(Long tid) {
-		this.tid = tid;
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	public String getPayment() {
+		return this.payment;
+	}
+	public void setPayment(String payment) {
+		this.payment = payment;
+	}
+
+	public String getPrice() {
+		return this.price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getReason() {
+		return this.reason;
+	}
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+
+	public String getRefundFee() {
+		return this.refundFee;
+	}
+	public void setRefundFee(String refundFee) {
+		this.refundFee = refundFee;
+	}
+
+	public Long getRefundId() {
+		return this.refundId;
+	}
+	public void setRefundId(Long refundId) {
+		this.refundId = refundId;
 	}
 
 	public RefundRemindTimeout getRefundRemindTimeout() {
@@ -206,11 +241,11 @@ public class Refund extends BaseObject {
 		this.sellerNick = sellerNick;
 	}
 
-	public Long getRefundId() {
-		return this.refundId;
+	public String getShippingType() {
+		return this.shippingType;
 	}
-	public void setRefundId(Long refundId) {
-		this.refundId = refundId;
+	public void setShippingType(String shippingType) {
+		this.shippingType = shippingType;
 	}
 
 	public String getSid() {
@@ -220,13 +255,6 @@ public class Refund extends BaseObject {
 		this.sid = sid;
 	}
 
-	public String getPayment() {
-		return this.payment;
-	}
-	public void setPayment(String payment) {
-		this.payment = payment;
-	}
-
 	public String getStatus() {
 		return this.status;
 	}
@@ -234,53 +262,25 @@ public class Refund extends BaseObject {
 		this.status = status;
 	}
 
-	public String getShippingType() {
-		return this.shippingType;
+	public Long getTid() {
+		return this.tid;
 	}
-	public void setShippingType(String shippingType) {
-		this.shippingType = shippingType;
-	}
-
-	public String getBuyerNick() {
-		return this.buyerNick;
-	}
-	public void setBuyerNick(String buyerNick) {
-		this.buyerNick = buyerNick;
+	public void setTid(Long tid) {
+		this.tid = tid;
 	}
 
-	public Integer getNum() {
-		return this.num;
+	public String getTitle() {
+		return this.title;
 	}
-	public void setNum(Integer num) {
-		this.num = num;
-	}
-
-	public String getPrice() {
-		return this.price;
-	}
-	public void setPrice(String price) {
-		this.price = price;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getAddress() {
-		return this.address;
+	public String getTotalFee() {
+		return this.totalFee;
 	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getOrderStatus() {
-		return this.orderStatus;
-	}
-	public void setOrderStatus(String orderStatus) {
-		this.orderStatus = orderStatus;
-	}
-
-	public Date getModified() {
-		return this.modified;
-	}
-	public void setModified(Date modified) {
-		this.modified = modified;
+	public void setTotalFee(String totalFee) {
+		this.totalFee = totalFee;
 	}
 
 }

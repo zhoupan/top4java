@@ -12,31 +12,17 @@ public class UserCredit extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("level")
-	private Integer level;
-
-	@JsonProperty("total_num")
-	private Integer totalNum;
-
 	@JsonProperty("good_num")
 	private Integer goodNum;
+
+	@JsonProperty("level")
+	private Integer level;
 
 	@JsonProperty("score")
 	private Integer score;
 
-	public Integer getLevel() {
-		return this.level;
-	}
-	public void setLevel(Integer level) {
-		this.level = level;
-	}
-
-	public Integer getTotalNum() {
-		return this.totalNum;
-	}
-	public void setTotalNum(Integer totalNum) {
-		this.totalNum = totalNum;
-	}
+	@JsonProperty("total_num")
+	private Integer totalNum;
 
 	public Integer getGoodNum() {
 		return this.goodNum;
@@ -45,11 +31,25 @@ public class UserCredit extends BaseObject {
 		this.goodNum = goodNum;
 	}
 
+	public Integer getLevel() {
+		return this.level;
+	}
+	public void setLevel(Integer level) {
+		this.level = level;
+	}
+
 	public Integer getScore() {
 		return this.score;
 	}
 	public void setScore(Integer score) {
 		this.score = score;
+	}
+
+	public Integer getTotalNum() {
+		return this.totalNum;
+	}
+	public void setTotalNum(Integer totalNum) {
+		this.totalNum = totalNum;
 	}
 
 }

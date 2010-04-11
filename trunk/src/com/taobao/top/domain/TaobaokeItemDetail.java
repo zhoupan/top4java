@@ -18,11 +18,11 @@ public class TaobaokeItemDetail extends BaseObject {
 	@JsonProperty("item_detail")
 	private ItemDetail itemDetail;
 
-	@JsonProperty("shop_click_url")
-	private String shopClickUrl;
-
 	@JsonProperty("seller_credit_score")
 	private Long sellerCreditScore;
+
+	@JsonProperty("shop_click_url")
+	private String shopClickUrl;
 
 	public String getClickUrl() {
 		return this.clickUrl;
@@ -38,18 +38,18 @@ public class TaobaokeItemDetail extends BaseObject {
 		this.itemDetail = itemDetail;
 	}
 
-	public String getShopClickUrl() {
-		return this.shopClickUrl;
-	}
-	public void setShopClickUrl(String shopClickUrl) {
-		this.shopClickUrl = shopClickUrl;
-	}
-
 	public Long getSellerCreditScore() {
 		return this.sellerCreditScore;
 	}
 	public void setSellerCreditScore(Long sellerCreditScore) {
 		this.sellerCreditScore = sellerCreditScore;
+	}
+
+	public String getShopClickUrl() {
+		return this.shopClickUrl;
+	}
+	public void setShopClickUrl(String shopClickUrl) {
+		this.shopClickUrl = shopClickUrl;
 	}
 
 }

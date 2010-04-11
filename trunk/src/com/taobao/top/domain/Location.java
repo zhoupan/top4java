@@ -12,29 +12,29 @@ public class Location extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("state")
-	private String state;
+	@JsonProperty("address")
+	private String address;
 
 	@JsonProperty("city")
 	private String city;
 
-	@JsonProperty("zip")
-	private String zip;
-
-	@JsonProperty("address")
-	private String address;
+	@JsonProperty("country")
+	private String country;
 
 	@JsonProperty("district")
 	private String district;
 
-	@JsonProperty("country")
-	private String country;
+	@JsonProperty("state")
+	private String state;
 
-	public String getState() {
-		return this.state;
+	@JsonProperty("zip")
+	private String zip;
+
+	public String getAddress() {
+		return this.address;
 	}
-	public void setState(String state) {
-		this.state = state;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getCity() {
@@ -44,18 +44,11 @@ public class Location extends BaseObject {
 		this.city = city;
 	}
 
-	public String getZip() {
-		return this.zip;
+	public String getCountry() {
+		return this.country;
 	}
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
-
-	public String getAddress() {
-		return this.address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	public String getDistrict() {
@@ -65,11 +58,18 @@ public class Location extends BaseObject {
 		this.district = district;
 	}
 
-	public String getCountry() {
-		return this.country;
+	public String getState() {
+		return this.state;
 	}
-	public void setCountry(String country) {
-		this.country = country;
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getZip() {
+		return this.zip;
+	}
+	public void setZip(String zip) {
+		this.zip = zip;
 	}
 
 }

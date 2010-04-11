@@ -13,46 +13,32 @@ public class AuthorizeMessage extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("end_date")
-	private String endDate;
-
-	@JsonProperty("nick")
-	private String nick;
-
-	@JsonProperty("status")
-	private String status;
+	@JsonProperty("app_key")
+	private String appKey;
 
 	@JsonProperty("created")
 	private Date created;
 
-	@JsonProperty("app_key")
-	private String appKey;
-
-	@JsonProperty("start_date")
-	private String startDate;
+	@JsonProperty("end_date")
+	private String endDate;
 
 	@JsonProperty("modified")
 	private Date modified;
 
-	public String getEndDate() {
-		return this.endDate;
-	}
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-	}
+	@JsonProperty("nick")
+	private String nick;
 
-	public String getNick() {
-		return this.nick;
-	}
-	public void setNick(String nick) {
-		this.nick = nick;
-	}
+	@JsonProperty("start_date")
+	private String startDate;
 
-	public String getStatus() {
-		return this.status;
+	@JsonProperty("status")
+	private String status;
+
+	public String getAppKey() {
+		return this.appKey;
 	}
-	public void setStatus(String status) {
-		this.status = status;
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
 	}
 
 	public Date getCreated() {
@@ -62,11 +48,25 @@ public class AuthorizeMessage extends BaseObject {
 		this.created = created;
 	}
 
-	public String getAppKey() {
-		return this.appKey;
+	public String getEndDate() {
+		return this.endDate;
 	}
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
+	}
+
+	public String getNick() {
+		return this.nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 
 	public String getStartDate() {
@@ -76,11 +76,11 @@ public class AuthorizeMessage extends BaseObject {
 		this.startDate = startDate;
 	}
 
-	public Date getModified() {
-		return this.modified;
+	public String getStatus() {
+		return this.status;
 	}
-	public void setModified(Date modified) {
-		this.modified = modified;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }

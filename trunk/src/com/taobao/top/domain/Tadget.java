@@ -12,24 +12,24 @@ public class Tadget extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("app_secret")
-	private String appSecret;
-
 	@JsonProperty("app_key")
 	private String appKey;
 
-	public String getAppSecret() {
-		return this.appSecret;
-	}
-	public void setAppSecret(String appSecret) {
-		this.appSecret = appSecret;
-	}
+	@JsonProperty("app_secret")
+	private String appSecret;
 
 	public String getAppKey() {
 		return this.appKey;
 	}
 	public void setAppKey(String appKey) {
 		this.appKey = appKey;
+	}
+
+	public String getAppSecret() {
+		return this.appSecret;
+	}
+	public void setAppSecret(String appSecret) {
+		this.appSecret = appSecret;
 	}
 
 }

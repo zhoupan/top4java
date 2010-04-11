@@ -15,20 +15,27 @@ public class TaobaokeShop extends BaseObject {
 	@JsonProperty("click_url")
 	private String clickUrl;
 
+	@JsonProperty("commission_rate")
+	private String commissionRate;
+
 	@JsonProperty("shop_title")
 	private String shopTitle;
 
 	@JsonProperty("user_id")
 	private String userId;
 
-	@JsonProperty("commission_rate")
-	private String commissionRate;
-
 	public String getClickUrl() {
 		return this.clickUrl;
 	}
 	public void setClickUrl(String clickUrl) {
 		this.clickUrl = clickUrl;
+	}
+
+	public String getCommissionRate() {
+		return this.commissionRate;
+	}
+	public void setCommissionRate(String commissionRate) {
+		this.commissionRate = commissionRate;
 	}
 
 	public String getShopTitle() {
@@ -43,13 +50,6 @@ public class TaobaokeShop extends BaseObject {
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
-	}
-
-	public String getCommissionRate() {
-		return this.commissionRate;
-	}
-	public void setCommissionRate(String commissionRate) {
-		this.commissionRate = commissionRate;
 	}
 
 }

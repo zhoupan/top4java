@@ -12,24 +12,24 @@ public class ItemCategory extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("count")
-	private Integer count;
-
 	@JsonProperty("category_id")
 	private Long categoryId;
 
-	public Integer getCount() {
-		return this.count;
-	}
-	public void setCount(Integer count) {
-		this.count = count;
-	}
+	@JsonProperty("count")
+	private Integer count;
 
 	public Long getCategoryId() {
 		return this.categoryId;
 	}
 	public void setCategoryId(Long categoryId) {
 		this.categoryId = categoryId;
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 }

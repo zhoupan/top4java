@@ -13,11 +13,14 @@ public class PropImg extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("position")
-	private Integer position;
+	@JsonProperty("created")
+	private Date created;
 
 	@JsonProperty("id")
 	private Long id;
+
+	@JsonProperty("position")
+	private Integer position;
 
 	@JsonProperty("properties")
 	private String properties;
@@ -25,14 +28,11 @@ public class PropImg extends BaseObject {
 	@JsonProperty("url")
 	private String url;
 
-	@JsonProperty("created")
-	private Date created;
-
-	public Integer getPosition() {
-		return this.position;
+	public Date getCreated() {
+		return this.created;
 	}
-	public void setPosition(Integer position) {
-		this.position = position;
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
 	public Long getId() {
@@ -40,6 +40,13 @@ public class PropImg extends BaseObject {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Integer getPosition() {
+		return this.position;
+	}
+	public void setPosition(Integer position) {
+		this.position = position;
 	}
 
 	public String getProperties() {
@@ -54,13 +61,6 @@ public class PropImg extends BaseObject {
 	}
 	public void setUrl(String url) {
 		this.url = url;
-	}
-
-	public Date getCreated() {
-		return this.created;
-	}
-	public void setCreated(Date created) {
-		this.created = created;
 	}
 
 }

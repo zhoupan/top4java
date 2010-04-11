@@ -12,41 +12,8 @@ public class TaobaokeItem extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("taobaoke_cat_click_url")
-	private String taobaokeCatClickUrl;
-
-	@JsonProperty("iid")
-	private String iid;
-
-	@JsonProperty("commission_rate")
-	private String commissionRate;
-
-	@JsonProperty("pic_url")
-	private String picUrl;
-
-	@JsonProperty("item_location")
-	private String itemLocation;
-
 	@JsonProperty("click_url")
 	private String clickUrl;
-
-	@JsonProperty("title")
-	private String title;
-
-	@JsonProperty("price")
-	private String price;
-
-	@JsonProperty("nick")
-	private String nick;
-
-	@JsonProperty("volume")
-	private Long volume;
-
-	@JsonProperty("num_iid")
-	private Long numIid;
-
-	@JsonProperty("commission_volume")
-	private String commissionVolume;
 
 	@JsonProperty("commission")
 	private String commission;
@@ -54,97 +21,53 @@ public class TaobaokeItem extends BaseObject {
 	@JsonProperty("commission_num")
 	private String commissionNum;
 
-	@JsonProperty("shop_click_url")
-	private String shopClickUrl;
+	@JsonProperty("commission_rate")
+	private String commissionRate;
 
-	@JsonProperty("seller_credit_score")
-	private Long sellerCreditScore;
+	@JsonProperty("commission_volume")
+	private String commissionVolume;
+
+	@JsonProperty("iid")
+	private String iid;
+
+	@JsonProperty("item_location")
+	private String itemLocation;
 
 	@JsonProperty("keyword_click_url")
 	private String keywordClickUrl;
 
-	public String getTaobaokeCatClickUrl() {
-		return this.taobaokeCatClickUrl;
-	}
-	public void setTaobaokeCatClickUrl(String taobaokeCatClickUrl) {
-		this.taobaokeCatClickUrl = taobaokeCatClickUrl;
-	}
+	@JsonProperty("nick")
+	private String nick;
 
-	public String getIid() {
-		return this.iid;
-	}
-	public void setIid(String iid) {
-		this.iid = iid;
-	}
+	@JsonProperty("num_iid")
+	private Long numIid;
 
-	public String getCommissionRate() {
-		return this.commissionRate;
-	}
-	public void setCommissionRate(String commissionRate) {
-		this.commissionRate = commissionRate;
-	}
+	@JsonProperty("pic_url")
+	private String picUrl;
 
-	public String getPicUrl() {
-		return this.picUrl;
-	}
-	public void setPicUrl(String picUrl) {
-		this.picUrl = picUrl;
-	}
+	@JsonProperty("price")
+	private String price;
 
-	public String getItemLocation() {
-		return this.itemLocation;
-	}
-	public void setItemLocation(String itemLocation) {
-		this.itemLocation = itemLocation;
-	}
+	@JsonProperty("seller_credit_score")
+	private Long sellerCreditScore;
+
+	@JsonProperty("shop_click_url")
+	private String shopClickUrl;
+
+	@JsonProperty("taobaoke_cat_click_url")
+	private String taobaokeCatClickUrl;
+
+	@JsonProperty("title")
+	private String title;
+
+	@JsonProperty("volume")
+	private Long volume;
 
 	public String getClickUrl() {
 		return this.clickUrl;
 	}
 	public void setClickUrl(String clickUrl) {
 		this.clickUrl = clickUrl;
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getPrice() {
-		return this.price;
-	}
-	public void setPrice(String price) {
-		this.price = price;
-	}
-
-	public String getNick() {
-		return this.nick;
-	}
-	public void setNick(String nick) {
-		this.nick = nick;
-	}
-
-	public Long getVolume() {
-		return this.volume;
-	}
-	public void setVolume(Long volume) {
-		this.volume = volume;
-	}
-
-	public Long getNumIid() {
-		return this.numIid;
-	}
-	public void setNumIid(Long numIid) {
-		this.numIid = numIid;
-	}
-
-	public String getCommissionVolume() {
-		return this.commissionVolume;
-	}
-	public void setCommissionVolume(String commissionVolume) {
-		this.commissionVolume = commissionVolume;
 	}
 
 	public String getCommission() {
@@ -161,11 +84,67 @@ public class TaobaokeItem extends BaseObject {
 		this.commissionNum = commissionNum;
 	}
 
-	public String getShopClickUrl() {
-		return this.shopClickUrl;
+	public String getCommissionRate() {
+		return this.commissionRate;
 	}
-	public void setShopClickUrl(String shopClickUrl) {
-		this.shopClickUrl = shopClickUrl;
+	public void setCommissionRate(String commissionRate) {
+		this.commissionRate = commissionRate;
+	}
+
+	public String getCommissionVolume() {
+		return this.commissionVolume;
+	}
+	public void setCommissionVolume(String commissionVolume) {
+		this.commissionVolume = commissionVolume;
+	}
+
+	public String getIid() {
+		return this.iid;
+	}
+	public void setIid(String iid) {
+		this.iid = iid;
+	}
+
+	public String getItemLocation() {
+		return this.itemLocation;
+	}
+	public void setItemLocation(String itemLocation) {
+		this.itemLocation = itemLocation;
+	}
+
+	public String getKeywordClickUrl() {
+		return this.keywordClickUrl;
+	}
+	public void setKeywordClickUrl(String keywordClickUrl) {
+		this.keywordClickUrl = keywordClickUrl;
+	}
+
+	public String getNick() {
+		return this.nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+
+	public Long getNumIid() {
+		return this.numIid;
+	}
+	public void setNumIid(Long numIid) {
+		this.numIid = numIid;
+	}
+
+	public String getPicUrl() {
+		return this.picUrl;
+	}
+	public void setPicUrl(String picUrl) {
+		this.picUrl = picUrl;
+	}
+
+	public String getPrice() {
+		return this.price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
 	}
 
 	public Long getSellerCreditScore() {
@@ -175,11 +154,32 @@ public class TaobaokeItem extends BaseObject {
 		this.sellerCreditScore = sellerCreditScore;
 	}
 
-	public String getKeywordClickUrl() {
-		return this.keywordClickUrl;
+	public String getShopClickUrl() {
+		return this.shopClickUrl;
 	}
-	public void setKeywordClickUrl(String keywordClickUrl) {
-		this.keywordClickUrl = keywordClickUrl;
+	public void setShopClickUrl(String shopClickUrl) {
+		this.shopClickUrl = shopClickUrl;
+	}
+
+	public String getTaobaokeCatClickUrl() {
+		return this.taobaokeCatClickUrl;
+	}
+	public void setTaobaokeCatClickUrl(String taobaokeCatClickUrl) {
+		this.taobaokeCatClickUrl = taobaokeCatClickUrl;
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Long getVolume() {
+		return this.volume;
+	}
+	public void setVolume(Long volume) {
+		this.volume = volume;
 	}
 
 }

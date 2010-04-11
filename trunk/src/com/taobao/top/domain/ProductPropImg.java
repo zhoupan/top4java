@@ -13,32 +13,32 @@ public class ProductPropImg extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("position")
-	private Integer position;
+	@JsonProperty("created")
+	private Date created;
 
 	@JsonProperty("id")
 	private Long id;
 
+	@JsonProperty("modified")
+	private Date modified;
+
+	@JsonProperty("position")
+	private Integer position;
+
 	@JsonProperty("product_id")
 	private Long productId;
-
-	@JsonProperty("url")
-	private String url;
 
 	@JsonProperty("props")
 	private String props;
 
-	@JsonProperty("created")
-	private Date created;
+	@JsonProperty("url")
+	private String url;
 
-	@JsonProperty("modified")
-	private Date modified;
-
-	public Integer getPosition() {
-		return this.position;
+	public Date getCreated() {
+		return this.created;
 	}
-	public void setPosition(Integer position) {
-		this.position = position;
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
 	public Long getId() {
@@ -48,18 +48,25 @@ public class ProductPropImg extends BaseObject {
 		this.id = id;
 	}
 
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
+	}
+
+	public Integer getPosition() {
+		return this.position;
+	}
+	public void setPosition(Integer position) {
+		this.position = position;
+	}
+
 	public Long getProductId() {
 		return this.productId;
 	}
 	public void setProductId(Long productId) {
 		this.productId = productId;
-	}
-
-	public String getUrl() {
-		return this.url;
-	}
-	public void setUrl(String url) {
-		this.url = url;
 	}
 
 	public String getProps() {
@@ -69,18 +76,11 @@ public class ProductPropImg extends BaseObject {
 		this.props = props;
 	}
 
-	public Date getCreated() {
-		return this.created;
+	public String getUrl() {
+		return this.url;
 	}
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-
-	public Date getModified() {
-		return this.modified;
-	}
-	public void setModified(Date modified) {
-		this.modified = modified;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 }

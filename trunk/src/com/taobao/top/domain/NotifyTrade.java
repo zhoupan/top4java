@@ -16,14 +16,20 @@ public class NotifyTrade extends BaseObject {
 	@JsonProperty("buyer_nick")
 	private String buyerNick;
 
+	@JsonProperty("is_3D")
+	private Boolean is3D;
+
+	@JsonProperty("modified")
+	private Date modified;
+
 	@JsonProperty("payment")
 	private String payment;
 
+	@JsonProperty("seller_nick")
+	private String sellerNick;
+
 	@JsonProperty("status")
 	private String status;
-
-	@JsonProperty("is_3D")
-	private Boolean is3D;
 
 	@JsonProperty("tid")
 	private Long tid;
@@ -31,17 +37,25 @@ public class NotifyTrade extends BaseObject {
 	@JsonProperty("type")
 	private String type;
 
-	@JsonProperty("seller_nick")
-	private String sellerNick;
-
-	@JsonProperty("modified")
-	private Date modified;
-
 	public String getBuyerNick() {
 		return this.buyerNick;
 	}
 	public void setBuyerNick(String buyerNick) {
 		this.buyerNick = buyerNick;
+	}
+
+	public Boolean getIs3D() {
+		return this.is3D;
+	}
+	public void setIs3D(Boolean is3D) {
+		this.is3D = is3D;
+	}
+
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
 	}
 
 	public String getPayment() {
@@ -51,18 +65,18 @@ public class NotifyTrade extends BaseObject {
 		this.payment = payment;
 	}
 
+	public String getSellerNick() {
+		return this.sellerNick;
+	}
+	public void setSellerNick(String sellerNick) {
+		this.sellerNick = sellerNick;
+	}
+
 	public String getStatus() {
 		return this.status;
 	}
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public Boolean getIs3D() {
-		return this.is3D;
-	}
-	public void setIs3D(Boolean is3D) {
-		this.is3D = is3D;
 	}
 
 	public Long getTid() {
@@ -77,20 +91,6 @@ public class NotifyTrade extends BaseObject {
 	}
 	public void setType(String type) {
 		this.type = type;
-	}
-
-	public String getSellerNick() {
-		return this.sellerNick;
-	}
-	public void setSellerNick(String sellerNick) {
-		this.sellerNick = sellerNick;
-	}
-
-	public Date getModified() {
-		return this.modified;
-	}
-	public void setModified(Date modified) {
-		this.modified = modified;
 	}
 
 }

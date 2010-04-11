@@ -16,65 +16,26 @@ public class ItemExtra extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("created")
-	private Date created;
-
-	@JsonProperty("eid")
-	private Long eid;
-
-	@JsonList(list="skus", name="sku")
-	private List<Sku> skus;
-
-	@JsonProperty("desc")
-	private String desc;
-
-	@JsonProperty("shop_id")
-	private Long shopId;
-
-	@JsonProperty("memo")
-	private String memo;
-
-	@JsonProperty("iid")
-	private String iid;
-
-	@JsonProperty("type")
-	private String type;
-
-	@JsonProperty("reserve_price")
-	private String reservePrice;
-
-	@JsonProperty("pic_url")
-	private String picUrl;
-
 	@JsonProperty("approve_status")
 	private String approveStatus;
 
-	@JsonProperty("modified")
-	private Date modified;
-
-	@JsonProperty("title")
-	private String title;
-
-	@JsonProperty("list_time")
-	private String listTime;
-
-	@JsonProperty("nick")
-	private String nick;
+	@JsonProperty("created")
+	private Date created;
 
 	@JsonProperty("delist_time")
 	private String delistTime;
 
-	@JsonProperty("num_iid")
-	private Long numIid;
+	@JsonProperty("desc")
+	private String desc;
+
+	@JsonProperty("eid")
+	private Long eid;
 
 	@JsonProperty("feature")
 	private String feature;
 
-	@JsonProperty("seller_cids")
-	private String sellerCids;
-
-	@JsonProperty("options")
-	private Long options;
+	@JsonProperty("iid")
+	private String iid;
 
 	@JsonProperty("item_num")
 	private Integer itemNum;
@@ -85,75 +46,44 @@ public class ItemExtra extends BaseObject {
 	@JsonProperty("item_pic_url")
 	private String itemPicUrl;
 
-	public Date getCreated() {
-		return this.created;
-	}
-	public void setCreated(Date created) {
-		this.created = created;
-	}
+	@JsonProperty("list_time")
+	private String listTime;
 
-	public Long getEid() {
-		return this.eid;
-	}
-	public void setEid(Long eid) {
-		this.eid = eid;
-	}
+	@JsonProperty("memo")
+	private String memo;
 
-	public List<Sku> getSkus() {
-		return this.skus;
-	}
-	public void setSkus(List<Sku> skus) {
-		this.skus = skus;
-	}
+	@JsonProperty("modified")
+	private Date modified;
 
-	public String getDesc() {
-		return this.desc;
-	}
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
+	@JsonProperty("nick")
+	private String nick;
 
-	public Long getShopId() {
-		return this.shopId;
-	}
-	public void setShopId(Long shopId) {
-		this.shopId = shopId;
-	}
+	@JsonProperty("num_iid")
+	private Long numIid;
 
-	public String getMemo() {
-		return this.memo;
-	}
-	public void setMemo(String memo) {
-		this.memo = memo;
-	}
+	@JsonProperty("options")
+	private Long options;
 
-	public String getIid() {
-		return this.iid;
-	}
-	public void setIid(String iid) {
-		this.iid = iid;
-	}
+	@JsonProperty("pic_url")
+	private String picUrl;
 
-	public String getType() {
-		return this.type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
+	@JsonProperty("reserve_price")
+	private String reservePrice;
 
-	public String getReservePrice() {
-		return this.reservePrice;
-	}
-	public void setReservePrice(String reservePrice) {
-		this.reservePrice = reservePrice;
-	}
+	@JsonProperty("seller_cids")
+	private String sellerCids;
 
-	public String getPicUrl() {
-		return this.picUrl;
-	}
-	public void setPicUrl(String picUrl) {
-		this.picUrl = picUrl;
-	}
+	@JsonProperty("shop_id")
+	private Long shopId;
+
+	@JsonList(list="skus", name="sku")
+	private List<Sku> skus;
+
+	@JsonProperty("title")
+	private String title;
+
+	@JsonProperty("type")
+	private String type;
 
 	public String getApproveStatus() {
 		return this.approveStatus;
@@ -162,32 +92,11 @@ public class ItemExtra extends BaseObject {
 		this.approveStatus = approveStatus;
 	}
 
-	public Date getModified() {
-		return this.modified;
+	public Date getCreated() {
+		return this.created;
 	}
-	public void setModified(Date modified) {
-		this.modified = modified;
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getListTime() {
-		return this.listTime;
-	}
-	public void setListTime(String listTime) {
-		this.listTime = listTime;
-	}
-
-	public String getNick() {
-		return this.nick;
-	}
-	public void setNick(String nick) {
-		this.nick = nick;
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
 	public String getDelistTime() {
@@ -197,11 +106,18 @@ public class ItemExtra extends BaseObject {
 		this.delistTime = delistTime;
 	}
 
-	public Long getNumIid() {
-		return this.numIid;
+	public String getDesc() {
+		return this.desc;
 	}
-	public void setNumIid(Long numIid) {
-		this.numIid = numIid;
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public Long getEid() {
+		return this.eid;
+	}
+	public void setEid(Long eid) {
+		this.eid = eid;
 	}
 
 	public String getFeature() {
@@ -211,18 +127,11 @@ public class ItemExtra extends BaseObject {
 		this.feature = feature;
 	}
 
-	public String getSellerCids() {
-		return this.sellerCids;
+	public String getIid() {
+		return this.iid;
 	}
-	public void setSellerCids(String sellerCids) {
-		this.sellerCids = sellerCids;
-	}
-
-	public Long getOptions() {
-		return this.options;
-	}
-	public void setOptions(Long options) {
-		this.options = options;
+	public void setIid(String iid) {
+		this.iid = iid;
 	}
 
 	public Integer getItemNum() {
@@ -244,6 +153,97 @@ public class ItemExtra extends BaseObject {
 	}
 	public void setItemPicUrl(String itemPicUrl) {
 		this.itemPicUrl = itemPicUrl;
+	}
+
+	public String getListTime() {
+		return this.listTime;
+	}
+	public void setListTime(String listTime) {
+		this.listTime = listTime;
+	}
+
+	public String getMemo() {
+		return this.memo;
+	}
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
+
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
+	}
+
+	public String getNick() {
+		return this.nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+
+	public Long getNumIid() {
+		return this.numIid;
+	}
+	public void setNumIid(Long numIid) {
+		this.numIid = numIid;
+	}
+
+	public Long getOptions() {
+		return this.options;
+	}
+	public void setOptions(Long options) {
+		this.options = options;
+	}
+
+	public String getPicUrl() {
+		return this.picUrl;
+	}
+	public void setPicUrl(String picUrl) {
+		this.picUrl = picUrl;
+	}
+
+	public String getReservePrice() {
+		return this.reservePrice;
+	}
+	public void setReservePrice(String reservePrice) {
+		this.reservePrice = reservePrice;
+	}
+
+	public String getSellerCids() {
+		return this.sellerCids;
+	}
+	public void setSellerCids(String sellerCids) {
+		this.sellerCids = sellerCids;
+	}
+
+	public Long getShopId() {
+		return this.shopId;
+	}
+	public void setShopId(Long shopId) {
+		this.shopId = shopId;
+	}
+
+	public List<Sku> getSkus() {
+		return this.skus;
+	}
+	public void setSkus(List<Sku> skus) {
+		this.skus = skus;
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }

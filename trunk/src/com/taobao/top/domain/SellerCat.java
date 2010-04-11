@@ -13,11 +13,14 @@ public class SellerCat extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
+	@JsonProperty("cid")
+	private String cid;
+
 	@JsonProperty("created")
 	private Date created;
 
-	@JsonProperty("cid")
-	private String cid;
+	@JsonProperty("modified")
+	private Date modified;
 
 	@JsonProperty("name")
 	private String name;
@@ -25,14 +28,18 @@ public class SellerCat extends BaseObject {
 	@JsonProperty("parent_cid")
 	private String parentCid;
 
-	@JsonProperty("sort_order")
-	private Integer sortOrder;
-
 	@JsonProperty("pic_url")
 	private String picUrl;
 
-	@JsonProperty("modified")
-	private Date modified;
+	@JsonProperty("sort_order")
+	private Integer sortOrder;
+
+	public String getCid() {
+		return this.cid;
+	}
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
 
 	public Date getCreated() {
 		return this.created;
@@ -41,11 +48,11 @@ public class SellerCat extends BaseObject {
 		this.created = created;
 	}
 
-	public String getCid() {
-		return this.cid;
+	public Date getModified() {
+		return this.modified;
 	}
-	public void setCid(String cid) {
-		this.cid = cid;
+	public void setModified(Date modified) {
+		this.modified = modified;
 	}
 
 	public String getName() {
@@ -62,13 +69,6 @@ public class SellerCat extends BaseObject {
 		this.parentCid = parentCid;
 	}
 
-	public Integer getSortOrder() {
-		return this.sortOrder;
-	}
-	public void setSortOrder(Integer sortOrder) {
-		this.sortOrder = sortOrder;
-	}
-
 	public String getPicUrl() {
 		return this.picUrl;
 	}
@@ -76,11 +76,11 @@ public class SellerCat extends BaseObject {
 		this.picUrl = picUrl;
 	}
 
-	public Date getModified() {
-		return this.modified;
+	public Integer getSortOrder() {
+		return this.sortOrder;
 	}
-	public void setModified(Date modified) {
-		this.modified = modified;
+	public void setSortOrder(Integer sortOrder) {
+		this.sortOrder = sortOrder;
 	}
 
 }
