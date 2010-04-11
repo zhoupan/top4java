@@ -11,6 +11,7 @@ import com.taobao.top.domain.ResponseList;
 import com.taobao.top.mapping.Converter;
 import com.taobao.top.mapping.Converters;
 import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonListClass;
 import com.taobao.top.mapping.Reader;
 import com.taobao.top.util.StrUtils;
 
@@ -45,8 +46,8 @@ public class JsonConverter implements Converter {
 			}
 		}
 
-		String jsonClassName = getJsonClassName(clazz);
-		List<?> objJsonList = (List<?>) rspJson.get(jsonClassName);
+		Map<?, ?> listJsonMap = (Map<?, ?>) rspJson.get(getJsonListClassName(clazz));
+		List<?> objJsonList= (List<?>) listJsonMap.get(getJsonClassName(clazz));
 
 		for (Object tmp : objJsonList) {
 			Map<?, ?> objJson = (Map<?, ?>) tmp;
@@ -60,8 +61,31 @@ public class JsonConverter implements Converter {
 	}
 
 	public <T> T toResponse(String rsp, Class<T> clazz, String api) throws TopException {
-		ResponseList<T> rspList = toResponseList(rsp, clazz, api);
-		return rspList.getFirst();
+		JSONReader reader = new JSONReader();
+		Map<?, ?> rootJson = (Map<?, ?>) reader.read(rsp);
+		if (rootJson == null) {
+			return null;
+		}
+
+		Map<?, ?> rspJson = (Map<?, ?>) rootJson.get(getRootElement(api));
+		if (rspJson == null || rspJson.isEmpty()) {
+			return null;
+		}
+
+		Map<?, ?> objJson = (Map<?, ?>) rspJson.get(getJsonClassName(clazz));
+		return fromJson(objJson, clazz);
+	}
+
+	private String getJsonListClassName(Class<?> clazz) {
+		JsonListClass jsonList = clazz.getAnnotation(JsonListClass.class);
+		if (jsonList != null) {
+			String alias = jsonList.value();
+			if (!StrUtils.isEmpty(alias)) {
+				return alias;
+			}
+		}
+
+		return null;
 	}
 
 	private String getJsonClassName(Class<?> clazz) {
