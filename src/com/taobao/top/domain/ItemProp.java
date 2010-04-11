@@ -2,210 +2,187 @@ package com.taobao.top.domain;
 
 import java.util.List;
 
-import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonList;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 商品属性。
- * 
+ * ItemProp Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("item_props")
 public class ItemProp extends BaseObject {
 
-	private static final long serialVersionUID = 7809692961838601952L;
+	private static final long serialVersionUID = 1L;
 
-	/** 属性编号 */
-	@JsonProperty("pid")
-	private Long pid;
-
-	/** 属性名称 */
-	@JsonProperty("name")
-	private String name;
-
-	/** 是否关键属性 */
-	@JsonProperty("is_key_prop")
-	private Boolean keyProp;
-
-	/** 是否销售属性 */
-	@JsonProperty("is_sale_prop")
-	private Boolean saleProp;
-
-	/** 是否颜色属性 */
-	@JsonProperty("is_color_prop")
-	private Boolean colorProp;
-
-	/** 是否是可枚举属性 */
 	@JsonProperty("is_enum_prop")
-	private Boolean enumProp;
+	private Boolean isEnumProp;
 
-	/** 是否是卖家可以自行输入的属性 */
-	@JsonProperty("is_input_prop")
-	private String inputProp;
-
-	/** 是否商品属性 */
-	@JsonProperty("is_item_prop")
-	private String itemProp;
-
-	/** 子属性的模板 */
-	@JsonProperty("child_template")
-	private String childPropTemplate;
-
-	/** 发布产品或商品时是否为必选属性 */
-	@JsonProperty("must")
-	private Boolean must;
-
-	/** 发布产品或商品时是否可以多选 */
-	@JsonProperty("multi")
-	private Boolean multi;
-
-	/** 上级属性编号 */
-	@JsonProperty("parent_pid")
-	private Long parentPid;
-
-	/** 上级属性值编号 */
 	@JsonProperty("parent_vid")
 	private Long parentVid;
 
-	/** 属性值对象 */
-	@JsonProperty("prop_values")
-	private List<PropValue> propValues;
-
-	/** 属性状态 */
 	@JsonProperty("status")
 	private String status;
 
-	/** 排列序号 */
+	@JsonProperty("is_allow_alias")
+	private Boolean isAllowAlias;
+
+	@JsonProperty("is_key_prop")
+	private Boolean isKeyProp;
+
+	@JsonProperty("pid")
+	private Long pid;
+
+	@JsonList(list="prop_values", name="prop_value")
+	private List<PropValue> propValues;
+
+	@JsonProperty("is_color_prop")
+	private Boolean isColorProp;
+
+	@JsonProperty("must")
+	private Boolean must;
+
+	@JsonProperty("name")
+	private String name;
+
+	@JsonProperty("multi")
+	private Boolean multi;
+
+	@JsonProperty("parent_pid")
+	private Long parentPid;
+
 	@JsonProperty("sort_order")
 	private Integer sortOrder;
 
-	public Long getPid() {
-		return this.pid;
-	}
+	@JsonProperty("child_template")
+	private String childTemplate;
 
-	public void setPid(Long pid) {
-		this.pid = pid;
-	}
+	@JsonProperty("is_input_prop")
+	private Boolean isInputProp;
 
-	public String getName() {
-		return this.name;
-	}
+	@JsonProperty("is_item_prop")
+	private Boolean isItemProp;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+	@JsonProperty("is_sale_prop")
+	private Boolean isSaleProp;
 
-	public Boolean isKeyProp() {
-		return this.keyProp;
+	public Boolean getIsEnumProp() {
+		return this.isEnumProp;
 	}
-
-	public void setKeyProp(Boolean isKeyProp) {
-		this.keyProp = isKeyProp;
-	}
-
-	public Boolean isSaleProp() {
-		return this.saleProp;
-	}
-
-	public void setSaleProp(Boolean isSaleProp) {
-		this.saleProp = isSaleProp;
-	}
-
-	public Boolean isColorProp() {
-		return this.colorProp;
-	}
-
-	public void setColorProp(Boolean isColorProp) {
-		this.colorProp = isColorProp;
-	}
-
-	public Boolean isEnumProp() {
-		return this.enumProp;
-	}
-
-	public void setEnumProp(Boolean isEnumProp) {
-		this.enumProp = isEnumProp;
-	}
-
-	public String isInputProp() {
-		return this.inputProp;
-	}
-
-	public void setInputProp(String isInputProp) {
-		this.inputProp = isInputProp;
-	}
-
-	public String isItemProp() {
-		return this.itemProp;
-	}
-
-	public void setItemProp(String isItemProp) {
-		this.itemProp = isItemProp;
-	}
-
-	public String getChildPropTemplate() {
-		return this.childPropTemplate;
-	}
-
-	public void setChildPropTemplate(String childPropTemplate) {
-		this.childPropTemplate = childPropTemplate;
-	}
-
-	public Boolean isMust() {
-		return this.must;
-	}
-
-	public void setMust(Boolean isMust) {
-		this.must = isMust;
-	}
-
-	public Boolean isMulti() {
-		return this.multi;
-	}
-
-	public void setMulti(Boolean isMulti) {
-		this.multi = isMulti;
-	}
-
-	public Long getParentPid() {
-		return this.parentPid;
-	}
-
-	public void setParentPid(Long parentPid) {
-		this.parentPid = parentPid;
+	public void setIsEnumProp(Boolean isEnumProp) {
+		this.isEnumProp = isEnumProp;
 	}
 
 	public Long getParentVid() {
 		return this.parentVid;
 	}
-
 	public void setParentVid(Long parentVid) {
 		this.parentVid = parentVid;
-	}
-
-	public List<PropValue> getPropValues() {
-		return this.propValues;
-	}
-
-	public void setPropValues(List<PropValue> propValues) {
-		this.propValues = propValues;
 	}
 
 	public String getStatus() {
 		return this.status;
 	}
-
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Boolean getIsAllowAlias() {
+		return this.isAllowAlias;
+	}
+	public void setIsAllowAlias(Boolean isAllowAlias) {
+		this.isAllowAlias = isAllowAlias;
+	}
+
+	public Boolean getIsKeyProp() {
+		return this.isKeyProp;
+	}
+	public void setIsKeyProp(Boolean isKeyProp) {
+		this.isKeyProp = isKeyProp;
+	}
+
+	public Long getPid() {
+		return this.pid;
+	}
+	public void setPid(Long pid) {
+		this.pid = pid;
+	}
+
+	public List<PropValue> getPropValues() {
+		return this.propValues;
+	}
+	public void setPropValues(List<PropValue> propValues) {
+		this.propValues = propValues;
+	}
+
+	public Boolean getIsColorProp() {
+		return this.isColorProp;
+	}
+	public void setIsColorProp(Boolean isColorProp) {
+		this.isColorProp = isColorProp;
+	}
+
+	public Boolean getMust() {
+		return this.must;
+	}
+	public void setMust(Boolean must) {
+		this.must = must;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Boolean getMulti() {
+		return this.multi;
+	}
+	public void setMulti(Boolean multi) {
+		this.multi = multi;
+	}
+
+	public Long getParentPid() {
+		return this.parentPid;
+	}
+	public void setParentPid(Long parentPid) {
+		this.parentPid = parentPid;
 	}
 
 	public Integer getSortOrder() {
 		return this.sortOrder;
 	}
-
 	public void setSortOrder(Integer sortOrder) {
 		this.sortOrder = sortOrder;
+	}
+
+	public String getChildTemplate() {
+		return this.childTemplate;
+	}
+	public void setChildTemplate(String childTemplate) {
+		this.childTemplate = childTemplate;
+	}
+
+	public Boolean getIsInputProp() {
+		return this.isInputProp;
+	}
+	public void setIsInputProp(Boolean isInputProp) {
+		this.isInputProp = isInputProp;
+	}
+
+	public Boolean getIsItemProp() {
+		return this.isItemProp;
+	}
+	public void setIsItemProp(Boolean isItemProp) {
+		this.isItemProp = isItemProp;
+	}
+
+	public Boolean getIsSaleProp() {
+		return this.isSaleProp;
+	}
+	public void setIsSaleProp(Boolean isSaleProp) {
+		this.isSaleProp = isSaleProp;
 	}
 
 }

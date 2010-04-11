@@ -1,65 +1,55 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 店铺类目。
- * 
+ * ShopCat Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("shop_cats")
 public class ShopCat extends BaseObject {
 
-	private static final long serialVersionUID = 6844195547709366543L;
+	private static final long serialVersionUID = 1L;
 
-	/** 卖家自定义类目编号 */
-	@JsonProperty("cid")
-	private Long cid;
-
-	/** 父类目编号 */
-	@JsonProperty("parent_cid")
-	private Long parentCid;
-
-	/** 卖家自定义类目名称 */
 	@JsonProperty("name")
 	private String name;
 
-	/** 该类目是否为父类目 */
+	@JsonProperty("parent_cid")
+	private Long parentCid;
+
 	@JsonProperty("is_parent")
-	private Boolean parent;
+	private Boolean isParent;
 
-	public Long getCid() {
-		return this.cid;
+	@JsonProperty("cid")
+	private Long cid;
+
+	public String getName() {
+		return this.name;
 	}
-
-	public void setCid(Long cid) {
-		this.cid = cid;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Long getParentCid() {
 		return this.parentCid;
 	}
-
 	public void setParentCid(Long parentCid) {
 		this.parentCid = parentCid;
 	}
 
-	public String getName() {
-		return this.name;
+	public Boolean getIsParent() {
+		return this.isParent;
+	}
+	public void setIsParent(Boolean isParent) {
+		this.isParent = isParent;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public Long getCid() {
+		return this.cid;
 	}
-
-	public Boolean isParent() {
-		return this.parent;
-	}
-
-	public void setParent(Boolean isParent) {
-		this.parent = isParent;
+	public void setCid(Long cid) {
+		this.cid = cid;
 	}
 
 }

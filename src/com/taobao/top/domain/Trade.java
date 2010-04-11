@@ -3,678 +3,597 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonList;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 交易。
- * 
+ * Trade Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("trades")
 public class Trade extends BaseObject {
 
-	private static final long serialVersionUID = 2497316227780926696L;
+	private static final long serialVersionUID = 1L;
 
-	/** 淘宝交易编号（父订单的交易编号） */
 	@JsonProperty("tid")
 	private Long tid;
 
-	/** 交易标题 */
-	@JsonProperty("title")
-	private String title;
+	@JsonProperty("modified")
+	private Date modified;
 
-	/** 交易类型 */
-	@JsonProperty("type")
-	private String type;
-
-	/** 卖家昵称 */
-	@JsonProperty("seller_nick")
-	private String sellerNick;
-
-	/** 买家昵称 */
-	@JsonProperty("buyer_nick")
-	private String buyerNick;
-
-	/** 买家留言 */
-	@JsonProperty("buyer_message")
-	private String buyerMessage;
-
-	/** 商品的编号 */
-	@JsonProperty("iid")
-	private String iid;
-
-	/** 商品路径 */
-	@JsonProperty("item_url")
-	private String itemUrl;
-
-	/** 商品价格 */
-	@JsonProperty("price")
-	private String itemPrice;
-
-	/** 商品图片绝对地址 */
-	@JsonProperty("pic_path")
-	private String itemImgUrl;
-
-	/** 商品购买数量 */
-	@JsonProperty("num")
-	private Integer itemNum;
-
-	/** 物流编号 */
-	@JsonProperty("sid")
-	private Long sid;
-
-	/** 创建交易时的物流方式 */
-	@JsonProperty("shipping_type")
-	private String shippingType;
-
-	/** 支付宝交易号 */
-	@JsonProperty("alipay_no")
-	private String alipayNo;
-
-	/** 买家实付金额（包含物流费用） */
-	@JsonProperty("payment")
-	private String payment;
-
-	/** 系统优惠金额 */
-	@JsonProperty("discount_fee")
-	private String discountFee;
-
-	/** 卖家优惠金额 */
-	@JsonProperty("adjust_fee")
-	private String adjustFee;
-
-	/** 交易快照信息 */
-	@JsonProperty("snapshot")
-	private String snapshot;
-
-	/** 交易快照地址 */
-	@JsonProperty("snapshot_url")
-	private String snapshotUrl;
-
-	/** 交易状态 */
-	@JsonProperty("status")
-	private String status;
-
-	/** 卖家是否已评价 */
-	@JsonProperty("seller_rate")
-	private Boolean sellerRated;
-
-	/** 买家是否已评价 */
-	@JsonProperty("buyer_rate")
-	private Boolean buyerRated;
-
-	/** 买家备注 */
-	@JsonProperty("buyer_memo")
-	private String buyerMemo;
-
-	/** 卖家备注 */
-	@JsonProperty("seller_memo")
-	private String sellerMemo;
-
-	/** 付款时间 */
-	@JsonProperty("pay_time")
-	private Date payTime;
-
-	/** 交易成功时间 */
-	@JsonProperty("end_time")
-	private Date endTime;
-
-	/** 买家获得积分，返点的积分 */
-	@JsonProperty("buyer_obtain_point_fee")
-	private String buyerObtainPointFee;
-
-	/** 买家使用积分 */
-	@JsonProperty("point_fee")
-	private String buyerUsePointFee;
-
-	/** 买家实际使用积分 */
-	@JsonProperty("real_point_fee")
-	private String buyerRealPointFee;
-
-	/** 金额 */
-	@JsonProperty("total_fee")
-	private String totalFee;
-
-	/** 邮费 */
-	@JsonProperty("post_fee")
-	private String postFee;
-
-	/** 买家支付宝账号 */
-	@JsonProperty("buyer_alipay_no")
-	private String buyerAlipayNo;
-
-	/** 收货人的姓名 */
-	@JsonProperty("receiver_name")
-	private String receiverName;
-
-	/** 收货人的所在省份 */
-	@JsonProperty("receiver_state")
-	private String receiverState;
-
-	/** 收货人的所在城市 */
-	@JsonProperty("receiver_city")
-	private String receiverCity;
-
-	/** 收货人的所在地区 */
-	@JsonProperty("receiver_district")
-	private String receiverDistrict;
-
-	/** 收货人的详细地址 */
-	@JsonProperty("receiver_address")
-	private String receiverAddress;
-
-	/** 收货人的邮编 */
-	@JsonProperty("receiver_zip")
-	private String receiverZip;
-
-	/** 收货人的手机号码 */
-	@JsonProperty("receiver_mobile")
-	private String receiverMobile;
-
-	/** 收货人的电话号码 */
-	@JsonProperty("receiver_phone")
-	private String receiverPhone;
-
-	/** 卖家发货时间 */
-	@JsonProperty("consign_time")
-	private String consignTime;
-
-	/** 买家邮箱 */
-	@JsonProperty("buyer_email")
-	private String buyerEmail;
-
-	/** 交易佣金 */
-	@JsonProperty("commission_fee")
-	private String commissionFee;
-
-	/** 卖家支付宝账号 */
-	@JsonProperty("seller_alipay_no")
-	private String sellerAlipayNo;
-
-	/** 卖家手机 */
-	@JsonProperty("seller_mobile")
-	private String sellerMobile;
-
-	/** 卖家电话 */
-	@JsonProperty("seller_phone")
-	private String sellerPhone;
-
-	/** 卖家姓名 */
 	@JsonProperty("seller_name")
 	private String sellerName;
 
-	/** 卖家Email */
-	@JsonProperty("seller_email")
-	private String sellerEmail;
+	@JsonList(list="orders", name="order")
+	private List<Order> orders;
 
-	/** 能够确认收货的实付款 */
-	@JsonProperty("available_confirm_fee")
-	private String availableConfirmFee;
+	@JsonProperty("buyer_obtain_point_fee")
+	private Integer buyerObtainPointFee;
 
-	/** 是否包含邮费 */
+	@JsonProperty("buyer_memo")
+	private String buyerMemo;
+
+	@JsonProperty("iid")
+	private String iid;
+
+	@JsonProperty("seller_memo")
+	private String sellerMemo;
+
+	@JsonProperty("receiver_address")
+	private String receiverAddress;
+
+	@JsonProperty("seller_alipay_no")
+	private String sellerAlipayNo;
+
+	@JsonProperty("adjust_fee")
+	private String adjustFee;
+
+	@JsonProperty("type")
+	private String type;
+
+	@JsonProperty("receiver_phone")
+	private String receiverPhone;
+
+	@JsonProperty("trade_memo")
+	private String tradeMemo;
+
+	@JsonProperty("created")
+	private Date created;
+
+	@JsonProperty("total_fee")
+	private String totalFee;
+
 	@JsonProperty("has_post_fee")
 	private Boolean hasPostFee;
 
-	/** 卖家实际收到的支付宝打款金额 */
-	@JsonProperty("received_payment")
-	private String receivedPayment;
+	@JsonProperty("is_3D")
+	private Boolean is3D;
 
-	/** 货到付款服务费 */
+	@JsonProperty("seller_nick")
+	private String sellerNick;
+
+	@JsonProperty("discount_fee")
+	private String discountFee;
+
+	@JsonProperty("available_confirm_fee")
+	private String availableConfirmFee;
+
+	@JsonProperty("status")
+	private String status;
+
+	@JsonProperty("shipping_type")
+	private String shippingType;
+
+	@JsonProperty("receiver_city")
+	private String receiverCity;
+
+	@JsonProperty("seller_phone")
+	private String sellerPhone;
+
 	@JsonProperty("cod_fee")
 	private String codFee;
 
-	/** 超时到期时间 */
+	@JsonProperty("cod_status")
+	private String codStatus;
+
+	@JsonProperty("pay_time")
+	private String payTime;
+
+	@JsonProperty("receiver_mobile")
+	private String receiverMobile;
+
+	@JsonProperty("receiver_name")
+	private String receiverName;
+
+	@JsonProperty("buyer_nick")
+	private String buyerNick;
+
+	@JsonProperty("snapshot_url")
+	private String snapshotUrl;
+
+	@JsonProperty("seller_rate")
+	private Boolean sellerRate;
+
+	@JsonProperty("price")
+	private String price;
+
+	@JsonProperty("end_time")
+	private String endTime;
+
+	@JsonProperty("consign_time")
+	private String consignTime;
+
+	@JsonProperty("receiver_zip")
+	private String receiverZip;
+
+	@JsonProperty("buyer_message")
+	private String buyerMessage;
+
+	@JsonProperty("pic_path")
+	private String picPath;
+
+	@JsonProperty("buyer_rate")
+	private Boolean buyerRate;
+
+	@JsonProperty("title")
+	private String title;
+
+	@JsonProperty("buyer_email")
+	private String buyerEmail;
+
+	@JsonProperty("alipay_no")
+	private String alipayNo;
+
+	@JsonProperty("buyer_alipay_no")
+	private String buyerAlipayNo;
+
+	@JsonProperty("commission_fee")
+	private String commissionFee;
+
+	@JsonProperty("receiver_state")
+	private String receiverState;
+
+	@JsonProperty("sid")
+	private String sid;
+
+	@JsonProperty("payment")
+	private String payment;
+
+	@JsonProperty("received_payment")
+	private String receivedPayment;
+
 	@JsonProperty("timeout_action_time")
-	private Date timeout;
+	private String timeoutActionTime;
 
-	/** 交易路径 */
-	@JsonProperty("trade_url")
-	private Date tradeUrl;
+	@JsonProperty("post_fee")
+	private String postFee;
 
-	/** 订单列表 */
-	@JsonProperty("orders")
-	private List<Order> orders;
+	@JsonProperty("point_fee")
+	private Integer pointFee;
+
+	@JsonProperty("receiver_district")
+	private String receiverDistrict;
+
+	@JsonProperty("num")
+	private Integer num;
+
+	@JsonProperty("real_point_fee")
+	private Integer realPointFee;
+
+	@JsonProperty("seller_mobile")
+	private String sellerMobile;
+
+	@JsonProperty("seller_email")
+	private String sellerEmail;
+
+	@JsonProperty("snapshot")
+	private String snapshot;
 
 	public Long getTid() {
 		return this.tid;
 	}
-
 	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getSellerNick() {
-		return this.sellerNick;
-	}
-
-	public void setSellerNick(String sellerNick) {
-		this.sellerNick = sellerNick;
-	}
-
-	public String getBuyerNick() {
-		return this.buyerNick;
-	}
-
-	public void setBuyerNick(String buyerNick) {
-		this.buyerNick = buyerNick;
-	}
-
-	public String getBuyerMessage() {
-		return this.buyerMessage;
-	}
-
-	public void setBuyerMessage(String buyerMessage) {
-		this.buyerMessage = buyerMessage;
-	}
-
-	public String getIid() {
-		return this.iid;
-	}
-
-	public void setIid(String iid) {
-		this.iid = iid;
-	}
-
-	public String getItemUrl() {
-		return this.itemUrl;
-	}
-
-	public void setItemUrl(String itemUrl) {
-		this.itemUrl = itemUrl;
-	}
-
-	public String getItemPrice() {
-		return this.itemPrice;
-	}
-
-	public void setItemPrice(String itemPrice) {
-		this.itemPrice = itemPrice;
-	}
-
-	public String getItemImgUrl() {
-		return this.itemImgUrl;
-	}
-
-	public void setItemImgUrl(String itemImgUrl) {
-		this.itemImgUrl = itemImgUrl;
-	}
-
-	public Integer getItemNum() {
-		return this.itemNum;
-	}
-
-	public void setItemNum(Integer itemNum) {
-		this.itemNum = itemNum;
-	}
-
-	public Long getSid() {
-		return this.sid;
-	}
-
-	public void setSid(Long sid) {
-		this.sid = sid;
-	}
-
-	public String getShippingType() {
-		return this.shippingType;
-	}
-
-	public void setShippingType(String shippingType) {
-		this.shippingType = shippingType;
-	}
-
-	public String getAlipayNo() {
-		return this.alipayNo;
-	}
-
-	public void setAlipayNo(String alipayNo) {
-		this.alipayNo = alipayNo;
-	}
-
-	public String getPayment() {
-		return this.payment;
-	}
-
-	public void setPayment(String payment) {
-		this.payment = payment;
-	}
-
-	public String getDiscountFee() {
-		return this.discountFee;
-	}
-
-	public void setDiscountFee(String discountFee) {
-		this.discountFee = discountFee;
-	}
-
-	public String getAdjustFee() {
-		return this.adjustFee;
-	}
-
-	public void setAdjustFee(String adjustFee) {
-		this.adjustFee = adjustFee;
-	}
-
-	public String getSnapshot() {
-		return this.snapshot;
-	}
-
-	public void setSnapshot(String snapshot) {
-		this.snapshot = snapshot;
-	}
-
-	public String getSnapshotUrl() {
-		return this.snapshotUrl;
-	}
-
-	public void setSnapshotUrl(String snapshotUrl) {
-		this.snapshotUrl = snapshotUrl;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public Boolean getSellerRated() {
-		return this.sellerRated;
-	}
-
-	public void setSellerRated(Boolean sellerRated) {
-		this.sellerRated = sellerRated;
-	}
-
-	public Boolean getBuyerRated() {
-		return this.buyerRated;
-	}
-
-	public void setBuyerRated(Boolean buyerRated) {
-		this.buyerRated = buyerRated;
-	}
-
-	public String getBuyerMemo() {
-		return this.buyerMemo;
-	}
-
-	public void setBuyerMemo(String buyerMemo) {
-		this.buyerMemo = buyerMemo;
-	}
-
-	public String getSellerMemo() {
-		return this.sellerMemo;
-	}
-
-	public void setSellerMemo(String sellerMemo) {
-		this.sellerMemo = sellerMemo;
-	}
-
-	public Date getPayTime() {
-		return this.payTime;
-	}
-
-	public void setPayTime(Date payTime) {
-		this.payTime = payTime;
-	}
-
-	public Date getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Date endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getBuyerObtainPointFee() {
-		return this.buyerObtainPointFee;
-	}
-
-	public void setBuyerObtainPointFee(String buyerObtainPointFee) {
-		this.buyerObtainPointFee = buyerObtainPointFee;
-	}
-
-	public String getBuyerUsePointFee() {
-		return this.buyerUsePointFee;
-	}
-
-	public void setBuyerUsePointFee(String buyerUsePointFee) {
-		this.buyerUsePointFee = buyerUsePointFee;
-	}
-
-	public String getBuyerRealPointFee() {
-		return this.buyerRealPointFee;
-	}
-
-	public void setBuyerRealPointFee(String buyerRealPointFee) {
-		this.buyerRealPointFee = buyerRealPointFee;
-	}
-
-	public String getTotalFee() {
-		return this.totalFee;
-	}
-
-	public void setTotalFee(String totalFee) {
-		this.totalFee = totalFee;
-	}
-
-	public String getPostFee() {
-		return this.postFee;
-	}
-
-	public void setPostFee(String postFee) {
-		this.postFee = postFee;
-	}
-
-	public String getBuyerAlipayNo() {
-		return this.buyerAlipayNo;
-	}
-
-	public void setBuyerAlipayNo(String buyerAlipayNo) {
-		this.buyerAlipayNo = buyerAlipayNo;
-	}
-
-	public String getReceiverName() {
-		return this.receiverName;
-	}
-
-	public void setReceiverName(String receiverName) {
-		this.receiverName = receiverName;
-	}
-
-	public String getReceiverState() {
-		return this.receiverState;
-	}
-
-	public void setReceiverState(String receiverState) {
-		this.receiverState = receiverState;
-	}
-
-	public String getReceiverCity() {
-		return this.receiverCity;
-	}
-
-	public void setReceiverCity(String receiverCity) {
-		this.receiverCity = receiverCity;
-	}
-
-	public String getReceiverDistrict() {
-		return this.receiverDistrict;
-	}
-
-	public void setReceiverDistrict(String receiverDistrict) {
-		this.receiverDistrict = receiverDistrict;
-	}
-
-	public String getReceiverAddress() {
-		return this.receiverAddress;
-	}
-
-	public void setReceiverAddress(String receiverAddress) {
-		this.receiverAddress = receiverAddress;
-	}
-
-	public String getReceiverZip() {
-		return this.receiverZip;
-	}
-
-	public void setReceiverZip(String receiverZip) {
-		this.receiverZip = receiverZip;
-	}
-
-	public String getReceiverMobile() {
-		return this.receiverMobile;
-	}
-
-	public void setReceiverMobile(String receiverMobile) {
-		this.receiverMobile = receiverMobile;
-	}
-
-	public String getReceiverPhone() {
-		return this.receiverPhone;
-	}
-
-	public void setReceiverPhone(String receiverPhone) {
-		this.receiverPhone = receiverPhone;
-	}
-
-	public String getConsignTime() {
-		return this.consignTime;
-	}
-
-	public void setConsignTime(String consignTime) {
-		this.consignTime = consignTime;
-	}
-
-	public String getBuyerEmail() {
-		return this.buyerEmail;
-	}
-
-	public void setBuyerEmail(String buyerEmail) {
-		this.buyerEmail = buyerEmail;
-	}
-
-	public String getCommissionFee() {
-		return this.commissionFee;
-	}
-
-	public void setCommissionFee(String commissionFee) {
-		this.commissionFee = commissionFee;
-	}
-
-	public String getSellerAlipayNo() {
-		return this.sellerAlipayNo;
-	}
-
-	public void setSellerAlipayNo(String sellerAlipayNo) {
-		this.sellerAlipayNo = sellerAlipayNo;
-	}
-
-	public String getSellerMobile() {
-		return this.sellerMobile;
-	}
-
-	public void setSellerMobile(String sellerMobile) {
-		this.sellerMobile = sellerMobile;
-	}
-
-	public String getSellerPhone() {
-		return this.sellerPhone;
-	}
-
-	public void setSellerPhone(String sellerPhone) {
-		this.sellerPhone = sellerPhone;
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
 	}
 
 	public String getSellerName() {
 		return this.sellerName;
 	}
-
 	public void setSellerName(String sellerName) {
 		this.sellerName = sellerName;
-	}
-
-	public String getSellerEmail() {
-		return this.sellerEmail;
-	}
-
-	public void setSellerEmail(String sellerEmail) {
-		this.sellerEmail = sellerEmail;
-	}
-
-	public String getAvailableConfirmFee() {
-		return this.availableConfirmFee;
-	}
-
-	public void setAvailableConfirmFee(String availableConfirmFee) {
-		this.availableConfirmFee = availableConfirmFee;
-	}
-
-	public Boolean getHasPostFee() {
-		return this.hasPostFee;
-	}
-
-	public void setHasPostFee(Boolean hasPostFee) {
-		this.hasPostFee = hasPostFee;
-	}
-
-	public String getReceivedPayment() {
-		return this.receivedPayment;
-	}
-
-	public void setReceivedPayment(String receivedPayment) {
-		this.receivedPayment = receivedPayment;
-	}
-
-	public String getCodFee() {
-		return this.codFee;
-	}
-
-	public void setCodFee(String codFee) {
-		this.codFee = codFee;
-	}
-
-	public Date getTimeout() {
-		return this.timeout;
-	}
-
-	public void setTimeout(Date timeout) {
-		this.timeout = timeout;
-	}
-
-	public Date getTradeUrl() {
-		return this.tradeUrl;
-	}
-
-	public void setTradeUrl(Date tradeUrl) {
-		this.tradeUrl = tradeUrl;
 	}
 
 	public List<Order> getOrders() {
 		return this.orders;
 	}
-
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
+	}
+
+	public Integer getBuyerObtainPointFee() {
+		return this.buyerObtainPointFee;
+	}
+	public void setBuyerObtainPointFee(Integer buyerObtainPointFee) {
+		this.buyerObtainPointFee = buyerObtainPointFee;
+	}
+
+	public String getBuyerMemo() {
+		return this.buyerMemo;
+	}
+	public void setBuyerMemo(String buyerMemo) {
+		this.buyerMemo = buyerMemo;
+	}
+
+	public String getIid() {
+		return this.iid;
+	}
+	public void setIid(String iid) {
+		this.iid = iid;
+	}
+
+	public String getSellerMemo() {
+		return this.sellerMemo;
+	}
+	public void setSellerMemo(String sellerMemo) {
+		this.sellerMemo = sellerMemo;
+	}
+
+	public String getReceiverAddress() {
+		return this.receiverAddress;
+	}
+	public void setReceiverAddress(String receiverAddress) {
+		this.receiverAddress = receiverAddress;
+	}
+
+	public String getSellerAlipayNo() {
+		return this.sellerAlipayNo;
+	}
+	public void setSellerAlipayNo(String sellerAlipayNo) {
+		this.sellerAlipayNo = sellerAlipayNo;
+	}
+
+	public String getAdjustFee() {
+		return this.adjustFee;
+	}
+	public void setAdjustFee(String adjustFee) {
+		this.adjustFee = adjustFee;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getReceiverPhone() {
+		return this.receiverPhone;
+	}
+	public void setReceiverPhone(String receiverPhone) {
+		this.receiverPhone = receiverPhone;
+	}
+
+	public String getTradeMemo() {
+		return this.tradeMemo;
+	}
+	public void setTradeMemo(String tradeMemo) {
+		this.tradeMemo = tradeMemo;
+	}
+
+	public Date getCreated() {
+		return this.created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public String getTotalFee() {
+		return this.totalFee;
+	}
+	public void setTotalFee(String totalFee) {
+		this.totalFee = totalFee;
+	}
+
+	public Boolean getHasPostFee() {
+		return this.hasPostFee;
+	}
+	public void setHasPostFee(Boolean hasPostFee) {
+		this.hasPostFee = hasPostFee;
+	}
+
+	public Boolean getIs3D() {
+		return this.is3D;
+	}
+	public void setIs3D(Boolean is3D) {
+		this.is3D = is3D;
+	}
+
+	public String getSellerNick() {
+		return this.sellerNick;
+	}
+	public void setSellerNick(String sellerNick) {
+		this.sellerNick = sellerNick;
+	}
+
+	public String getDiscountFee() {
+		return this.discountFee;
+	}
+	public void setDiscountFee(String discountFee) {
+		this.discountFee = discountFee;
+	}
+
+	public String getAvailableConfirmFee() {
+		return this.availableConfirmFee;
+	}
+	public void setAvailableConfirmFee(String availableConfirmFee) {
+		this.availableConfirmFee = availableConfirmFee;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getShippingType() {
+		return this.shippingType;
+	}
+	public void setShippingType(String shippingType) {
+		this.shippingType = shippingType;
+	}
+
+	public String getReceiverCity() {
+		return this.receiverCity;
+	}
+	public void setReceiverCity(String receiverCity) {
+		this.receiverCity = receiverCity;
+	}
+
+	public String getSellerPhone() {
+		return this.sellerPhone;
+	}
+	public void setSellerPhone(String sellerPhone) {
+		this.sellerPhone = sellerPhone;
+	}
+
+	public String getCodFee() {
+		return this.codFee;
+	}
+	public void setCodFee(String codFee) {
+		this.codFee = codFee;
+	}
+
+	public String getCodStatus() {
+		return this.codStatus;
+	}
+	public void setCodStatus(String codStatus) {
+		this.codStatus = codStatus;
+	}
+
+	public String getPayTime() {
+		return this.payTime;
+	}
+	public void setPayTime(String payTime) {
+		this.payTime = payTime;
+	}
+
+	public String getReceiverMobile() {
+		return this.receiverMobile;
+	}
+	public void setReceiverMobile(String receiverMobile) {
+		this.receiverMobile = receiverMobile;
+	}
+
+	public String getReceiverName() {
+		return this.receiverName;
+	}
+	public void setReceiverName(String receiverName) {
+		this.receiverName = receiverName;
+	}
+
+	public String getBuyerNick() {
+		return this.buyerNick;
+	}
+	public void setBuyerNick(String buyerNick) {
+		this.buyerNick = buyerNick;
+	}
+
+	public String getSnapshotUrl() {
+		return this.snapshotUrl;
+	}
+	public void setSnapshotUrl(String snapshotUrl) {
+		this.snapshotUrl = snapshotUrl;
+	}
+
+	public Boolean getSellerRate() {
+		return this.sellerRate;
+	}
+	public void setSellerRate(Boolean sellerRate) {
+		this.sellerRate = sellerRate;
+	}
+
+	public String getPrice() {
+		return this.price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getConsignTime() {
+		return this.consignTime;
+	}
+	public void setConsignTime(String consignTime) {
+		this.consignTime = consignTime;
+	}
+
+	public String getReceiverZip() {
+		return this.receiverZip;
+	}
+	public void setReceiverZip(String receiverZip) {
+		this.receiverZip = receiverZip;
+	}
+
+	public String getBuyerMessage() {
+		return this.buyerMessage;
+	}
+	public void setBuyerMessage(String buyerMessage) {
+		this.buyerMessage = buyerMessage;
+	}
+
+	public String getPicPath() {
+		return this.picPath;
+	}
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
+	}
+
+	public Boolean getBuyerRate() {
+		return this.buyerRate;
+	}
+	public void setBuyerRate(Boolean buyerRate) {
+		this.buyerRate = buyerRate;
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getBuyerEmail() {
+		return this.buyerEmail;
+	}
+	public void setBuyerEmail(String buyerEmail) {
+		this.buyerEmail = buyerEmail;
+	}
+
+	public String getAlipayNo() {
+		return this.alipayNo;
+	}
+	public void setAlipayNo(String alipayNo) {
+		this.alipayNo = alipayNo;
+	}
+
+	public String getBuyerAlipayNo() {
+		return this.buyerAlipayNo;
+	}
+	public void setBuyerAlipayNo(String buyerAlipayNo) {
+		this.buyerAlipayNo = buyerAlipayNo;
+	}
+
+	public String getCommissionFee() {
+		return this.commissionFee;
+	}
+	public void setCommissionFee(String commissionFee) {
+		this.commissionFee = commissionFee;
+	}
+
+	public String getReceiverState() {
+		return this.receiverState;
+	}
+	public void setReceiverState(String receiverState) {
+		this.receiverState = receiverState;
+	}
+
+	public String getSid() {
+		return this.sid;
+	}
+	public void setSid(String sid) {
+		this.sid = sid;
+	}
+
+	public String getPayment() {
+		return this.payment;
+	}
+	public void setPayment(String payment) {
+		this.payment = payment;
+	}
+
+	public String getReceivedPayment() {
+		return this.receivedPayment;
+	}
+	public void setReceivedPayment(String receivedPayment) {
+		this.receivedPayment = receivedPayment;
+	}
+
+	public String getTimeoutActionTime() {
+		return this.timeoutActionTime;
+	}
+	public void setTimeoutActionTime(String timeoutActionTime) {
+		this.timeoutActionTime = timeoutActionTime;
+	}
+
+	public String getPostFee() {
+		return this.postFee;
+	}
+	public void setPostFee(String postFee) {
+		this.postFee = postFee;
+	}
+
+	public Integer getPointFee() {
+		return this.pointFee;
+	}
+	public void setPointFee(Integer pointFee) {
+		this.pointFee = pointFee;
+	}
+
+	public String getReceiverDistrict() {
+		return this.receiverDistrict;
+	}
+	public void setReceiverDistrict(String receiverDistrict) {
+		this.receiverDistrict = receiverDistrict;
+	}
+
+	public Integer getNum() {
+		return this.num;
+	}
+	public void setNum(Integer num) {
+		this.num = num;
+	}
+
+	public Integer getRealPointFee() {
+		return this.realPointFee;
+	}
+	public void setRealPointFee(Integer realPointFee) {
+		this.realPointFee = realPointFee;
+	}
+
+	public String getSellerMobile() {
+		return this.sellerMobile;
+	}
+	public void setSellerMobile(String sellerMobile) {
+		this.sellerMobile = sellerMobile;
+	}
+
+	public String getSellerEmail() {
+		return this.sellerEmail;
+	}
+	public void setSellerEmail(String sellerEmail) {
+		this.sellerEmail = sellerEmail;
+	}
+
+	public String getSnapshot() {
+		return this.snapshot;
+	}
+	public void setSnapshot(String snapshot) {
+		this.snapshot = snapshot;
 	}
 
 }

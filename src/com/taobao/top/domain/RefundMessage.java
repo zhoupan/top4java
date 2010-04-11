@@ -1,113 +1,107 @@
 package com.taobao.top.domain;
 
+import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonList;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 留言/凭证。
- * 
+ * RefundMessage Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("refundMessages")
 public class RefundMessage extends BaseObject {
 
-	private static final long serialVersionUID = 3814583502849124589L;
+	private static final long serialVersionUID = 1L;
 
-	/** 留言编号 */
-	@JsonProperty("message_id")
-	private Long msgId;
+	@JsonProperty("id")
+	private Long id;
 
-	/** 留言内容 */
+	@JsonProperty("created")
+	private Date created;
+
 	@JsonProperty("content")
-	private String msgContent;
+	private String content;
 
-	/** 留言类型。 */
-	@JsonProperty("message_type")
-	private String msgType;
-
-	/** 凭证附件地址（图片） */
-	@JsonProperty("picture_urls")
-	private List<PicUrl> picUrls;
-
-	/** 退款编号 */
 	@JsonProperty("refund_id")
 	private Long refundId;
 
-	/** 留言者编号 */
-	@JsonProperty("owner_id")
-	private Long ownerId;
+	@JsonList(list="pic_urls", name="pic_url")
+	private List<PicUrl> picUrls;
 
-	/** 留言者昵称 */
 	@JsonProperty("owner_nick")
 	private String ownerNick;
 
-	/** 留言者身份 */
+	@JsonProperty("owner_id")
+	private Long ownerId;
+
+	@JsonProperty("message_type")
+	private String messageType;
+
 	@JsonProperty("owner_role")
 	private String ownerRole;
 
-	public Long getMsgId() {
-		return this.msgId;
+	public Long getId() {
+		return this.id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public void setMsgId(Long msgId) {
-		this.msgId = msgId;
+	public Date getCreated() {
+		return this.created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
-	public String getMsgContent() {
-		return this.msgContent;
+	public String getContent() {
+		return this.content;
 	}
-
-	public void setMsgContent(String msgContent) {
-		this.msgContent = msgContent;
-	}
-
-	public String getMsgType() {
-		return this.msgType;
-	}
-
-	public void setMsgType(String msgType) {
-		this.msgType = msgType;
-	}
-
-	public List<PicUrl> getPicUrls() {
-		return this.picUrls;
-	}
-
-	public void setPicUrls(List<PicUrl> picUrls) {
-		this.picUrls = picUrls;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public Long getRefundId() {
 		return this.refundId;
 	}
-
 	public void setRefundId(Long refundId) {
 		this.refundId = refundId;
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public List<PicUrl> getPicUrls() {
+		return this.picUrls;
 	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
+	public void setPicUrls(List<PicUrl> picUrls) {
+		this.picUrls = picUrls;
 	}
 
 	public String getOwnerNick() {
 		return this.ownerNick;
 	}
-
 	public void setOwnerNick(String ownerNick) {
 		this.ownerNick = ownerNick;
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+	}
+
+	public String getMessageType() {
+		return this.messageType;
+	}
+	public void setMessageType(String messageType) {
+		this.messageType = messageType;
 	}
 
 	public String getOwnerRole() {
 		return this.ownerRole;
 	}
-
 	public void setOwnerRole(String ownerRole) {
 		this.ownerRole = ownerRole;
 	}

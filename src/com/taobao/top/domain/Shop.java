@@ -1,113 +1,126 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
+import java.util.Date;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 店铺。
- * 
+ * Shop Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("shops")
 public class Shop extends BaseObject {
 
-	private static final long serialVersionUID = 6166854720194440994L;
+	private static final long serialVersionUID = 1L;
 
-	/** 店铺编号 */
 	@JsonProperty("sid")
-	private Long sid;
+	private String sid;
 
-	/** 店铺所属的类目编号 */
-	@JsonProperty("cid")
-	private Long cid;
-
-	/** 卖家昵称 */
-	@JsonProperty("nick")
-	private String sellerNick;
-
-	/** 店铺标题 */
 	@JsonProperty("title")
 	private String title;
 
-	/** 店铺描述 */
 	@JsonProperty("desc")
-	private String description;
+	private String desc;
 
-	/** 店铺公告 */
+	@JsonProperty("nick")
+	private String nick;
+
+	@JsonProperty("created")
+	private Date created;
+
+	@JsonProperty("shop_score")
+	private ShopScore shopScore;
+
 	@JsonProperty("bulletin")
 	private String bulletin;
 
-	/** 店标地址 */
 	@JsonProperty("pic_path")
-	private String logoUrl;
+	private String picPath;
 
-	/** 剩余橱窗推荐数 */
+	@JsonProperty("cid")
+	private String cid;
+
+	@JsonProperty("modified")
+	private Date modified;
+
 	@JsonProperty("remain_count")
-	private Integer remainShowcase;
+	private Integer remainCount;
 
-	public Long getSid() {
+	public String getSid() {
 		return this.sid;
 	}
-
-	public void setSid(Long sid) {
+	public void setSid(String sid) {
 		this.sid = sid;
-	}
-
-	public Long getCid() {
-		return this.cid;
-	}
-
-	public void setCid(Long cid) {
-		this.cid = cid;
-	}
-
-	public String getSellerNick() {
-		return this.sellerNick;
-	}
-
-	public void setSellerNick(String sellerNick) {
-		this.sellerNick = sellerNick;
 	}
 
 	public String getTitle() {
 		return this.title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getDesc() {
+		return this.desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public String getNick() {
+		return this.nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+
+	public Date getCreated() {
+		return this.created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public ShopScore getShopScore() {
+		return this.shopScore;
+	}
+	public void setShopScore(ShopScore shopScore) {
+		this.shopScore = shopScore;
 	}
 
 	public String getBulletin() {
 		return this.bulletin;
 	}
-
 	public void setBulletin(String bulletin) {
 		this.bulletin = bulletin;
 	}
 
-	public String getLogoUrl() {
-		return this.logoUrl;
+	public String getPicPath() {
+		return this.picPath;
+	}
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
 	}
 
-	public void setLogoUrl(String logoUrl) {
-		this.logoUrl = logoUrl;
+	public String getCid() {
+		return this.cid;
+	}
+	public void setCid(String cid) {
+		this.cid = cid;
 	}
 
-	public Integer getRemainShowcase() {
-		return this.remainShowcase;
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
 	}
 
-	public void setRemainShowcase(Integer remainShowcase) {
-		this.remainShowcase = remainShowcase;
+	public Integer getRemainCount() {
+		return this.remainCount;
+	}
+	public void setRemainCount(Integer remainCount) {
+		this.remainCount = remainCount;
 	}
 
 }
