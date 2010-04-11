@@ -13,29 +13,23 @@ public class TradeRate extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("created")
-	private Date created;
-
-	@JsonProperty("oid")
-	private Long oid;
-
-	@JsonProperty("tid")
-	private Long tid;
-
 	@JsonProperty("content")
 	private String content;
 
-	@JsonProperty("result")
-	private String result;
+	@JsonProperty("created")
+	private Date created;
 
 	@JsonProperty("item_price")
 	private String itemPrice;
 
+	@JsonProperty("item_title")
+	private String itemTitle;
+
 	@JsonProperty("nick")
 	private String nick;
 
-	@JsonProperty("item_title")
-	private String itemTitle;
+	@JsonProperty("oid")
+	private Long oid;
 
 	@JsonProperty("rated_nick")
 	private String ratedNick;
@@ -43,29 +37,14 @@ public class TradeRate extends BaseObject {
 	@JsonProperty("reply")
 	private String reply;
 
+	@JsonProperty("result")
+	private String result;
+
 	@JsonProperty("role")
 	private String role;
 
-	public Date getCreated() {
-		return this.created;
-	}
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-
-	public Long getOid() {
-		return this.oid;
-	}
-	public void setOid(Long oid) {
-		this.oid = oid;
-	}
-
-	public Long getTid() {
-		return this.tid;
-	}
-	public void setTid(Long tid) {
-		this.tid = tid;
-	}
+	@JsonProperty("tid")
+	private Long tid;
 
 	public String getContent() {
 		return this.content;
@@ -74,11 +53,11 @@ public class TradeRate extends BaseObject {
 		this.content = content;
 	}
 
-	public String getResult() {
-		return this.result;
+	public Date getCreated() {
+		return this.created;
 	}
-	public void setResult(String result) {
-		this.result = result;
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
 	public String getItemPrice() {
@@ -88,6 +67,13 @@ public class TradeRate extends BaseObject {
 		this.itemPrice = itemPrice;
 	}
 
+	public String getItemTitle() {
+		return this.itemTitle;
+	}
+	public void setItemTitle(String itemTitle) {
+		this.itemTitle = itemTitle;
+	}
+
 	public String getNick() {
 		return this.nick;
 	}
@@ -95,11 +81,11 @@ public class TradeRate extends BaseObject {
 		this.nick = nick;
 	}
 
-	public String getItemTitle() {
-		return this.itemTitle;
+	public Long getOid() {
+		return this.oid;
 	}
-	public void setItemTitle(String itemTitle) {
-		this.itemTitle = itemTitle;
+	public void setOid(Long oid) {
+		this.oid = oid;
 	}
 
 	public String getRatedNick() {
@@ -116,11 +102,25 @@ public class TradeRate extends BaseObject {
 		this.reply = reply;
 	}
 
+	public String getResult() {
+		return this.result;
+	}
+	public void setResult(String result) {
+		this.result = result;
+	}
+
 	public String getRole() {
 		return this.role;
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+	public void setTid(Long tid) {
+		this.tid = tid;
 	}
 
 }

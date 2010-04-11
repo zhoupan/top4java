@@ -12,14 +12,21 @@ public class LogisticsCompany extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
+	@JsonProperty("code")
+	private String code;
+
 	@JsonProperty("id")
 	private Long id;
 
 	@JsonProperty("name")
 	private String name;
 
-	@JsonProperty("code")
-	private String code;
+	public String getCode() {
+		return this.code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public Long getId() {
 		return this.id;
@@ -33,13 +40,6 @@ public class LogisticsCompany extends BaseObject {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 }

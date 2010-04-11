@@ -12,8 +12,11 @@ public class ItemCat extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("status")
-	private String status;
+	@JsonProperty("cid")
+	private Long cid;
+
+	@JsonProperty("is_parent")
+	private Boolean isParent;
 
 	@JsonProperty("name")
 	private String name;
@@ -21,20 +24,24 @@ public class ItemCat extends BaseObject {
 	@JsonProperty("parent_cid")
 	private Long parentCid;
 
-	@JsonProperty("is_parent")
-	private Boolean isParent;
-
 	@JsonProperty("sort_order")
 	private Integer sortOrder;
 
-	@JsonProperty("cid")
-	private Long cid;
+	@JsonProperty("status")
+	private String status;
 
-	public String getStatus() {
-		return this.status;
+	public Long getCid() {
+		return this.cid;
 	}
-	public void setStatus(String status) {
-		this.status = status;
+	public void setCid(Long cid) {
+		this.cid = cid;
+	}
+
+	public Boolean getIsParent() {
+		return this.isParent;
+	}
+	public void setIsParent(Boolean isParent) {
+		this.isParent = isParent;
 	}
 
 	public String getName() {
@@ -51,13 +58,6 @@ public class ItemCat extends BaseObject {
 		this.parentCid = parentCid;
 	}
 
-	public Boolean getIsParent() {
-		return this.isParent;
-	}
-	public void setIsParent(Boolean isParent) {
-		this.isParent = isParent;
-	}
-
 	public Integer getSortOrder() {
 		return this.sortOrder;
 	}
@@ -65,11 +65,11 @@ public class ItemCat extends BaseObject {
 		this.sortOrder = sortOrder;
 	}
 
-	public Long getCid() {
-		return this.cid;
+	public String getStatus() {
+		return this.status;
 	}
-	public void setCid(Long cid) {
-		this.cid = cid;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }

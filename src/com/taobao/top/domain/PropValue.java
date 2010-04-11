@@ -12,66 +12,38 @@ public class PropValue extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("prop_name")
-	private String propName;
-
-	@JsonProperty("status")
-	private String status;
-
-	@JsonProperty("name")
-	private String name;
-
-	@JsonProperty("pid")
-	private Long pid;
-
-	@JsonProperty("sort_order")
-	private Integer sortOrder;
+	@JsonProperty("cid")
+	private Long cid;
 
 	@JsonProperty("is_parent")
 	private Boolean isParent;
 
-	@JsonProperty("vid")
-	private Long vid;
-
-	@JsonProperty("cid")
-	private Long cid;
+	@JsonProperty("name")
+	private String name;
 
 	@JsonProperty("name_alias")
 	private String nameAlias;
 
-	public String getPropName() {
-		return this.propName;
-	}
-	public void setPropName(String propName) {
-		this.propName = propName;
-	}
+	@JsonProperty("pid")
+	private Long pid;
 
-	public String getStatus() {
-		return this.status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	@JsonProperty("prop_name")
+	private String propName;
 
-	public String getName() {
-		return this.name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	@JsonProperty("sort_order")
+	private Integer sortOrder;
 
-	public Long getPid() {
-		return this.pid;
-	}
-	public void setPid(Long pid) {
-		this.pid = pid;
-	}
+	@JsonProperty("status")
+	private String status;
 
-	public Integer getSortOrder() {
-		return this.sortOrder;
+	@JsonProperty("vid")
+	private Long vid;
+
+	public Long getCid() {
+		return this.cid;
 	}
-	public void setSortOrder(Integer sortOrder) {
-		this.sortOrder = sortOrder;
+	public void setCid(Long cid) {
+		this.cid = cid;
 	}
 
 	public Boolean getIsParent() {
@@ -81,18 +53,11 @@ public class PropValue extends BaseObject {
 		this.isParent = isParent;
 	}
 
-	public Long getVid() {
-		return this.vid;
+	public String getName() {
+		return this.name;
 	}
-	public void setVid(Long vid) {
-		this.vid = vid;
-	}
-
-	public Long getCid() {
-		return this.cid;
-	}
-	public void setCid(Long cid) {
-		this.cid = cid;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getNameAlias() {
@@ -100,6 +65,41 @@ public class PropValue extends BaseObject {
 	}
 	public void setNameAlias(String nameAlias) {
 		this.nameAlias = nameAlias;
+	}
+
+	public Long getPid() {
+		return this.pid;
+	}
+	public void setPid(Long pid) {
+		this.pid = pid;
+	}
+
+	public String getPropName() {
+		return this.propName;
+	}
+	public void setPropName(String propName) {
+		this.propName = propName;
+	}
+
+	public Integer getSortOrder() {
+		return this.sortOrder;
+	}
+	public void setSortOrder(Integer sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Long getVid() {
+		return this.vid;
+	}
+	public void setVid(Long vid) {
+		this.vid = vid;
 	}
 
 }

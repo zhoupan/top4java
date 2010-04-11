@@ -14,24 +14,24 @@ public class ItemSearch extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonList(list="items", name="item")
-	private List<Item> items;
-
 	@JsonList(list="item_categories", name="item_category")
 	private List<ItemCategory> itemCategories;
 
-	public List<Item> getItems() {
-		return this.items;
-	}
-	public void setItems(List<Item> items) {
-		this.items = items;
-	}
+	@JsonList(list="items", name="item")
+	private List<Item> items;
 
 	public List<ItemCategory> getItemCategories() {
 		return this.itemCategories;
 	}
 	public void setItemCategories(List<ItemCategory> itemCategories) {
 		this.itemCategories = itemCategories;
+	}
+
+	public List<Item> getItems() {
+		return this.items;
+	}
+	public void setItems(List<Item> items) {
+		this.items = items;
 	}
 
 }

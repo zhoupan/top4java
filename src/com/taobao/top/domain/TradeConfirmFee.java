@@ -15,11 +15,11 @@ public class TradeConfirmFee extends BaseObject {
 	@JsonProperty("confirm_fee")
 	private String confirmFee;
 
-	@JsonProperty("is_last_order")
-	private Boolean isLastOrder;
-
 	@JsonProperty("confirm_post_fee")
 	private String confirmPostFee;
+
+	@JsonProperty("is_last_order")
+	private Boolean isLastOrder;
 
 	public String getConfirmFee() {
 		return this.confirmFee;
@@ -28,18 +28,18 @@ public class TradeConfirmFee extends BaseObject {
 		this.confirmFee = confirmFee;
 	}
 
-	public Boolean getIsLastOrder() {
-		return this.isLastOrder;
-	}
-	public void setIsLastOrder(Boolean isLastOrder) {
-		this.isLastOrder = isLastOrder;
-	}
-
 	public String getConfirmPostFee() {
 		return this.confirmPostFee;
 	}
 	public void setConfirmPostFee(String confirmPostFee) {
 		this.confirmPostFee = confirmPostFee;
+	}
+
+	public Boolean getIsLastOrder() {
+		return this.isLastOrder;
+	}
+	public void setIsLastOrder(Boolean isLastOrder) {
+		this.isLastOrder = isLastOrder;
 	}
 
 }

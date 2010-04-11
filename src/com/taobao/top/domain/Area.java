@@ -15,30 +15,23 @@ public class Area extends BaseObject {
 	@JsonProperty("id")
 	private Long id;
 
-	@JsonProperty("zip")
-	private String zip;
-
 	@JsonProperty("name")
 	private String name;
+
+	@JsonProperty("parent_id")
+	private Long parentId;
 
 	@JsonProperty("type")
 	private Long type;
 
-	@JsonProperty("parent_id")
-	private Long parentId;
+	@JsonProperty("zip")
+	private String zip;
 
 	public Long getId() {
 		return this.id;
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getZip() {
-		return this.zip;
-	}
-	public void setZip(String zip) {
-		this.zip = zip;
 	}
 
 	public String getName() {
@@ -48,6 +41,13 @@ public class Area extends BaseObject {
 		this.name = name;
 	}
 
+	public Long getParentId() {
+		return this.parentId;
+	}
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
+	}
+
 	public Long getType() {
 		return this.type;
 	}
@@ -55,11 +55,11 @@ public class Area extends BaseObject {
 		this.type = type;
 	}
 
-	public Long getParentId() {
-		return this.parentId;
+	public String getZip() {
+		return this.zip;
 	}
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
+	public void setZip(String zip) {
+		this.zip = zip;
 	}
 
 }

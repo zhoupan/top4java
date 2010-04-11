@@ -12,17 +12,31 @@ public class ShopCat extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
+	@JsonProperty("cid")
+	private Long cid;
+
+	@JsonProperty("is_parent")
+	private Boolean isParent;
+
 	@JsonProperty("name")
 	private String name;
 
 	@JsonProperty("parent_cid")
 	private Long parentCid;
 
-	@JsonProperty("is_parent")
-	private Boolean isParent;
+	public Long getCid() {
+		return this.cid;
+	}
+	public void setCid(Long cid) {
+		this.cid = cid;
+	}
 
-	@JsonProperty("cid")
-	private Long cid;
+	public Boolean getIsParent() {
+		return this.isParent;
+	}
+	public void setIsParent(Boolean isParent) {
+		this.isParent = isParent;
+	}
 
 	public String getName() {
 		return this.name;
@@ -36,20 +50,6 @@ public class ShopCat extends BaseObject {
 	}
 	public void setParentCid(Long parentCid) {
 		this.parentCid = parentCid;
-	}
-
-	public Boolean getIsParent() {
-		return this.isParent;
-	}
-	public void setIsParent(Boolean isParent) {
-		this.isParent = isParent;
-	}
-
-	public Long getCid() {
-		return this.cid;
-	}
-	public void setCid(Long cid) {
-		this.cid = cid;
 	}
 
 }

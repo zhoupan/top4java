@@ -12,24 +12,17 @@ public class Brand extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("prop_name")
-	private String propName;
-
 	@JsonProperty("name")
 	private String name;
 
 	@JsonProperty("pid")
 	private Long pid;
 
+	@JsonProperty("prop_name")
+	private String propName;
+
 	@JsonProperty("vid")
 	private Long vid;
-
-	public String getPropName() {
-		return this.propName;
-	}
-	public void setPropName(String propName) {
-		this.propName = propName;
-	}
 
 	public String getName() {
 		return this.name;
@@ -43,6 +36,13 @@ public class Brand extends BaseObject {
 	}
 	public void setPid(Long pid) {
 		this.pid = pid;
+	}
+
+	public String getPropName() {
+		return this.propName;
+	}
+	public void setPropName(String propName) {
+		this.propName = propName;
 	}
 
 	public Long getVid() {

@@ -12,21 +12,14 @@ public class ShopScore extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("service_score")
-	private String serviceScore;
-
 	@JsonProperty("delivery_score")
 	private String deliveryScore;
 
 	@JsonProperty("item_score")
 	private String itemScore;
 
-	public String getServiceScore() {
-		return this.serviceScore;
-	}
-	public void setServiceScore(String serviceScore) {
-		this.serviceScore = serviceScore;
-	}
+	@JsonProperty("service_score")
+	private String serviceScore;
 
 	public String getDeliveryScore() {
 		return this.deliveryScore;
@@ -40,6 +33,13 @@ public class ShopScore extends BaseObject {
 	}
 	public void setItemScore(String itemScore) {
 		this.itemScore = itemScore;
+	}
+
+	public String getServiceScore() {
+		return this.serviceScore;
+	}
+	public void setServiceScore(String serviceScore) {
+		this.serviceScore = serviceScore;
 	}
 
 }

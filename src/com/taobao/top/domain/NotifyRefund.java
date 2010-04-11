@@ -16,29 +16,36 @@ public class NotifyRefund extends BaseObject {
 	@JsonProperty("buyer_nick")
 	private String buyerNick;
 
+	@JsonProperty("modified")
+	private Date modified;
+
 	@JsonProperty("refund_fee")
 	private String refundFee;
-
-	@JsonProperty("status")
-	private String status;
 
 	@JsonProperty("rid")
 	private Long rid;
 
-	@JsonProperty("tid")
-	private Long tid;
-
 	@JsonProperty("seller_nick")
 	private String sellerNick;
 
-	@JsonProperty("modified")
-	private Date modified;
+	@JsonProperty("status")
+	private String status;
+
+	@JsonProperty("tid")
+	private Long tid;
 
 	public String getBuyerNick() {
 		return this.buyerNick;
 	}
 	public void setBuyerNick(String buyerNick) {
 		this.buyerNick = buyerNick;
+	}
+
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
 	}
 
 	public String getRefundFee() {
@@ -48,25 +55,11 @@ public class NotifyRefund extends BaseObject {
 		this.refundFee = refundFee;
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public Long getRid() {
 		return this.rid;
 	}
 	public void setRid(Long rid) {
 		this.rid = rid;
-	}
-
-	public Long getTid() {
-		return this.tid;
-	}
-	public void setTid(Long tid) {
-		this.tid = tid;
 	}
 
 	public String getSellerNick() {
@@ -76,11 +69,18 @@ public class NotifyRefund extends BaseObject {
 		this.sellerNick = sellerNick;
 	}
 
-	public Date getModified() {
-		return this.modified;
+	public String getStatus() {
+		return this.status;
 	}
-	public void setModified(Date modified) {
-		this.modified = modified;
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+	public void setTid(Long tid) {
+		this.tid = tid;
 	}
 
 }

@@ -16,26 +16,26 @@ public class SubscribeMessage extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonList(list="subscriptions", name="subscription")
-	private List<Subscription> subscriptions;
+	@JsonProperty("app_key")
+	private String appKey;
 
 	@JsonProperty("end_date")
 	private String endDate;
 
-	@JsonProperty("app_key")
-	private String appKey;
+	@JsonProperty("modified")
+	private Date modified;
 
 	@JsonProperty("start_date")
 	private String startDate;
 
-	@JsonProperty("modified")
-	private Date modified;
+	@JsonList(list="subscriptions", name="subscription")
+	private List<Subscription> subscriptions;
 
-	public List<Subscription> getSubscriptions() {
-		return this.subscriptions;
+	public String getAppKey() {
+		return this.appKey;
 	}
-	public void setSubscriptions(List<Subscription> subscriptions) {
-		this.subscriptions = subscriptions;
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
 	}
 
 	public String getEndDate() {
@@ -45,11 +45,11 @@ public class SubscribeMessage extends BaseObject {
 		this.endDate = endDate;
 	}
 
-	public String getAppKey() {
-		return this.appKey;
+	public Date getModified() {
+		return this.modified;
 	}
-	public void setAppKey(String appKey) {
-		this.appKey = appKey;
+	public void setModified(Date modified) {
+		this.modified = modified;
 	}
 
 	public String getStartDate() {
@@ -59,11 +59,11 @@ public class SubscribeMessage extends BaseObject {
 		this.startDate = startDate;
 	}
 
-	public Date getModified() {
-		return this.modified;
+	public List<Subscription> getSubscriptions() {
+		return this.subscriptions;
 	}
-	public void setModified(Date modified) {
-		this.modified = modified;
+	public void setSubscriptions(List<Subscription> subscriptions) {
+		this.subscriptions = subscriptions;
 	}
 
 }

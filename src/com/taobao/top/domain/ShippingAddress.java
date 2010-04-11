@@ -12,37 +12,23 @@ public class ShippingAddress extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("phone")
-	private String phone;
-
-	@JsonProperty("location")
-	private Location location;
-
 	@JsonProperty("address_id")
 	private Integer addressId;
 
 	@JsonProperty("is_default")
 	private Boolean isDefault;
 
+	@JsonProperty("location")
+	private Location location;
+
 	@JsonProperty("mobile")
 	private String mobile;
 
+	@JsonProperty("phone")
+	private String phone;
+
 	@JsonProperty("receiver_name")
 	private String receiverName;
-
-	public String getPhone() {
-		return this.phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public Location getLocation() {
-		return this.location;
-	}
-	public void setLocation(Location location) {
-		this.location = location;
-	}
 
 	public Integer getAddressId() {
 		return this.addressId;
@@ -58,11 +44,25 @@ public class ShippingAddress extends BaseObject {
 		this.isDefault = isDefault;
 	}
 
+	public Location getLocation() {
+		return this.location;
+	}
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
 	public String getMobile() {
 		return this.mobile;
 	}
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getReceiverName() {

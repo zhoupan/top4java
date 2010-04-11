@@ -13,38 +13,101 @@ public class Shop extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
+	@JsonProperty("bulletin")
+	private String bulletin;
+
+	@JsonProperty("cid")
+	private String cid;
+
+	@JsonProperty("created")
+	private Date created;
+
+	@JsonProperty("desc")
+	private String desc;
+
+	@JsonProperty("modified")
+	private Date modified;
+
+	@JsonProperty("nick")
+	private String nick;
+
+	@JsonProperty("pic_path")
+	private String picPath;
+
+	@JsonProperty("remain_count")
+	private Integer remainCount;
+
+	@JsonProperty("shop_score")
+	private ShopScore shopScore;
+
 	@JsonProperty("sid")
 	private String sid;
 
 	@JsonProperty("title")
 	private String title;
 
-	@JsonProperty("desc")
-	private String desc;
+	public String getBulletin() {
+		return this.bulletin;
+	}
+	public void setBulletin(String bulletin) {
+		this.bulletin = bulletin;
+	}
 
-	@JsonProperty("nick")
-	private String nick;
+	public String getCid() {
+		return this.cid;
+	}
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
 
-	@JsonProperty("created")
-	private Date created;
+	public Date getCreated() {
+		return this.created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
+	}
 
-	@JsonProperty("shop_score")
-	private ShopScore shopScore;
+	public String getDesc() {
+		return this.desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
 
-	@JsonProperty("bulletin")
-	private String bulletin;
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
+	}
 
-	@JsonProperty("pic_path")
-	private String picPath;
+	public String getNick() {
+		return this.nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
 
-	@JsonProperty("cid")
-	private String cid;
+	public String getPicPath() {
+		return this.picPath;
+	}
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
+	}
 
-	@JsonProperty("modified")
-	private Date modified;
+	public Integer getRemainCount() {
+		return this.remainCount;
+	}
+	public void setRemainCount(Integer remainCount) {
+		this.remainCount = remainCount;
+	}
 
-	@JsonProperty("remain_count")
-	private Integer remainCount;
+	public ShopScore getShopScore() {
+		return this.shopScore;
+	}
+	public void setShopScore(ShopScore shopScore) {
+		this.shopScore = shopScore;
+	}
 
 	public String getSid() {
 		return this.sid;
@@ -58,69 +121,6 @@ public class Shop extends BaseObject {
 	}
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getDesc() {
-		return this.desc;
-	}
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
-
-	public String getNick() {
-		return this.nick;
-	}
-	public void setNick(String nick) {
-		this.nick = nick;
-	}
-
-	public Date getCreated() {
-		return this.created;
-	}
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-
-	public ShopScore getShopScore() {
-		return this.shopScore;
-	}
-	public void setShopScore(ShopScore shopScore) {
-		this.shopScore = shopScore;
-	}
-
-	public String getBulletin() {
-		return this.bulletin;
-	}
-	public void setBulletin(String bulletin) {
-		this.bulletin = bulletin;
-	}
-
-	public String getPicPath() {
-		return this.picPath;
-	}
-	public void setPicPath(String picPath) {
-		this.picPath = picPath;
-	}
-
-	public String getCid() {
-		return this.cid;
-	}
-	public void setCid(String cid) {
-		this.cid = cid;
-	}
-
-	public Date getModified() {
-		return this.modified;
-	}
-	public void setModified(Date modified) {
-		this.modified = modified;
-	}
-
-	public Integer getRemainCount() {
-		return this.remainCount;
-	}
-	public void setRemainCount(Integer remainCount) {
-		this.remainCount = remainCount;
 	}
 
 }
