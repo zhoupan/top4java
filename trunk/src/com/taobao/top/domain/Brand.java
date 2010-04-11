@@ -3,61 +3,53 @@ package com.taobao.top.domain;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 品牌结构。
- * 
+ * Brand Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Nov 16, 2009
+ * @since 1.0, Apr 11, 2010
  */
 public class Brand extends BaseObject {
 
-	private static final long serialVersionUID = -5591129713165873417L;
+	private static final long serialVersionUID = 1L;
 
-	/** 属性编号 */
-	@JsonProperty("pid")
-	private Long propId;
-
-	/** 属性名 */
 	@JsonProperty("prop_name")
 	private String propName;
 
-	/** 属性值编号 */
-	@JsonProperty("vid")
-	private Long valueId;
-
-	/** 属性值名称 */
 	@JsonProperty("name")
-	private String valueName;
+	private String name;
 
-	public Long getPropId() {
-		return this.propId;
-	}
+	@JsonProperty("pid")
+	private Long pid;
 
-	public void setPropId(Long propId) {
-		this.propId = propId;
-	}
+	@JsonProperty("vid")
+	private Long vid;
 
 	public String getPropName() {
 		return this.propName;
 	}
-
 	public void setPropName(String propName) {
 		this.propName = propName;
 	}
 
-	public Long getValueId() {
-		return this.valueId;
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public void setValueId(Long valueId) {
-		this.valueId = valueId;
+	public Long getPid() {
+		return this.pid;
+	}
+	public void setPid(Long pid) {
+		this.pid = pid;
 	}
 
-	public String getValueName() {
-		return this.valueName;
+	public Long getVid() {
+		return this.vid;
 	}
-
-	public void setValueName(String valueName) {
-		this.valueName = valueName;
+	public void setVid(Long vid) {
+		this.vid = vid;
 	}
 
 }

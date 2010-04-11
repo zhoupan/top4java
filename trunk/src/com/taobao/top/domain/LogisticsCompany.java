@@ -1,77 +1,45 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 物流公司。
- * 
+ * LogisticsCompany Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("logistic_companies")
 public class LogisticsCompany extends BaseObject {
 
-	private static final long serialVersionUID = 832695257977044931L;
+	private static final long serialVersionUID = 1L;
 
-	/** 物流公司标识 */
-	@JsonProperty("company_id")
-	private Long companyId;
+	@JsonProperty("id")
+	private Long id;
 
-	/** 物流公司代码 */
-	@JsonProperty("company_code")
-	private String companyCode;
+	@JsonProperty("name")
+	private String name;
 
-	/** 物流公司简称 */
-	@JsonProperty("company_name")
-	private String companyName;
+	@JsonProperty("code")
+	private String code;
 
-	/** 派送范围 */
-	@JsonProperty("send_area")
-	private String sendArea;
-
-	/** 不派送范围 */
-	@JsonProperty("not_send_area")
-	private String unsendArea;
-
-	public Long getCompanyId() {
-		return this.companyId;
+	public Long getId() {
+		return this.id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public void setCompanyId(Long companyId) {
-		this.companyId = companyId;
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getCompanyCode() {
-		return this.companyCode;
+	public String getCode() {
+		return this.code;
 	}
-
-	public void setCompanyCode(String companyCode) {
-		this.companyCode = companyCode;
-	}
-
-	public String getCompanyName() {
-		return this.companyName;
-	}
-
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
-
-	public String getSendArea() {
-		return this.sendArea;
-	}
-
-	public void setSendArea(String sendArea) {
-		this.sendArea = sendArea;
-	}
-
-	public String getUnsendArea() {
-		return this.unsendArea;
-	}
-
-	public void setUnsendArea(String unsendArea) {
-		this.unsendArea = unsendArea;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 }

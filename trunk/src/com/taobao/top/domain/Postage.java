@@ -1,129 +1,74 @@
 package com.taobao.top.domain;
 
+import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonList;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 运费模板。
- * 
+ * Postage Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("postages")
 public class Postage extends BaseObject {
 
-	private static final long serialVersionUID = 6651685101634743170L;
+	private static final long serialVersionUID = 1L;
 
-	/** 运费模板编号 */
+	@JsonProperty("created")
+	private Date created;
+
 	@JsonProperty("postage_id")
-	private Long id;
+	private Long postageId;
 
-	/** 运费模板名称 */
-	@JsonProperty("name")
-	private String name;
-
-	/** 备注 */
-	@JsonProperty("memo")
-	private String memo;
-
-	/** 平邮收费 */
-	@JsonProperty("post_price")
-	private String postPrice;
-
-	/** 平邮加件收费 */
-	@JsonProperty("post_increase")
-	private String postIncrease;
-
-	/** 快递收费 */
-	@JsonProperty("express_price")
-	private String expressPrice;
-
-	/** 快递加件费用 */
-	@JsonProperty("express_increase")
-	private String expressIncrease;
-
-	/** EMS收费 */
-	@JsonProperty("ems_price")
-	private String emsPrice;
-
-	/** EMS加件费用 */
 	@JsonProperty("ems_increase")
 	private String emsIncrease;
 
-	/** 运费方式模板收费方式 */
-	@JsonProperty("postage_mode_list")
+	@JsonList(list="postage_modes", name="postage_mode")
 	private List<PostageMode> postageModes;
 
-	public Long getId() {
-		return this.id;
+	@JsonProperty("memo")
+	private String memo;
+
+	@JsonProperty("post_increase")
+	private String postIncrease;
+
+	@JsonProperty("express_price")
+	private String expressPrice;
+
+	@JsonProperty("name")
+	private String name;
+
+	@JsonProperty("post_price")
+	private String postPrice;
+
+	@JsonProperty("ems_price")
+	private String emsPrice;
+
+	@JsonProperty("express_increase")
+	private String expressIncrease;
+
+	@JsonProperty("modified")
+	private Date modified;
+
+	public Date getCreated() {
+		return this.created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public Long getPostageId() {
+		return this.postageId;
 	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getMemo() {
-		return this.memo;
-	}
-
-	public void setMemo(String memo) {
-		this.memo = memo;
-	}
-
-	public String getPostPrice() {
-		return this.postPrice;
-	}
-
-	public void setPostPrice(String postPrice) {
-		this.postPrice = postPrice;
-	}
-
-	public String getPostIncrease() {
-		return this.postIncrease;
-	}
-
-	public void setPostIncrease(String postIncrease) {
-		this.postIncrease = postIncrease;
-	}
-
-	public String getExpressPrice() {
-		return this.expressPrice;
-	}
-
-	public void setExpressPrice(String expressPrice) {
-		this.expressPrice = expressPrice;
-	}
-
-	public String getExpressIncrease() {
-		return this.expressIncrease;
-	}
-
-	public void setExpressIncrease(String expressIncrease) {
-		this.expressIncrease = expressIncrease;
-	}
-
-	public String getEmsPrice() {
-		return this.emsPrice;
-	}
-
-	public void setEmsPrice(String emsPrice) {
-		this.emsPrice = emsPrice;
+	public void setPostageId(Long postageId) {
+		this.postageId = postageId;
 	}
 
 	public String getEmsIncrease() {
 		return this.emsIncrease;
 	}
-
 	public void setEmsIncrease(String emsIncrease) {
 		this.emsIncrease = emsIncrease;
 	}
@@ -131,9 +76,64 @@ public class Postage extends BaseObject {
 	public List<PostageMode> getPostageModes() {
 		return this.postageModes;
 	}
-
 	public void setPostageModes(List<PostageMode> postageModes) {
 		this.postageModes = postageModes;
+	}
+
+	public String getMemo() {
+		return this.memo;
+	}
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
+
+	public String getPostIncrease() {
+		return this.postIncrease;
+	}
+	public void setPostIncrease(String postIncrease) {
+		this.postIncrease = postIncrease;
+	}
+
+	public String getExpressPrice() {
+		return this.expressPrice;
+	}
+	public void setExpressPrice(String expressPrice) {
+		this.expressPrice = expressPrice;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPostPrice() {
+		return this.postPrice;
+	}
+	public void setPostPrice(String postPrice) {
+		this.postPrice = postPrice;
+	}
+
+	public String getEmsPrice() {
+		return this.emsPrice;
+	}
+	public void setEmsPrice(String emsPrice) {
+		this.emsPrice = emsPrice;
+	}
+
+	public String getExpressIncrease() {
+		return this.expressIncrease;
+	}
+	public void setExpressIncrease(String expressIncrease) {
+		this.expressIncrease = expressIncrease;
+	}
+
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
 	}
 
 }

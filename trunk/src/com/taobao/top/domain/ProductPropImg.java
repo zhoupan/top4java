@@ -1,77 +1,86 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
+import java.util.Date;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 产品属性图片。
- * 
+ * ProductPropImg Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("productPropImgs")
 public class ProductPropImg extends BaseObject {
 
-	private static final long serialVersionUID = -8743999758645796860L;
+	private static final long serialVersionUID = 1L;
 
-	/** 产品属性图片编号 */
-	@JsonProperty("pic_id")
-	private Long imgId;
-
-	/** 图片绝对地址 */
-	@JsonProperty("url")
-	private String imgUrl;
-
-	/** 图片所属产品的编号 */
-	@JsonProperty("product_id")
-	private Long productId;
-
-	/** 属性串 */
-	@JsonProperty("props")
-	private String props;
-
-	/** 图片序号 */
 	@JsonProperty("position")
 	private Integer position;
 
-	public Long getImgId() {
-		return this.imgId;
+	@JsonProperty("id")
+	private Long id;
+
+	@JsonProperty("product_id")
+	private Long productId;
+
+	@JsonProperty("url")
+	private String url;
+
+	@JsonProperty("props")
+	private String props;
+
+	@JsonProperty("created")
+	private Date created;
+
+	@JsonProperty("modified")
+	private Date modified;
+
+	public Integer getPosition() {
+		return this.position;
+	}
+	public void setPosition(Integer position) {
+		this.position = position;
 	}
 
-	public void setImgId(Long imgId) {
-		this.imgId = imgId;
+	public Long getId() {
+		return this.id;
 	}
-
-	public String getImgUrl() {
-		return this.imgUrl;
-	}
-
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public Long getProductId() {
 		return this.productId;
 	}
-
 	public void setProductId(Long productId) {
 		this.productId = productId;
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public String getProps() {
 		return this.props;
 	}
-
 	public void setProps(String props) {
 		this.props = props;
 	}
 
-	public Integer getPosition() {
-		return this.position;
+	public Date getCreated() {
+		return this.created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
-	public void setPosition(Integer position) {
-		this.position = position;
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
 	}
 
 }

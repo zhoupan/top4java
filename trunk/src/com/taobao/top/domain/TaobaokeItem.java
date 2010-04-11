@@ -1,149 +1,185 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 淘宝客商品。
- * 
+ * TaobaokeItem Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("taobaokeItems")
 public class TaobaokeItem extends BaseObject {
 
-	private static final long serialVersionUID = -5332351372151412576L;
+	private static final long serialVersionUID = 1L;
 
-	/** 淘宝客商品编号 */
-	@JsonProperty("id")
+	@JsonProperty("taobaoke_cat_click_url")
+	private String taobaokeCatClickUrl;
+
+	@JsonProperty("iid")
 	private String iid;
 
-	/** 宝贝名称 */
-	@JsonProperty("title")
-	private String title;
-
-	/** 卖家昵称 */
-	@JsonProperty("nick")
-	private String nick;
-
-	/** 图片地址 */
-	@JsonProperty("pict_url")
-	private String picUrl;
-
-	/** 商品价格 */
-	@JsonProperty("price")
-	private String price;
-
-	/** 推广点击网址 */
-	@JsonProperty("click_url")
-	private String clickUrl;
-
-	/** 淘宝客佣金 */
-	@JsonProperty("commission")
-	private String commission;
-
-	/** 淘宝客佣金比率 */
 	@JsonProperty("commission_rate")
 	private String commissionRate;
 
-	/** 累计成交量 */
-	@JsonProperty("commission_num")
-	private String commissionNum;
+	@JsonProperty("pic_url")
+	private String picUrl;
 
-	/** 累计总支出佣金量 */
+	@JsonProperty("item_location")
+	private String itemLocation;
+
+	@JsonProperty("click_url")
+	private String clickUrl;
+
+	@JsonProperty("title")
+	private String title;
+
+	@JsonProperty("price")
+	private String price;
+
+	@JsonProperty("nick")
+	private String nick;
+
+	@JsonProperty("volume")
+	private Long volume;
+
+	@JsonProperty("num_iid")
+	private Long numIid;
+
 	@JsonProperty("commission_volume")
 	private String commissionVolume;
 
-	/** 淘宝客推广链接 */
-	@JsonProperty("list_url_by_q")
-	private String promotionUrl;
+	@JsonProperty("commission")
+	private String commission;
+
+	@JsonProperty("commission_num")
+	private String commissionNum;
+
+	@JsonProperty("shop_click_url")
+	private String shopClickUrl;
+
+	@JsonProperty("seller_credit_score")
+	private Long sellerCreditScore;
+
+	@JsonProperty("keyword_click_url")
+	private String keywordClickUrl;
+
+	public String getTaobaokeCatClickUrl() {
+		return this.taobaokeCatClickUrl;
+	}
+	public void setTaobaokeCatClickUrl(String taobaokeCatClickUrl) {
+		this.taobaokeCatClickUrl = taobaokeCatClickUrl;
+	}
 
 	public String getIid() {
 		return this.iid;
 	}
-
 	public void setIid(String iid) {
 		this.iid = iid;
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getNick() {
-		return this.nick;
-	}
-
-	public void setNick(String nick) {
-		this.nick = nick;
-	}
-
-	public String getPicUrl() {
-		return this.picUrl;
-	}
-
-	public void setPicUrl(String picUrl) {
-		this.picUrl = picUrl;
-	}
-
-	public String getPrice() {
-		return this.price;
-	}
-
-	public void setPrice(String price) {
-		this.price = price;
-	}
-
-	public String getClickUrl() {
-		return this.clickUrl;
-	}
-
-	public void setClickUrl(String clickUrl) {
-		this.clickUrl = clickUrl;
-	}
-
-	public String getCommission() {
-		return this.commission;
-	}
-
-	public void setCommission(String commission) {
-		this.commission = commission;
 	}
 
 	public String getCommissionRate() {
 		return this.commissionRate;
 	}
-
 	public void setCommissionRate(String commissionRate) {
 		this.commissionRate = commissionRate;
 	}
 
-	public String getCommissionNum() {
-		return this.commissionNum;
+	public String getPicUrl() {
+		return this.picUrl;
+	}
+	public void setPicUrl(String picUrl) {
+		this.picUrl = picUrl;
 	}
 
-	public void setCommissionNum(String commissionNum) {
-		this.commissionNum = commissionNum;
+	public String getItemLocation() {
+		return this.itemLocation;
+	}
+	public void setItemLocation(String itemLocation) {
+		this.itemLocation = itemLocation;
+	}
+
+	public String getClickUrl() {
+		return this.clickUrl;
+	}
+	public void setClickUrl(String clickUrl) {
+		this.clickUrl = clickUrl;
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getPrice() {
+		return this.price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getNick() {
+		return this.nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+
+	public Long getVolume() {
+		return this.volume;
+	}
+	public void setVolume(Long volume) {
+		this.volume = volume;
+	}
+
+	public Long getNumIid() {
+		return this.numIid;
+	}
+	public void setNumIid(Long numIid) {
+		this.numIid = numIid;
 	}
 
 	public String getCommissionVolume() {
 		return this.commissionVolume;
 	}
-
 	public void setCommissionVolume(String commissionVolume) {
 		this.commissionVolume = commissionVolume;
 	}
 
-	public String getPromotionUrl() {
-		return this.promotionUrl;
+	public String getCommission() {
+		return this.commission;
+	}
+	public void setCommission(String commission) {
+		this.commission = commission;
 	}
 
-	public void setPromotionUrl(String promotionUrl) {
-		this.promotionUrl = promotionUrl;
+	public String getCommissionNum() {
+		return this.commissionNum;
+	}
+	public void setCommissionNum(String commissionNum) {
+		this.commissionNum = commissionNum;
+	}
+
+	public String getShopClickUrl() {
+		return this.shopClickUrl;
+	}
+	public void setShopClickUrl(String shopClickUrl) {
+		this.shopClickUrl = shopClickUrl;
+	}
+
+	public Long getSellerCreditScore() {
+		return this.sellerCreditScore;
+	}
+	public void setSellerCreditScore(Long sellerCreditScore) {
+		this.sellerCreditScore = sellerCreditScore;
+	}
+
+	public String getKeywordClickUrl() {
+		return this.keywordClickUrl;
+	}
+	public void setKeywordClickUrl(String keywordClickUrl) {
+		this.keywordClickUrl = keywordClickUrl;
 	}
 
 }

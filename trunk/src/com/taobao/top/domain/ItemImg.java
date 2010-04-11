@@ -1,53 +1,56 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
+import java.util.Date;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 商品图片。
- * 
+ * ItemImg Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("itemImgs")
 public class ItemImg extends BaseObject {
 
-	private static final long serialVersionUID = 1187037974768271197L;
+	private static final long serialVersionUID = 1L;
 
-	/** 商品图片的编号 */
-	@JsonProperty("itemimg_id")
-	private Long imgId;
-
-	/** 商品图片链接地址 */
-	@JsonProperty("url")
-	private String imgUrl;
-
-	/** 图片放在第几张(多图时可设置) */
 	@JsonProperty("position")
 	private Integer position;
 
-	public Long getImgId() {
-		return this.imgId;
-	}
+	@JsonProperty("id")
+	private Long id;
 
-	public void setImgId(Long imgId) {
-		this.imgId = imgId;
-	}
+	@JsonProperty("url")
+	private String url;
 
-	public String getImgUrl() {
-		return this.imgUrl;
-	}
-
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
-	}
+	@JsonProperty("created")
+	private Date created;
 
 	public Integer getPosition() {
 		return this.position;
 	}
-
 	public void setPosition(Integer position) {
 		this.position = position;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public Date getCreated() {
+		return this.created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
 }

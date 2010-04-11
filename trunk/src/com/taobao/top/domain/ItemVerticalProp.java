@@ -3,29 +3,26 @@ package com.taobao.top.domain;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * Area Data Structure.
+ * ItemVerticalProp Data Structure.
  *
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class Area extends BaseObject {
+public class ItemVerticalProp extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
 	@JsonProperty("id")
 	private Long id;
 
-	@JsonProperty("zip")
-	private String zip;
+	@JsonProperty("is_required")
+	private Boolean isRequired;
 
 	@JsonProperty("name")
 	private String name;
 
 	@JsonProperty("type")
-	private Long type;
-
-	@JsonProperty("parent_id")
-	private Long parentId;
+	private Integer type;
 
 	public Long getId() {
 		return this.id;
@@ -34,11 +31,11 @@ public class Area extends BaseObject {
 		this.id = id;
 	}
 
-	public String getZip() {
-		return this.zip;
+	public Boolean getIsRequired() {
+		return this.isRequired;
 	}
-	public void setZip(String zip) {
-		this.zip = zip;
+	public void setIsRequired(Boolean isRequired) {
+		this.isRequired = isRequired;
 	}
 
 	public String getName() {
@@ -48,18 +45,11 @@ public class Area extends BaseObject {
 		this.name = name;
 	}
 
-	public Long getType() {
+	public Integer getType() {
 		return this.type;
 	}
-	public void setType(Long type) {
+	public void setType(Integer type) {
 		this.type = type;
-	}
-
-	public Long getParentId() {
-		return this.parentId;
-	}
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
 	}
 
 }

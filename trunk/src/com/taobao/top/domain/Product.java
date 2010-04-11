@@ -1,223 +1,209 @@
 package com.taobao.top.domain;
 
+import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonList;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 产品信息。
- * 
+ * Product Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("products")
 public class Product extends BaseObject {
 
-	private static final long serialVersionUID = 5871121977074379440L;
+	private static final long serialVersionUID = 1L;
 
-	/** 产品编号 */
 	@JsonProperty("product_id")
-	private Long id;
+	private Long productId;
 
-	/** 产品名称 */
-	@JsonProperty("name")
-	private String name;
+	@JsonProperty("created")
+	private Date created;
 
-	/** 外部产品编号 */
+	@JsonProperty("desc")
+	private String desc;
+
 	@JsonProperty("outer_id")
 	private String outerId;
 
-	/** 标准产品编号 */
 	@JsonProperty("tsc")
-	private String standardId;
+	private String tsc;
 
-	/** 商品类目编号 */
-	@JsonProperty("cid")
-	private Long categoryId;
-
-	/** 商品类目名称 */
-	@JsonProperty("cat_name")
-	private String categoryName;
-
-	/** 产品的关键属性列表 */
-	@JsonProperty("props")
-	private String props;
-
-	/** 产品的关键属性字符串列表 */
-	@JsonProperty("props_str")
-	private String propStrs;
-
-	/** 产品的非关键（绑定）属性列表 */
-	@JsonProperty("binds")
-	private String bindProps;
-
-	/** 产品的非关键（绑定）字符串列表 */
 	@JsonProperty("binds_str")
-	private String bindPropStrs;
+	private String bindsStr;
 
-	/** 产品的销售属性列表 */
-	@JsonProperty("sale_props")
-	private String saleProps;
+	@JsonList(list="product_prop_imgs", name="product_prop_img")
+	private List<ProductPropImg> productPropImgs;
 
-	/** 产品的销售属性字符串列表 */
-	@JsonProperty("sale_props_str")
-	private String salePropStrs;
+	@JsonList(list="product_imgs", name="product_img")
+	private List<ProductImg> productImgs;
 
-	/** 产品的市场价 */
+	@JsonProperty("cid")
+	private Long cid;
+
+	@JsonProperty("pic_url")
+	private String picUrl;
+
+	@JsonProperty("modified")
+	private Date modified;
+
+	@JsonProperty("cat_name")
+	private String catName;
+
+	@JsonProperty("binds")
+	private String binds;
+
 	@JsonProperty("price")
 	private String price;
 
-	/** 产品的描述 */
-	@JsonProperty("desc")
-	private String description;
+	@JsonProperty("name")
+	private String name;
 
-	/** 产品的主图片地址 */
-	@JsonProperty("pic_path")
-	private String primaryImgUrl;
+	@JsonProperty("sale_props")
+	private String saleProps;
 
-	/** 产品的子图片 */
-	@JsonProperty("product_img")
-	private List<ProductImg> imgs;
+	@JsonProperty("sale_props_str")
+	private String salePropsStr;
 
-	/** 产品的属性图片 */
-	@JsonProperty("product_prop_img")
-	private List<ProductPropImg> propImgs;
+	@JsonProperty("props_str")
+	private String propsStr;
 
-	public Long getId() {
-		return this.id;
+	@JsonProperty("props")
+	private String props;
+
+	public Long getProductId() {
+		return this.productId;
+	}
+	public void setProductId(Long productId) {
+		this.productId = productId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public Date getCreated() {
+		return this.created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
-	public String getName() {
-		return this.name;
+	public String getDesc() {
+		return this.desc;
 	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
 	public String getOuterId() {
 		return this.outerId;
 	}
-
 	public void setOuterId(String outerId) {
 		this.outerId = outerId;
 	}
 
-	public String getStandardId() {
-		return this.standardId;
+	public String getTsc() {
+		return this.tsc;
+	}
+	public void setTsc(String tsc) {
+		this.tsc = tsc;
 	}
 
-	public void setStandardId(String standardId) {
-		this.standardId = standardId;
+	public String getBindsStr() {
+		return this.bindsStr;
+	}
+	public void setBindsStr(String bindsStr) {
+		this.bindsStr = bindsStr;
 	}
 
-	public Long getCategoryId() {
-		return this.categoryId;
+	public List<ProductPropImg> getProductPropImgs() {
+		return this.productPropImgs;
+	}
+	public void setProductPropImgs(List<ProductPropImg> productPropImgs) {
+		this.productPropImgs = productPropImgs;
 	}
 
-	public void setCategoryId(Long categoryId) {
-		this.categoryId = categoryId;
+	public List<ProductImg> getProductImgs() {
+		return this.productImgs;
+	}
+	public void setProductImgs(List<ProductImg> productImgs) {
+		this.productImgs = productImgs;
 	}
 
-	public String getCategoryName() {
-		return this.categoryName;
+	public Long getCid() {
+		return this.cid;
+	}
+	public void setCid(Long cid) {
+		this.cid = cid;
 	}
 
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
+	public String getPicUrl() {
+		return this.picUrl;
+	}
+	public void setPicUrl(String picUrl) {
+		this.picUrl = picUrl;
 	}
 
-	public String getProps() {
-		return this.props;
+	public Date getModified() {
+		return this.modified;
+	}
+	public void setModified(Date modified) {
+		this.modified = modified;
 	}
 
-	public void setProps(String props) {
-		this.props = props;
+	public String getCatName() {
+		return this.catName;
+	}
+	public void setCatName(String catName) {
+		this.catName = catName;
 	}
 
-	public String getPropStrs() {
-		return this.propStrs;
+	public String getBinds() {
+		return this.binds;
 	}
-
-	public void setPropStrs(String propStrs) {
-		this.propStrs = propStrs;
-	}
-
-	public String getBindProps() {
-		return this.bindProps;
-	}
-
-	public void setBindProps(String bindProps) {
-		this.bindProps = bindProps;
-	}
-
-	public String getBindPropStrs() {
-		return this.bindPropStrs;
-	}
-
-	public void setBindPropStrs(String bindPropStrs) {
-		this.bindPropStrs = bindPropStrs;
-	}
-
-	public String getSaleProps() {
-		return this.saleProps;
-	}
-
-	public void setSaleProps(String saleProps) {
-		this.saleProps = saleProps;
-	}
-
-	public String getSalePropStrs() {
-		return this.salePropStrs;
-	}
-
-	public void setSalePropStrs(String salePropStrs) {
-		this.salePropStrs = salePropStrs;
+	public void setBinds(String binds) {
+		this.binds = binds;
 	}
 
 	public String getPrice() {
 		return this.price;
 	}
-
 	public void setPrice(String price) {
 		this.price = price;
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public String getSaleProps() {
+		return this.saleProps;
+	}
+	public void setSaleProps(String saleProps) {
+		this.saleProps = saleProps;
 	}
 
-	public String getPrimaryImgUrl() {
-		return this.primaryImgUrl;
+	public String getSalePropsStr() {
+		return this.salePropsStr;
+	}
+	public void setSalePropsStr(String salePropsStr) {
+		this.salePropsStr = salePropsStr;
 	}
 
-	public void setPrimaryImgUrl(String primaryImgUrl) {
-		this.primaryImgUrl = primaryImgUrl;
+	public String getPropsStr() {
+		return this.propsStr;
+	}
+	public void setPropsStr(String propsStr) {
+		this.propsStr = propsStr;
 	}
 
-	public List<ProductImg> getImgs() {
-		return this.imgs;
+	public String getProps() {
+		return this.props;
 	}
-
-	public void setImgs(List<ProductImg> imgs) {
-		this.imgs = imgs;
-	}
-
-	public List<ProductPropImg> getPropImgs() {
-		return this.propImgs;
-	}
-
-	public void setPropImgs(List<ProductPropImg> propImgs) {
-		this.propImgs = propImgs;
+	public void setProps(String props) {
+		this.props = props;
 	}
 
 }

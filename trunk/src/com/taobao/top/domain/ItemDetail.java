@@ -7,23 +7,14 @@ import com.taobao.top.mapping.JsonList;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * Item Data Structure.
+ * ItemDetail Data Structure.
  *
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class Item extends BaseObject {
+public class ItemDetail extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
-
-	@JsonProperty("created")
-	private Date created;
-
-	@JsonProperty("iid")
-	private String iid;
-
-	@JsonProperty("num_iid")
-	private Long numIid;
 
 	@JsonProperty("express_fee")
 	private String expressFee;
@@ -39,6 +30,9 @@ public class Item extends BaseObject {
 
 	@JsonList(list="item_imgs", name="item_img")
 	private List<ItemImg> itemImgs;
+
+	@JsonProperty("iid")
+	private String iid;
 
 	@JsonProperty("has_warranty")
 	private Boolean hasWarranty;
@@ -115,6 +109,9 @@ public class Item extends BaseObject {
 	@JsonProperty("title")
 	private String title;
 
+	@JsonProperty("num_iid")
+	private Long numIid;
+
 	@JsonProperty("seller_cids")
 	private String sellerCids;
 
@@ -166,33 +163,6 @@ public class Item extends BaseObject {
 	@JsonProperty("props")
 	private String props;
 
-	@JsonProperty("score")
-	private Long score;
-
-	@JsonProperty("volume")
-	private Long volume;
-
-	public Date getCreated() {
-		return this.created;
-	}
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-
-	public String getIid() {
-		return this.iid;
-	}
-	public void setIid(String iid) {
-		this.iid = iid;
-	}
-
-	public Long getNumIid() {
-		return this.numIid;
-	}
-	public void setNumIid(Long numIid) {
-		this.numIid = numIid;
-	}
-
 	public String getExpressFee() {
 		return this.expressFee;
 	}
@@ -226,6 +196,13 @@ public class Item extends BaseObject {
 	}
 	public void setItemImgs(List<ItemImg> itemImgs) {
 		this.itemImgs = itemImgs;
+	}
+
+	public String getIid() {
+		return this.iid;
+	}
+	public void setIid(String iid) {
+		this.iid = iid;
 	}
 
 	public Boolean getHasWarranty() {
@@ -403,6 +380,13 @@ public class Item extends BaseObject {
 		this.title = title;
 	}
 
+	public Long getNumIid() {
+		return this.numIid;
+	}
+	public void setNumIid(Long numIid) {
+		this.numIid = numIid;
+	}
+
 	public String getSellerCids() {
 		return this.sellerCids;
 	}
@@ -520,20 +504,6 @@ public class Item extends BaseObject {
 	}
 	public void setProps(String props) {
 		this.props = props;
-	}
-
-	public Long getScore() {
-		return this.score;
-	}
-	public void setScore(Long score) {
-		this.score = score;
-	}
-
-	public Long getVolume() {
-		return this.volume;
-	}
-	public void setVolume(Long volume) {
-		this.volume = volume;
 	}
 
 }

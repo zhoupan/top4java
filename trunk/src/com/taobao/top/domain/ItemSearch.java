@@ -2,46 +2,36 @@ package com.taobao.top.domain;
 
 import java.util.List;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonList;
 
 /**
- * 商品搜索结果。
- * 
+ * ItemSearch Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-@JsonClass("itemsearchs")
 public class ItemSearch extends BaseObject {
 
-	private static final long serialVersionUID = 3890051998325964871L;
+	private static final long serialVersionUID = 1L;
 
-	/** 商品列表 */
-	@JsonProperty("item_list")
+	@JsonList(list="items", name="item")
 	private List<Item> items;
 
-	/** 商品分类列表 */
-	@JsonProperty("category_list")
-	private List<ItemCat> itemCats;
+	@JsonList(list="item_categories", name="item_category")
+	private List<ItemCategory> itemCategories;
 
 	public List<Item> getItems() {
 		return this.items;
 	}
-
 	public void setItems(List<Item> items) {
 		this.items = items;
 	}
 
-	public List<ItemCat> getItemCats() {
-		return this.itemCats;
+	public List<ItemCategory> getItemCategories() {
+		return this.itemCategories;
 	}
-
-	public void setItemCats(List<ItemCat> itemCats) {
-		this.itemCats = itemCats;
-	}
-
-	public boolean checkEmpty() {
-		return items == null || items.isEmpty();
+	public void setItemCategories(List<ItemCategory> itemCategories) {
+		this.itemCategories = itemCategories;
 	}
 
 }

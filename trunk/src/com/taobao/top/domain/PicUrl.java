@@ -3,23 +3,21 @@ package com.taobao.top.domain;
 import com.taobao.top.mapping.JsonProperty;
 
 /**
- * 图片地址。
- * 
+ * PicUrl Data Structure.
+ *
  * @author carver.gu
- * @since 1.0, Nov 16, 2009
+ * @since 1.0, Apr 11, 2010
  */
 public class PicUrl extends BaseObject {
 
-	private static final long serialVersionUID = -5338320202369196055L;
+	private static final long serialVersionUID = 1L;
 
-	/** 图片地址 */
 	@JsonProperty("url")
 	private String url;
 
 	public String getUrl() {
 		return this.url;
 	}
-
 	public void setUrl(String url) {
 		this.url = url;
 	}
