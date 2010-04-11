@@ -17,10 +17,11 @@ public interface Converter {
 	 * @param <T> 领域泛型
 	 * @param rsp 响应字符串
 	 * @param clazz 领域类型
+	 * @param api 接口名称
 	 * @return 响应列表对象
 	 * @throws TopException
 	 */
-	public <T> ResponseList<T> toResponseList(String rsp, Class<T> clazz) throws TopException;
+	public <T> ResponseList<T> toResponseList(String rsp, Class<T> clazz, String api) throws TopException;
 
 	/**
 	 * 把字符串转换为响应对象。
@@ -28,9 +29,10 @@ public interface Converter {
 	 * @param <T> 领域泛型
 	 * @param rsp 响应字符串
 	 * @param clazz 领域类型
+	 * @param api 接口名称
 	 * @return 响应对象
 	 * @throws TopException
 	 */
-	public <T> T toResponse(String rsp, Class<T> clazz) throws TopException;
+	public <T> T toResponse(String rsp, Class<T> clazz, String api) throws TopException;
 
 }

@@ -1,6 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * Suite Data Structure.
@@ -8,23 +10,25 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("suite")
+@JsonListClass("suites")
 public class Suite extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("end_date")
+	@JsonField("end_date")
 	private String endDate;
 
-	@JsonProperty("id")
+	@JsonField("id")
 	private Long id;
 
-	@JsonProperty("nick")
+	@JsonField("nick")
 	private String nick;
 
-	@JsonProperty("start_date")
+	@JsonField("start_date")
 	private String startDate;
 
-	@JsonProperty("suite_name")
+	@JsonField("suite_name")
 	private String suiteName;
 
 	public String getEndDate() {

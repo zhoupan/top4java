@@ -3,8 +3,10 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonList;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.JsonListField;
 
 /**
  * RefundMessage Data Structure.
@@ -12,35 +14,38 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("refund_message")
+@JsonListClass("refund_messages")
 public class RefundMessage extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("content")
+	@JsonField("content")
 	private String content;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("id")
+	@JsonField("id")
 	private Long id;
 
-	@JsonProperty("message_type")
+	@JsonField("message_type")
 	private String messageType;
 
-	@JsonProperty("owner_id")
+	@JsonField("owner_id")
 	private Long ownerId;
 
-	@JsonProperty("owner_nick")
+	@JsonField("owner_nick")
 	private String ownerNick;
 
-	@JsonProperty("owner_role")
+	@JsonField("owner_role")
 	private String ownerRole;
 
-	@JsonList(list="pic_urls", name="pic_url")
+	@JsonField("pic_url")
+	@JsonListField("pic_urls")
 	private List<PicUrl> picUrls;
 
-	@JsonProperty("refund_id")
+	@JsonField("refund_id")
 	private Long refundId;
 
 	public String getContent() {

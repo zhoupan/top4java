@@ -1,6 +1,7 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
 
 /**
  * Tadget Data Structure.
@@ -8,14 +9,15 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("tadget")
 public class Tadget extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("app_key")
+	@JsonField("app_key")
 	private String appKey;
 
-	@JsonProperty("app_secret")
+	@JsonField("app_secret")
 	private String appSecret;
 
 	public String getAppKey() {

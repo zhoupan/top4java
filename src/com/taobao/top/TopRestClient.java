@@ -88,7 +88,7 @@ public class TopRestClient implements TopClient {
 		}
 
 		tryParseException(rsp);
-		return parser.parse(rsp);
+		return parser.parse(rsp, request.getApiName());
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class TopRestClient implements TopClient {
 	private void tryParseException(String rsp) throws TopException {
 		if (Constants.FORMAT_JSON.equals(this.format)) {
 			// 为了避免二次解释JSON，采用startsWith判断
-			if (rsp.startsWith("{\"error_rsp\":")) {
+			if (rsp.startsWith("{\"error_response\":")) {
 				Matcher matcher = ERR_RSP_JSON.matcher(rsp);
 				if (matcher.find()) {
 					int errCode = Integer.parseInt(matcher.group(1));

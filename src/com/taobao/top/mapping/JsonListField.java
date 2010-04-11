@@ -6,19 +6,16 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * JSON列表注解。
+ * JSON列表属性注解。
  * 
  * @author carver.gu
- * @since 1.0, Sep 19, 2009
+ * @since 1.0, Apr 11, 2010
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(value = { ElementType.FIELD })
-public @interface JsonList {
+public @interface JsonListField {
 
-	/** JSON属性列表名称 **/
-	public String list() default "";
-
-	/** JSON属性元素名称 **/
-	public String name() default "";
+	/** JSON列表属性映射名称 **/
+	public String value() default "";
 
 }

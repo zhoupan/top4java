@@ -3,8 +3,10 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonList;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.JsonListField;
 
 /**
  * ItemExtra Data Structure.
@@ -12,77 +14,80 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("item_extra")
+@JsonListClass("item_extras")
 public class ItemExtra extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("approve_status")
+	@JsonField("approve_status")
 	private String approveStatus;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("delist_time")
+	@JsonField("delist_time")
 	private String delistTime;
 
-	@JsonProperty("desc")
+	@JsonField("desc")
 	private String desc;
 
-	@JsonProperty("eid")
+	@JsonField("eid")
 	private Long eid;
 
-	@JsonProperty("feature")
+	@JsonField("feature")
 	private String feature;
 
-	@JsonProperty("iid")
+	@JsonField("iid")
 	private String iid;
 
-	@JsonProperty("item_num")
+	@JsonField("item_num")
 	private Integer itemNum;
 
-	@JsonProperty("item_options")
+	@JsonField("item_options")
 	private Long itemOptions;
 
-	@JsonProperty("item_pic_url")
+	@JsonField("item_pic_url")
 	private String itemPicUrl;
 
-	@JsonProperty("list_time")
+	@JsonField("list_time")
 	private String listTime;
 
-	@JsonProperty("memo")
+	@JsonField("memo")
 	private String memo;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("nick")
+	@JsonField("nick")
 	private String nick;
 
-	@JsonProperty("num_iid")
+	@JsonField("num_iid")
 	private Long numIid;
 
-	@JsonProperty("options")
+	@JsonField("options")
 	private Long options;
 
-	@JsonProperty("pic_url")
+	@JsonField("pic_url")
 	private String picUrl;
 
-	@JsonProperty("reserve_price")
+	@JsonField("reserve_price")
 	private String reservePrice;
 
-	@JsonProperty("seller_cids")
+	@JsonField("seller_cids")
 	private String sellerCids;
 
-	@JsonProperty("shop_id")
+	@JsonField("shop_id")
 	private Long shopId;
 
-	@JsonList(list="skus", name="sku")
+	@JsonField("sku")
+	@JsonListField("skus")
 	private List<Sku> skus;
 
-	@JsonProperty("title")
+	@JsonField("title")
 	private String title;
 
-	@JsonProperty("type")
+	@JsonField("type")
 	private String type;
 
 	public String getApproveStatus() {

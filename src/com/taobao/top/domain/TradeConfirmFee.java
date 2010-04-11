@@ -1,6 +1,7 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
 
 /**
  * TradeConfirmFee Data Structure.
@@ -8,17 +9,18 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("trade_confirm_fee")
 public class TradeConfirmFee extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("confirm_fee")
+	@JsonField("confirm_fee")
 	private String confirmFee;
 
-	@JsonProperty("confirm_post_fee")
+	@JsonField("confirm_post_fee")
 	private String confirmPostFee;
 
-	@JsonProperty("is_last_order")
+	@JsonField("is_last_order")
 	private Boolean isLastOrder;
 
 	public String getConfirmFee() {

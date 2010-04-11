@@ -1,7 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * Order Data Structure.
@@ -9,89 +11,91 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("order")
+@JsonListClass("orders")
 public class Order extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("adjust_fee")
+	@JsonField("adjust_fee")
 	private String adjustFee;
 
-	@JsonProperty("buyer_rate")
+	@JsonField("buyer_rate")
 	private String buyerRate;
 
-	@JsonProperty("discount_fee")
+	@JsonField("discount_fee")
 	private String discountFee;
 
-	@JsonProperty("iid")
+	@JsonField("iid")
 	private String iid;
 
-	@JsonProperty("item_meal_id")
+	@JsonField("item_meal_id")
 	private Long itemMealId;
 
-	@JsonProperty("item_meal_name")
+	@JsonField("item_meal_name")
 	private String itemMealName;
 
-	@JsonProperty("item_memo")
+	@JsonField("item_memo")
 	private String itemMemo;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("num")
+	@JsonField("num")
 	private Integer num;
 
-	@JsonProperty("oid")
+	@JsonField("oid")
 	private Long oid;
 
-	@JsonProperty("outer_iid")
+	@JsonField("outer_iid")
 	private String outerIid;
 
-	@JsonProperty("outer_sku_id")
+	@JsonField("outer_sku_id")
 	private String outerSkuId;
 
-	@JsonProperty("payment")
+	@JsonField("payment")
 	private String payment;
 
-	@JsonProperty("pic_path")
+	@JsonField("pic_path")
 	private String picPath;
 
-	@JsonProperty("price")
+	@JsonField("price")
 	private String price;
 
-	@JsonProperty("refund_id")
+	@JsonField("refund_id")
 	private Long refundId;
 
-	@JsonProperty("refund_status")
+	@JsonField("refund_status")
 	private String refundStatus;
 
-	@JsonProperty("seller_rate")
+	@JsonField("seller_rate")
 	private String sellerRate;
 
-	@JsonProperty("seller_type")
+	@JsonField("seller_type")
 	private String sellerType;
 
-	@JsonProperty("sku_id")
+	@JsonField("sku_id")
 	private String skuId;
 
-	@JsonProperty("sku_properties_name")
+	@JsonField("sku_properties_name")
 	private String skuPropertiesName;
 
-	@JsonProperty("snapshot")
+	@JsonField("snapshot")
 	private String snapshot;
 
-	@JsonProperty("snapshot_url")
+	@JsonField("snapshot_url")
 	private String snapshotUrl;
 
-	@JsonProperty("status")
+	@JsonField("status")
 	private String status;
 
-	@JsonProperty("timeout_action_time")
+	@JsonField("timeout_action_time")
 	private String timeoutActionTime;
 
-	@JsonProperty("title")
+	@JsonField("title")
 	private String title;
 
-	@JsonProperty("total_fee")
+	@JsonField("total_fee")
 	private String totalFee;
 
 	public String getAdjustFee() {

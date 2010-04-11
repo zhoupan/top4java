@@ -1,6 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * PropValue Data Structure.
@@ -8,35 +10,37 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("prop_value")
+@JsonListClass("prop_values")
 public class PropValue extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("cid")
+	@JsonField("cid")
 	private Long cid;
 
-	@JsonProperty("is_parent")
+	@JsonField("is_parent")
 	private Boolean isParent;
 
-	@JsonProperty("name")
+	@JsonField("name")
 	private String name;
 
-	@JsonProperty("name_alias")
+	@JsonField("name_alias")
 	private String nameAlias;
 
-	@JsonProperty("pid")
+	@JsonField("pid")
 	private Long pid;
 
-	@JsonProperty("prop_name")
+	@JsonField("prop_name")
 	private String propName;
 
-	@JsonProperty("sort_order")
+	@JsonField("sort_order")
 	private Integer sortOrder;
 
-	@JsonProperty("status")
+	@JsonField("status")
 	private String status;
 
-	@JsonProperty("vid")
+	@JsonField("vid")
 	private Long vid;
 
 	public Long getCid() {

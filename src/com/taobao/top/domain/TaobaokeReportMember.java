@@ -1,6 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * TaobaokeReportMember Data Structure.
@@ -8,53 +10,55 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("taobaoke_report_member")
+@JsonListClass("taobaoke_report_members")
 public class TaobaokeReportMember extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("app_key")
+	@JsonField("app_key")
 	private String appKey;
 
-	@JsonProperty("category_id")
+	@JsonField("category_id")
 	private Long categoryId;
 
-	@JsonProperty("category_name")
+	@JsonField("category_name")
 	private String categoryName;
 
-	@JsonProperty("commission")
+	@JsonField("commission")
 	private String commission;
 
-	@JsonProperty("commission_rate")
+	@JsonField("commission_rate")
 	private String commissionRate;
 
-	@JsonProperty("iid")
+	@JsonField("iid")
 	private String iid;
 
-	@JsonProperty("item_num")
+	@JsonField("item_num")
 	private Long itemNum;
 
-	@JsonProperty("item_title")
+	@JsonField("item_title")
 	private String itemTitle;
 
-	@JsonProperty("num_iid")
+	@JsonField("num_iid")
 	private Long numIid;
 
-	@JsonProperty("outer_code")
+	@JsonField("outer_code")
 	private String outerCode;
 
-	@JsonProperty("pay_price")
+	@JsonField("pay_price")
 	private String payPrice;
 
-	@JsonProperty("pay_time")
+	@JsonField("pay_time")
 	private String payTime;
 
-	@JsonProperty("seller_nick")
+	@JsonField("seller_nick")
 	private String sellerNick;
 
-	@JsonProperty("shop_title")
+	@JsonField("shop_title")
 	private String shopTitle;
 
-	@JsonProperty("trade_id")
+	@JsonField("trade_id")
 	private Long tradeId;
 
 	public String getAppKey() {

@@ -1,6 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * TaobaokeItem Data Structure.
@@ -8,59 +10,61 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("taobaoke_item")
+@JsonListClass("taobaoke_items")
 public class TaobaokeItem extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("click_url")
+	@JsonField("click_url")
 	private String clickUrl;
 
-	@JsonProperty("commission")
+	@JsonField("commission")
 	private String commission;
 
-	@JsonProperty("commission_num")
+	@JsonField("commission_num")
 	private String commissionNum;
 
-	@JsonProperty("commission_rate")
+	@JsonField("commission_rate")
 	private String commissionRate;
 
-	@JsonProperty("commission_volume")
+	@JsonField("commission_volume")
 	private String commissionVolume;
 
-	@JsonProperty("iid")
+	@JsonField("iid")
 	private String iid;
 
-	@JsonProperty("item_location")
+	@JsonField("item_location")
 	private String itemLocation;
 
-	@JsonProperty("keyword_click_url")
+	@JsonField("keyword_click_url")
 	private String keywordClickUrl;
 
-	@JsonProperty("nick")
+	@JsonField("nick")
 	private String nick;
 
-	@JsonProperty("num_iid")
+	@JsonField("num_iid")
 	private Long numIid;
 
-	@JsonProperty("pic_url")
+	@JsonField("pic_url")
 	private String picUrl;
 
-	@JsonProperty("price")
+	@JsonField("price")
 	private String price;
 
-	@JsonProperty("seller_credit_score")
+	@JsonField("seller_credit_score")
 	private Long sellerCreditScore;
 
-	@JsonProperty("shop_click_url")
+	@JsonField("shop_click_url")
 	private String shopClickUrl;
 
-	@JsonProperty("taobaoke_cat_click_url")
+	@JsonField("taobaoke_cat_click_url")
 	private String taobaokeCatClickUrl;
 
-	@JsonProperty("title")
+	@JsonField("title")
 	private String title;
 
-	@JsonProperty("volume")
+	@JsonField("volume")
 	private Long volume;
 
 	public String getClickUrl() {

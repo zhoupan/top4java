@@ -1,7 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * Shipping Data Structure.
@@ -9,65 +11,67 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("shipping")
+@JsonListClass("shippings")
 public class Shipping extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("buyer_nick")
+	@JsonField("buyer_nick")
 	private String buyerNick;
 
-	@JsonProperty("company_name")
+	@JsonField("company_name")
 	private String companyName;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("delivery_end")
+	@JsonField("delivery_end")
 	private String deliveryEnd;
 
-	@JsonProperty("delivery_start")
+	@JsonField("delivery_start")
 	private String deliveryStart;
 
-	@JsonProperty("freight_payer")
+	@JsonField("freight_payer")
 	private String freightPayer;
 
-	@JsonProperty("is_success")
+	@JsonField("is_success")
 	private Boolean isSuccess;
 
-	@JsonProperty("item_title")
+	@JsonField("item_title")
 	private String itemTitle;
 
-	@JsonProperty("location")
+	@JsonField("location")
 	private Location location;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("out_sid")
+	@JsonField("out_sid")
 	private String outSid;
 
-	@JsonProperty("receiver_mobile")
+	@JsonField("receiver_mobile")
 	private String receiverMobile;
 
-	@JsonProperty("receiver_name")
+	@JsonField("receiver_name")
 	private String receiverName;
 
-	@JsonProperty("receiver_phone")
+	@JsonField("receiver_phone")
 	private String receiverPhone;
 
-	@JsonProperty("seller_confirm")
+	@JsonField("seller_confirm")
 	private String sellerConfirm;
 
-	@JsonProperty("seller_nick")
+	@JsonField("seller_nick")
 	private String sellerNick;
 
-	@JsonProperty("status")
+	@JsonField("status")
 	private String status;
 
-	@JsonProperty("tid")
+	@JsonField("tid")
 	private Long tid;
 
-	@JsonProperty("type")
+	@JsonField("type")
 	private String type;
 
 	public String getBuyerNick() {

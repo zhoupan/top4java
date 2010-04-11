@@ -1,6 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * LogisticsCompany Data Structure.
@@ -8,17 +10,19 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("logistics_company")
+@JsonListClass("logistics_companies")
 public class LogisticsCompany extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("code")
+	@JsonField("code")
 	private String code;
 
-	@JsonProperty("id")
+	@JsonField("id")
 	private Long id;
 
-	@JsonProperty("name")
+	@JsonField("name")
 	private String name;
 
 	public String getCode() {

@@ -1,7 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * ProductImg Data Structure.
@@ -9,26 +11,28 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("product_img")
+@JsonListClass("product_imgs")
 public class ProductImg extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("id")
+	@JsonField("id")
 	private Long id;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("position")
+	@JsonField("position")
 	private Integer position;
 
-	@JsonProperty("product_id")
+	@JsonField("product_id")
 	private Long productId;
 
-	@JsonProperty("url")
+	@JsonField("url")
 	private String url;
 
 	public Date getCreated() {

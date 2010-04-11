@@ -11,10 +11,10 @@ public class JsonConverterTest {
 	@Test
 	public void parseOrders() throws Exception {
 		Converter converter = new JsonConverter();
-		String json = TestUtils.readResource("orders.json");
+		String json = TestUtils.readResource("items.json");
 		long begin = System.currentTimeMillis();
 		for (int i = 0; i < 500; i++) {
-			converter.toResponseList(json, Order.class);
+			converter.toResponseList(json, Order.class, "taobao.items.get");
 		}
 		long end = System.currentTimeMillis();
 		System.out.println("Time elapsed: " + (end - begin) + " ms.");

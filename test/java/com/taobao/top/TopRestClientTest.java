@@ -32,7 +32,7 @@ public class TopRestClientTest {
 			}
 		};
 		TopParser<String> parser = new TopParser<String>() {
-			public String parse(String body) {
+			public String parse(String body, String api) {
 				return body;
 			}
 		};
@@ -80,7 +80,7 @@ public class TopRestClientTest {
 			}
 		};
 		TopParser<String> parser = new TopParser<String>() {
-			public String parse(String body) {
+			public String parse(String body, String api) {
 				return body;
 			}
 		};

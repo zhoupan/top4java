@@ -1,6 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * TaobaokeShop Data Structure.
@@ -8,20 +10,22 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("taobaoke_shop")
+@JsonListClass("taobaoke_shops")
 public class TaobaokeShop extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("click_url")
+	@JsonField("click_url")
 	private String clickUrl;
 
-	@JsonProperty("commission_rate")
+	@JsonField("commission_rate")
 	private String commissionRate;
 
-	@JsonProperty("shop_title")
+	@JsonField("shop_title")
 	private String shopTitle;
 
-	@JsonProperty("user_id")
+	@JsonField("user_id")
 	private String userId;
 
 	public String getClickUrl() {

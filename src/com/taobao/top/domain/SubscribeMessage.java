@@ -3,8 +3,9 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonList;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListField;
 
 /**
  * SubscribeMessage Data Structure.
@@ -12,23 +13,25 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("subscribe_message")
 public class SubscribeMessage extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("app_key")
+	@JsonField("app_key")
 	private String appKey;
 
-	@JsonProperty("end_date")
+	@JsonField("end_date")
 	private String endDate;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("start_date")
+	@JsonField("start_date")
 	private String startDate;
 
-	@JsonList(list="subscriptions", name="subscription")
+	@JsonField("subscription")
+	@JsonListField("subscriptions")
 	private List<Subscription> subscriptions;
 
 	public String getAppKey() {

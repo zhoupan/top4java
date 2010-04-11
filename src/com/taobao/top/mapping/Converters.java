@@ -15,7 +15,6 @@ import java.util.List;
 
 import com.taobao.top.Constants;
 import com.taobao.top.TopException;
-import com.taobao.top.domain.BaseObject;
 import com.taobao.top.util.StrUtils;
 
 /**
@@ -54,8 +53,8 @@ public class Converters {
 					continue; // ignore class field
 				}
 
-				Field field = getDeclaredField(clazz, name);
-				JsonProperty jsonProp = field.getAnnotation(JsonProperty.class);
+				Field field = clazz.getDeclaredField(name);
+				JsonField jsonProp = field.getAnnotation(JsonField.class);
 				if (jsonProp != null) {
 					String alias = jsonProp.value();
 					if (!StrUtils.isEmpty(alias)) {
@@ -139,18 +138,6 @@ public class Converters {
 		}
 
 		return rsp;
-	}
-
-	private static <T> Field getDeclaredField(Class<T> clazz, String name) throws NoSuchFieldException {
-		Field field;
-
-		if ("created".equals(name) || "modified".equals(name)) {
-			field = BaseObject.class.getDeclaredField(name);
-		} else {
-			field = clazz.getDeclaredField(name);
-		}
-
-		return field;
 	}
 
 }
