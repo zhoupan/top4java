@@ -3,8 +3,6 @@ package com.taobao.top;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import com.taobao.top.parser.TopParser;
 import com.taobao.top.request.TopRequest;
@@ -21,9 +19,6 @@ import com.taobao.top.util.WebUtils;
  * @since 1.0, Sep 13, 2009
  */
 public class TopRestClient implements TopClient {
-
-	private static final Pattern ERR_RSP_JSON = Pattern
-			.compile("\\{\"error_rsp\":\\{\"code\":(\\d+),\"msg\":\"(.*)\"\\}\\}");
 
 	private static final String APP_KEY = "app_key";
 	private static final String FORMAT = "format";
@@ -59,7 +54,7 @@ public class TopRestClient implements TopClient {
 
 		// 添加协议级请求参数
 		textParams.put(METHOD, request.getApiName());
-		textParams.put(VERSION, "1.0");
+		textParams.put(VERSION, "2.0");
 		textParams.put(APP_KEY, appKey);
 		textParams.put(FORMAT, format);
 		textParams.put(PARTNER_ID, "300");
@@ -101,14 +96,7 @@ public class TopRestClient implements TopClient {
 		if (Constants.FORMAT_JSON.equals(this.format)) {
 			// 为了避免二次解释JSON，采用startsWith判断
 			if (rsp.startsWith("{\"error_response\":")) {
-				Matcher matcher = ERR_RSP_JSON.matcher(rsp);
-				if (matcher.find()) {
-					int errCode = Integer.parseInt(matcher.group(1));
-					String errMsg = matcher.group(2);
-					throw new TopException(errCode, errMsg);
-				} else {
-					throw new TopException("Unknown server excpetion!");
-				}
+				// TODO parse exception
 			}
 		} else {
 			throw new TopException("Unsupported response format!");
