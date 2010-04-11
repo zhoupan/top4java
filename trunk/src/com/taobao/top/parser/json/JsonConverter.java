@@ -22,7 +22,7 @@ import com.taobao.top.util.StrUtils;
  */
 public class JsonConverter implements Converter {
 
-	public <T> ResponseList<T> toResponseList(String rsp, Class<T> clazz) throws TopException {
+	public <T> ResponseList<T> toResponseList(String rsp, Class<T> clazz, String api) throws TopException {
 		ResponseList<T> rspList = new ResponseList<T>();
 
 		JSONReader reader = new JSONReader();
@@ -31,12 +31,12 @@ public class JsonConverter implements Converter {
 			return rspList;
 		}
 
-		Map<?, ?> rspJson = (Map<?, ?>) rootJson.get("rsp");
+		Map<?, ?> rspJson = (Map<?, ?>) rootJson.get(getRootElement(api));
 		if (rspJson == null || rspJson.isEmpty()) {
 			return rspList;
 		}
 
-		Object totalResults = rspJson.get("totalResults");
+		Object totalResults = rspJson.get("total_results");
 		if (totalResults != null) {
 			if (totalResults instanceof Long) {
 				rspList.setTotalResults((Long) totalResults);
@@ -59,8 +59,8 @@ public class JsonConverter implements Converter {
 		return rspList;
 	}
 
-	public <T> T toResponse(String rsp, Class<T> clazz) throws TopException {
-		ResponseList<T> rspList = toResponseList(rsp, clazz);
+	public <T> T toResponse(String rsp, Class<T> clazz, String api) throws TopException {
+		ResponseList<T> rspList = toResponseList(rsp, clazz, api);
 		return rspList.getFirst();
 	}
 
@@ -130,6 +130,15 @@ public class JsonConverter implements Converter {
 				return listObjs;
 			}
 		});
+	}
+
+	private String getRootElement(String api) {
+		int pos = api.indexOf('.');
+		if (pos != -1 && api.length() > pos) {
+			api = api.substring(pos + 1).replace('.', '_');
+		}
+
+		return api + "_response";
 	}
 
 }

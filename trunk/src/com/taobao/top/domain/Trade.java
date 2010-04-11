@@ -3,8 +3,10 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonList;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.JsonListField;
 
 /**
  * Trade Data Structure.
@@ -12,182 +14,185 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("trade")
+@JsonListClass("trades")
 public class Trade extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("adjust_fee")
+	@JsonField("adjust_fee")
 	private String adjustFee;
 
-	@JsonProperty("alipay_no")
+	@JsonField("alipay_no")
 	private String alipayNo;
 
-	@JsonProperty("available_confirm_fee")
+	@JsonField("available_confirm_fee")
 	private String availableConfirmFee;
 
-	@JsonProperty("buyer_alipay_no")
+	@JsonField("buyer_alipay_no")
 	private String buyerAlipayNo;
 
-	@JsonProperty("buyer_email")
+	@JsonField("buyer_email")
 	private String buyerEmail;
 
-	@JsonProperty("buyer_memo")
+	@JsonField("buyer_memo")
 	private String buyerMemo;
 
-	@JsonProperty("buyer_message")
+	@JsonField("buyer_message")
 	private String buyerMessage;
 
-	@JsonProperty("buyer_nick")
+	@JsonField("buyer_nick")
 	private String buyerNick;
 
-	@JsonProperty("buyer_obtain_point_fee")
+	@JsonField("buyer_obtain_point_fee")
 	private Integer buyerObtainPointFee;
 
-	@JsonProperty("buyer_rate")
+	@JsonField("buyer_rate")
 	private Boolean buyerRate;
 
-	@JsonProperty("cod_fee")
+	@JsonField("cod_fee")
 	private String codFee;
 
-	@JsonProperty("cod_status")
+	@JsonField("cod_status")
 	private String codStatus;
 
-	@JsonProperty("commission_fee")
+	@JsonField("commission_fee")
 	private String commissionFee;
 
-	@JsonProperty("consign_time")
+	@JsonField("consign_time")
 	private String consignTime;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("discount_fee")
+	@JsonField("discount_fee")
 	private String discountFee;
 
-	@JsonProperty("end_time")
+	@JsonField("end_time")
 	private String endTime;
 
-	@JsonProperty("has_post_fee")
+	@JsonField("has_post_fee")
 	private Boolean hasPostFee;
 
-	@JsonProperty("iid")
+	@JsonField("iid")
 	private String iid;
 
-	@JsonProperty("is_3D")
+	@JsonField("is_3D")
 	private Boolean is3D;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("num")
+	@JsonField("num")
 	private Integer num;
 
-	@JsonList(list="orders", name="order")
+	@JsonField("order")
+	@JsonListField("orders")
 	private List<Order> orders;
 
-	@JsonProperty("pay_time")
+	@JsonField("pay_time")
 	private String payTime;
 
-	@JsonProperty("payment")
+	@JsonField("payment")
 	private String payment;
 
-	@JsonProperty("pic_path")
+	@JsonField("pic_path")
 	private String picPath;
 
-	@JsonProperty("point_fee")
+	@JsonField("point_fee")
 	private Integer pointFee;
 
-	@JsonProperty("post_fee")
+	@JsonField("post_fee")
 	private String postFee;
 
-	@JsonProperty("price")
+	@JsonField("price")
 	private String price;
 
-	@JsonProperty("real_point_fee")
+	@JsonField("real_point_fee")
 	private Integer realPointFee;
 
-	@JsonProperty("received_payment")
+	@JsonField("received_payment")
 	private String receivedPayment;
 
-	@JsonProperty("receiver_address")
+	@JsonField("receiver_address")
 	private String receiverAddress;
 
-	@JsonProperty("receiver_city")
+	@JsonField("receiver_city")
 	private String receiverCity;
 
-	@JsonProperty("receiver_district")
+	@JsonField("receiver_district")
 	private String receiverDistrict;
 
-	@JsonProperty("receiver_mobile")
+	@JsonField("receiver_mobile")
 	private String receiverMobile;
 
-	@JsonProperty("receiver_name")
+	@JsonField("receiver_name")
 	private String receiverName;
 
-	@JsonProperty("receiver_phone")
+	@JsonField("receiver_phone")
 	private String receiverPhone;
 
-	@JsonProperty("receiver_state")
+	@JsonField("receiver_state")
 	private String receiverState;
 
-	@JsonProperty("receiver_zip")
+	@JsonField("receiver_zip")
 	private String receiverZip;
 
-	@JsonProperty("seller_alipay_no")
+	@JsonField("seller_alipay_no")
 	private String sellerAlipayNo;
 
-	@JsonProperty("seller_email")
+	@JsonField("seller_email")
 	private String sellerEmail;
 
-	@JsonProperty("seller_memo")
+	@JsonField("seller_memo")
 	private String sellerMemo;
 
-	@JsonProperty("seller_mobile")
+	@JsonField("seller_mobile")
 	private String sellerMobile;
 
-	@JsonProperty("seller_name")
+	@JsonField("seller_name")
 	private String sellerName;
 
-	@JsonProperty("seller_nick")
+	@JsonField("seller_nick")
 	private String sellerNick;
 
-	@JsonProperty("seller_phone")
+	@JsonField("seller_phone")
 	private String sellerPhone;
 
-	@JsonProperty("seller_rate")
+	@JsonField("seller_rate")
 	private Boolean sellerRate;
 
-	@JsonProperty("shipping_type")
+	@JsonField("shipping_type")
 	private String shippingType;
 
-	@JsonProperty("sid")
+	@JsonField("sid")
 	private String sid;
 
-	@JsonProperty("snapshot")
+	@JsonField("snapshot")
 	private String snapshot;
 
-	@JsonProperty("snapshot_url")
+	@JsonField("snapshot_url")
 	private String snapshotUrl;
 
-	@JsonProperty("status")
+	@JsonField("status")
 	private String status;
 
-	@JsonProperty("tid")
+	@JsonField("tid")
 	private Long tid;
 
-	@JsonProperty("timeout_action_time")
+	@JsonField("timeout_action_time")
 	private String timeoutActionTime;
 
-	@JsonProperty("title")
+	@JsonField("title")
 	private String title;
 
-	@JsonProperty("total_fee")
+	@JsonField("total_fee")
 	private String totalFee;
 
-	@JsonProperty("trade_memo")
+	@JsonField("trade_memo")
 	private String tradeMemo;
 
-	@JsonProperty("type")
+	@JsonField("type")
 	private String type;
 
 	public String getAdjustFee() {

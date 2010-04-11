@@ -1,6 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * ShippingAddress Data Structure.
@@ -8,26 +10,28 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("shipping_address")
+@JsonListClass("shipping_addresss")
 public class ShippingAddress extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("address_id")
+	@JsonField("address_id")
 	private Integer addressId;
 
-	@JsonProperty("is_default")
+	@JsonField("is_default")
 	private Boolean isDefault;
 
-	@JsonProperty("location")
+	@JsonField("location")
 	private Location location;
 
-	@JsonProperty("mobile")
+	@JsonField("mobile")
 	private String mobile;
 
-	@JsonProperty("phone")
+	@JsonField("phone")
 	private String phone;
 
-	@JsonProperty("receiver_name")
+	@JsonField("receiver_name")
 	private String receiverName;
 
 	public Integer getAddressId() {

@@ -1,7 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * User Data Structure.
@@ -9,92 +11,94 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("user")
+@JsonListClass("users")
 public class User extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("alipay_account")
+	@JsonField("alipay_account")
 	private String alipayAccount;
 
-	@JsonProperty("alipay_bind")
+	@JsonField("alipay_bind")
 	private String alipayBind;
 
-	@JsonProperty("alipay_no")
+	@JsonField("alipay_no")
 	private String alipayNo;
 
-	@JsonProperty("auto_repost")
+	@JsonField("auto_repost")
 	private String autoRepost;
 
-	@JsonProperty("birthday")
+	@JsonField("birthday")
 	private String birthday;
 
-	@JsonProperty("buyer_credit")
+	@JsonField("buyer_credit")
 	private UserCredit buyerCredit;
 
-	@JsonProperty("consumer_protection")
+	@JsonField("consumer_protection")
 	private Boolean consumerProtection;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("email")
+	@JsonField("email")
 	private String email;
 
-	@JsonProperty("has_more_pic")
+	@JsonField("has_more_pic")
 	private Boolean hasMorePic;
 
-	@JsonProperty("id_card")
+	@JsonField("id_card")
 	private String idCard;
 
-	@JsonProperty("item_img_num")
+	@JsonField("item_img_num")
 	private Integer itemImgNum;
 
-	@JsonProperty("item_img_size")
+	@JsonField("item_img_size")
 	private Integer itemImgSize;
 
-	@JsonProperty("last_visit")
+	@JsonField("last_visit")
 	private String lastVisit;
 
-	@JsonProperty("location")
+	@JsonField("location")
 	private Location location;
 
-	@JsonProperty("mobile")
+	@JsonField("mobile")
 	private String mobile;
 
-	@JsonProperty("nick")
+	@JsonField("nick")
 	private String nick;
 
-	@JsonProperty("phone")
+	@JsonField("phone")
 	private String phone;
 
-	@JsonProperty("promoted_type")
+	@JsonField("promoted_type")
 	private String promotedType;
 
-	@JsonProperty("prop_img_num")
+	@JsonField("prop_img_num")
 	private Integer propImgNum;
 
-	@JsonProperty("prop_img_size")
+	@JsonField("prop_img_size")
 	private Integer propImgSize;
 
-	@JsonProperty("real_name")
+	@JsonField("real_name")
 	private String realName;
 
-	@JsonProperty("seller_credit")
+	@JsonField("seller_credit")
 	private UserCredit sellerCredit;
 
-	@JsonProperty("sex")
+	@JsonField("sex")
 	private String sex;
 
-	@JsonProperty("status")
+	@JsonField("status")
 	private String status;
 
-	@JsonProperty("type")
+	@JsonField("type")
 	private String type;
 
-	@JsonProperty("uid")
+	@JsonField("uid")
 	private String uid;
 
-	@JsonProperty("user_id")
+	@JsonField("user_id")
 	private Long userId;
 
 	public String getAlipayAccount() {

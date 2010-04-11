@@ -1,7 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * TradeRate Data Structure.
@@ -9,41 +11,43 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("trade_rate")
+@JsonListClass("trade_rates")
 public class TradeRate extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("content")
+	@JsonField("content")
 	private String content;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("item_price")
+	@JsonField("item_price")
 	private String itemPrice;
 
-	@JsonProperty("item_title")
+	@JsonField("item_title")
 	private String itemTitle;
 
-	@JsonProperty("nick")
+	@JsonField("nick")
 	private String nick;
 
-	@JsonProperty("oid")
+	@JsonField("oid")
 	private Long oid;
 
-	@JsonProperty("rated_nick")
+	@JsonField("rated_nick")
 	private String ratedNick;
 
-	@JsonProperty("reply")
+	@JsonField("reply")
 	private String reply;
 
-	@JsonProperty("result")
+	@JsonField("result")
 	private String result;
 
-	@JsonProperty("role")
+	@JsonField("role")
 	private String role;
 
-	@JsonProperty("tid")
+	@JsonField("tid")
 	private Long tid;
 
 	public String getContent() {

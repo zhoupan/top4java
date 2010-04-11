@@ -2,7 +2,9 @@ package com.taobao.top.domain;
 
 import java.util.List;
 
-import com.taobao.top.mapping.JsonList;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListField;
 
 /**
  * SellerAuthorize Data Structure.
@@ -10,14 +12,17 @@ import com.taobao.top.mapping.JsonList;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("seller_authorize")
 public class SellerAuthorize extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonList(list="brands", name="brand")
+	@JsonField("brand")
+	@JsonListField("brands")
 	private List<Brand> brands;
 
-	@JsonList(list="item_cats", name="item_cat")
+	@JsonField("item_cat")
+	@JsonListField("item_cats")
 	private List<ItemCat> itemCats;
 
 	public List<Brand> getBrands() {

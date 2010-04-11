@@ -1,6 +1,7 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
 
 /**
  * RefundRemindTimeout Data Structure.
@@ -8,17 +9,18 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("refund_remind_timeout")
 public class RefundRemindTimeout extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("exist_timeout")
+	@JsonField("exist_timeout")
 	private Boolean existTimeout;
 
-	@JsonProperty("remind_type")
+	@JsonField("remind_type")
 	private Integer remindType;
 
-	@JsonProperty("timeout")
+	@JsonField("timeout")
 	private String timeout;
 
 	public Boolean getExistTimeout() {

@@ -19,9 +19,9 @@ public class ObjectListJsonParser<T> implements TopParser<ResponseList<T>> {
 		this.clazz = clazz;
 	}
 
-	public ResponseList<T> parse(String rsp) throws TopException {
+	public ResponseList<T> parse(String rsp, String api) throws TopException {
 		Converter converter = new JsonConverter();
-		return converter.toResponseList(rsp, clazz);
+		return converter.toResponseList(rsp, clazz, api);
 	}
 
 }

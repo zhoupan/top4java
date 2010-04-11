@@ -3,8 +3,10 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonList;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.JsonListField;
 
 /**
  * Item Data Structure.
@@ -12,164 +14,170 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("item")
+@JsonListClass("items")
 public class Item extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("approve_status")
+	@JsonField("approve_status")
 	private String approveStatus;
 
-	@JsonProperty("auction_point")
+	@JsonField("auction_point")
 	private Long auctionPoint;
 
-	@JsonProperty("auto_fill")
+	@JsonField("auto_fill")
 	private String autoFill;
 
-	@JsonProperty("auto_repost")
+	@JsonField("auto_repost")
 	private Boolean autoRepost;
 
-	@JsonProperty("cid")
+	@JsonField("cid")
 	private Long cid;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("delist_time")
+	@JsonField("delist_time")
 	private String delistTime;
 
-	@JsonProperty("desc")
+	@JsonField("desc")
 	private String desc;
 
-	@JsonProperty("detail_url")
+	@JsonField("detail_url")
 	private String detailUrl;
 
-	@JsonProperty("ems_fee")
+	@JsonField("ems_fee")
 	private String emsFee;
 
-	@JsonProperty("express_fee")
+	@JsonField("express_fee")
 	private String expressFee;
 
-	@JsonProperty("freight_payer")
+	@JsonField("freight_payer")
 	private String freightPayer;
 
-	@JsonProperty("has_discount")
+	@JsonField("has_discount")
 	private Boolean hasDiscount;
 
-	@JsonProperty("has_invoice")
+	@JsonField("has_invoice")
 	private Boolean hasInvoice;
 
-	@JsonProperty("has_showcase")
+	@JsonField("has_showcase")
 	private Boolean hasShowcase;
 
-	@JsonProperty("has_warranty")
+	@JsonField("has_warranty")
 	private Boolean hasWarranty;
 
-	@JsonProperty("iid")
+	@JsonField("iid")
 	private String iid;
 
-	@JsonProperty("increment")
+	@JsonField("increment")
 	private String increment;
 
-	@JsonProperty("input_pids")
+	@JsonField("input_pids")
 	private String inputPids;
 
-	@JsonProperty("input_str")
+	@JsonField("input_str")
 	private String inputStr;
 
-	@JsonProperty("is_3D")
+	@JsonField("is_3D")
 	private Boolean is3D;
 
-	@JsonProperty("is_ex")
+	@JsonField("is_ex")
 	private Boolean isEx;
 
-	@JsonProperty("is_taobao")
+	@JsonField("is_taobao")
 	private Boolean isTaobao;
 
-	@JsonProperty("is_timing")
+	@JsonField("is_timing")
 	private Boolean isTiming;
 
-	@JsonProperty("is_virtual")
+	@JsonField("is_virtual")
 	private Boolean isVirtual;
 
-	@JsonList(list="item_imgs", name="item_img")
+	@JsonField("item_img")
+	@JsonListField("item_imgs")
 	private List<ItemImg> itemImgs;
 
-	@JsonProperty("list_time")
+	@JsonField("list_time")
 	private String listTime;
 
-	@JsonProperty("location")
+	@JsonField("location")
 	private Location location;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("nick")
+	@JsonField("nick")
 	private String nick;
 
-	@JsonProperty("num")
+	@JsonField("num")
 	private Integer num;
 
-	@JsonProperty("num_iid")
+	@JsonField("num_iid")
 	private Long numIid;
 
-	@JsonProperty("one_station")
+	@JsonField("one_station")
 	private Boolean oneStation;
 
-	@JsonProperty("outer_id")
+	@JsonField("outer_id")
 	private String outerId;
 
-	@JsonProperty("pic_url")
+	@JsonField("pic_url")
 	private String picUrl;
 
-	@JsonProperty("post_fee")
+	@JsonField("post_fee")
 	private String postFee;
 
-	@JsonProperty("postage_id")
+	@JsonField("postage_id")
 	private Long postageId;
 
-	@JsonProperty("price")
+	@JsonField("price")
 	private String price;
 
-	@JsonProperty("product_id")
+	@JsonField("product_id")
 	private Long productId;
 
-	@JsonList(list="prop_imgs", name="prop_img")
+	@JsonField("prop_img")
+	@JsonListField("prop_imgs")
 	private List<PropImg> propImgs;
 
-	@JsonProperty("property_alias")
+	@JsonField("property_alias")
 	private String propertyAlias;
 
-	@JsonProperty("props")
+	@JsonField("props")
 	private String props;
 
-	@JsonProperty("score")
+	@JsonField("score")
 	private Long score;
 
-	@JsonProperty("second_kill")
+	@JsonField("second_kill")
 	private String secondKill;
 
-	@JsonProperty("seller_cids")
+	@JsonField("seller_cids")
 	private String sellerCids;
 
-	@JsonList(list="skus", name="sku")
+	@JsonField("sku")
+	@JsonListField("skus")
 	private List<Sku> skus;
 
-	@JsonProperty("stuff_status")
+	@JsonField("stuff_status")
 	private String stuffStatus;
 
-	@JsonProperty("title")
+	@JsonField("title")
 	private String title;
 
-	@JsonProperty("type")
+	@JsonField("type")
 	private String type;
 
-	@JsonProperty("valid_thru")
+	@JsonField("valid_thru")
 	private Integer validThru;
 
-	@JsonList(list="videos", name="video")
+	@JsonField("video")
+	@JsonListField("videos")
 	private List<Video> videos;
 
-	@JsonProperty("volume")
+	@JsonField("volume")
 	private Long volume;
 
 	public String getApproveStatus() {

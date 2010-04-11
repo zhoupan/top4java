@@ -1,7 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * Refund Data Structure.
@@ -9,89 +11,91 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("refund")
+@JsonListClass("refunds")
 public class Refund extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("address")
+	@JsonField("address")
 	private String address;
 
-	@JsonProperty("alipay_no")
+	@JsonField("alipay_no")
 	private String alipayNo;
 
-	@JsonProperty("buyer_nick")
+	@JsonField("buyer_nick")
 	private String buyerNick;
 
-	@JsonProperty("company_name")
+	@JsonField("company_name")
 	private String companyName;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("desc")
+	@JsonField("desc")
 	private String desc;
 
-	@JsonProperty("good_return_time")
+	@JsonField("good_return_time")
 	private String goodReturnTime;
 
-	@JsonProperty("good_status")
+	@JsonField("good_status")
 	private String goodStatus;
 
-	@JsonProperty("has_good_return")
+	@JsonField("has_good_return")
 	private Boolean hasGoodReturn;
 
-	@JsonProperty("iid")
+	@JsonField("iid")
 	private String iid;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("num")
+	@JsonField("num")
 	private Integer num;
 
-	@JsonProperty("oid")
+	@JsonField("oid")
 	private Long oid;
 
-	@JsonProperty("order_status")
+	@JsonField("order_status")
 	private String orderStatus;
 
-	@JsonProperty("payment")
+	@JsonField("payment")
 	private String payment;
 
-	@JsonProperty("price")
+	@JsonField("price")
 	private String price;
 
-	@JsonProperty("reason")
+	@JsonField("reason")
 	private String reason;
 
-	@JsonProperty("refund_fee")
+	@JsonField("refund_fee")
 	private String refundFee;
 
-	@JsonProperty("refund_id")
+	@JsonField("refund_id")
 	private Long refundId;
 
-	@JsonProperty("refund_remind_timeout")
+	@JsonField("refund_remind_timeout")
 	private RefundRemindTimeout refundRemindTimeout;
 
-	@JsonProperty("seller_nick")
+	@JsonField("seller_nick")
 	private String sellerNick;
 
-	@JsonProperty("shipping_type")
+	@JsonField("shipping_type")
 	private String shippingType;
 
-	@JsonProperty("sid")
+	@JsonField("sid")
 	private String sid;
 
-	@JsonProperty("status")
+	@JsonField("status")
 	private String status;
 
-	@JsonProperty("tid")
+	@JsonField("tid")
 	private Long tid;
 
-	@JsonProperty("title")
+	@JsonField("title")
 	private String title;
 
-	@JsonProperty("total_fee")
+	@JsonField("total_fee")
 	private String totalFee;
 
 	public String getAddress() {

@@ -1,6 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * Area Data Structure.
@@ -8,23 +10,25 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("area")
+@JsonListClass("areas")
 public class Area extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("id")
+	@JsonField("id")
 	private Long id;
 
-	@JsonProperty("name")
+	@JsonField("name")
 	private String name;
 
-	@JsonProperty("parent_id")
+	@JsonField("parent_id")
 	private Long parentId;
 
-	@JsonProperty("type")
+	@JsonField("type")
 	private Long type;
 
-	@JsonProperty("zip")
+	@JsonField("zip")
 	private String zip;
 
 	public Long getId() {

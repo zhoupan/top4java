@@ -1,7 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * SellerCat Data Structure.
@@ -9,29 +11,31 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("seller_cat")
+@JsonListClass("seller_cats")
 public class SellerCat extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("cid")
+	@JsonField("cid")
 	private String cid;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("name")
+	@JsonField("name")
 	private String name;
 
-	@JsonProperty("parent_cid")
+	@JsonField("parent_cid")
 	private String parentCid;
 
-	@JsonProperty("pic_url")
+	@JsonField("pic_url")
 	private String picUrl;
 
-	@JsonProperty("sort_order")
+	@JsonField("sort_order")
 	private Integer sortOrder;
 
 	public String getCid() {

@@ -1,6 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * ShopCat Data Structure.
@@ -8,20 +10,22 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("shop_cat")
+@JsonListClass("shop_cats")
 public class ShopCat extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("cid")
+	@JsonField("cid")
 	private Long cid;
 
-	@JsonProperty("is_parent")
+	@JsonField("is_parent")
 	private Boolean isParent;
 
-	@JsonProperty("name")
+	@JsonField("name")
 	private String name;
 
-	@JsonProperty("parent_cid")
+	@JsonField("parent_cid")
 	private Long parentCid;
 
 	public Long getCid() {

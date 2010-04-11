@@ -1,7 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * AuthorizeMessage Data Structure.
@@ -9,29 +11,31 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("authorize_message")
+@JsonListClass("authorize_messages")
 public class AuthorizeMessage extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("app_key")
+	@JsonField("app_key")
 	private String appKey;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("end_date")
+	@JsonField("end_date")
 	private String endDate;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("nick")
+	@JsonField("nick")
 	private String nick;
 
-	@JsonProperty("start_date")
+	@JsonField("start_date")
 	private String startDate;
 
-	@JsonProperty("status")
+	@JsonField("status")
 	private String status;
 
 	public String getAppKey() {

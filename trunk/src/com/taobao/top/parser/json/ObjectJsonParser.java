@@ -18,9 +18,9 @@ public class ObjectJsonParser<T> implements TopParser<T> {
 		this.clazz = clazz;
 	}
 
-	public T parse(String rsp) throws TopException {
+	public T parse(String rsp, String api) throws TopException {
 		Converter converter = new JsonConverter();
-		return converter.toResponse(rsp, clazz);
+		return converter.toResponse(rsp, clazz, api);
 	}
 
 }

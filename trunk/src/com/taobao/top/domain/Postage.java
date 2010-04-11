@@ -3,8 +3,10 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonList;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.JsonListField;
 
 /**
  * Postage Data Structure.
@@ -12,44 +14,47 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("postage")
+@JsonListClass("postages")
 public class Postage extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("ems_increase")
+	@JsonField("ems_increase")
 	private String emsIncrease;
 
-	@JsonProperty("ems_price")
+	@JsonField("ems_price")
 	private String emsPrice;
 
-	@JsonProperty("express_increase")
+	@JsonField("express_increase")
 	private String expressIncrease;
 
-	@JsonProperty("express_price")
+	@JsonField("express_price")
 	private String expressPrice;
 
-	@JsonProperty("memo")
+	@JsonField("memo")
 	private String memo;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("name")
+	@JsonField("name")
 	private String name;
 
-	@JsonProperty("post_increase")
+	@JsonField("post_increase")
 	private String postIncrease;
 
-	@JsonProperty("post_price")
+	@JsonField("post_price")
 	private String postPrice;
 
-	@JsonProperty("postage_id")
+	@JsonField("postage_id")
 	private Long postageId;
 
-	@JsonList(list="postage_modes", name="postage_mode")
+	@JsonField("postage_mode")
+	@JsonListField("postage_modes")
 	private List<PostageMode> postageModes;
 
 	public Date getCreated() {

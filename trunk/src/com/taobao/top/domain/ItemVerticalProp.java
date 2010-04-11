@@ -1,6 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * ItemVerticalProp Data Structure.
@@ -8,20 +10,22 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("item_vertical_prop")
+@JsonListClass("item_vertical_props")
 public class ItemVerticalProp extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("id")
+	@JsonField("id")
 	private Long id;
 
-	@JsonProperty("is_required")
+	@JsonField("is_required")
 	private Boolean isRequired;
 
-	@JsonProperty("name")
+	@JsonField("name")
 	private String name;
 
-	@JsonProperty("type")
+	@JsonField("type")
 	private Integer type;
 
 	public Long getId() {

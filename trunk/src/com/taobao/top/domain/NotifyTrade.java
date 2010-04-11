@@ -1,7 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * NotifyTrade Data Structure.
@@ -9,32 +11,34 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("notify_trade")
+@JsonListClass("notify_trades")
 public class NotifyTrade extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("buyer_nick")
+	@JsonField("buyer_nick")
 	private String buyerNick;
 
-	@JsonProperty("is_3D")
+	@JsonField("is_3D")
 	private Boolean is3D;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("payment")
+	@JsonField("payment")
 	private String payment;
 
-	@JsonProperty("seller_nick")
+	@JsonField("seller_nick")
 	private String sellerNick;
 
-	@JsonProperty("status")
+	@JsonField("status")
 	private String status;
 
-	@JsonProperty("tid")
+	@JsonField("tid")
 	private Long tid;
 
-	@JsonProperty("type")
+	@JsonField("type")
 	private String type;
 
 	public String getBuyerNick() {

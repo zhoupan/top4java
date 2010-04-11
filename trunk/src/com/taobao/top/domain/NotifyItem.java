@@ -1,7 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * NotifyItem Data Structure.
@@ -9,35 +11,37 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("notify_item")
+@JsonListClass("notify_items")
 public class NotifyItem extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("changed_fields")
+	@JsonField("changed_fields")
 	private String changedFields;
 
-	@JsonProperty("iid")
+	@JsonField("iid")
 	private String iid;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("nick")
+	@JsonField("nick")
 	private String nick;
 
-	@JsonProperty("num")
+	@JsonField("num")
 	private Integer num;
 
-	@JsonProperty("num_iid")
+	@JsonField("num_iid")
 	private Long numIid;
 
-	@JsonProperty("price")
+	@JsonField("price")
 	private String price;
 
-	@JsonProperty("status")
+	@JsonField("status")
 	private String status;
 
-	@JsonProperty("title")
+	@JsonField("title")
 	private String title;
 
 	public String getChangedFields() {

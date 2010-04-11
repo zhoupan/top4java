@@ -2,8 +2,10 @@ package com.taobao.top.domain;
 
 import java.util.List;
 
-import com.taobao.top.mapping.JsonList;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.JsonListField;
 
 /**
  * ItemProp Data Structure.
@@ -11,59 +13,62 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("item_prop")
+@JsonListClass("item_props")
 public class ItemProp extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("child_template")
+	@JsonField("child_template")
 	private String childTemplate;
 
-	@JsonProperty("is_allow_alias")
+	@JsonField("is_allow_alias")
 	private Boolean isAllowAlias;
 
-	@JsonProperty("is_color_prop")
+	@JsonField("is_color_prop")
 	private Boolean isColorProp;
 
-	@JsonProperty("is_enum_prop")
+	@JsonField("is_enum_prop")
 	private Boolean isEnumProp;
 
-	@JsonProperty("is_input_prop")
+	@JsonField("is_input_prop")
 	private Boolean isInputProp;
 
-	@JsonProperty("is_item_prop")
+	@JsonField("is_item_prop")
 	private Boolean isItemProp;
 
-	@JsonProperty("is_key_prop")
+	@JsonField("is_key_prop")
 	private Boolean isKeyProp;
 
-	@JsonProperty("is_sale_prop")
+	@JsonField("is_sale_prop")
 	private Boolean isSaleProp;
 
-	@JsonProperty("multi")
+	@JsonField("multi")
 	private Boolean multi;
 
-	@JsonProperty("must")
+	@JsonField("must")
 	private Boolean must;
 
-	@JsonProperty("name")
+	@JsonField("name")
 	private String name;
 
-	@JsonProperty("parent_pid")
+	@JsonField("parent_pid")
 	private Long parentPid;
 
-	@JsonProperty("parent_vid")
+	@JsonField("parent_vid")
 	private Long parentVid;
 
-	@JsonProperty("pid")
+	@JsonField("pid")
 	private Long pid;
 
-	@JsonList(list="prop_values", name="prop_value")
+	@JsonField("prop_value")
+	@JsonListField("prop_values")
 	private List<PropValue> propValues;
 
-	@JsonProperty("sort_order")
+	@JsonField("sort_order")
 	private Integer sortOrder;
 
-	@JsonProperty("status")
+	@JsonField("status")
 	private String status;
 
 	public String getChildTemplate() {

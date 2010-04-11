@@ -8,7 +8,7 @@ package com.taobao.top.parser;
  */
 public class StringParser implements TopParser<String> {
 
-	public String parse(String rsp) {
+	public String parse(String rsp, String api) {
 		return rsp;
 	}
 

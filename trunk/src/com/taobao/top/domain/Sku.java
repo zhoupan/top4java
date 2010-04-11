@@ -1,7 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
 
 /**
  * Sku Data Structure.
@@ -9,44 +11,46 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("sku")
+@JsonListClass("skus")
 public class Sku extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("extra_id")
+	@JsonField("extra_id")
 	private Long extraId;
 
-	@JsonProperty("iid")
+	@JsonField("iid")
 	private String iid;
 
-	@JsonProperty("memo")
+	@JsonField("memo")
 	private String memo;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("num_iid")
+	@JsonField("num_iid")
 	private Long numIid;
 
-	@JsonProperty("outer_id")
+	@JsonField("outer_id")
 	private String outerId;
 
-	@JsonProperty("price")
+	@JsonField("price")
 	private String price;
 
-	@JsonProperty("properties")
+	@JsonField("properties")
 	private String properties;
 
-	@JsonProperty("quantity")
+	@JsonField("quantity")
 	private Long quantity;
 
-	@JsonProperty("sku_id")
+	@JsonField("sku_id")
 	private Long skuId;
 
-	@JsonProperty("status")
+	@JsonField("status")
 	private String status;
 
 	public Date getCreated() {

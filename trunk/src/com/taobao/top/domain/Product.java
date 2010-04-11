@@ -3,8 +3,10 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonList;
-import com.taobao.top.mapping.JsonProperty;
+import com.taobao.top.mapping.JsonClass;
+import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.JsonListField;
 
 /**
  * Product Data Structure.
@@ -12,65 +14,69 @@ import com.taobao.top.mapping.JsonProperty;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
+@JsonClass("product")
+@JsonListClass("products")
 public class Product extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonProperty("binds")
+	@JsonField("binds")
 	private String binds;
 
-	@JsonProperty("binds_str")
+	@JsonField("binds_str")
 	private String bindsStr;
 
-	@JsonProperty("cat_name")
+	@JsonField("cat_name")
 	private String catName;
 
-	@JsonProperty("cid")
+	@JsonField("cid")
 	private Long cid;
 
-	@JsonProperty("created")
+	@JsonField("created")
 	private Date created;
 
-	@JsonProperty("desc")
+	@JsonField("desc")
 	private String desc;
 
-	@JsonProperty("modified")
+	@JsonField("modified")
 	private Date modified;
 
-	@JsonProperty("name")
+	@JsonField("name")
 	private String name;
 
-	@JsonProperty("outer_id")
+	@JsonField("outer_id")
 	private String outerId;
 
-	@JsonProperty("pic_url")
+	@JsonField("pic_url")
 	private String picUrl;
 
-	@JsonProperty("price")
+	@JsonField("price")
 	private String price;
 
-	@JsonProperty("product_id")
+	@JsonField("product_id")
 	private Long productId;
 
-	@JsonList(list="product_imgs", name="product_img")
+	@JsonField("product_img")
+	@JsonListField("product_imgs")
 	private List<ProductImg> productImgs;
 
-	@JsonList(list="product_prop_imgs", name="product_prop_img")
+	@JsonField("product_prop_img")
+	@JsonListField("product_prop_imgs")
 	private List<ProductPropImg> productPropImgs;
 
-	@JsonProperty("props")
+	@JsonField("props")
 	private String props;
 
-	@JsonProperty("props_str")
+	@JsonField("props_str")
 	private String propsStr;
 
-	@JsonProperty("sale_props")
+	@JsonField("sale_props")
 	private String saleProps;
 
-	@JsonProperty("sale_props_str")
+	@JsonField("sale_props_str")
 	private String salePropsStr;
 
-	@JsonProperty("tsc")
+	@JsonField("tsc")
 	private String tsc;
 
 	public String getBinds() {
