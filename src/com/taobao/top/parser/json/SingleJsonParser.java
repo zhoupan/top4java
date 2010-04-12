@@ -1,27 +1,26 @@
 package com.taobao.top.parser.json;
 
 import com.taobao.top.TopException;
-import com.taobao.top.domain.ResponseList;
 import com.taobao.top.mapping.Converter;
 import com.taobao.top.parser.TopParser;
 
 /**
- * 通用JSON对象列表解释器。
+ * 单个JSON对象解释器。
  * 
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class ObjectListJsonParser<T> implements TopParser<ResponseList<T>> {
+public class SingleJsonParser<T> implements TopParser<T> {
 
 	private Class<T> clazz;
 
-	public ObjectListJsonParser(Class<T> clazz) {
+	public SingleJsonParser(Class<T> clazz) {
 		this.clazz = clazz;
 	}
 
-	public ResponseList<T> parse(String rsp, String api) throws TopException {
+	public T parse(String rsp, String api) throws TopException {
 		Converter converter = new JsonConverter();
-		return converter.toResponseList(rsp, clazz, api);
+		return converter.toResponse(rsp, clazz, api);
 	}
 
 }

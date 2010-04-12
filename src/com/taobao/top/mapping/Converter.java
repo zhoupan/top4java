@@ -1,7 +1,7 @@
 package com.taobao.top.mapping;
 
 import com.taobao.top.TopException;
-import com.taobao.top.domain.ResponseList;
+import com.taobao.top.domain.PageList;
 
 /**
  * 动态格式转换器。
@@ -21,7 +21,7 @@ public interface Converter {
 	 * @return 响应列表对象
 	 * @throws TopException
 	 */
-	public <T> ResponseList<T> toResponseList(String rsp, Class<T> clazz, String api) throws TopException;
+	public <T> PageList<T> toResponseList(String rsp, Class<T> clazz, String api) throws TopException;
 
 	/**
 	 * 把字符串转换为响应对象。
