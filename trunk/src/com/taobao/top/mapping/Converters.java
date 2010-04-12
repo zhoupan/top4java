@@ -21,7 +21,7 @@ import com.taobao.top.util.StrUtils;
  * 转换工具类。
  * 
  * @author carver.gu
- * @since 1.0, Oct 12, 2009
+ * @since 1.0, Apr 11, 2010
  */
 public class Converters {
 

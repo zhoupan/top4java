@@ -8,7 +8,7 @@ import com.taobao.top.TopException;
  * 格式转换器。
  * 
  * @author carver.gu
- * @since 1.0, Sep 19, 2009
+ * @since 1.0, Apr 11, 2010
  */
 public interface Reader {
 
