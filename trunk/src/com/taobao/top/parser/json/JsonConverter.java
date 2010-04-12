@@ -7,7 +7,7 @@ import java.util.Map;
 import org.stringtree.json.JSONReader;
 
 import com.taobao.top.TopException;
-import com.taobao.top.domain.ResponseList;
+import com.taobao.top.domain.PageList;
 import com.taobao.top.mapping.Converter;
 import com.taobao.top.mapping.Converters;
 import com.taobao.top.mapping.JsonClass;
@@ -23,8 +23,8 @@ import com.taobao.top.util.StrUtils;
  */
 public class JsonConverter implements Converter {
 
-	public <T> ResponseList<T> toResponseList(String rsp, Class<T> clazz, String api) throws TopException {
-		ResponseList<T> rspList = new ResponseList<T>();
+	public <T> PageList<T> toResponseList(String rsp, Class<T> clazz, String api) throws TopException {
+		PageList<T> rspList = new PageList<T>();
 
 		JSONReader reader = new JSONReader();
 		Map<?, ?> rootJson = (Map<?, ?>) reader.read(rsp);

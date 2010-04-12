@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TOP响应列表。
+ * TOP分页响应列表。
  * 
  * @author carver.gu
- * @since 1.0, Sep 17, 2009
+ * @since 1.0, Apr 11, 2010
  */
-public class ResponseList<T> {
+public class PageList<T> {
 
 	/** 所有记录数 */
 	private Long totalResults;
@@ -65,7 +65,7 @@ public class ResponseList<T> {
 	/**
 	 * 获取实际返回的记录数。
 	 */
-	public long getReturnResults() {
+	public int getReturnResults() {
 		if (isEmpty()) {
 			return 0;
 		} else {
@@ -76,15 +76,15 @@ public class ResponseList<T> {
 	/**
 	 * 获取返回记录的总页数。
 	 */
-	public long getPageCount(long pageSize) {
+	public int getPageCount(int pageSize) {
 		if (this.totalResults != null) {
 			if (this.totalResults % pageSize == 0) {
-				return this.totalResults / pageSize;
+				return this.totalResults.intValue() / pageSize;
 			} else {
-				return this.totalResults / pageSize + 1;
+				return this.totalResults.intValue() / pageSize + 1;
 			}
 		}
-		return 0L;
+		return 0;
 	}
 
 }
