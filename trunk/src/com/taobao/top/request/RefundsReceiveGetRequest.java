@@ -16,8 +16,8 @@ public class RefundsReceiveGetRequest implements TopRequest {
 	private String buyerNick;
 	private Date endModified;
 	private String fields;
-	private Long pageNo;
-	private Long pageSize;
+	private Integer pageNo;
+	private Integer pageSize;
 	private Date startModified;
 	private String status;
 	private String type;
@@ -31,10 +31,10 @@ public class RefundsReceiveGetRequest implements TopRequest {
 	public void setFields(String fields) {
 		this.fields = fields;
 	}
-	public void setPageNo(Long pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 	}
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 	public void setStartModified(Date startModified) {

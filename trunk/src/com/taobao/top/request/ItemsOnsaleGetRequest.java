@@ -19,8 +19,8 @@ public class ItemsOnsaleGetRequest implements TopRequest {
 	private Boolean isEx;
 	private Boolean isTaobao;
 	private String orderBy;
-	private Long pageNo;
-	private Long pageSize;
+	private Integer pageNo;
+	private Integer pageSize;
 	private String q;
 	private String sellerCids;
 
@@ -45,10 +45,10 @@ public class ItemsOnsaleGetRequest implements TopRequest {
 	public void setOrderBy(String orderBy) {
 		this.orderBy = orderBy;
 	}
-	public void setPageNo(Long pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 	}
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 	public void setQ(String q) {

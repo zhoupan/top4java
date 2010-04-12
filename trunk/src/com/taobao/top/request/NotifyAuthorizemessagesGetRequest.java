@@ -15,8 +15,8 @@ public class NotifyAuthorizemessagesGetRequest implements TopRequest {
 	private Long expiredDay;
 	private String fields;
 	private String nicks;
-	private Long pageNo;
-	private Long pageSize;
+	private Integer pageNo;
+	private Integer pageSize;
 
 	public void setExpiredDay(Long expiredDay) {
 		this.expiredDay = expiredDay;
@@ -27,10 +27,10 @@ public class NotifyAuthorizemessagesGetRequest implements TopRequest {
 	public void setNicks(String nicks) {
 		this.nicks = nicks;
 	}
-	public void setPageNo(Long pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 	}
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 

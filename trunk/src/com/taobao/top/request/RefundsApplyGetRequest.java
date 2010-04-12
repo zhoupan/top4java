@@ -13,8 +13,8 @@ import com.taobao.top.util.TopHashMap;
 public class RefundsApplyGetRequest implements TopRequest {
 
 	private String fields;
-	private Long pageNo;
-	private Long pageSize;
+	private Integer pageNo;
+	private Integer pageSize;
 	private String sellerNick;
 	private String status;
 	private String type;
@@ -22,10 +22,10 @@ public class RefundsApplyGetRequest implements TopRequest {
 	public void setFields(String fields) {
 		this.fields = fields;
 	}
-	public void setPageNo(Long pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 	}
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 	public void setSellerNick(String sellerNick) {

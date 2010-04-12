@@ -16,8 +16,8 @@ public class ItemsDownloadRequest implements TopRequest {
 	private String approveStatus;
 	private Long cid;
 	private Date endDate;
-	private Long pageNo;
-	private Long pageSize;
+	private Integer pageNo;
+	private Integer pageSize;
 	private String q;
 	private String sellerCids;
 	private Date startDate;
@@ -31,10 +31,10 @@ public class ItemsDownloadRequest implements TopRequest {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-	public void setPageNo(Long pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 	}
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 	public void setQ(String q) {

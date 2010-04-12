@@ -7,6 +7,12 @@ import com.taobao.top.domain.User;
 import com.taobao.top.parser.json.ObjectJsonParser;
 import com.taobao.top.util.TestUtils;
 
+/**
+ * 用户接口测试。
+ * 
+ * @author fengsheng
+ * @since 1.0, Apr 12, 2010
+ */
 public class UserApiTest {
 
 	@Test
