@@ -13,17 +13,17 @@ import com.taobao.top.util.TopHashMap;
 public class RefundMessagesGetRequest implements TopRequest {
 
 	private String fields;
-	private Long pageNo;
-	private Long pageSize;
+	private Integer pageNo;
+	private Integer pageSize;
 	private Long refundId;
 
 	public void setFields(String fields) {
 		this.fields = fields;
 	}
-	public void setPageNo(Long pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 	}
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 	public void setRefundId(Long refundId) {

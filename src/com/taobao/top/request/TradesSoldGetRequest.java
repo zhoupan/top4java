@@ -16,8 +16,8 @@ public class TradesSoldGetRequest implements TopRequest {
 	private String buyerNick;
 	private Date endCreated;
 	private String fields;
-	private Long pageNo;
-	private Long pageSize;
+	private Integer pageNo;
+	private Integer pageSize;
 	private String rateStatus;
 	private Date startCreated;
 	private String status;
@@ -34,10 +34,10 @@ public class TradesSoldGetRequest implements TopRequest {
 	public void setFields(String fields) {
 		this.fields = fields;
 	}
-	public void setPageNo(Long pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 	}
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 	public void setRateStatus(String rateStatus) {

@@ -28,11 +28,11 @@ public abstract class TestUtils {
 	}
 
 	public static TopClient getOnlineClient() {
-		return new TopRestClient(TOP_ONLINE_URL, "12011932", "a12489406d7a8de453bc9d3b15229cba");
+		return new TopRestClient(TOP_ONLINE_URL, "12005076", "64292c42ca49632200289324fba42572");
 	}
 
 	public static TopJsonRestClient getOnlineJsonClient() {
-		return new TopJsonRestClient(TOP_ONLINE_URL, "12011932", "a12489406d7a8de453bc9d3b15229cba");
+		return new TopJsonRestClient(TOP_ONLINE_URL, "12005076", "64292c42ca49632200289324fba42572");
 	}
 
 	public static String readResource(String fileName) throws IOException {

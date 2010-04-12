@@ -16,8 +16,8 @@ public class ItemextrasGetRequest implements TopRequest {
 	private String fields;
 	private String nick;
 	private String orderBy;
-	private Long pageNo;
-	private Long pageSize;
+	private Integer pageNo;
+	private Integer pageSize;
 
 	public void setApproveStatus(String approveStatus) {
 		this.approveStatus = approveStatus;
@@ -31,10 +31,10 @@ public class ItemextrasGetRequest implements TopRequest {
 	public void setOrderBy(String orderBy) {
 		this.orderBy = orderBy;
 	}
-	public void setPageNo(Long pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 	}
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 

@@ -27,8 +27,8 @@ public class ItemsSearchRequest implements TopRequest {
 	private String nicks;
 	private Boolean oneStation;
 	private String orderBy;
-	private Long pageNo;
-	private Long pageSize;
+	private Integer pageNo;
+	private Integer pageSize;
 	private Boolean postFree;
 	private Long productId;
 	private String promotedService;
@@ -85,10 +85,10 @@ public class ItemsSearchRequest implements TopRequest {
 	public void setOrderBy(String orderBy) {
 		this.orderBy = orderBy;
 	}
-	public void setPageNo(Long pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 	}
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 	public void setPostFree(Boolean postFree) {

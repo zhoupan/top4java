@@ -14,8 +14,8 @@ public class TradesGetRequest implements TopRequest {
 
 	private String fields;
 	private String iid;
-	private Long pageNo;
-	private Long pageSize;
+	private Integer pageNo;
+	private Integer pageSize;
 	private String sellerNick;
 	private String type;
 
@@ -25,10 +25,10 @@ public class TradesGetRequest implements TopRequest {
 	public void setIid(String iid) {
 		this.iid = iid;
 	}
-	public void setPageNo(Long pageNo) {
+	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 	}
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 	public void setSellerNick(String sellerNick) {
