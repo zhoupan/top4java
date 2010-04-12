@@ -16,7 +16,7 @@ public class TradeApiTest {
 	@Test
 	public void getTrades() {
 		TradesSoldGetRequest req = new TradesSoldGetRequest();
-		req.setFields("tid,seller_nick,buyer_nick,orders");
+		req.setFields("tid,seller_nick,buyer_nick,orders.oid,orders.iid,orders.title,orders.price");
 		req.setPageSize(2);
 		TopJsonRestClient client = TestUtils.getOnlineJsonClient();
 		String rsp = client.getResponse(req);
