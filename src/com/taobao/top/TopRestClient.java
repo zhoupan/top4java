@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Map;
 
+import org.stringtree.json.JSONReader;
+
 import com.taobao.top.parser.TopParser;
 import com.taobao.top.request.TopRequest;
 import com.taobao.top.request.TopUploadRequest;
@@ -96,7 +98,18 @@ public class TopRestClient implements TopClient {
 		if (Constants.FORMAT_JSON.equals(this.format)) {
 			// 为了避免二次解释JSON，采用startsWith判断
 			if (rsp.startsWith("{\"error_response\":")) {
-				// TODO parse exception
+				JSONReader reader = new JSONReader();
+				Map<?, ?> rspJson = (Map<?, ?>) reader.read(rsp);
+				Map<?, ?> errJson = (Map<?, ?>) rspJson.get("error_response");
+				Long errCode = (Long) errJson.get("code");
+				String errMsg = (String) errJson.get("msg");
+				String subErrCode = (String) errJson.get("sub_code");
+				String subErrMsg = (String) errJson.get("sub_msg");
+				if (subErrCode == null && subErrMsg == null) {
+					throw new TopException(errCode.toString(), errMsg);
+				} else {
+					throw new TopException(subErrCode, subErrMsg);
+				}
 			}
 		} else {
 			throw new TopException("Unsupported response format!");
