@@ -10,11 +10,11 @@ import com.taobao.top.parser.TopParser;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class SingleJsonParser<T> implements TopParser<T> {
+public class ObjectJsonParser<T> implements TopParser<T> {
 
 	private Class<T> clazz;
 
-	public SingleJsonParser(Class<T> clazz) {
+	public ObjectJsonParser(Class<T> clazz) {
 		this.clazz = clazz;
 	}
 
