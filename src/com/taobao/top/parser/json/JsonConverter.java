@@ -129,24 +129,28 @@ public class JsonConverter implements Converter {
 				}
 			}
 
-			public List<?> getListObjects(Object name, Class<?> subType) throws TopException {
-				Object tmp = json.get(name);
+			public List<?> getListObjects(Object listName, Object itemName, Class<?> subType) throws TopException {
 				List<Object> listObjs = null;
 
-				if (tmp instanceof List<?>) {
-					listObjs = new ArrayList<Object>();
-					List<?> tmpList = (List<?>) tmp;
-					for (Object subTmp : tmpList) {
-						if (subTmp instanceof Map<?, ?>) {// object
-							Map<?, ?> subMap = (Map<?, ?>) subTmp;
-							Object subObj = fromJson(subMap, subType);
-							if (subObj != null) {
-								listObjs.add(subObj);
+				Object listTmp = json.get(listName);
+				if (listTmp instanceof Map<?, ?>) {
+					Map<?, ?> jsonMap = (Map<?, ?>) listTmp;
+					Object itemTmp = jsonMap.get(itemName);
+					if (itemTmp instanceof List<?>) {
+						listObjs = new ArrayList<Object>();
+						List<?> tmpList = (List<?>) itemTmp;
+						for (Object subTmp : tmpList) {
+							if (subTmp instanceof Map<?, ?>) {// object
+								Map<?, ?> subMap = (Map<?, ?>) subTmp;
+								Object subObj = fromJson(subMap, subType);
+								if (subObj != null) {
+									listObjs.add(subObj);
+								}
+							} else if (subTmp instanceof List<?>) {// array
+								// TODO not support yet
+							} else {// boolean, long, double, string, null
+								listObjs.add(subTmp);
 							}
-						} else if (subTmp instanceof List<?>) {// array
-							// TODO not support yet
-						} else {// boolean, long, double, string, null
-							listObjs.add(subTmp);
 						}
 					}
 				}

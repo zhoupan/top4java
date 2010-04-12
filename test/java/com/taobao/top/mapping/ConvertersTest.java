@@ -53,7 +53,7 @@ public class ConvertersTest {
 			public Object getObject(Object name, Class<?> type) throws TopException {
 				return null;
 			}
-			public List<?> getListObjects(Object name, Class<?> subType) throws TopException {
+			public List<?> getListObjects(Object listName, Object itemName, Class<?> subType) throws TopException {
 				return null;
 			}
 		};

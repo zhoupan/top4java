@@ -47,59 +47,66 @@ public class Converters {
 
 			for (PropertyDescriptor pd : pds) {
 				Method method = pd.getWriteMethod();
-				String name = pd.getName();
+				String itemName = pd.getName();
+				String listName = null;
 
-				if ("class".equals(name)) {
+				if ("class".equals(itemName)) {
 					continue; // ignore class field
 				}
 
-				Field field = clazz.getDeclaredField(name);
-				JsonField jsonProp = field.getAnnotation(JsonField.class);
-				if (jsonProp != null) {
-					String alias = jsonProp.value();
+				Field field = clazz.getDeclaredField(itemName);
+				JsonField jsonField = field.getAnnotation(JsonField.class);
+				if (jsonField != null) {
+					String alias = jsonField.value();
 					if (!StrUtils.isEmpty(alias)) {
-						name = alias; // use annotation name
+						itemName = alias; // use annotation name
 					}
 				}
 
-				if (!reader.hasReturnField(name)) {
-					continue; // ignore non-return field
+				if (!reader.hasReturnField(itemName)) {
+					JsonListField jsonListField = field.getAnnotation(JsonListField.class);
+					if (jsonListField != null) {
+						listName = jsonListField.value();
+					}
+					if (listName == null || !reader.hasReturnField(listName)) {
+						continue; // ignore non-return field
+					}
 				}
 
 				Class<?> typeClass = field.getType();
 				if (String.class.isAssignableFrom(typeClass)) {
-					Object value = reader.getPrimitiveObject(name);
+					Object value = reader.getPrimitiveObject(itemName);
 					method.invoke(rsp, value.toString());
 				} else if (Long.class.isAssignableFrom(typeClass)) {
-					Object value = reader.getPrimitiveObject(name);
+					Object value = reader.getPrimitiveObject(itemName);
 					if (value instanceof Long) {
 						method.invoke(rsp, (Long) value);
 					} else {
 						method.invoke(rsp, Long.valueOf(value.toString()));
 					}
 				} else if (Integer.class.isAssignableFrom(typeClass)) {
-					Object value = reader.getPrimitiveObject(name);
+					Object value = reader.getPrimitiveObject(itemName);
 					if (value instanceof Integer) {
 						method.invoke(rsp, (Integer) value);
 					} else {
 						method.invoke(rsp, Integer.valueOf(value.toString()));
 					}
 				} else if (Boolean.class.isAssignableFrom(typeClass)) {
-					Object value = reader.getPrimitiveObject(name);
+					Object value = reader.getPrimitiveObject(itemName);
 					if (value instanceof Boolean) {
 						method.invoke(rsp, (Boolean) value);
 					} else {
 						method.invoke(rsp, Boolean.valueOf(value.toString()));
 					}
 				} else if (Double.class.isAssignableFrom(typeClass)) {
-					Object value = reader.getPrimitiveObject(name);
+					Object value = reader.getPrimitiveObject(itemName);
 					if (value instanceof Double) {
 						method.invoke(rsp, (Double) value);
 					} else {
 						method.invoke(rsp, Double.valueOf(value.toString()));
 					}
 				} else if (Number.class.isAssignableFrom(typeClass)) {
-					Object value = reader.getPrimitiveObject(name);
+					Object value = reader.getPrimitiveObject(itemName);
 					if (value instanceof Number) {
 						method.invoke(rsp, (Number) value);
 					} else {
@@ -107,7 +114,7 @@ public class Converters {
 					}
 				} else if (Date.class.isAssignableFrom(typeClass)) {
 					DateFormat format = new SimpleDateFormat(Constants.DATE_TIME_FORMAT);
-					Object value = reader.getPrimitiveObject(name);
+					Object value = reader.getPrimitiveObject(itemName);
 					if (value instanceof String) {
 						method.invoke(rsp, format.parse(value.toString()));
 					}
@@ -119,15 +126,15 @@ public class Converters {
 						if (genericTypes != null && genericTypes.length > 0) {
 							if (genericTypes[0] instanceof Class<?>) {
 								Class<?> subType = (Class<?>) genericTypes[0];
-								List<?> listObjs = reader.getListObjects(name, subType);
+								List<?> listObjs = reader.getListObjects(listName, itemName, subType);
 								if (listObjs != null) {
-									method.invoke(rsp, reader.getListObjects(name, subType));
+									method.invoke(rsp, listObjs);
 								}
 							}
 						}
 					}
 				} else {
-					Object obj = reader.getObject(name, typeClass);
+					Object obj = reader.getObject(itemName, typeClass);
 					if (obj != null) {
 						method.invoke(rsp, obj);
 					}

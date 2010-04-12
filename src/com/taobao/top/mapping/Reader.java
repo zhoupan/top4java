@@ -41,11 +41,12 @@ public interface Reader {
 	/**
 	 * 读取多个对象的值。
 	 * 
-	 * @param name 映射名称
+	 * @param listName 列表名称
+	 * @param itemName 映射名称
 	 * @param subType 嵌套映射类型
 	 * @return 嵌套映射类型实例列表
 	 * @throws TopException
 	 */
-	public List<?> getListObjects(Object name, Class<?> subType) throws TopException;
+	public List<?> getListObjects(Object listName, Object itemName, Class<?> subType) throws TopException;
 
 }
