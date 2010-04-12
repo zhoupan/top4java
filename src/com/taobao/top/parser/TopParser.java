@@ -6,7 +6,7 @@ import com.taobao.top.TopException;
  * TOP响应解释器接口。响应格式可以是JSON, XML等等。
  * 
  * @author carver.gu
- * @since 1.0, Sep 12, 2009
+ * @since 1.0, Apr 11, 2010
  */
 public interface TopParser<T> {
 

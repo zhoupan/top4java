@@ -9,7 +9,7 @@ import com.taobao.top.parser.TopParser;
  * 通用JSON对象列表解释器。
  * 
  * @author carver.gu
- * @since 1.0, Oct 12, 2009
+ * @since 1.0, Apr 11, 2010
  */
 public class ObjectListJsonParser<T> implements TopParser<ResponseList<T>> {
 
