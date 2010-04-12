@@ -4,10 +4,9 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import com.taobao.top.TopClient;
 import com.taobao.top.TopException;
+import com.taobao.top.TopJsonRestClient;
 import com.taobao.top.domain.User;
-import com.taobao.top.parser.json.ObjectJsonParser;
 import com.taobao.top.util.TestUtils;
 
 /**
@@ -18,13 +17,14 @@ import com.taobao.top.util.TestUtils;
  */
 public class UserApiTest {
 
+	private TopJsonRestClient client = TestUtils.getOnlineJsonClient();
+
 	@Test
 	public void getUser() {
 		UserGetRequest req = new UserGetRequest();
-		req.setFields("nick,location,seller_credit,buyer_credit,last_visit");
+		req.setFields("nick,location,seller_credit,buyer_credit,last_visit,created");
 		req.setNick("hz0799");
-		TopClient client = TestUtils.getOnlineClient();
-		User user = client.execute(req, new ObjectJsonParser<User>(User.class));
+		User user = client.userGet(req);
 		Assert.assertEquals("hz0799", user.getNick());
 	}
 
@@ -33,9 +33,8 @@ public class UserApiTest {
 		UserGetRequest req = new UserGetRequest();
 		req.setFields("nick,location,seller_credit,buyer_credit,last_visit");
 		req.setNick("abc#$%");
-		TopClient client = TestUtils.getOnlineClient();
 		try {
-			client.execute(req, new ObjectJsonParser<User>(User.class));
+			client.userGet(req);
 		} catch (TopException e) {
 			Assert.assertEquals("user-not-exist", e.getErrCode());
 		}
