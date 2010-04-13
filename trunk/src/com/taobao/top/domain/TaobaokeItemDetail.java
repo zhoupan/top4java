@@ -20,7 +20,7 @@ public class TaobaokeItemDetail extends BaseObject {
 	private String clickUrl;
 
 	@JsonField("item_detail")
-	private ItemDetail itemDetail;
+	private Item itemDetail;
 
 	@JsonField("seller_credit_score")
 	private Long sellerCreditScore;
@@ -35,10 +35,10 @@ public class TaobaokeItemDetail extends BaseObject {
 		this.clickUrl = clickUrl;
 	}
 
-	public ItemDetail getItemDetail() {
+	public Item getItemDetail() {
 		return this.itemDetail;
 	}
-	public void setItemDetail(ItemDetail itemDetail) {
+	public void setItemDetail(Item itemDetail) {
 		this.itemDetail = itemDetail;
 	}
 
