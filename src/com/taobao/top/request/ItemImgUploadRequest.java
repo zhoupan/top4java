@@ -17,9 +17,9 @@ public class ItemImgUploadRequest implements TopRequest {
 	private Long id;
 	private String iid;
 	private FileItem image;
-	private String isMajor;
+	private Boolean isMajor;
 	private Long numIid;
-	private Long position;
+	private Integer position;
 
 	public void setId(Long id) {
 		this.id = id;
@@ -30,13 +30,13 @@ public class ItemImgUploadRequest implements TopRequest {
 	public void setImage(FileItem image) {
 		this.image = image;
 	}
-	public void setIsMajor(String isMajor) {
+	public void setIsMajor(Boolean isMajor) {
 		this.isMajor = isMajor;
 	}
 	public void setNumIid(Long numIid) {
 		this.numIid = numIid;
 	}
-	public void setPosition(Long position) {
+	public void setPosition(Integer position) {
 		this.position = position;
 	}
 

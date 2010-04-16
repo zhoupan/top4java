@@ -14,9 +14,7 @@ public class ItemImgDeleteRequest implements TopRequest {
 
 	private Long id;
 	private String iid;
-	private Long itemimgId;
 	private Long numIid;
-	private String v;
 
 	public void setId(Long id) {
 		this.id = id;
@@ -24,14 +22,8 @@ public class ItemImgDeleteRequest implements TopRequest {
 	public void setIid(String iid) {
 		this.iid = iid;
 	}
-	public void setItemimgId(Long itemimgId) {
-		this.itemimgId = itemimgId;
-	}
 	public void setNumIid(Long numIid) {
 		this.numIid = numIid;
-	}
-	public void setV(String v) {
-		this.v = v;
 	}
 
 	public String getApiName() {
@@ -42,9 +34,7 @@ public class ItemImgDeleteRequest implements TopRequest {
 		TopHashMap params = new TopHashMap();
 		params.put("id", this.id);
 		params.put("iid", this.iid);
-		params.put("itemimg_id", this.itemimgId);
 		params.put("num_iid", this.numIid);
-		params.put("v", this.v);
 		return params;
 	}
 

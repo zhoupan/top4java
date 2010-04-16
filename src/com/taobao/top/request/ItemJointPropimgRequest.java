@@ -16,10 +16,8 @@ public class ItemJointPropimgRequest implements TopRequest {
 	private String iid;
 	private Long numIid;
 	private String picPath;
-	private Long position;
+	private Integer position;
 	private String properties;
-	private String url;
-	private String v;
 
 	public void setId(Long id) {
 		this.id = id;
@@ -33,17 +31,11 @@ public class ItemJointPropimgRequest implements TopRequest {
 	public void setPicPath(String picPath) {
 		this.picPath = picPath;
 	}
-	public void setPosition(Long position) {
+	public void setPosition(Integer position) {
 		this.position = position;
 	}
 	public void setProperties(String properties) {
 		this.properties = properties;
-	}
-	public void setUrl(String url) {
-		this.url = url;
-	}
-	public void setV(String v) {
-		this.v = v;
 	}
 
 	public String getApiName() {
@@ -58,8 +50,6 @@ public class ItemJointPropimgRequest implements TopRequest {
 		params.put("pic_path", this.picPath);
 		params.put("position", this.position);
 		params.put("properties", this.properties);
-		params.put("url", this.url);
-		params.put("v", this.v);
 		return params;
 	}
 

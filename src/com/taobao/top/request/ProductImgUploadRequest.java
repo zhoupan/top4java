@@ -17,9 +17,8 @@ public class ProductImgUploadRequest implements TopRequest {
 	private Long id;
 	private FileItem image;
 	private String isMajor;
-	private Long picId;
-	private String position;
-	private String productId;
+	private Integer position;
+	private Long productId;
 
 	public void setId(Long id) {
 		this.id = id;
@@ -30,13 +29,10 @@ public class ProductImgUploadRequest implements TopRequest {
 	public void setIsMajor(String isMajor) {
 		this.isMajor = isMajor;
 	}
-	public void setPicId(Long picId) {
-		this.picId = picId;
-	}
-	public void setPosition(String position) {
+	public void setPosition(Integer position) {
 		this.position = position;
 	}
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 
@@ -48,7 +44,6 @@ public class ProductImgUploadRequest implements TopRequest {
 		TopHashMap params = new TopHashMap();
 		params.put("id", this.id);
 		params.put("is_major", this.isMajor);
-		params.put("pic_id", this.picId);
 		params.put("position", this.position);
 		params.put("product_id", this.productId);
 		return params;

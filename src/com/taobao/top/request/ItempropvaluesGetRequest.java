@@ -1,5 +1,6 @@
 package com.taobao.top.request;
 
+import java.util.Date;
 import java.util.Map;
 
 import com.taobao.top.util.TopHashMap;
@@ -12,15 +13,15 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ItempropvaluesGetRequest implements TopRequest {
 
-	private String cid;
-	private String datetime;
+	private Long cid;
+	private Date datetime;
 	private String fields;
 	private String pvs;
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
-	public void setDatetime(String datetime) {
+	public void setDatetime(Date datetime) {
 		this.datetime = datetime;
 	}
 	public void setFields(String fields) {

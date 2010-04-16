@@ -14,25 +14,25 @@ public class IcpSubmitRequest implements TopRequest {
 
 	private String companyAddress;
 	private String companyCertNo;
-	private Long companyCertType;
-	private Long companyCity;
-	private Long companyDistrict;
-	private Long companyKind;
+	private Integer companyCertType;
+	private Integer companyCity;
+	private Integer companyDistrict;
+	private Integer companyKind;
 	private String companyMasterCertNo;
-	private Long companyMasterCertType;
+	private Integer companyMasterCertType;
 	private String companyMasterEmail;
 	private String companyMasterMobile;
 	private String companyMasterName;
 	private String companyMasterPhone;
 	private String companyMasterUnicom;
 	private String companyName;
-	private Long companyState;
+	private Integer companyState;
 	private String companySuperior;
 	private String siteDomain;
 	private String siteHomePage;
 	private String siteIp;
 	private String siteMasterCertNo;
-	private Long siteMasterCertType;
+	private Integer siteMasterCertType;
 	private String siteMasterEmail;
 	private String siteMasterMobile;
 	private String siteMasterName;
@@ -46,22 +46,22 @@ public class IcpSubmitRequest implements TopRequest {
 	public void setCompanyCertNo(String companyCertNo) {
 		this.companyCertNo = companyCertNo;
 	}
-	public void setCompanyCertType(Long companyCertType) {
+	public void setCompanyCertType(Integer companyCertType) {
 		this.companyCertType = companyCertType;
 	}
-	public void setCompanyCity(Long companyCity) {
+	public void setCompanyCity(Integer companyCity) {
 		this.companyCity = companyCity;
 	}
-	public void setCompanyDistrict(Long companyDistrict) {
+	public void setCompanyDistrict(Integer companyDistrict) {
 		this.companyDistrict = companyDistrict;
 	}
-	public void setCompanyKind(Long companyKind) {
+	public void setCompanyKind(Integer companyKind) {
 		this.companyKind = companyKind;
 	}
 	public void setCompanyMasterCertNo(String companyMasterCertNo) {
 		this.companyMasterCertNo = companyMasterCertNo;
 	}
-	public void setCompanyMasterCertType(Long companyMasterCertType) {
+	public void setCompanyMasterCertType(Integer companyMasterCertType) {
 		this.companyMasterCertType = companyMasterCertType;
 	}
 	public void setCompanyMasterEmail(String companyMasterEmail) {
@@ -82,7 +82,7 @@ public class IcpSubmitRequest implements TopRequest {
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
-	public void setCompanyState(Long companyState) {
+	public void setCompanyState(Integer companyState) {
 		this.companyState = companyState;
 	}
 	public void setCompanySuperior(String companySuperior) {
@@ -100,7 +100,7 @@ public class IcpSubmitRequest implements TopRequest {
 	public void setSiteMasterCertNo(String siteMasterCertNo) {
 		this.siteMasterCertNo = siteMasterCertNo;
 	}
-	public void setSiteMasterCertType(Long siteMasterCertType) {
+	public void setSiteMasterCertType(Integer siteMasterCertType) {
 		this.siteMasterCertType = siteMasterCertType;
 	}
 	public void setSiteMasterEmail(String siteMasterEmail) {

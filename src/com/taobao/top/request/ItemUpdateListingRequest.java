@@ -13,13 +13,13 @@ import com.taobao.top.util.TopHashMap;
 public class ItemUpdateListingRequest implements TopRequest {
 
 	private String iid;
-	private Long num;
+	private Integer num;
 	private Long numIid;
 
 	public void setIid(String iid) {
 		this.iid = iid;
 	}
-	public void setNum(Long num) {
+	public void setNum(Integer num) {
 		this.num = num;
 	}
 	public void setNumIid(Long numIid) {

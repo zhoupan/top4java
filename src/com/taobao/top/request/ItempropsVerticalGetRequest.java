@@ -12,11 +12,11 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ItempropsVerticalGetRequest implements TopRequest {
 
-	private String cid;
+	private Long cid;
 	private String fields;
 	private String type;
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 	public void setFields(String fields) {

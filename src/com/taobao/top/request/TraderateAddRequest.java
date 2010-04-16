@@ -12,20 +12,20 @@ import com.taobao.top.util.TopHashMap;
  */
 public class TraderateAddRequest implements TopRequest {
 
-	private String anony;
+	private Boolean anony;
 	private String content;
-	private String oid;
+	private Long oid;
 	private String result;
 	private String role;
-	private String tid;
+	private Long tid;
 
-	public void setAnony(String anony) {
+	public void setAnony(Boolean anony) {
 		this.anony = anony;
 	}
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public void setOid(String oid) {
+	public void setOid(Long oid) {
 		this.oid = oid;
 	}
 	public void setResult(String result) {
@@ -34,7 +34,7 @@ public class TraderateAddRequest implements TopRequest {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public void setTid(String tid) {
+	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 

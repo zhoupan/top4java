@@ -21,7 +21,7 @@ public class ProductAddRequest implements TopRequest {
 	private FileItem image;
 	private Boolean major;
 	private String name;
-	private String nativeUnKeyProps;
+	private String nativeUnkeyprops;
 	private String outerId;
 	private String price;
 	private String props;
@@ -48,8 +48,8 @@ public class ProductAddRequest implements TopRequest {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public void setNativeUnKeyProps(String nativeUnKeyProps) {
-		this.nativeUnKeyProps = nativeUnKeyProps;
+	public void setNativeUnkeyprops(String nativeUnkeyprops) {
+		this.nativeUnkeyprops = nativeUnkeyprops;
 	}
 	public void setOuterId(String outerId) {
 		this.outerId = outerId;
@@ -76,7 +76,7 @@ public class ProductAddRequest implements TopRequest {
 		params.put("desc", this.desc);
 		params.put("major", this.major);
 		params.put("name", this.name);
-		params.put("nativeUnKeyProps", this.nativeUnKeyProps);
+		params.put("native_unkeyprops", this.nativeUnkeyprops);
 		params.put("outer_id", this.outerId);
 		params.put("price", this.price);
 		params.put("props", this.props);

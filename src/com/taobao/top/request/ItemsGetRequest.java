@@ -13,9 +13,9 @@ import com.taobao.top.util.TopHashMap;
 public class ItemsGetRequest implements TopRequest {
 
 	private Long cid;
-	private Long endPrice;
-	private Long endScore;
-	private Long endVolume;
+	private Integer endPrice;
+	private Integer endScore;
+	private Integer endVolume;
 	private String fields;
 	private Boolean genuineSecurity;
 	private Boolean is3D;
@@ -34,22 +34,22 @@ public class ItemsGetRequest implements TopRequest {
 	private String promotedService;
 	private String props;
 	private String q;
-	private Long startPrice;
-	private Long startScore;
-	private Long startVolume;
+	private Integer startPrice;
+	private Integer startScore;
+	private Integer startVolume;
 	private String stuffStatus;
 	private Boolean wwStatus;
 
 	public void setCid(Long cid) {
 		this.cid = cid;
 	}
-	public void setEndPrice(Long endPrice) {
+	public void setEndPrice(Integer endPrice) {
 		this.endPrice = endPrice;
 	}
-	public void setEndScore(Long endScore) {
+	public void setEndScore(Integer endScore) {
 		this.endScore = endScore;
 	}
-	public void setEndVolume(Long endVolume) {
+	public void setEndVolume(Integer endVolume) {
 		this.endVolume = endVolume;
 	}
 	public void setFields(String fields) {
@@ -106,13 +106,13 @@ public class ItemsGetRequest implements TopRequest {
 	public void setQ(String q) {
 		this.q = q;
 	}
-	public void setStartPrice(Long startPrice) {
+	public void setStartPrice(Integer startPrice) {
 		this.startPrice = startPrice;
 	}
-	public void setStartScore(Long startScore) {
+	public void setStartScore(Integer startScore) {
 		this.startScore = startScore;
 	}
-	public void setStartVolume(Long startVolume) {
+	public void setStartVolume(Integer startVolume) {
 		this.startVolume = startVolume;
 	}
 	public void setStuffStatus(String stuffStatus) {

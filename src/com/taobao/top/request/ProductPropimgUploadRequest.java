@@ -14,30 +14,22 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ProductPropimgUploadRequest implements TopRequest {
 
-	private String id;
+	private Long id;
 	private FileItem image;
-	private String isMajor;
-	private Long picId;
-	private String position;
-	private String productId;
+	private Integer position;
+	private Long productId;
 	private String props;
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public void setImage(FileItem image) {
 		this.image = image;
 	}
-	public void setIsMajor(String isMajor) {
-		this.isMajor = isMajor;
-	}
-	public void setPicId(Long picId) {
-		this.picId = picId;
-	}
-	public void setPosition(String position) {
+	public void setPosition(Integer position) {
 		this.position = position;
 	}
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 	public void setProps(String props) {
@@ -51,8 +43,6 @@ public class ProductPropimgUploadRequest implements TopRequest {
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
 		params.put("id", this.id);
-		params.put("is_major", this.isMajor);
-		params.put("pic_id", this.picId);
 		params.put("position", this.position);
 		params.put("product_id", this.productId);
 		params.put("props", this.props);

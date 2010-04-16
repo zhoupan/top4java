@@ -17,9 +17,7 @@ public class ItemJointImgRequest implements TopRequest {
 	private Boolean isMajor;
 	private Long numIid;
 	private String picPath;
-	private Long position;
-	private String url;
-	private String v;
+	private Integer position;
 
 	public void setId(Long id) {
 		this.id = id;
@@ -36,14 +34,8 @@ public class ItemJointImgRequest implements TopRequest {
 	public void setPicPath(String picPath) {
 		this.picPath = picPath;
 	}
-	public void setPosition(Long position) {
+	public void setPosition(Integer position) {
 		this.position = position;
-	}
-	public void setUrl(String url) {
-		this.url = url;
-	}
-	public void setV(String v) {
-		this.v = v;
 	}
 
 	public String getApiName() {
@@ -58,8 +50,6 @@ public class ItemJointImgRequest implements TopRequest {
 		params.put("num_iid", this.numIid);
 		params.put("pic_path", this.picPath);
 		params.put("position", this.position);
-		params.put("url", this.url);
-		params.put("v", this.v);
 		return params;
 	}
 

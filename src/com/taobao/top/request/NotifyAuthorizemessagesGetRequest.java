@@ -12,13 +12,13 @@ import com.taobao.top.util.TopHashMap;
  */
 public class NotifyAuthorizemessagesGetRequest implements TopRequest {
 
-	private Long expiredDay;
+	private Integer expiredDay;
 	private String fields;
 	private String nicks;
 	private Integer pageNo;
 	private Integer pageSize;
 
-	public void setExpiredDay(Long expiredDay) {
+	public void setExpiredDay(Integer expiredDay) {
 		this.expiredDay = expiredDay;
 	}
 	public void setFields(String fields) {

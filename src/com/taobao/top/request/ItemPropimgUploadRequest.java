@@ -18,7 +18,7 @@ public class ItemPropimgUploadRequest implements TopRequest {
 	private String iid;
 	private FileItem image;
 	private Long numIid;
-	private Long position;
+	private Integer position;
 	private String properties;
 
 	public void setId(Long id) {
@@ -33,7 +33,7 @@ public class ItemPropimgUploadRequest implements TopRequest {
 	public void setNumIid(Long numIid) {
 		this.numIid = numIid;
 	}
-	public void setPosition(Long position) {
+	public void setPosition(Integer position) {
 		this.position = position;
 	}
 	public void setProperties(String properties) {

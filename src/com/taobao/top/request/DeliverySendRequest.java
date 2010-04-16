@@ -13,6 +13,7 @@ import com.taobao.top.util.TopHashMap;
 public class DeliverySendRequest implements TopRequest {
 
 	private String companyCode;
+	private String fields;
 	private String memo;
 	private String orderType;
 	private String outSid;
@@ -26,6 +27,9 @@ public class DeliverySendRequest implements TopRequest {
 
 	public void setCompanyCode(String companyCode) {
 		this.companyCode = companyCode;
+	}
+	public void setFields(String fields) {
+		this.fields = fields;
 	}
 	public void setMemo(String memo) {
 		this.memo = memo;
@@ -65,6 +69,7 @@ public class DeliverySendRequest implements TopRequest {
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
 		params.put("company_code", this.companyCode);
+		params.put("fields", this.fields);
 		params.put("memo", this.memo);
 		params.put("order_type", this.orderType);
 		params.put("out_sid", this.outSid);

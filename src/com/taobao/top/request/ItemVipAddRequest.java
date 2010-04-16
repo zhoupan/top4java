@@ -39,7 +39,7 @@ public class ItemVipAddRequest implements TopRequest {
 	private Date listTime;
 	private String locationCity;
 	private String locationState;
-	private Long num;
+	private Integer num;
 	private String outerId;
 	private String picPath;
 	private String postFee;
@@ -57,7 +57,7 @@ public class ItemVipAddRequest implements TopRequest {
 	private String stuffStatus;
 	private String title;
 	private String type;
-	private Long validThru;
+	private Integer validThru;
 
 	public void setApproveStatus(String approveStatus) {
 		this.approveStatus = approveStatus;
@@ -131,7 +131,7 @@ public class ItemVipAddRequest implements TopRequest {
 	public void setLocationState(String locationState) {
 		this.locationState = locationState;
 	}
-	public void setNum(Long num) {
+	public void setNum(Integer num) {
 		this.num = num;
 	}
 	public void setOuterId(String outerId) {
@@ -185,7 +185,7 @@ public class ItemVipAddRequest implements TopRequest {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public void setValidThru(Long validThru) {
+	public void setValidThru(Integer validThru) {
 		this.validThru = validThru;
 	}
 

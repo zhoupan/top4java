@@ -13,12 +13,12 @@ import com.taobao.top.util.TopHashMap;
 public class TradeCloseRequest implements TopRequest {
 
 	private String closeReason;
-	private String tid;
+	private Long tid;
 
 	public void setCloseReason(String closeReason) {
 		this.closeReason = closeReason;
 	}
-	public void setTid(String tid) {
+	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 

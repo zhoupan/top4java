@@ -12,13 +12,13 @@ import com.taobao.top.util.TopHashMap;
  */
 public class TradeConfirmfeeGetRequest implements TopRequest {
 
-	private String isDetail;
-	private String tid;
+	private Boolean isDetail;
+	private Long tid;
 
-	public void setIsDetail(String isDetail) {
+	public void setIsDetail(Boolean isDetail) {
 		this.isDetail = isDetail;
 	}
-	public void setTid(String tid) {
+	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 
