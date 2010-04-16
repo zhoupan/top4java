@@ -13,7 +13,7 @@ import com.taobao.top.util.TopHashMap;
 public class ItemSkuDeleteRequest implements TopRequest {
 
 	private String iid;
-	private Long itemNum;
+	private Integer itemNum;
 	private String itemPrice;
 	private String lang;
 	private Long numIid;
@@ -22,7 +22,7 @@ public class ItemSkuDeleteRequest implements TopRequest {
 	public void setIid(String iid) {
 		this.iid = iid;
 	}
-	public void setItemNum(Long itemNum) {
+	public void setItemNum(Integer itemNum) {
 		this.itemNum = itemNum;
 	}
 	public void setItemPrice(String itemPrice) {

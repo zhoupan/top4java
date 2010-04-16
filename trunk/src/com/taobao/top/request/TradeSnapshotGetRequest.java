@@ -13,12 +13,12 @@ import com.taobao.top.util.TopHashMap;
 public class TradeSnapshotGetRequest implements TopRequest {
 
 	private String fields;
-	private String tid;
+	private Long tid;
 
 	public void setFields(String fields) {
 		this.fields = fields;
 	}
-	public void setTid(String tid) {
+	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 

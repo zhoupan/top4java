@@ -12,10 +12,10 @@ import com.taobao.top.util.TopHashMap;
  */
 public class NotifyUserAuthorizeRequest implements TopRequest {
 
-	private Long duration;
+	private Integer duration;
 	private String email;
 
-	public void setDuration(Long duration) {
+	public void setDuration(Integer duration) {
 		this.duration = duration;
 	}
 	public void setEmail(String email) {

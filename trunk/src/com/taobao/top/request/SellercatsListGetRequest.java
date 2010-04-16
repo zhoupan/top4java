@@ -12,8 +12,12 @@ import com.taobao.top.util.TopHashMap;
  */
 public class SellercatsListGetRequest implements TopRequest {
 
+	private String fields;
 	private String nick;
 
+	public void setFields(String fields) {
+		this.fields = fields;
+	}
 	public void setNick(String nick) {
 		this.nick = nick;
 	}
@@ -24,6 +28,7 @@ public class SellercatsListGetRequest implements TopRequest {
 
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
+		params.put("fields", this.fields);
 		params.put("nick", this.nick);
 		return params;
 	}

@@ -15,7 +15,7 @@ public class SellercatsListAddRequest implements TopRequest {
 	private String name;
 	private String parentCid;
 	private String pictUrl;
-	private String sortOrder;
+	private Integer sortOrder;
 
 	public void setName(String name) {
 		this.name = name;
@@ -26,7 +26,7 @@ public class SellercatsListAddRequest implements TopRequest {
 	public void setPictUrl(String pictUrl) {
 		this.pictUrl = pictUrl;
 	}
-	public void setSortOrder(String sortOrder) {
+	public void setSortOrder(Integer sortOrder) {
 		this.sortOrder = sortOrder;
 	}
 

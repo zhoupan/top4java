@@ -13,21 +13,13 @@ import com.taobao.top.util.TopHashMap;
 public class ProductPropimgDeleteRequest implements TopRequest {
 
 	private Long id;
-	private Long picId;
-	private String productId;
-	private String v;
+	private Long productId;
 
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public void setPicId(Long picId) {
-		this.picId = picId;
-	}
-	public void setProductId(String productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
-	}
-	public void setV(String v) {
-		this.v = v;
 	}
 
 	public String getApiName() {
@@ -37,9 +29,7 @@ public class ProductPropimgDeleteRequest implements TopRequest {
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
 		params.put("id", this.id);
-		params.put("pic_id", this.picId);
 		params.put("product_id", this.productId);
-		params.put("v", this.v);
 		return params;
 	}
 

@@ -15,7 +15,7 @@ public class SellercatsListUpdateRequest implements TopRequest {
 	private String cid;
 	private String name;
 	private String pictUrl;
-	private String sortOrder;
+	private Integer sortOrder;
 
 	public void setCid(String cid) {
 		this.cid = cid;
@@ -26,7 +26,7 @@ public class SellercatsListUpdateRequest implements TopRequest {
 	public void setPictUrl(String pictUrl) {
 		this.pictUrl = pictUrl;
 	}
-	public void setSortOrder(String sortOrder) {
+	public void setSortOrder(Integer sortOrder) {
 		this.sortOrder = sortOrder;
 	}
 

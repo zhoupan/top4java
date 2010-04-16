@@ -12,14 +12,14 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ProductsSearchRequest implements TopRequest {
 
-	private String cid;
+	private Long cid;
 	private String fields;
 	private Integer pageNo;
 	private Integer pageSize;
 	private String props;
 	private String q;
 
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 	public void setFields(String fields) {

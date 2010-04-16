@@ -13,12 +13,12 @@ import com.taobao.top.util.TopHashMap;
 public class TradeMemoUpdateRequest implements TopRequest {
 
 	private String memo;
-	private String tid;
+	private Long tid;
 
 	public void setMemo(String memo) {
 		this.memo = memo;
 	}
-	public void setTid(String tid) {
+	public void setTid(Long tid) {
 		this.tid = tid;
 	}
 

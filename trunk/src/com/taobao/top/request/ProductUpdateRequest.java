@@ -1,9 +1,7 @@
 package com.taobao.top.request;
 
-import java.util.HashMap;
 import java.util.Map;
 
-import com.taobao.top.util.FileItem;
 import com.taobao.top.util.TopHashMap;
 
 /**
@@ -16,10 +14,9 @@ public class ProductUpdateRequest implements TopRequest {
 
 	private String binds;
 	private String desc;
-	private FileItem image;
 	private Boolean major;
 	private String name;
-	private String nativeUnKeyProps;
+	private String nativeUnkeyprops;
 	private String outerId;
 	private String price;
 	private Long productId;
@@ -31,17 +28,14 @@ public class ProductUpdateRequest implements TopRequest {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public void setImage(FileItem image) {
-		this.image = image;
-	}
 	public void setMajor(Boolean major) {
 		this.major = major;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public void setNativeUnKeyProps(String nativeUnKeyProps) {
-		this.nativeUnKeyProps = nativeUnKeyProps;
+	public void setNativeUnkeyprops(String nativeUnkeyprops) {
+		this.nativeUnkeyprops = nativeUnkeyprops;
 	}
 	public void setOuterId(String outerId) {
 		this.outerId = outerId;
@@ -66,17 +60,11 @@ public class ProductUpdateRequest implements TopRequest {
 		params.put("desc", this.desc);
 		params.put("major", this.major);
 		params.put("name", this.name);
-		params.put("nativeUnKeyProps", this.nativeUnKeyProps);
+		params.put("native_unkeyprops", this.nativeUnkeyprops);
 		params.put("outer_id", this.outerId);
 		params.put("price", this.price);
 		params.put("product_id", this.productId);
 		params.put("sale_props", this.saleProps);
-		return params;
-	}
-
-	public Map<String, FileItem> getFileParams() {
-		Map<String, FileItem> params = new HashMap<String, FileItem>();
-		params.put("image", this.image);
 		return params;
 	}
 

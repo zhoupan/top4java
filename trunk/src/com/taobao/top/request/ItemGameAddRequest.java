@@ -1,5 +1,6 @@
 package com.taobao.top.request;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,28 +17,28 @@ public class ItemGameAddRequest implements TopRequest {
 
 	private String approveStatus;
 	private Long auctionPoint;
-	private String autoRepost;
+	private Boolean autoRepost;
 	private Long cid;
 	private String desc;
 	private String emsFee;
 	private String expressFee;
 	private String freightPayer;
-	private String gameType;
-	private String hasDiscount;
-	private String hasInvoice;
-	private String hasShowcase;
-	private String hasWarranty;
+	private Integer gameType;
+	private Boolean hasDiscount;
+	private Boolean hasInvoice;
+	private Boolean hasShowcase;
+	private Boolean hasWarranty;
 	private String increment;
 	private String inputPids;
 	private String inputStr;
-	private String is3D;
-	private String isEx;
-	private String isTaobao;
+	private Boolean is3D;
+	private Boolean isEx;
+	private Boolean isTaobao;
 	private String lang;
-	private String listTime;
+	private Date listTime;
 	private String locationCity;
 	private String locationState;
-	private Long num;
+	private Integer num;
 	private String outerId;
 	private String picPath;
 	private String postFee;
@@ -54,7 +55,7 @@ public class ItemGameAddRequest implements TopRequest {
 	private String stuffStatus;
 	private String title;
 	private String type;
-	private Long validThru;
+	private Integer validThru;
 	private String verticalIds;
 	private FileItem verticalImage;
 	private Long verticalImageId;
@@ -66,7 +67,7 @@ public class ItemGameAddRequest implements TopRequest {
 	public void setAuctionPoint(Long auctionPoint) {
 		this.auctionPoint = auctionPoint;
 	}
-	public void setAutoRepost(String autoRepost) {
+	public void setAutoRepost(Boolean autoRepost) {
 		this.autoRepost = autoRepost;
 	}
 	public void setCid(Long cid) {
@@ -84,19 +85,19 @@ public class ItemGameAddRequest implements TopRequest {
 	public void setFreightPayer(String freightPayer) {
 		this.freightPayer = freightPayer;
 	}
-	public void setGameType(String gameType) {
+	public void setGameType(Integer gameType) {
 		this.gameType = gameType;
 	}
-	public void setHasDiscount(String hasDiscount) {
+	public void setHasDiscount(Boolean hasDiscount) {
 		this.hasDiscount = hasDiscount;
 	}
-	public void setHasInvoice(String hasInvoice) {
+	public void setHasInvoice(Boolean hasInvoice) {
 		this.hasInvoice = hasInvoice;
 	}
-	public void setHasShowcase(String hasShowcase) {
+	public void setHasShowcase(Boolean hasShowcase) {
 		this.hasShowcase = hasShowcase;
 	}
-	public void setHasWarranty(String hasWarranty) {
+	public void setHasWarranty(Boolean hasWarranty) {
 		this.hasWarranty = hasWarranty;
 	}
 	public void setIncrement(String increment) {
@@ -108,19 +109,19 @@ public class ItemGameAddRequest implements TopRequest {
 	public void setInputStr(String inputStr) {
 		this.inputStr = inputStr;
 	}
-	public void setIs3D(String is3D) {
+	public void setIs3D(Boolean is3D) {
 		this.is3D = is3D;
 	}
-	public void setIsEx(String isEx) {
+	public void setIsEx(Boolean isEx) {
 		this.isEx = isEx;
 	}
-	public void setIsTaobao(String isTaobao) {
+	public void setIsTaobao(Boolean isTaobao) {
 		this.isTaobao = isTaobao;
 	}
 	public void setLang(String lang) {
 		this.lang = lang;
 	}
-	public void setListTime(String listTime) {
+	public void setListTime(Date listTime) {
 		this.listTime = listTime;
 	}
 	public void setLocationCity(String locationCity) {
@@ -129,7 +130,7 @@ public class ItemGameAddRequest implements TopRequest {
 	public void setLocationState(String locationState) {
 		this.locationState = locationState;
 	}
-	public void setNum(Long num) {
+	public void setNum(Integer num) {
 		this.num = num;
 	}
 	public void setOuterId(String outerId) {
@@ -180,7 +181,7 @@ public class ItemGameAddRequest implements TopRequest {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public void setValidThru(Long validThru) {
+	public void setValidThru(Integer validThru) {
 		this.validThru = validThru;
 	}
 	public void setVerticalIds(String verticalIds) {

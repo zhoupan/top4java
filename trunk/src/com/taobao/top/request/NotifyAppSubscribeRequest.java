@@ -12,11 +12,11 @@ import com.taobao.top.util.TopHashMap;
  */
 public class NotifyAppSubscribeRequest implements TopRequest {
 
-	private Long duration;
+	private Integer duration;
 	private String status;
 	private String topics;
 
-	public void setDuration(Long duration) {
+	public void setDuration(Integer duration) {
 		this.duration = duration;
 	}
 	public void setStatus(String status) {

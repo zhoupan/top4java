@@ -1,5 +1,6 @@
 package com.taobao.top.request;
 
+import java.util.Date;
 import java.util.Map;
 
 import com.taobao.top.util.TopHashMap;
@@ -14,14 +15,14 @@ public class ItempropsGetRequest implements TopRequest {
 
 	private String childPath;
 	private Long cid;
-	private String datetime;
+	private Date datetime;
 	private String fields;
-	private String isColorProp;
-	private String isEnumProp;
-	private String isInputProp;
-	private String isItemProp;
-	private String isKeyProp;
-	private String isSaleProp;
+	private Boolean isColorProp;
+	private Boolean isEnumProp;
+	private Boolean isInputProp;
+	private Boolean isItemProp;
+	private Boolean isKeyProp;
+	private Boolean isSaleProp;
 	private Long parentPid;
 	private Long pid;
 
@@ -31,28 +32,28 @@ public class ItempropsGetRequest implements TopRequest {
 	public void setCid(Long cid) {
 		this.cid = cid;
 	}
-	public void setDatetime(String datetime) {
+	public void setDatetime(Date datetime) {
 		this.datetime = datetime;
 	}
 	public void setFields(String fields) {
 		this.fields = fields;
 	}
-	public void setIsColorProp(String isColorProp) {
+	public void setIsColorProp(Boolean isColorProp) {
 		this.isColorProp = isColorProp;
 	}
-	public void setIsEnumProp(String isEnumProp) {
+	public void setIsEnumProp(Boolean isEnumProp) {
 		this.isEnumProp = isEnumProp;
 	}
-	public void setIsInputProp(String isInputProp) {
+	public void setIsInputProp(Boolean isInputProp) {
 		this.isInputProp = isInputProp;
 	}
-	public void setIsItemProp(String isItemProp) {
+	public void setIsItemProp(Boolean isItemProp) {
 		this.isItemProp = isItemProp;
 	}
-	public void setIsKeyProp(String isKeyProp) {
+	public void setIsKeyProp(Boolean isKeyProp) {
 		this.isKeyProp = isKeyProp;
 	}
-	public void setIsSaleProp(String isSaleProp) {
+	public void setIsSaleProp(Boolean isSaleProp) {
 		this.isSaleProp = isSaleProp;
 	}
 	public void setParentPid(Long parentPid) {
