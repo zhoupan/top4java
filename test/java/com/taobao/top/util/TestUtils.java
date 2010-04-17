@@ -32,7 +32,7 @@ public abstract class TestUtils {
 	}
 
 	public static TopJsonRestClient getOnlineJsonClient() {
-		return new TopJsonRestClient(TOP_ONLINE_URL, "12005076", "64292c42ca49632200289324fba42572");
+		return new TopJsonRestClient(TOP_ONLINE_URL, "10011201", "InYQcoRSjNqszqMOMEsAdJDHbewbCAMJ");
 	}
 
 	public static String readResource(String fileName) throws IOException {
