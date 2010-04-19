@@ -24,7 +24,7 @@ public abstract class TestUtils {
 	}
 
 	public static TopClient getPrivateClient() {
-		return new TopRestClient(TOP_PRIVATE_URL, "30592", "eece9b3d34f077e65acfc6fa8f872c0a");
+		return new TopRestClient(TOP_PRIVATE_URL, "4272", "0ebbcccfee18d7ad1aebc5b135ffa906");
 	}
 
 	public static TopClient getOnlineClient() {
