@@ -38,17 +38,16 @@ public class JsonConverter implements Converter {
 		}
 
 		Object totalResults = rspJson.get("total_results");
-		if (totalResults != null) {
-			if (totalResults instanceof Long) {
-				rspList.setTotalResults((Long) totalResults);
-			} else {
-				rspList.setTotalResults(Long.valueOf(totalResults.toString()));
-			}
+		if (totalResults instanceof Long) {
+			rspList.setTotalResults((Long) totalResults);
 		}
 
 		Map<?, ?> listJsonMap = (Map<?, ?>) rspJson.get(getJsonListClassName(clazz));
-		List<?> objJsonList= (List<?>) listJsonMap.get(getJsonClassName(clazz));
+		if (listJsonMap == null || listJsonMap.isEmpty()) {
+			return rspList;
+		}
 
+		List<?> objJsonList = (List<?>) listJsonMap.get(getJsonClassName(clazz));
 		for (Object tmp : objJsonList) {
 			Map<?, ?> objJson = (Map<?, ?>) tmp;
 			T obj = fromJson(objJson, clazz);
