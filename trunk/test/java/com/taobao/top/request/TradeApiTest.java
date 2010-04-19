@@ -8,6 +8,7 @@ import com.taobao.top.TopClient;
 import com.taobao.top.TopJsonRestClient;
 import com.taobao.top.domain.PageList;
 import com.taobao.top.domain.Trade;
+import com.taobao.top.domain.TradeRate;
 import com.taobao.top.parser.json.ListJsonParser;
 import com.taobao.top.util.TestUtils;
 
@@ -38,6 +39,20 @@ public class TradeApiTest {
 		TopRequestProxy proxy = new TopRequestProxy(req, "tbtest1063");
 		PageList<Trade> rsp = topClient.execute(proxy, new ListJsonParser<Trade>(Trade.class));
 		Assert.assertTrue(rsp.getTotalResults() > 0L);
+	}
+
+	@Test
+	public void getTradeRates() {
+		TraderatesGetRequest req = new TraderatesGetRequest();
+		req.setFields("tid,role,nick,result,created,rated_nick,item_title,item_price,content,reply");
+		req.setRole("buyer");
+		req.setRateType("get");
+		req.setResult("good");
+		req.setPageNo(1);
+		req.setPageSize(40);
+		PageList<TradeRate> rsp = client.traderatesGet(req);
+		System.out.println(rsp.getTotalResults());
+		System.out.println(rsp.getReturnResults());
 	}
 
 }
