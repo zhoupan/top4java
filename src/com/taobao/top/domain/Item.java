@@ -148,6 +148,9 @@ public class Item extends BaseObject {
 	@ApiField("props")
 	private String props;
 
+	@ApiField("props_name")
+	private String propsName;
+
 	@ApiField("score")
 	private Long score;
 
@@ -472,6 +475,13 @@ public class Item extends BaseObject {
 	}
 	public void setProps(String props) {
 		this.props = props;
+	}
+
+	public String getPropsName() {
+		return this.propsName;
+	}
+	public void setPropsName(String propsName) {
+		this.propsName = propsName;
 	}
 
 	public Long getScore() {

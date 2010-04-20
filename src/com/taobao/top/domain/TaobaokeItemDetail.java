@@ -11,7 +11,7 @@ import com.taobao.top.mapping.ApiListClass;
  * @since 1.0, Apr 11, 2010
  */
 @ApiClass("taobaoke_item_detail")
-@ApiListClass("taobaoke_items")
+@ApiListClass("taobaoke_item_details")
 public class TaobaokeItemDetail extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
@@ -19,8 +19,8 @@ public class TaobaokeItemDetail extends BaseObject {
 	@ApiField("click_url")
 	private String clickUrl;
 
-	@ApiField("item_detail")
-	private Item itemDetail;
+	@ApiField("item")
+	private Item item;
 
 	@ApiField("seller_credit_score")
 	private Long sellerCreditScore;
@@ -35,11 +35,11 @@ public class TaobaokeItemDetail extends BaseObject {
 		this.clickUrl = clickUrl;
 	}
 
-	public Item getItemDetail() {
-		return this.itemDetail;
+	public Item getItem() {
+		return this.item;
 	}
-	public void setItemDetail(Item itemDetail) {
-		this.itemDetail = itemDetail;
+	public void setItem(Item item) {
+		this.item = item;
 	}
 
 	public Long getSellerCreditScore() {
