@@ -1,8 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * Feature Data Structure.
@@ -10,16 +10,16 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("feature")
-@JsonListClass("features")
+@ApiClass("feature")
+@ApiListClass("features")
 public class Feature extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("attr_key")
+	@ApiField("attr_key")
 	private String attrKey;
 
-	@JsonField("attr_value")
+	@ApiField("attr_value")
 	private String attrValue;
 
 	public String getAttrKey() {

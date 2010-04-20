@@ -1,7 +1,7 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
 
 /**
  * ShopScore Data Structure.
@@ -9,18 +9,18 @@ import com.taobao.top.mapping.JsonField;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("shop_score")
+@ApiClass("shop_score")
 public class ShopScore extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("delivery_score")
+	@ApiField("delivery_score")
 	private String deliveryScore;
 
-	@JsonField("item_score")
+	@ApiField("item_score")
 	private String itemScore;
 
-	@JsonField("service_score")
+	@ApiField("service_score")
 	private String serviceScore;
 
 	public String getDeliveryScore() {

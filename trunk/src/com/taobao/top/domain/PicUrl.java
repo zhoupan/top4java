@@ -1,8 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * PicUrl Data Structure.
@@ -10,13 +10,13 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("pic_url")
-@JsonListClass("pic_urls")
+@ApiClass("pic_url")
+@ApiListClass("pic_urls")
 public class PicUrl extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("url")
+	@ApiField("url")
 	private String url;
 
 	public String getUrl() {

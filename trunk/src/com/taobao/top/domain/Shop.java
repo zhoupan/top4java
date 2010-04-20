@@ -1,8 +1,8 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
 
 /**
  * Shop Data Structure.
@@ -10,42 +10,42 @@ import com.taobao.top.mapping.JsonField;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("shop")
+@ApiClass("shop")
 public class Shop extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("bulletin")
+	@ApiField("bulletin")
 	private String bulletin;
 
-	@JsonField("cid")
+	@ApiField("cid")
 	private String cid;
 
-	@JsonField("created")
+	@ApiField("created")
 	private Date created;
 
-	@JsonField("desc")
+	@ApiField("desc")
 	private String desc;
 
-	@JsonField("modified")
+	@ApiField("modified")
 	private Date modified;
 
-	@JsonField("nick")
+	@ApiField("nick")
 	private String nick;
 
-	@JsonField("pic_path")
+	@ApiField("pic_path")
 	private String picPath;
 
-	@JsonField("remain_count")
+	@ApiField("remain_count")
 	private Integer remainCount;
 
-	@JsonField("shop_score")
+	@ApiField("shop_score")
 	private ShopScore shopScore;
 
-	@JsonField("sid")
+	@ApiField("sid")
 	private String sid;
 
-	@JsonField("title")
+	@ApiField("title")
 	private String title;
 
 	public String getBulletin() {

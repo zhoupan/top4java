@@ -1,9 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * Order Data Structure.
@@ -11,91 +11,91 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("order")
-@JsonListClass("orders")
+@ApiClass("order")
+@ApiListClass("orders")
 public class Order extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("adjust_fee")
+	@ApiField("adjust_fee")
 	private String adjustFee;
 
-	@JsonField("buyer_rate")
+	@ApiField("buyer_rate")
 	private String buyerRate;
 
-	@JsonField("discount_fee")
+	@ApiField("discount_fee")
 	private String discountFee;
 
-	@JsonField("iid")
+	@ApiField("iid")
 	private String iid;
 
-	@JsonField("item_meal_id")
+	@ApiField("item_meal_id")
 	private Long itemMealId;
 
-	@JsonField("item_meal_name")
+	@ApiField("item_meal_name")
 	private String itemMealName;
 
-	@JsonField("item_memo")
+	@ApiField("item_memo")
 	private String itemMemo;
 
-	@JsonField("modified")
+	@ApiField("modified")
 	private Date modified;
 
-	@JsonField("num")
+	@ApiField("num")
 	private Integer num;
 
-	@JsonField("oid")
+	@ApiField("oid")
 	private Long oid;
 
-	@JsonField("outer_iid")
+	@ApiField("outer_iid")
 	private String outerIid;
 
-	@JsonField("outer_sku_id")
+	@ApiField("outer_sku_id")
 	private String outerSkuId;
 
-	@JsonField("payment")
+	@ApiField("payment")
 	private String payment;
 
-	@JsonField("pic_path")
+	@ApiField("pic_path")
 	private String picPath;
 
-	@JsonField("price")
+	@ApiField("price")
 	private String price;
 
-	@JsonField("refund_id")
+	@ApiField("refund_id")
 	private Long refundId;
 
-	@JsonField("refund_status")
+	@ApiField("refund_status")
 	private String refundStatus;
 
-	@JsonField("seller_rate")
+	@ApiField("seller_rate")
 	private String sellerRate;
 
-	@JsonField("seller_type")
+	@ApiField("seller_type")
 	private String sellerType;
 
-	@JsonField("sku_id")
+	@ApiField("sku_id")
 	private String skuId;
 
-	@JsonField("sku_properties_name")
+	@ApiField("sku_properties_name")
 	private String skuPropertiesName;
 
-	@JsonField("snapshot")
+	@ApiField("snapshot")
 	private String snapshot;
 
-	@JsonField("snapshot_url")
+	@ApiField("snapshot_url")
 	private String snapshotUrl;
 
-	@JsonField("status")
+	@ApiField("status")
 	private String status;
 
-	@JsonField("timeout_action_time")
+	@ApiField("timeout_action_time")
 	private String timeoutActionTime;
 
-	@JsonField("title")
+	@ApiField("title")
 	private String title;
 
-	@JsonField("total_fee")
+	@ApiField("total_fee")
 	private String totalFee;
 
 	public String getAdjustFee() {

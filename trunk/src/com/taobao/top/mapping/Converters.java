@@ -55,7 +55,7 @@ public class Converters {
 				}
 
 				Field field = clazz.getDeclaredField(itemName);
-				JsonField jsonField = field.getAnnotation(JsonField.class);
+				ApiField jsonField = field.getAnnotation(ApiField.class);
 				if (jsonField != null) {
 					String alias = jsonField.value();
 					if (!StrUtils.isEmpty(alias)) {
@@ -64,7 +64,7 @@ public class Converters {
 				}
 
 				if (!reader.hasReturnField(itemName)) {
-					JsonListField jsonListField = field.getAnnotation(JsonListField.class);
+					ApiListField jsonListField = field.getAnnotation(ApiListField.class);
 					if (jsonListField != null) {
 						listName = jsonListField.value();
 					}

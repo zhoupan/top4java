@@ -3,10 +3,10 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
-import com.taobao.top.mapping.JsonListField;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
+import com.taobao.top.mapping.ApiListField;
 
 /**
  * RefundMessage Data Structure.
@@ -14,38 +14,38 @@ import com.taobao.top.mapping.JsonListField;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("refund_message")
-@JsonListClass("refund_messages")
+@ApiClass("refund_message")
+@ApiListClass("refund_messages")
 public class RefundMessage extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("content")
+	@ApiField("content")
 	private String content;
 
-	@JsonField("created")
+	@ApiField("created")
 	private Date created;
 
-	@JsonField("id")
+	@ApiField("id")
 	private Long id;
 
-	@JsonField("message_type")
+	@ApiField("message_type")
 	private String messageType;
 
-	@JsonField("owner_id")
+	@ApiField("owner_id")
 	private Long ownerId;
 
-	@JsonField("owner_nick")
+	@ApiField("owner_nick")
 	private String ownerNick;
 
-	@JsonField("owner_role")
+	@ApiField("owner_role")
 	private String ownerRole;
 
-	@JsonField("pic_url")
-	@JsonListField("pic_urls")
+	@ApiField("pic_url")
+	@ApiListField("pic_urls")
 	private List<PicUrl> picUrls;
 
-	@JsonField("refund_id")
+	@ApiField("refund_id")
 	private Long refundId;
 
 	public String getContent() {

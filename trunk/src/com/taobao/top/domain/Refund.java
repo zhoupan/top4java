@@ -1,9 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * Refund Data Structure.
@@ -11,91 +11,91 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("refund")
-@JsonListClass("refunds")
+@ApiClass("refund")
+@ApiListClass("refunds")
 public class Refund extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("address")
+	@ApiField("address")
 	private String address;
 
-	@JsonField("alipay_no")
+	@ApiField("alipay_no")
 	private String alipayNo;
 
-	@JsonField("buyer_nick")
+	@ApiField("buyer_nick")
 	private String buyerNick;
 
-	@JsonField("company_name")
+	@ApiField("company_name")
 	private String companyName;
 
-	@JsonField("created")
+	@ApiField("created")
 	private Date created;
 
-	@JsonField("desc")
+	@ApiField("desc")
 	private String desc;
 
-	@JsonField("good_return_time")
+	@ApiField("good_return_time")
 	private String goodReturnTime;
 
-	@JsonField("good_status")
+	@ApiField("good_status")
 	private String goodStatus;
 
-	@JsonField("has_good_return")
+	@ApiField("has_good_return")
 	private Boolean hasGoodReturn;
 
-	@JsonField("iid")
+	@ApiField("iid")
 	private String iid;
 
-	@JsonField("modified")
+	@ApiField("modified")
 	private Date modified;
 
-	@JsonField("num")
+	@ApiField("num")
 	private Integer num;
 
-	@JsonField("oid")
+	@ApiField("oid")
 	private Long oid;
 
-	@JsonField("order_status")
+	@ApiField("order_status")
 	private String orderStatus;
 
-	@JsonField("payment")
+	@ApiField("payment")
 	private String payment;
 
-	@JsonField("price")
+	@ApiField("price")
 	private String price;
 
-	@JsonField("reason")
+	@ApiField("reason")
 	private String reason;
 
-	@JsonField("refund_fee")
+	@ApiField("refund_fee")
 	private String refundFee;
 
-	@JsonField("refund_id")
+	@ApiField("refund_id")
 	private Long refundId;
 
-	@JsonField("refund_remind_timeout")
+	@ApiField("refund_remind_timeout")
 	private RefundRemindTimeout refundRemindTimeout;
 
-	@JsonField("seller_nick")
+	@ApiField("seller_nick")
 	private String sellerNick;
 
-	@JsonField("shipping_type")
+	@ApiField("shipping_type")
 	private String shippingType;
 
-	@JsonField("sid")
+	@ApiField("sid")
 	private String sid;
 
-	@JsonField("status")
+	@ApiField("status")
 	private String status;
 
-	@JsonField("tid")
+	@ApiField("tid")
 	private Long tid;
 
-	@JsonField("title")
+	@ApiField("title")
 	private String title;
 
-	@JsonField("total_fee")
+	@ApiField("total_fee")
 	private String totalFee;
 
 	public String getAddress() {

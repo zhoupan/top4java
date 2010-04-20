@@ -2,10 +2,10 @@ package com.taobao.top.domain;
 
 import java.util.List;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
-import com.taobao.top.mapping.JsonListField;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
+import com.taobao.top.mapping.ApiListField;
 
 /**
  * ItemProp Data Structure.
@@ -13,62 +13,62 @@ import com.taobao.top.mapping.JsonListField;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("item_prop")
-@JsonListClass("item_props")
+@ApiClass("item_prop")
+@ApiListClass("item_props")
 public class ItemProp extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("child_template")
+	@ApiField("child_template")
 	private String childTemplate;
 
-	@JsonField("is_allow_alias")
+	@ApiField("is_allow_alias")
 	private Boolean isAllowAlias;
 
-	@JsonField("is_color_prop")
+	@ApiField("is_color_prop")
 	private Boolean isColorProp;
 
-	@JsonField("is_enum_prop")
+	@ApiField("is_enum_prop")
 	private Boolean isEnumProp;
 
-	@JsonField("is_input_prop")
+	@ApiField("is_input_prop")
 	private Boolean isInputProp;
 
-	@JsonField("is_item_prop")
+	@ApiField("is_item_prop")
 	private Boolean isItemProp;
 
-	@JsonField("is_key_prop")
+	@ApiField("is_key_prop")
 	private Boolean isKeyProp;
 
-	@JsonField("is_sale_prop")
+	@ApiField("is_sale_prop")
 	private Boolean isSaleProp;
 
-	@JsonField("multi")
+	@ApiField("multi")
 	private Boolean multi;
 
-	@JsonField("must")
+	@ApiField("must")
 	private Boolean must;
 
-	@JsonField("name")
+	@ApiField("name")
 	private String name;
 
-	@JsonField("parent_pid")
+	@ApiField("parent_pid")
 	private Long parentPid;
 
-	@JsonField("parent_vid")
+	@ApiField("parent_vid")
 	private Long parentVid;
 
-	@JsonField("pid")
+	@ApiField("pid")
 	private Long pid;
 
-	@JsonField("prop_value")
-	@JsonListField("prop_values")
+	@ApiField("prop_value")
+	@ApiListField("prop_values")
 	private List<PropValue> propValues;
 
-	@JsonField("sort_order")
+	@ApiField("sort_order")
 	private Integer sortOrder;
 
-	@JsonField("status")
+	@ApiField("status")
 	private String status;
 
 	public String getChildTemplate() {

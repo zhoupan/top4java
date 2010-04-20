@@ -1,8 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * TaobaokeItemDetail Data Structure.
@@ -10,22 +10,22 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("taobaoke_item_detail")
-@JsonListClass("taobaoke_items")
+@ApiClass("taobaoke_item_detail")
+@ApiListClass("taobaoke_items")
 public class TaobaokeItemDetail extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("click_url")
+	@ApiField("click_url")
 	private String clickUrl;
 
-	@JsonField("item_detail")
+	@ApiField("item_detail")
 	private Item itemDetail;
 
-	@JsonField("seller_credit_score")
+	@ApiField("seller_credit_score")
 	private Long sellerCreditScore;
 
-	@JsonField("shop_click_url")
+	@ApiField("shop_click_url")
 	private String shopClickUrl;
 
 	public String getClickUrl() {

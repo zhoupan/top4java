@@ -1,8 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * ItemCat Data Structure.
@@ -10,28 +10,28 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("item_cat")
-@JsonListClass("item_cats")
+@ApiClass("item_cat")
+@ApiListClass("item_cats")
 public class ItemCat extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("cid")
+	@ApiField("cid")
 	private Long cid;
 
-	@JsonField("is_parent")
+	@ApiField("is_parent")
 	private Boolean isParent;
 
-	@JsonField("name")
+	@ApiField("name")
 	private String name;
 
-	@JsonField("parent_cid")
+	@ApiField("parent_cid")
 	private Long parentCid;
 
-	@JsonField("sort_order")
+	@ApiField("sort_order")
 	private Integer sortOrder;
 
-	@JsonField("status")
+	@ApiField("status")
 	private String status;
 
 	public Long getCid() {

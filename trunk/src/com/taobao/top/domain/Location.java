@@ -1,7 +1,7 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
 
 /**
  * Location Data Structure.
@@ -9,27 +9,27 @@ import com.taobao.top.mapping.JsonField;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("location")
+@ApiClass("location")
 public class Location extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("address")
+	@ApiField("address")
 	private String address;
 
-	@JsonField("city")
+	@ApiField("city")
 	private String city;
 
-	@JsonField("country")
+	@ApiField("country")
 	private String country;
 
-	@JsonField("district")
+	@ApiField("district")
 	private String district;
 
-	@JsonField("state")
+	@ApiField("state")
 	private String state;
 
-	@JsonField("zip")
+	@ApiField("zip")
 	private String zip;
 
 	public String getAddress() {
