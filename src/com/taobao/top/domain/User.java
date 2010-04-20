@@ -1,9 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * User Data Structure.
@@ -11,94 +11,94 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("user")
-@JsonListClass("users")
+@ApiClass("user")
+@ApiListClass("users")
 public class User extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("alipay_account")
+	@ApiField("alipay_account")
 	private String alipayAccount;
 
-	@JsonField("alipay_bind")
+	@ApiField("alipay_bind")
 	private String alipayBind;
 
-	@JsonField("alipay_no")
+	@ApiField("alipay_no")
 	private String alipayNo;
 
-	@JsonField("auto_repost")
+	@ApiField("auto_repost")
 	private String autoRepost;
 
-	@JsonField("birthday")
+	@ApiField("birthday")
 	private String birthday;
 
-	@JsonField("buyer_credit")
+	@ApiField("buyer_credit")
 	private UserCredit buyerCredit;
 
-	@JsonField("consumer_protection")
+	@ApiField("consumer_protection")
 	private Boolean consumerProtection;
 
-	@JsonField("created")
+	@ApiField("created")
 	private Date created;
 
-	@JsonField("email")
+	@ApiField("email")
 	private String email;
 
-	@JsonField("has_more_pic")
+	@ApiField("has_more_pic")
 	private Boolean hasMorePic;
 
-	@JsonField("id_card")
+	@ApiField("id_card")
 	private String idCard;
 
-	@JsonField("item_img_num")
+	@ApiField("item_img_num")
 	private Integer itemImgNum;
 
-	@JsonField("item_img_size")
+	@ApiField("item_img_size")
 	private Integer itemImgSize;
 
-	@JsonField("last_visit")
+	@ApiField("last_visit")
 	private String lastVisit;
 
-	@JsonField("location")
+	@ApiField("location")
 	private Location location;
 
-	@JsonField("mobile")
+	@ApiField("mobile")
 	private String mobile;
 
-	@JsonField("nick")
+	@ApiField("nick")
 	private String nick;
 
-	@JsonField("phone")
+	@ApiField("phone")
 	private String phone;
 
-	@JsonField("promoted_type")
+	@ApiField("promoted_type")
 	private String promotedType;
 
-	@JsonField("prop_img_num")
+	@ApiField("prop_img_num")
 	private Integer propImgNum;
 
-	@JsonField("prop_img_size")
+	@ApiField("prop_img_size")
 	private Integer propImgSize;
 
-	@JsonField("real_name")
+	@ApiField("real_name")
 	private String realName;
 
-	@JsonField("seller_credit")
+	@ApiField("seller_credit")
 	private UserCredit sellerCredit;
 
-	@JsonField("sex")
+	@ApiField("sex")
 	private String sex;
 
-	@JsonField("status")
+	@ApiField("status")
 	private String status;
 
-	@JsonField("type")
+	@ApiField("type")
 	private String type;
 
-	@JsonField("uid")
+	@ApiField("uid")
 	private String uid;
 
-	@JsonField("user_id")
+	@ApiField("user_id")
 	private Long userId;
 
 	public String getAlipayAccount() {

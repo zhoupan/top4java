@@ -3,10 +3,10 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
-import com.taobao.top.mapping.JsonListField;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
+import com.taobao.top.mapping.ApiListField;
 
 /**
  * Item Data Structure.
@@ -14,170 +14,170 @@ import com.taobao.top.mapping.JsonListField;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("item")
-@JsonListClass("items")
+@ApiClass("item")
+@ApiListClass("items")
 public class Item extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("approve_status")
+	@ApiField("approve_status")
 	private String approveStatus;
 
-	@JsonField("auction_point")
+	@ApiField("auction_point")
 	private Long auctionPoint;
 
-	@JsonField("auto_fill")
+	@ApiField("auto_fill")
 	private String autoFill;
 
-	@JsonField("auto_repost")
+	@ApiField("auto_repost")
 	private Boolean autoRepost;
 
-	@JsonField("cid")
+	@ApiField("cid")
 	private Long cid;
 
-	@JsonField("created")
+	@ApiField("created")
 	private Date created;
 
-	@JsonField("delist_time")
+	@ApiField("delist_time")
 	private String delistTime;
 
-	@JsonField("desc")
+	@ApiField("desc")
 	private String desc;
 
-	@JsonField("detail_url")
+	@ApiField("detail_url")
 	private String detailUrl;
 
-	@JsonField("ems_fee")
+	@ApiField("ems_fee")
 	private String emsFee;
 
-	@JsonField("express_fee")
+	@ApiField("express_fee")
 	private String expressFee;
 
-	@JsonField("freight_payer")
+	@ApiField("freight_payer")
 	private String freightPayer;
 
-	@JsonField("has_discount")
+	@ApiField("has_discount")
 	private Boolean hasDiscount;
 
-	@JsonField("has_invoice")
+	@ApiField("has_invoice")
 	private Boolean hasInvoice;
 
-	@JsonField("has_showcase")
+	@ApiField("has_showcase")
 	private Boolean hasShowcase;
 
-	@JsonField("has_warranty")
+	@ApiField("has_warranty")
 	private Boolean hasWarranty;
 
-	@JsonField("iid")
+	@ApiField("iid")
 	private String iid;
 
-	@JsonField("increment")
+	@ApiField("increment")
 	private String increment;
 
-	@JsonField("input_pids")
+	@ApiField("input_pids")
 	private String inputPids;
 
-	@JsonField("input_str")
+	@ApiField("input_str")
 	private String inputStr;
 
-	@JsonField("is_3D")
+	@ApiField("is_3D")
 	private Boolean is3D;
 
-	@JsonField("is_ex")
+	@ApiField("is_ex")
 	private Boolean isEx;
 
-	@JsonField("is_taobao")
+	@ApiField("is_taobao")
 	private Boolean isTaobao;
 
-	@JsonField("is_timing")
+	@ApiField("is_timing")
 	private Boolean isTiming;
 
-	@JsonField("is_virtual")
+	@ApiField("is_virtual")
 	private Boolean isVirtual;
 
-	@JsonField("item_img")
-	@JsonListField("item_imgs")
+	@ApiField("item_img")
+	@ApiListField("item_imgs")
 	private List<ItemImg> itemImgs;
 
-	@JsonField("list_time")
+	@ApiField("list_time")
 	private String listTime;
 
-	@JsonField("location")
+	@ApiField("location")
 	private Location location;
 
-	@JsonField("modified")
+	@ApiField("modified")
 	private Date modified;
 
-	@JsonField("nick")
+	@ApiField("nick")
 	private String nick;
 
-	@JsonField("num")
+	@ApiField("num")
 	private Integer num;
 
-	@JsonField("num_iid")
+	@ApiField("num_iid")
 	private Long numIid;
 
-	@JsonField("one_station")
+	@ApiField("one_station")
 	private Boolean oneStation;
 
-	@JsonField("outer_id")
+	@ApiField("outer_id")
 	private String outerId;
 
-	@JsonField("pic_url")
+	@ApiField("pic_url")
 	private String picUrl;
 
-	@JsonField("post_fee")
+	@ApiField("post_fee")
 	private String postFee;
 
-	@JsonField("postage_id")
+	@ApiField("postage_id")
 	private Long postageId;
 
-	@JsonField("price")
+	@ApiField("price")
 	private String price;
 
-	@JsonField("product_id")
+	@ApiField("product_id")
 	private Long productId;
 
-	@JsonField("prop_img")
-	@JsonListField("prop_imgs")
+	@ApiField("prop_img")
+	@ApiListField("prop_imgs")
 	private List<PropImg> propImgs;
 
-	@JsonField("property_alias")
+	@ApiField("property_alias")
 	private String propertyAlias;
 
-	@JsonField("props")
+	@ApiField("props")
 	private String props;
 
-	@JsonField("score")
+	@ApiField("score")
 	private Long score;
 
-	@JsonField("second_kill")
+	@ApiField("second_kill")
 	private String secondKill;
 
-	@JsonField("seller_cids")
+	@ApiField("seller_cids")
 	private String sellerCids;
 
-	@JsonField("sku")
-	@JsonListField("skus")
+	@ApiField("sku")
+	@ApiListField("skus")
 	private List<Sku> skus;
 
-	@JsonField("stuff_status")
+	@ApiField("stuff_status")
 	private String stuffStatus;
 
-	@JsonField("title")
+	@ApiField("title")
 	private String title;
 
-	@JsonField("type")
+	@ApiField("type")
 	private String type;
 
-	@JsonField("valid_thru")
+	@ApiField("valid_thru")
 	private Integer validThru;
 
-	@JsonField("video")
-	@JsonListField("videos")
+	@ApiField("video")
+	@ApiListField("videos")
 	private List<Video> videos;
 
-	@JsonField("volume")
+	@ApiField("volume")
 	private Long volume;
 
 	public String getApproveStatus() {

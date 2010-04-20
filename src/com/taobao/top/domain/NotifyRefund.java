@@ -1,9 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * NotifyRefund Data Structure.
@@ -11,31 +11,31 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("notify_refund")
-@JsonListClass("notify_refunds")
+@ApiClass("notify_refund")
+@ApiListClass("notify_refunds")
 public class NotifyRefund extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("buyer_nick")
+	@ApiField("buyer_nick")
 	private String buyerNick;
 
-	@JsonField("modified")
+	@ApiField("modified")
 	private Date modified;
 
-	@JsonField("refund_fee")
+	@ApiField("refund_fee")
 	private String refundFee;
 
-	@JsonField("rid")
+	@ApiField("rid")
 	private Long rid;
 
-	@JsonField("seller_nick")
+	@ApiField("seller_nick")
 	private String sellerNick;
 
-	@JsonField("status")
+	@ApiField("status")
 	private String status;
 
-	@JsonField("tid")
+	@ApiField("tid")
 	private Long tid;
 
 	public String getBuyerNick() {

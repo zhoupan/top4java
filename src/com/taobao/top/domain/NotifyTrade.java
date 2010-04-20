@@ -1,9 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * NotifyTrade Data Structure.
@@ -11,34 +11,34 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("notify_trade")
-@JsonListClass("notify_trades")
+@ApiClass("notify_trade")
+@ApiListClass("notify_trades")
 public class NotifyTrade extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("buyer_nick")
+	@ApiField("buyer_nick")
 	private String buyerNick;
 
-	@JsonField("is_3D")
+	@ApiField("is_3D")
 	private Boolean is3D;
 
-	@JsonField("modified")
+	@ApiField("modified")
 	private Date modified;
 
-	@JsonField("payment")
+	@ApiField("payment")
 	private String payment;
 
-	@JsonField("seller_nick")
+	@ApiField("seller_nick")
 	private String sellerNick;
 
-	@JsonField("status")
+	@ApiField("status")
 	private String status;
 
-	@JsonField("tid")
+	@ApiField("tid")
 	private Long tid;
 
-	@JsonField("type")
+	@ApiField("type")
 	private String type;
 
 	public String getBuyerNick() {

@@ -1,8 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * TaobaokeReportMember Data Structure.
@@ -10,55 +10,55 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("taobaoke_report_member")
-@JsonListClass("taobaoke_report_members")
+@ApiClass("taobaoke_report_member")
+@ApiListClass("taobaoke_report_members")
 public class TaobaokeReportMember extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("app_key")
+	@ApiField("app_key")
 	private String appKey;
 
-	@JsonField("category_id")
+	@ApiField("category_id")
 	private Long categoryId;
 
-	@JsonField("category_name")
+	@ApiField("category_name")
 	private String categoryName;
 
-	@JsonField("commission")
+	@ApiField("commission")
 	private String commission;
 
-	@JsonField("commission_rate")
+	@ApiField("commission_rate")
 	private String commissionRate;
 
-	@JsonField("iid")
+	@ApiField("iid")
 	private String iid;
 
-	@JsonField("item_num")
+	@ApiField("item_num")
 	private Long itemNum;
 
-	@JsonField("item_title")
+	@ApiField("item_title")
 	private String itemTitle;
 
-	@JsonField("num_iid")
+	@ApiField("num_iid")
 	private Long numIid;
 
-	@JsonField("outer_code")
+	@ApiField("outer_code")
 	private String outerCode;
 
-	@JsonField("pay_price")
+	@ApiField("pay_price")
 	private String payPrice;
 
-	@JsonField("pay_time")
+	@ApiField("pay_time")
 	private String payTime;
 
-	@JsonField("seller_nick")
+	@ApiField("seller_nick")
 	private String sellerNick;
 
-	@JsonField("shop_title")
+	@ApiField("shop_title")
 	private String shopTitle;
 
-	@JsonField("trade_id")
+	@ApiField("trade_id")
 	private Long tradeId;
 
 	public String getAppKey() {

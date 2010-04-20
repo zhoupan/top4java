@@ -1,9 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * Video Data Structure.
@@ -11,31 +11,31 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("video")
-@JsonListClass("videos")
+@ApiClass("video")
+@ApiListClass("videos")
 public class Video extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("created")
+	@ApiField("created")
 	private Date created;
 
-	@JsonField("id")
+	@ApiField("id")
 	private Long id;
 
-	@JsonField("iid")
+	@ApiField("iid")
 	private String iid;
 
-	@JsonField("modified")
+	@ApiField("modified")
 	private Date modified;
 
-	@JsonField("num_iid")
+	@ApiField("num_iid")
 	private Long numIid;
 
-	@JsonField("url")
+	@ApiField("url")
 	private String url;
 
-	@JsonField("video_id")
+	@ApiField("video_id")
 	private Long videoId;
 
 	public Date getCreated() {

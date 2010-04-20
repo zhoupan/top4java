@@ -3,10 +3,10 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
-import com.taobao.top.mapping.JsonListField;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
+import com.taobao.top.mapping.ApiListField;
 
 /**
  * ItemExtra Data Structure.
@@ -14,80 +14,80 @@ import com.taobao.top.mapping.JsonListField;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("item_extra")
-@JsonListClass("item_extras")
+@ApiClass("item_extra")
+@ApiListClass("item_extras")
 public class ItemExtra extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("approve_status")
+	@ApiField("approve_status")
 	private String approveStatus;
 
-	@JsonField("created")
+	@ApiField("created")
 	private Date created;
 
-	@JsonField("delist_time")
+	@ApiField("delist_time")
 	private String delistTime;
 
-	@JsonField("desc")
+	@ApiField("desc")
 	private String desc;
 
-	@JsonField("eid")
+	@ApiField("eid")
 	private Long eid;
 
-	@JsonField("feature")
+	@ApiField("feature")
 	private String feature;
 
-	@JsonField("iid")
+	@ApiField("iid")
 	private String iid;
 
-	@JsonField("item_num")
+	@ApiField("item_num")
 	private Integer itemNum;
 
-	@JsonField("item_options")
+	@ApiField("item_options")
 	private Long itemOptions;
 
-	@JsonField("item_pic_url")
+	@ApiField("item_pic_url")
 	private String itemPicUrl;
 
-	@JsonField("list_time")
+	@ApiField("list_time")
 	private String listTime;
 
-	@JsonField("memo")
+	@ApiField("memo")
 	private String memo;
 
-	@JsonField("modified")
+	@ApiField("modified")
 	private Date modified;
 
-	@JsonField("nick")
+	@ApiField("nick")
 	private String nick;
 
-	@JsonField("num_iid")
+	@ApiField("num_iid")
 	private Long numIid;
 
-	@JsonField("options")
+	@ApiField("options")
 	private Long options;
 
-	@JsonField("pic_url")
+	@ApiField("pic_url")
 	private String picUrl;
 
-	@JsonField("reserve_price")
+	@ApiField("reserve_price")
 	private String reservePrice;
 
-	@JsonField("seller_cids")
+	@ApiField("seller_cids")
 	private String sellerCids;
 
-	@JsonField("shop_id")
+	@ApiField("shop_id")
 	private Long shopId;
 
-	@JsonField("sku")
-	@JsonListField("skus")
+	@ApiField("sku")
+	@ApiListField("skus")
 	private List<Sku> skus;
 
-	@JsonField("title")
+	@ApiField("title")
 	private String title;
 
-	@JsonField("type")
+	@ApiField("type")
 	private String type;
 
 	public String getApproveStatus() {

@@ -1,8 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * TaobaokeItem Data Structure.
@@ -10,61 +10,61 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("taobaoke_item")
-@JsonListClass("taobaoke_items")
+@ApiClass("taobaoke_item")
+@ApiListClass("taobaoke_items")
 public class TaobaokeItem extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("click_url")
+	@ApiField("click_url")
 	private String clickUrl;
 
-	@JsonField("commission")
+	@ApiField("commission")
 	private String commission;
 
-	@JsonField("commission_num")
+	@ApiField("commission_num")
 	private String commissionNum;
 
-	@JsonField("commission_rate")
+	@ApiField("commission_rate")
 	private String commissionRate;
 
-	@JsonField("commission_volume")
+	@ApiField("commission_volume")
 	private String commissionVolume;
 
-	@JsonField("iid")
+	@ApiField("iid")
 	private String iid;
 
-	@JsonField("item_location")
+	@ApiField("item_location")
 	private String itemLocation;
 
-	@JsonField("keyword_click_url")
+	@ApiField("keyword_click_url")
 	private String keywordClickUrl;
 
-	@JsonField("nick")
+	@ApiField("nick")
 	private String nick;
 
-	@JsonField("num_iid")
+	@ApiField("num_iid")
 	private Long numIid;
 
-	@JsonField("pic_url")
+	@ApiField("pic_url")
 	private String picUrl;
 
-	@JsonField("price")
+	@ApiField("price")
 	private String price;
 
-	@JsonField("seller_credit_score")
+	@ApiField("seller_credit_score")
 	private Long sellerCreditScore;
 
-	@JsonField("shop_click_url")
+	@ApiField("shop_click_url")
 	private String shopClickUrl;
 
-	@JsonField("taobaoke_cat_click_url")
+	@ApiField("taobaoke_cat_click_url")
 	private String taobaokeCatClickUrl;
 
-	@JsonField("title")
+	@ApiField("title")
 	private String title;
 
-	@JsonField("volume")
+	@ApiField("volume")
 	private Long volume;
 
 	public String getClickUrl() {

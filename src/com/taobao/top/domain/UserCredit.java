@@ -1,7 +1,7 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
 
 /**
  * UserCredit Data Structure.
@@ -9,21 +9,21 @@ import com.taobao.top.mapping.JsonField;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("user_credit")
+@ApiClass("user_credit")
 public class UserCredit extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("good_num")
+	@ApiField("good_num")
 	private Integer goodNum;
 
-	@JsonField("level")
+	@ApiField("level")
 	private Integer level;
 
-	@JsonField("score")
+	@ApiField("score")
 	private Integer score;
 
-	@JsonField("total_num")
+	@ApiField("total_num")
 	private Integer totalNum;
 
 	public Integer getGoodNum() {

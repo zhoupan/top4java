@@ -1,8 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * PostageMode Data Structure.
@@ -10,28 +10,28 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("postage_mode")
-@JsonListClass("postage_modes")
+@ApiClass("postage_mode")
+@ApiListClass("postage_modes")
 public class PostageMode extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("dests")
+	@ApiField("dests")
 	private String dests;
 
-	@JsonField("id")
+	@ApiField("id")
 	private Long id;
 
-	@JsonField("increase")
+	@ApiField("increase")
 	private String increase;
 
-	@JsonField("postage_id")
+	@ApiField("postage_id")
 	private Long postageId;
 
-	@JsonField("price")
+	@ApiField("price")
 	private String price;
 
-	@JsonField("type")
+	@ApiField("type")
 	private String type;
 
 	public String getDests() {

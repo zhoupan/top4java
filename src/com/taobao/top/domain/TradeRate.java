@@ -1,9 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * TradeRate Data Structure.
@@ -11,43 +11,43 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("trade_rate")
-@JsonListClass("trade_rates")
+@ApiClass("trade_rate")
+@ApiListClass("trade_rates")
 public class TradeRate extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("content")
+	@ApiField("content")
 	private String content;
 
-	@JsonField("created")
+	@ApiField("created")
 	private Date created;
 
-	@JsonField("item_price")
+	@ApiField("item_price")
 	private String itemPrice;
 
-	@JsonField("item_title")
+	@ApiField("item_title")
 	private String itemTitle;
 
-	@JsonField("nick")
+	@ApiField("nick")
 	private String nick;
 
-	@JsonField("oid")
+	@ApiField("oid")
 	private Long oid;
 
-	@JsonField("rated_nick")
+	@ApiField("rated_nick")
 	private String ratedNick;
 
-	@JsonField("reply")
+	@ApiField("reply")
 	private String reply;
 
-	@JsonField("result")
+	@ApiField("result")
 	private String result;
 
-	@JsonField("role")
+	@ApiField("role")
 	private String role;
 
-	@JsonField("tid")
+	@ApiField("tid")
 	private Long tid;
 
 	public String getContent() {

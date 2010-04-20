@@ -1,9 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * PropImg Data Structure.
@@ -11,25 +11,25 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("prop_img")
-@JsonListClass("prop_imgs")
+@ApiClass("prop_img")
+@ApiListClass("prop_imgs")
 public class PropImg extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("created")
+	@ApiField("created")
 	private Date created;
 
-	@JsonField("id")
+	@ApiField("id")
 	private Long id;
 
-	@JsonField("position")
+	@ApiField("position")
 	private Integer position;
 
-	@JsonField("properties")
+	@ApiField("properties")
 	private String properties;
 
-	@JsonField("url")
+	@ApiField("url")
 	private String url;
 
 	public Date getCreated() {

@@ -3,10 +3,10 @@ package com.taobao.top.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
-import com.taobao.top.mapping.JsonListField;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
+import com.taobao.top.mapping.ApiListField;
 
 /**
  * Product Data Structure.
@@ -14,69 +14,69 @@ import com.taobao.top.mapping.JsonListField;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("product")
-@JsonListClass("products")
+@ApiClass("product")
+@ApiListClass("products")
 public class Product extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("binds")
+	@ApiField("binds")
 	private String binds;
 
-	@JsonField("binds_str")
+	@ApiField("binds_str")
 	private String bindsStr;
 
-	@JsonField("cat_name")
+	@ApiField("cat_name")
 	private String catName;
 
-	@JsonField("cid")
+	@ApiField("cid")
 	private Long cid;
 
-	@JsonField("created")
+	@ApiField("created")
 	private Date created;
 
-	@JsonField("desc")
+	@ApiField("desc")
 	private String desc;
 
-	@JsonField("modified")
+	@ApiField("modified")
 	private Date modified;
 
-	@JsonField("name")
+	@ApiField("name")
 	private String name;
 
-	@JsonField("outer_id")
+	@ApiField("outer_id")
 	private String outerId;
 
-	@JsonField("pic_url")
+	@ApiField("pic_url")
 	private String picUrl;
 
-	@JsonField("price")
+	@ApiField("price")
 	private String price;
 
-	@JsonField("product_id")
+	@ApiField("product_id")
 	private Long productId;
 
-	@JsonField("product_img")
-	@JsonListField("product_imgs")
+	@ApiField("product_img")
+	@ApiListField("product_imgs")
 	private List<ProductImg> productImgs;
 
-	@JsonField("product_prop_img")
-	@JsonListField("product_prop_imgs")
+	@ApiField("product_prop_img")
+	@ApiListField("product_prop_imgs")
 	private List<ProductPropImg> productPropImgs;
 
-	@JsonField("props")
+	@ApiField("props")
 	private String props;
 
-	@JsonField("props_str")
+	@ApiField("props_str")
 	private String propsStr;
 
-	@JsonField("sale_props")
+	@ApiField("sale_props")
 	private String saleProps;
 
-	@JsonField("sale_props_str")
+	@ApiField("sale_props_str")
 	private String salePropsStr;
 
-	@JsonField("tsc")
+	@ApiField("tsc")
 	private String tsc;
 
 	public String getBinds() {

@@ -1,8 +1,8 @@
 package com.taobao.top.domain;
 
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * Brand Data Structure.
@@ -10,22 +10,22 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("brand")
-@JsonListClass("brands")
+@ApiClass("brand")
+@ApiListClass("brands")
 public class Brand extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("name")
+	@ApiField("name")
 	private String name;
 
-	@JsonField("pid")
+	@ApiField("pid")
 	private Long pid;
 
-	@JsonField("prop_name")
+	@ApiField("prop_name")
 	private String propName;
 
-	@JsonField("vid")
+	@ApiField("vid")
 	private Long vid;
 
 	public String getName() {

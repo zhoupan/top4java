@@ -10,8 +10,8 @@ import com.taobao.top.TopException;
 import com.taobao.top.domain.PageList;
 import com.taobao.top.mapping.Converter;
 import com.taobao.top.mapping.Converters;
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiListClass;
 import com.taobao.top.mapping.Reader;
 import com.taobao.top.util.StrUtils;
 
@@ -76,7 +76,7 @@ public class JsonConverter implements Converter {
 	}
 
 	private String getJsonListClassName(Class<?> clazz) {
-		JsonListClass jsonList = clazz.getAnnotation(JsonListClass.class);
+		ApiListClass jsonList = clazz.getAnnotation(ApiListClass.class);
 		if (jsonList != null) {
 			String alias = jsonList.value();
 			if (!StrUtils.isEmpty(alias)) {
@@ -88,7 +88,7 @@ public class JsonConverter implements Converter {
 	}
 
 	private String getJsonClassName(Class<?> clazz) {
-		JsonClass jsonClass = clazz.getAnnotation(JsonClass.class);
+		ApiClass jsonClass = clazz.getAnnotation(ApiClass.class);
 		if (jsonClass != null) {
 			String alias = jsonClass.value();
 			if (!StrUtils.isEmpty(alias)) {

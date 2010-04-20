@@ -1,9 +1,9 @@
 package com.taobao.top.domain;
 
 import java.util.Date;
-import com.taobao.top.mapping.JsonClass;
-import com.taobao.top.mapping.JsonField;
-import com.taobao.top.mapping.JsonListClass;
+import com.taobao.top.mapping.ApiClass;
+import com.taobao.top.mapping.ApiField;
+import com.taobao.top.mapping.ApiListClass;
 
 /**
  * Shipping Data Structure.
@@ -11,67 +11,67 @@ import com.taobao.top.mapping.JsonListClass;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-@JsonClass("shipping")
-@JsonListClass("shippings")
+@ApiClass("shipping")
+@ApiListClass("shippings")
 public class Shipping extends BaseObject {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonField("buyer_nick")
+	@ApiField("buyer_nick")
 	private String buyerNick;
 
-	@JsonField("company_name")
+	@ApiField("company_name")
 	private String companyName;
 
-	@JsonField("created")
+	@ApiField("created")
 	private Date created;
 
-	@JsonField("delivery_end")
+	@ApiField("delivery_end")
 	private String deliveryEnd;
 
-	@JsonField("delivery_start")
+	@ApiField("delivery_start")
 	private String deliveryStart;
 
-	@JsonField("freight_payer")
+	@ApiField("freight_payer")
 	private String freightPayer;
 
-	@JsonField("is_success")
+	@ApiField("is_success")
 	private Boolean isSuccess;
 
-	@JsonField("item_title")
+	@ApiField("item_title")
 	private String itemTitle;
 
-	@JsonField("location")
+	@ApiField("location")
 	private Location location;
 
-	@JsonField("modified")
+	@ApiField("modified")
 	private Date modified;
 
-	@JsonField("out_sid")
+	@ApiField("out_sid")
 	private String outSid;
 
-	@JsonField("receiver_mobile")
+	@ApiField("receiver_mobile")
 	private String receiverMobile;
 
-	@JsonField("receiver_name")
+	@ApiField("receiver_name")
 	private String receiverName;
 
-	@JsonField("receiver_phone")
+	@ApiField("receiver_phone")
 	private String receiverPhone;
 
-	@JsonField("seller_confirm")
+	@ApiField("seller_confirm")
 	private String sellerConfirm;
 
-	@JsonField("seller_nick")
+	@ApiField("seller_nick")
 	private String sellerNick;
 
-	@JsonField("status")
+	@ApiField("status")
 	private String status;
 
-	@JsonField("tid")
+	@ApiField("tid")
 	private Long tid;
 
-	@JsonField("type")
+	@ApiField("type")
 	private String type;
 
 	public String getBuyerNick() {
