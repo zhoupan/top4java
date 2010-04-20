@@ -35,6 +35,9 @@ public class Trade extends BaseObject {
 	@ApiField("buyer_email")
 	private String buyerEmail;
 
+	@ApiField("buyer_flag")
+	private Integer buyerFlag;
+
 	@ApiField("buyer_memo")
 	private String buyerMemo;
 
@@ -144,6 +147,9 @@ public class Trade extends BaseObject {
 	@ApiField("seller_email")
 	private String sellerEmail;
 
+	@ApiField("seller_flag")
+	private Integer sellerFlag;
+
 	@ApiField("seller_memo")
 	private String sellerMemo;
 
@@ -228,6 +234,13 @@ public class Trade extends BaseObject {
 	}
 	public void setBuyerEmail(String buyerEmail) {
 		this.buyerEmail = buyerEmail;
+	}
+
+	public Integer getBuyerFlag() {
+		return this.buyerFlag;
+	}
+	public void setBuyerFlag(Integer buyerFlag) {
+		this.buyerFlag = buyerFlag;
 	}
 
 	public String getBuyerMemo() {
@@ -480,6 +493,13 @@ public class Trade extends BaseObject {
 	}
 	public void setSellerEmail(String sellerEmail) {
 		this.sellerEmail = sellerEmail;
+	}
+
+	public Integer getSellerFlag() {
+		return this.sellerFlag;
+	}
+	public void setSellerFlag(Integer sellerFlag) {
+		this.sellerFlag = sellerFlag;
 	}
 
 	public String getSellerMemo() {

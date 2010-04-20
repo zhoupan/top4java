@@ -250,6 +250,16 @@ public class TopJsonRestClient {
 		return client.execute(request, new ListJsonParser<Sku>(Sku.class), session);
 	}
 
+	/** TOP API: taobao.item.update **/
+	public Item itemUpdate(ItemUpdateRequest request) {
+		return client.execute(request, new ObjectJsonParser<Item>(Item.class));
+	}
+
+	/** TOP API: taobao.item.update **/
+	public Item itemUpdate(ItemUpdateRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<Item>(Item.class), session);
+	}
+
 	/** TOP API: taobao.item.update.delisting **/
 	public Item itemUpdateDelisting(ItemUpdateDelistingRequest request) {
 		return client.execute(request, new ObjectJsonParser<Item>(Item.class));
@@ -267,16 +277,6 @@ public class TopJsonRestClient {
 
 	/** TOP API: taobao.item.update.listing **/
 	public Item itemUpdateListing(ItemUpdateListingRequest request, String session) {
-		return client.execute(request, new ObjectJsonParser<Item>(Item.class), session);
-	}
-
-	/** TOP API: taobao.item.update **/
-	public Item itemUpdate(ItemUpdateRequest request) {
-		return client.execute(request, new ObjectJsonParser<Item>(Item.class));
-	}
-
-	/** TOP API: taobao.item.update **/
-	public Item itemUpdate(ItemUpdateRequest request, String session) {
 		return client.execute(request, new ObjectJsonParser<Item>(Item.class), session);
 	}
 
@@ -618,6 +618,56 @@ public class TopJsonRestClient {
 	/** TOP API: taobao.notify.user.authorize **/
 	public AuthorizeMessage notifyUserAuthorize(NotifyUserAuthorizeRequest request, String session) {
 		return client.execute(request, new ObjectJsonParser<AuthorizeMessage>(AuthorizeMessage.class), session);
+	}
+
+	/** TOP API: taobao.picture.category.add **/
+	public void pictureCategoryAdd(PictureCategoryAddRequest request) {
+		client.execute(request, new StringParser());
+	}
+
+	/** TOP API: taobao.picture.category.add **/
+	public void pictureCategoryAdd(PictureCategoryAddRequest request, String session) {
+		client.execute(request, new StringParser(), session);
+	}
+
+	/** TOP API: taobao.picture.category.get **/
+	public PageList<PictureCategory> pictureCategoryGet(PictureCategoryGetRequest request) {
+		return client.execute(request, new ListJsonParser<PictureCategory>(PictureCategory.class));
+	}
+
+	/** TOP API: taobao.picture.category.get **/
+	public PageList<PictureCategory> pictureCategoryGet(PictureCategoryGetRequest request, String session) {
+		return client.execute(request, new ListJsonParser<PictureCategory>(PictureCategory.class), session);
+	}
+
+	/** TOP API: taobao.picture.delete **/
+	public void pictureDelete(PictureDeleteRequest request) {
+		client.execute(request, new StringParser());
+	}
+
+	/** TOP API: taobao.picture.delete **/
+	public void pictureDelete(PictureDeleteRequest request, String session) {
+		client.execute(request, new StringParser(), session);
+	}
+
+	/** TOP API: taobao.picture.get **/
+	public PageList<Picture> pictureGet(PictureGetRequest request) {
+		return client.execute(request, new ListJsonParser<Picture>(Picture.class));
+	}
+
+	/** TOP API: taobao.picture.get **/
+	public PageList<Picture> pictureGet(PictureGetRequest request, String session) {
+		return client.execute(request, new ListJsonParser<Picture>(Picture.class), session);
+	}
+
+	/** TOP API: taobao.picture.upload **/
+	public void pictureUpload(PictureUploadRequest request) {
+		client.execute(request, new StringParser());
+	}
+
+	/** TOP API: taobao.picture.upload **/
+	public void pictureUpload(PictureUploadRequest request, String session) {
+		client.execute(request, new StringParser(), session);
 	}
 
 	/** TOP API: taobao.postage.add **/
