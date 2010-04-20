@@ -12,12 +12,12 @@ import com.taobao.top.util.TopHashMap;
  */
 public class SellercatsListUpdateRequest implements TopRequest {
 
-	private String cid;
+	private Integer cid;
 	private String name;
 	private String pictUrl;
 	private Integer sortOrder;
 
-	public void setCid(String cid) {
+	public void setCid(Integer cid) {
 		this.cid = cid;
 	}
 	public void setName(String name) {

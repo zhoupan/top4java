@@ -23,7 +23,7 @@ public class ItemGameAddRequest implements TopRequest {
 	private String emsFee;
 	private String expressFee;
 	private String freightPayer;
-	private Integer gameType;
+	private String gameType;
 	private Boolean hasDiscount;
 	private Boolean hasInvoice;
 	private Boolean hasShowcase;
@@ -85,7 +85,7 @@ public class ItemGameAddRequest implements TopRequest {
 	public void setFreightPayer(String freightPayer) {
 		this.freightPayer = freightPayer;
 	}
-	public void setGameType(Integer gameType) {
+	public void setGameType(String gameType) {
 		this.gameType = gameType;
 	}
 	public void setHasDiscount(Boolean hasDiscount) {

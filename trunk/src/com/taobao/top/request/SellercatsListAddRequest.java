@@ -13,14 +13,14 @@ import com.taobao.top.util.TopHashMap;
 public class SellercatsListAddRequest implements TopRequest {
 
 	private String name;
-	private String parentCid;
+	private Integer parentCid;
 	private String pictUrl;
 	private Integer sortOrder;
 
 	public void setName(String name) {
 		this.name = name;
 	}
-	public void setParentCid(String parentCid) {
+	public void setParentCid(Integer parentCid) {
 		this.parentCid = parentCid;
 	}
 	public void setPictUrl(String pictUrl) {

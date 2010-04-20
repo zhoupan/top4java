@@ -16,7 +16,7 @@ public class ProductImgUploadRequest implements TopRequest {
 
 	private Long id;
 	private FileItem image;
-	private String isMajor;
+	private Boolean isMajor;
 	private Integer position;
 	private Long productId;
 
@@ -26,7 +26,7 @@ public class ProductImgUploadRequest implements TopRequest {
 	public void setImage(FileItem image) {
 		this.image = image;
 	}
-	public void setIsMajor(String isMajor) {
+	public void setIsMajor(Boolean isMajor) {
 		this.isMajor = isMajor;
 	}
 	public void setPosition(Integer position) {
