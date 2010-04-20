@@ -12,12 +12,12 @@ import com.taobao.top.util.TopHashMap;
  */
 public class TaobaokeCaturlGetRequest implements TopRequest {
 
-	private String cid;
+	private Integer cid;
 	private String nick;
 	private String outerCode;
 	private String q;
 
-	public void setCid(String cid) {
+	public void setCid(Integer cid) {
 		this.cid = cid;
 	}
 	public void setNick(String nick) {

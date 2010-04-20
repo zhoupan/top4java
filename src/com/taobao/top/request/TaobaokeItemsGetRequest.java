@@ -14,7 +14,7 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 
 	private String area;
 	private String autoSend;
-	private String cid;
+	private Integer cid;
 	private String endCommissionNum;
 	private String endCommissionRate;
 	private String endCredit;
@@ -39,7 +39,7 @@ public class TaobaokeItemsGetRequest implements TopRequest {
 	public void setAutoSend(String autoSend) {
 		this.autoSend = autoSend;
 	}
-	public void setCid(String cid) {
+	public void setCid(Integer cid) {
 		this.cid = cid;
 	}
 	public void setEndCommissionNum(String endCommissionNum) {

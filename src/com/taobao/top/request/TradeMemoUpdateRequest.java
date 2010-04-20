@@ -12,9 +12,13 @@ import com.taobao.top.util.TopHashMap;
  */
 public class TradeMemoUpdateRequest implements TopRequest {
 
+	private Integer flag;
 	private String memo;
 	private Long tid;
 
+	public void setFlag(Integer flag) {
+		this.flag = flag;
+	}
 	public void setMemo(String memo) {
 		this.memo = memo;
 	}
@@ -28,6 +32,7 @@ public class TradeMemoUpdateRequest implements TopRequest {
 
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
+		params.put("flag", this.flag);
 		params.put("memo", this.memo);
 		params.put("tid", this.tid);
 		return params;
