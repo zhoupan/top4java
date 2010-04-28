@@ -13,7 +13,7 @@ import com.taobao.top.util.TopHashMap;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class ItemGameAddRequest implements TopRequest {
+public class ItemGameAddRequest implements TopUploadRequest {
 
 	private String approveStatus;
 	private Long auctionPoint;

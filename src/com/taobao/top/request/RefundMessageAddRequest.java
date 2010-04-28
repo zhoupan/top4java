@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class RefundMessageAddRequest implements TopRequest {
+public class RefundMessageAddRequest implements TopUploadRequest {
 
 	private String content;
 	private FileItem image;

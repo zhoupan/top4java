@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class ProductPropimgUploadRequest implements TopRequest {
+public class ProductPropimgUploadRequest implements TopUploadRequest {
 
 	private Long id;
 	private FileItem image;

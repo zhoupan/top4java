@@ -13,7 +13,7 @@ import com.taobao.top.util.TopHashMap;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class ItemextraUpdateRequest implements TopRequest {
+public class ItemextraUpdateRequest implements TopUploadRequest {
 
 	private String approveStatus;
 	private Date delistTime;

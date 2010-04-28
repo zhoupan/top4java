@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class AppSubappApplyRequest implements TopRequest {
+public class AppSubappApplyRequest implements TopUploadRequest {
 
 	private String callbackUrl;
 	private FileItem logo;
