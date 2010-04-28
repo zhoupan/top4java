@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class PictureUploadRequest implements TopRequest {
+public class PictureUploadRequest implements TopUploadRequest {
 
 	private String imageInputTitle;
 	private FileItem img;

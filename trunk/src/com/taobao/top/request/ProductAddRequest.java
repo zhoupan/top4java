@@ -12,7 +12,7 @@ import com.taobao.top.util.TopHashMap;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class ProductAddRequest implements TopRequest {
+public class ProductAddRequest implements TopUploadRequest {
 
 	private String binds;
 	private Long cid;
