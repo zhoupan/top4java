@@ -7,7 +7,7 @@ import com.taobao.top.mapping.ApiListClass;
 
 /**
  * Order Data Structure.
- *
+ * 
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
@@ -88,6 +88,8 @@ public class Order extends BaseObject {
 
 	@ApiField("status")
 	private String status;
+
+	private Long tid;
 
 	@ApiField("timeout_action_time")
 	private String timeoutActionTime;
@@ -264,6 +266,13 @@ public class Order extends BaseObject {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+	public void setTid(Long tid) {
+		this.tid = tid;
 	}
 
 	public String getTimeoutActionTime() {

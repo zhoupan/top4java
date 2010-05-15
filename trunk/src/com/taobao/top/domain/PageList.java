@@ -1,5 +1,6 @@
 package com.taobao.top.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,9 @@ import java.util.List;
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class PageList<T> {
+public class PageList<T> implements Serializable {
+
+	private static final long serialVersionUID = 1238749498860238250L;
 
 	/** 所有记录数 */
 	private Long totalResults;
