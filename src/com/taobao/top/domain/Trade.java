@@ -94,7 +94,7 @@ public class Trade extends BaseObject {
 	private List<Order> orders;
 
 	@ApiField("pay_time")
-	private String payTime;
+	private Date payTime;
 
 	@ApiField("payment")
 	private String payment;
@@ -369,10 +369,10 @@ public class Trade extends BaseObject {
 		this.orders = orders;
 	}
 
-	public String getPayTime() {
+	public Date getPayTime() {
 		return this.payTime;
 	}
-	public void setPayTime(String payTime) {
+	public void setPayTime(Date payTime) {
 		this.payTime = payTime;
 	}
 
