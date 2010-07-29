@@ -123,22 +123,34 @@ public abstract class TopUtils {
 	}
 
 	/**
-	 * 解释TOP回调参数为键值对。
+	 * 使用UTF-8字符集解释TOP回调参数为键值对。
 	 * 
-	 * @param topParams 经过BASE64编码的字符串
+	 * @param params 经过BASE64编码的字符串
 	 * @return 键值对
 	 * @throws IOException
 	 */
-	public static Map<String, String> decodeTopParams(String topParams) throws IOException {
-		if (StrUtils.isEmpty(topParams)) {
+	public static Map<String, String> decodeTopParams(String params) throws IOException {
+		return decodeTopParams(params, Constants.CHARSET_UTF8);
+	}
+
+	/**
+	 * 解释TOP回调参数为键值对。
+	 * 
+	 * @param params 经过BASE64编码的字符串
+	 * @param charset 字符集，如GBK, UTF-8
+	 * @return 键值对
+	 * @throws IOException
+	 */
+	public static Map<String, String> decodeTopParams(String params, String charset) throws IOException {
+		if (StrUtils.isEmpty(params)) {
 			return null;
 		}
 
 		BASE64Decoder decoder = new BASE64Decoder();
-		byte[] buffer = decoder.decodeBuffer(topParams);
-		String originTopParams = new String(buffer, Constants.CHARSET_UTF8);
+		byte[] buffer = decoder.decodeBuffer(params);
+		String decodedParams = new String(buffer, Constants.CHARSET_UTF8);
 
-		return WebUtils.splitUrlQuery(originTopParams);
+		return WebUtils.splitUrlQuery(decodedParams);
 	}
 
 	/**
