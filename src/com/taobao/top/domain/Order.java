@@ -29,6 +29,9 @@ public class Order extends BaseObject {
 	@ApiField("iid")
 	private String iid;
 
+	@ApiField("num_iid")
+	private Long numIid;
+
 	@ApiField("item_meal_id")
 	private Long itemMealId;
 
@@ -126,6 +129,13 @@ public class Order extends BaseObject {
 	}
 	public void setIid(String iid) {
 		this.iid = iid;
+	}
+
+	public Long getNumIid() {
+		return this.numIid;
+	}
+	public void setNumIid(Long numIid) {
+		this.numIid = numIid;
 	}
 
 	public Long getItemMealId() {
