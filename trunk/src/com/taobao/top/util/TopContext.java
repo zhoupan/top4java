@@ -17,6 +17,7 @@ public class TopContext {
 	public static final String PARAMETERS = "top_parameters";
 	public static final String USER_ID = "visitor_id";
 	public static final String USER_NICK = "visitor_nick";
+	public static final String NO_LOGIN = "no_login";
 
 	private Map<String, String> parameters = new HashMap<String, String>();
 	private String callbackUrl;
