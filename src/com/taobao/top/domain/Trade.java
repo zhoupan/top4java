@@ -432,6 +432,17 @@ public class Trade extends BaseObject {
 		this.receiverAddress = receiverAddress;
 	}
 
+	public String getReceiverAddr() {
+		StringBuilder addr = new StringBuilder();
+		addr.append(this.receiverState);
+		addr.append(" ").append(this.receiverCity);
+		if (this.receiverDistrict != null) {
+			addr.append(" ").append(this.receiverDistrict);
+		}
+		addr.append(" ").append(this.receiverAddress);
+		return addr.toString();
+	}
+
 	public String getReceiverCity() {
 		return this.receiverCity;
 	}
