@@ -120,6 +120,8 @@ public class Trade extends BaseObject {
 	@ApiField("receiver_address")
 	private String receiverAddress;
 
+	private String receiverAddr;
+
 	@ApiField("receiver_city")
 	private String receiverCity;
 
@@ -433,14 +435,10 @@ public class Trade extends BaseObject {
 	}
 
 	public String getReceiverAddr() {
-		StringBuilder addr = new StringBuilder();
-		addr.append(this.receiverState);
-		addr.append(" ").append(this.receiverCity);
-		if (this.receiverDistrict != null) {
-			addr.append(" ").append(this.receiverDistrict);
-		}
-		addr.append(" ").append(this.receiverAddress);
-		return addr.toString();
+		return this.receiverAddr;
+	}
+	public void setReceiverAddr(String receiverAddr) {
+		this.receiverAddr = receiverAddr;
 	}
 
 	public String getReceiverCity() {
