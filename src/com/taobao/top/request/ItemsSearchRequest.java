@@ -12,12 +12,15 @@ import com.taobao.top.util.TopHashMap;
  */
 public class ItemsSearchRequest implements TopRequest {
 
+	private Boolean auctionFlag;
+	private Boolean autoPost;
 	private Long cid;
 	private Integer endPrice;
 	private Integer endScore;
 	private Integer endVolume;
 	private String fields;
 	private Boolean genuineSecurity;
+	private Boolean hasDiscount;
 	private Boolean is3D;
 	private Boolean isCod;
 	private Boolean isMall;
@@ -40,6 +43,12 @@ public class ItemsSearchRequest implements TopRequest {
 	private String stuffStatus;
 	private Boolean wwStatus;
 
+	public void setAuctionFlag(Boolean auctionFlag) {
+		this.auctionFlag = auctionFlag;
+	}
+	public void setAutoPost(Boolean autoPost) {
+		this.autoPost = autoPost;
+	}
 	public void setCid(Long cid) {
 		this.cid = cid;
 	}
@@ -57,6 +66,9 @@ public class ItemsSearchRequest implements TopRequest {
 	}
 	public void setGenuineSecurity(Boolean genuineSecurity) {
 		this.genuineSecurity = genuineSecurity;
+	}
+	public void setHasDiscount(Boolean hasDiscount) {
+		this.hasDiscount = hasDiscount;
 	}
 	public void setIs3D(Boolean is3D) {
 		this.is3D = is3D;
@@ -128,12 +140,15 @@ public class ItemsSearchRequest implements TopRequest {
 
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
+		params.put("auction_flag", this.auctionFlag);
+		params.put("auto_post", this.autoPost);
 		params.put("cid", this.cid);
 		params.put("end_price", this.endPrice);
 		params.put("end_score", this.endScore);
 		params.put("end_volume", this.endVolume);
 		params.put("fields", this.fields);
 		params.put("genuine_security", this.genuineSecurity);
+		params.put("has_discount", this.hasDiscount);
 		params.put("is_3D", this.is3D);
 		params.put("is_cod", this.isCod);
 		params.put("is_mall", this.isMall);

@@ -76,8 +76,14 @@ public class Product extends BaseObject {
 	@ApiField("sale_props_str")
 	private String salePropsStr;
 
+	@ApiField("status")
+	private Long status;
+
 	@ApiField("tsc")
 	private String tsc;
+
+	@ApiField("vertical_market")
+	private Long verticalMarket;
 
 	public String getBinds() {
 		return this.binds;
@@ -205,11 +211,25 @@ public class Product extends BaseObject {
 		this.salePropsStr = salePropsStr;
 	}
 
+	public Long getStatus() {
+		return this.status;
+	}
+	public void setStatus(Long status) {
+		this.status = status;
+	}
+
 	public String getTsc() {
 		return this.tsc;
 	}
 	public void setTsc(String tsc) {
 		this.tsc = tsc;
+	}
+
+	public Long getVerticalMarket() {
+		return this.verticalMarket;
+	}
+	public void setVerticalMarket(Long verticalMarket) {
+		this.verticalMarket = verticalMarket;
 	}
 
 }

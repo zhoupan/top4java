@@ -27,6 +27,9 @@ public class PostageUpdateRequest implements TopRequest {
 	private String postageModeOptTypes;
 	private String postageModePrices;
 	private String postageModeTypes;
+	private Boolean removeEms;
+	private Boolean removeExpress;
+	private Boolean removePost;
 
 	public void setEmsIncrease(String emsIncrease) {
 		this.emsIncrease = emsIncrease;
@@ -73,6 +76,15 @@ public class PostageUpdateRequest implements TopRequest {
 	public void setPostageModeTypes(String postageModeTypes) {
 		this.postageModeTypes = postageModeTypes;
 	}
+	public void setRemoveEms(Boolean removeEms) {
+		this.removeEms = removeEms;
+	}
+	public void setRemoveExpress(Boolean removeExpress) {
+		this.removeExpress = removeExpress;
+	}
+	public void setRemovePost(Boolean removePost) {
+		this.removePost = removePost;
+	}
 
 	public String getApiName() {
 		return "taobao.postage.update";
@@ -95,6 +107,9 @@ public class PostageUpdateRequest implements TopRequest {
 		params.put("postage_mode_optTypes", this.postageModeOptTypes);
 		params.put("postage_mode_prices", this.postageModePrices);
 		params.put("postage_mode_types", this.postageModeTypes);
+		params.put("remove_ems", this.removeEms);
+		params.put("remove_express", this.removeExpress);
+		params.put("remove_post", this.removePost);
 		return params;
 	}
 

@@ -53,6 +53,9 @@ public class Refund extends BaseObject {
 	@ApiField("num")
 	private Integer num;
 
+	@ApiField("num_iid")
+	private Long numIid;
+
 	@ApiField("oid")
 	private Long oid;
 
@@ -180,6 +183,13 @@ public class Refund extends BaseObject {
 	}
 	public void setNum(Integer num) {
 		this.num = num;
+	}
+
+	public Long getNumIid() {
+		return this.numIid;
+	}
+	public void setNumIid(Long numIid) {
+		this.numIid = numIid;
 	}
 
 	public Long getOid() {

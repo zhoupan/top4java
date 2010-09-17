@@ -25,7 +25,7 @@ public class ItemextraAddRequest implements TopUploadRequest {
 	private String memo;
 	private Long numIid;
 	private Long options;
-	private String picUrl;
+	private String picPath;
 	private String reservePrice;
 	private String sellerCids;
 	private Long shopId;
@@ -68,8 +68,8 @@ public class ItemextraAddRequest implements TopUploadRequest {
 	public void setOptions(Long options) {
 		this.options = options;
 	}
-	public void setPicUrl(String picUrl) {
-		this.picUrl = picUrl;
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
 	}
 	public void setReservePrice(String reservePrice) {
 		this.reservePrice = reservePrice;
@@ -120,7 +120,7 @@ public class ItemextraAddRequest implements TopUploadRequest {
 		params.put("memo", this.memo);
 		params.put("num_iid", this.numIid);
 		params.put("options", this.options);
-		params.put("pic_url", this.picUrl);
+		params.put("pic_path", this.picPath);
 		params.put("reserve_price", this.reservePrice);
 		params.put("seller_cids", this.sellerCids);
 		params.put("shop_id", this.shopId);

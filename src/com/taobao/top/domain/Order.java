@@ -7,7 +7,7 @@ import com.taobao.top.mapping.ApiListClass;
 
 /**
  * Order Data Structure.
- * 
+ *
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
@@ -21,16 +21,13 @@ public class Order extends BaseObject {
 	private String adjustFee;
 
 	@ApiField("buyer_rate")
-	private String buyerRate;
+	private Boolean buyerRate;
 
 	@ApiField("discount_fee")
 	private String discountFee;
 
 	@ApiField("iid")
 	private String iid;
-
-	@ApiField("num_iid")
-	private Long numIid;
 
 	@ApiField("item_meal_id")
 	private Long itemMealId;
@@ -46,6 +43,9 @@ public class Order extends BaseObject {
 
 	@ApiField("num")
 	private Integer num;
+
+	@ApiField("num_iid")
+	private Long numIid;
 
 	@ApiField("oid")
 	private Long oid;
@@ -72,7 +72,7 @@ public class Order extends BaseObject {
 	private String refundStatus;
 
 	@ApiField("seller_rate")
-	private String sellerRate;
+	private Boolean sellerRate;
 
 	@ApiField("seller_type")
 	private String sellerType;
@@ -110,10 +110,10 @@ public class Order extends BaseObject {
 		this.adjustFee = adjustFee;
 	}
 
-	public String getBuyerRate() {
+	public Boolean getBuyerRate() {
 		return this.buyerRate;
 	}
-	public void setBuyerRate(String buyerRate) {
+	public void setBuyerRate(Boolean buyerRate) {
 		this.buyerRate = buyerRate;
 	}
 
@@ -129,13 +129,6 @@ public class Order extends BaseObject {
 	}
 	public void setIid(String iid) {
 		this.iid = iid;
-	}
-
-	public Long getNumIid() {
-		return this.numIid;
-	}
-	public void setNumIid(Long numIid) {
-		this.numIid = numIid;
 	}
 
 	public Long getItemMealId() {
@@ -171,6 +164,13 @@ public class Order extends BaseObject {
 	}
 	public void setNum(Integer num) {
 		this.num = num;
+	}
+
+	public Long getNumIid() {
+		return this.numIid;
+	}
+	public void setNumIid(Long numIid) {
+		this.numIid = numIid;
 	}
 
 	public Long getOid() {
@@ -229,10 +229,10 @@ public class Order extends BaseObject {
 		this.refundStatus = refundStatus;
 	}
 
-	public String getSellerRate() {
+	public Boolean getSellerRate() {
 		return this.sellerRate;
 	}
-	public void setSellerRate(String sellerRate) {
+	public void setSellerRate(Boolean sellerRate) {
 		this.sellerRate = sellerRate;
 	}
 

@@ -15,6 +15,7 @@ public class TaobaokeItemsConvertRequest implements TopRequest {
 	private String fields;
 	private String iids;
 	private String nick;
+	private String numIids;
 	private String outerCode;
 
 	public void setFields(String fields) {
@@ -25,6 +26,9 @@ public class TaobaokeItemsConvertRequest implements TopRequest {
 	}
 	public void setNick(String nick) {
 		this.nick = nick;
+	}
+	public void setNumIids(String numIids) {
+		this.numIids = numIids;
 	}
 	public void setOuterCode(String outerCode) {
 		this.outerCode = outerCode;
@@ -39,6 +43,7 @@ public class TaobaokeItemsConvertRequest implements TopRequest {
 		params.put("fields", this.fields);
 		params.put("iids", this.iids);
 		params.put("nick", this.nick);
+		params.put("num_iids", this.numIids);
 		params.put("outer_code", this.outerCode);
 		return params;
 	}

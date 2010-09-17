@@ -18,6 +18,8 @@ public class ProductsSearchRequest implements TopRequest {
 	private Integer pageSize;
 	private String props;
 	private String q;
+	private String status;
+	private Long verticalMarket;
 
 	public void setCid(Long cid) {
 		this.cid = cid;
@@ -37,6 +39,12 @@ public class ProductsSearchRequest implements TopRequest {
 	public void setQ(String q) {
 		this.q = q;
 	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public void setVerticalMarket(Long verticalMarket) {
+		this.verticalMarket = verticalMarket;
+	}
 
 	public String getApiName() {
 		return "taobao.products.search";
@@ -50,6 +58,8 @@ public class ProductsSearchRequest implements TopRequest {
 		params.put("page_size", this.pageSize);
 		params.put("props", this.props);
 		params.put("q", this.q);
+		params.put("status", this.status);
+		params.put("vertical_market", this.verticalMarket);
 		return params;
 	}
 

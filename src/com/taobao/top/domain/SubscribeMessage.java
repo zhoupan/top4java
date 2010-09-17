@@ -27,12 +27,22 @@ public class SubscribeMessage extends BaseObject {
 	@ApiField("modified")
 	private Date modified;
 
+	@ApiField("notify_info")
+	@ApiListField("notify_infos")
+	private List<NotifyInfo> notifyInfos;
+
+	@ApiField("notify_url")
+	private String notifyUrl;
+
 	@ApiField("start_date")
 	private String startDate;
 
 	@ApiField("subscription")
 	@ApiListField("subscriptions")
 	private List<Subscription> subscriptions;
+
+	@ApiField("valid")
+	private Boolean valid;
 
 	public String getAppKey() {
 		return this.appKey;
@@ -55,6 +65,20 @@ public class SubscribeMessage extends BaseObject {
 		this.modified = modified;
 	}
 
+	public List<NotifyInfo> getNotifyInfos() {
+		return this.notifyInfos;
+	}
+	public void setNotifyInfos(List<NotifyInfo> notifyInfos) {
+		this.notifyInfos = notifyInfos;
+	}
+
+	public String getNotifyUrl() {
+		return this.notifyUrl;
+	}
+	public void setNotifyUrl(String notifyUrl) {
+		this.notifyUrl = notifyUrl;
+	}
+
 	public String getStartDate() {
 		return this.startDate;
 	}
@@ -67,6 +91,13 @@ public class SubscribeMessage extends BaseObject {
 	}
 	public void setSubscriptions(List<Subscription> subscriptions) {
 		this.subscriptions = subscriptions;
+	}
+
+	public Boolean getValid() {
+		return this.valid;
+	}
+	public void setValid(Boolean valid) {
+		this.valid = valid;
 	}
 
 }

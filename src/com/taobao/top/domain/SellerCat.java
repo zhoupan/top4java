@@ -18,7 +18,7 @@ public class SellerCat extends BaseObject {
 	private static final long serialVersionUID = 1L;
 
 	@ApiField("cid")
-	private String cid;
+	private Integer cid;
 
 	@ApiField("created")
 	private Date created;
@@ -30,7 +30,7 @@ public class SellerCat extends BaseObject {
 	private String name;
 
 	@ApiField("parent_cid")
-	private String parentCid;
+	private Integer parentCid;
 
 	@ApiField("pic_url")
 	private String picUrl;
@@ -38,10 +38,10 @@ public class SellerCat extends BaseObject {
 	@ApiField("sort_order")
 	private Integer sortOrder;
 
-	public String getCid() {
+	public Integer getCid() {
 		return this.cid;
 	}
-	public void setCid(String cid) {
+	public void setCid(Integer cid) {
 		this.cid = cid;
 	}
 
@@ -66,10 +66,10 @@ public class SellerCat extends BaseObject {
 		this.name = name;
 	}
 
-	public String getParentCid() {
+	public Integer getParentCid() {
 		return this.parentCid;
 	}
-	public void setParentCid(String parentCid) {
+	public void setParentCid(Integer parentCid) {
 		this.parentCid = parentCid;
 	}
 

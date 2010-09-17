@@ -6,28 +6,25 @@ import java.util.Map;
 import com.taobao.top.util.TopHashMap;
 
 /**
- * TOP API: taobao.trades.sold.increment.get
+ * TOP API: taobao.increment.refunds.get
  * 
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class TradesSoldIncrementGetRequest implements TopRequest {
+public class IncrementRefundsGetRequest implements TopRequest {
 
 	private Date endModified;
-	private String fields;
+	private String nick;
 	private Integer pageNo;
 	private Integer pageSize;
 	private Date startModified;
 	private String status;
-	private String tag;
-	private String type;
-	private Boolean useHasNext;
 
 	public void setEndModified(Date endModified) {
 		this.endModified = endModified;
 	}
-	public void setFields(String fields) {
-		this.fields = fields;
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
@@ -41,31 +38,19 @@ public class TradesSoldIncrementGetRequest implements TopRequest {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public void setTag(String tag) {
-		this.tag = tag;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	public void setUseHasNext(Boolean useHasNext) {
-		this.useHasNext = useHasNext;
-	}
 
 	public String getApiName() {
-		return "taobao.trades.sold.increment.get";
+		return "taobao.increment.refunds.get";
 	}
 
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
 		params.put("end_modified", this.endModified);
-		params.put("fields", this.fields);
+		params.put("nick", this.nick);
 		params.put("page_no", this.pageNo);
 		params.put("page_size", this.pageSize);
 		params.put("start_modified", this.startModified);
 		params.put("status", this.status);
-		params.put("tag", this.tag);
-		params.put("type", this.type);
-		params.put("use_has_next", this.useHasNext);
 		return params;
 	}
 

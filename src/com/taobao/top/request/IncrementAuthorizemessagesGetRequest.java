@@ -5,29 +5,27 @@ import java.util.Map;
 import com.taobao.top.util.TopHashMap;
 
 /**
- * TOP API: taobao.trades.get
+ * TOP API: taobao.increment.authorizemessages.get
  * 
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class TradesGetRequest implements TopRequest {
+public class IncrementAuthorizemessagesGetRequest implements TopRequest {
 
+	private Integer expiredDay;
 	private String fields;
-	private String iid;
-	private Long numIid;
+	private String nicks;
 	private Integer pageNo;
 	private Integer pageSize;
-	private String sellerNick;
-	private String type;
 
+	public void setExpiredDay(Integer expiredDay) {
+		this.expiredDay = expiredDay;
+	}
 	public void setFields(String fields) {
 		this.fields = fields;
 	}
-	public void setIid(String iid) {
-		this.iid = iid;
-	}
-	public void setNumIid(Long numIid) {
-		this.numIid = numIid;
+	public void setNicks(String nicks) {
+		this.nicks = nicks;
 	}
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
@@ -35,26 +33,18 @@ public class TradesGetRequest implements TopRequest {
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
-	public void setSellerNick(String sellerNick) {
-		this.sellerNick = sellerNick;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
 
 	public String getApiName() {
-		return "taobao.trades.get";
+		return "taobao.increment.authorizemessages.get";
 	}
 
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
+		params.put("expired_day", this.expiredDay);
 		params.put("fields", this.fields);
-		params.put("iid", this.iid);
-		params.put("num_iid", this.numIid);
+		params.put("nicks", this.nicks);
 		params.put("page_no", this.pageNo);
 		params.put("page_size", this.pageSize);
-		params.put("seller_nick", this.sellerNick);
-		params.put("type", this.type);
 		return params;
 	}
 

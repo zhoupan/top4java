@@ -19,7 +19,7 @@ public class Shop extends BaseObject {
 	private String bulletin;
 
 	@ApiField("cid")
-	private String cid;
+	private Long cid;
 
 	@ApiField("created")
 	private Date created;
@@ -43,7 +43,7 @@ public class Shop extends BaseObject {
 	private ShopScore shopScore;
 
 	@ApiField("sid")
-	private String sid;
+	private Long sid;
 
 	@ApiField("title")
 	private String title;
@@ -55,10 +55,10 @@ public class Shop extends BaseObject {
 		this.bulletin = bulletin;
 	}
 
-	public String getCid() {
+	public Long getCid() {
 		return this.cid;
 	}
-	public void setCid(String cid) {
+	public void setCid(Long cid) {
 		this.cid = cid;
 	}
 
@@ -111,10 +111,10 @@ public class Shop extends BaseObject {
 		this.shopScore = shopScore;
 	}
 
-	public String getSid() {
+	public Long getSid() {
 		return this.sid;
 	}
-	public void setSid(String sid) {
+	public void setSid(Long sid) {
 		this.sid = sid;
 	}
 

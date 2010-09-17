@@ -1,5 +1,6 @@
 package com.taobao.top.request;
 
+import java.util.Date;
 import java.util.Map;
 
 import com.taobao.top.util.TopHashMap;
@@ -13,6 +14,7 @@ import com.taobao.top.util.TopHashMap;
 public class ItemsOnsaleGetRequest implements TopRequest {
 
 	private Long cid;
+	private Date endModified;
 	private String fields;
 	private Boolean hasDiscount;
 	private Boolean hasShowcase;
@@ -23,9 +25,13 @@ public class ItemsOnsaleGetRequest implements TopRequest {
 	private Integer pageSize;
 	private String q;
 	private String sellerCids;
+	private Date startModified;
 
 	public void setCid(Long cid) {
 		this.cid = cid;
+	}
+	public void setEndModified(Date endModified) {
+		this.endModified = endModified;
 	}
 	public void setFields(String fields) {
 		this.fields = fields;
@@ -57,6 +63,9 @@ public class ItemsOnsaleGetRequest implements TopRequest {
 	public void setSellerCids(String sellerCids) {
 		this.sellerCids = sellerCids;
 	}
+	public void setStartModified(Date startModified) {
+		this.startModified = startModified;
+	}
 
 	public String getApiName() {
 		return "taobao.items.onsale.get";
@@ -65,6 +74,7 @@ public class ItemsOnsaleGetRequest implements TopRequest {
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
 		params.put("cid", this.cid);
+		params.put("end_modified", this.endModified);
 		params.put("fields", this.fields);
 		params.put("has_discount", this.hasDiscount);
 		params.put("has_showcase", this.hasShowcase);
@@ -75,6 +85,7 @@ public class ItemsOnsaleGetRequest implements TopRequest {
 		params.put("page_size", this.pageSize);
 		params.put("q", this.q);
 		params.put("seller_cids", this.sellerCids);
+		params.put("start_modified", this.startModified);
 		return params;
 	}
 
