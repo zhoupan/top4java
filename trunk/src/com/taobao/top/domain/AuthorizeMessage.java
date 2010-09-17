@@ -38,6 +38,9 @@ public class AuthorizeMessage extends BaseObject {
 	@ApiField("status")
 	private String status;
 
+	@ApiField("valid")
+	private Boolean valid;
+
 	public String getAppKey() {
 		return this.appKey;
 	}
@@ -85,6 +88,13 @@ public class AuthorizeMessage extends BaseObject {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Boolean getValid() {
+		return this.valid;
+	}
+	public void setValid(Boolean valid) {
+		this.valid = valid;
 	}
 
 }

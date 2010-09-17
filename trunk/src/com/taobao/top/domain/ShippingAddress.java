@@ -1,5 +1,6 @@
 package com.taobao.top.domain;
 
+import java.util.Date;
 import com.taobao.top.mapping.ApiClass;
 import com.taobao.top.mapping.ApiField;
 import com.taobao.top.mapping.ApiListClass;
@@ -17,7 +18,10 @@ public class ShippingAddress extends BaseObject {
 	private static final long serialVersionUID = 1L;
 
 	@ApiField("address_id")
-	private Integer addressId;
+	private Long addressId;
+
+	@ApiField("created")
+	private Date created;
 
 	@ApiField("is_default")
 	private Boolean isDefault;
@@ -34,11 +38,18 @@ public class ShippingAddress extends BaseObject {
 	@ApiField("receiver_name")
 	private String receiverName;
 
-	public Integer getAddressId() {
+	public Long getAddressId() {
 		return this.addressId;
 	}
-	public void setAddressId(Integer addressId) {
+	public void setAddressId(Long addressId) {
 		this.addressId = addressId;
+	}
+
+	public Date getCreated() {
+		return this.created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
 	public Boolean getIsDefault() {

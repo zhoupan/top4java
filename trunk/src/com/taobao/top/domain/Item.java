@@ -86,6 +86,9 @@ public class Item extends BaseObject {
 	@ApiField("is_ex")
 	private Boolean isEx;
 
+	@ApiField("is_prepay")
+	private Boolean isPrepay;
+
 	@ApiField("is_taobao")
 	private Boolean isTaobao;
 
@@ -138,6 +141,9 @@ public class Item extends BaseObject {
 	@ApiField("product_id")
 	private Long productId;
 
+	@ApiField("promoted_service")
+	private String promotedService;
+
 	@ApiField("prop_img")
 	@ApiListField("prop_imgs")
 	private List<PropImg> propImgs;
@@ -180,8 +186,14 @@ public class Item extends BaseObject {
 	@ApiListField("videos")
 	private List<Video> videos;
 
+	@ApiField("violation")
+	private Boolean violation;
+
 	@ApiField("volume")
 	private Long volume;
+
+	@ApiField("ww_status")
+	private Boolean wwStatus;
 
 	public String getApproveStatus() {
 		return this.approveStatus;
@@ -337,6 +349,13 @@ public class Item extends BaseObject {
 		this.isEx = isEx;
 	}
 
+	public Boolean getIsPrepay() {
+		return this.isPrepay;
+	}
+	public void setIsPrepay(Boolean isPrepay) {
+		this.isPrepay = isPrepay;
+	}
+
 	public Boolean getIsTaobao() {
 		return this.isTaobao;
 	}
@@ -456,6 +475,13 @@ public class Item extends BaseObject {
 		this.productId = productId;
 	}
 
+	public String getPromotedService() {
+		return this.promotedService;
+	}
+	public void setPromotedService(String promotedService) {
+		this.promotedService = promotedService;
+	}
+
 	public List<PropImg> getPropImgs() {
 		return this.propImgs;
 	}
@@ -547,11 +573,25 @@ public class Item extends BaseObject {
 		this.videos = videos;
 	}
 
+	public Boolean getViolation() {
+		return this.violation;
+	}
+	public void setViolation(Boolean violation) {
+		this.violation = violation;
+	}
+
 	public Long getVolume() {
 		return this.volume;
 	}
 	public void setVolume(Long volume) {
 		this.volume = volume;
+	}
+
+	public Boolean getWwStatus() {
+		return this.wwStatus;
+	}
+	public void setWwStatus(Boolean wwStatus) {
+		this.wwStatus = wwStatus;
 	}
 
 }

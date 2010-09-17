@@ -47,9 +47,6 @@ public class User extends BaseObject {
 	@ApiField("has_more_pic")
 	private Boolean hasMorePic;
 
-	@ApiField("id_card")
-	private String idCard;
-
 	@ApiField("item_img_num")
 	private Integer itemImgNum;
 
@@ -61,6 +58,9 @@ public class User extends BaseObject {
 
 	@ApiField("location")
 	private Location location;
+
+	@ApiField("magazine_subscribe")
+	private Boolean magazineSubscribe;
 
 	@ApiField("mobile")
 	private String mobile;
@@ -100,6 +100,9 @@ public class User extends BaseObject {
 
 	@ApiField("user_id")
 	private Long userId;
+
+	@ApiField("vertical_market")
+	private String verticalMarket;
 
 	public String getAlipayAccount() {
 		return this.alipayAccount;
@@ -171,13 +174,6 @@ public class User extends BaseObject {
 		this.hasMorePic = hasMorePic;
 	}
 
-	public String getIdCard() {
-		return this.idCard;
-	}
-	public void setIdCard(String idCard) {
-		this.idCard = idCard;
-	}
-
 	public Integer getItemImgNum() {
 		return this.itemImgNum;
 	}
@@ -204,6 +200,13 @@ public class User extends BaseObject {
 	}
 	public void setLocation(Location location) {
 		this.location = location;
+	}
+
+	public Boolean getMagazineSubscribe() {
+		return this.magazineSubscribe;
+	}
+	public void setMagazineSubscribe(Boolean magazineSubscribe) {
+		this.magazineSubscribe = magazineSubscribe;
 	}
 
 	public String getMobile() {
@@ -295,6 +298,13 @@ public class User extends BaseObject {
 	}
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+
+	public String getVerticalMarket() {
+		return this.verticalMarket;
+	}
+	public void setVerticalMarket(String verticalMarket) {
+		this.verticalMarket = verticalMarket;
 	}
 
 }

@@ -5,36 +5,36 @@ import java.util.Map;
 import com.taobao.top.util.TopHashMap;
 
 /**
- * TOP API: taobao.items.list.get
+ * TOP API: taobao.taobaoke.interval.report.get
  * 
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
-public class ItemsListGetRequest implements TopRequest {
+public class TaobaokeIntervalReportGetRequest implements TopRequest {
 
+	private String endDate;
 	private String fields;
-	private String iids;
-	private String numIids;
+	private String startDate;
 
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
 	public void setFields(String fields) {
 		this.fields = fields;
 	}
-	public void setIids(String iids) {
-		this.iids = iids;
-	}
-	public void setNumIids(String numIids) {
-		this.numIids = numIids;
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
 	}
 
 	public String getApiName() {
-		return "taobao.items.list.get";
+		return "taobao.taobaoke.interval.report.get";
 	}
 
 	public Map<String, String> getTextParams() {
 		TopHashMap params = new TopHashMap();
+		params.put("end_date", this.endDate);
 		params.put("fields", this.fields);
-		params.put("iids", this.iids);
-		params.put("num_iids", this.numIids);
+		params.put("start_date", this.startDate);
 		return params;
 	}
 

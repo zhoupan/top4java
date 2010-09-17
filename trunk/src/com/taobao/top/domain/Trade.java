@@ -38,6 +38,9 @@ public class Trade extends BaseObject {
 	@ApiField("buyer_flag")
 	private Integer buyerFlag;
 
+	@ApiField("buyer_ip")
+	private String buyerIp;
+
 	@ApiField("buyer_memo")
 	private String buyerMemo;
 
@@ -80,6 +83,9 @@ public class Trade extends BaseObject {
 	@ApiField("iid")
 	private String iid;
 
+	@ApiField("invoice_name")
+	private String invoiceName;
+
 	@ApiField("is_3D")
 	private Boolean is3D;
 
@@ -88,6 +94,9 @@ public class Trade extends BaseObject {
 
 	@ApiField("num")
 	private Integer num;
+
+	@ApiField("num_iid")
+	private Long numIid;
 
 	@ApiField("order")
 	@ApiListField("orders")
@@ -110,6 +119,13 @@ public class Trade extends BaseObject {
 
 	@ApiField("price")
 	private String price;
+
+	@ApiField("promotion")
+	private String promotion;
+
+	@ApiField("promotion_detail")
+	@ApiListField("promotion_details")
+	private List<PromotionDetail> promotionDetails;
 
 	@ApiField("real_point_fee")
 	private Integer realPointFee;
@@ -245,6 +261,13 @@ public class Trade extends BaseObject {
 		this.buyerFlag = buyerFlag;
 	}
 
+	public String getBuyerIp() {
+		return this.buyerIp;
+	}
+	public void setBuyerIp(String buyerIp) {
+		this.buyerIp = buyerIp;
+	}
+
 	public String getBuyerMemo() {
 		return this.buyerMemo;
 	}
@@ -343,6 +366,13 @@ public class Trade extends BaseObject {
 		this.iid = iid;
 	}
 
+	public String getInvoiceName() {
+		return this.invoiceName;
+	}
+	public void setInvoiceName(String invoiceName) {
+		this.invoiceName = invoiceName;
+	}
+
 	public Boolean getIs3D() {
 		return this.is3D;
 	}
@@ -362,6 +392,13 @@ public class Trade extends BaseObject {
 	}
 	public void setNum(Integer num) {
 		this.num = num;
+	}
+
+	public Long getNumIid() {
+		return this.numIid;
+	}
+	public void setNumIid(Long numIid) {
+		this.numIid = numIid;
 	}
 
 	public List<Order> getOrders() {
@@ -411,6 +448,20 @@ public class Trade extends BaseObject {
 	}
 	public void setPrice(String price) {
 		this.price = price;
+	}
+
+	public String getPromotion() {
+		return this.promotion;
+	}
+	public void setPromotion(String promotion) {
+		this.promotion = promotion;
+	}
+
+	public List<PromotionDetail> getPromotionDetails() {
+		return this.promotionDetails;
+	}
+	public void setPromotionDetails(List<PromotionDetail> promotionDetails) {
+		this.promotionDetails = promotionDetails;
 	}
 
 	public Integer getRealPointFee() {

@@ -21,7 +21,6 @@ public class TradesBoughtGetRequest implements TopRequest {
 	private String sellerNick;
 	private Date startCreated;
 	private String status;
-	private String title;
 	private String type;
 
 	public void setEndCreated(Date endCreated) {
@@ -48,9 +47,6 @@ public class TradesBoughtGetRequest implements TopRequest {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
 	public void setType(String type) {
 		this.type = type;
 	}
@@ -69,7 +65,6 @@ public class TradesBoughtGetRequest implements TopRequest {
 		params.put("seller_nick", this.sellerNick);
 		params.put("start_created", this.startCreated);
 		params.put("status", this.status);
-		params.put("title", this.title);
 		params.put("type", this.type);
 		return params;
 	}

@@ -50,6 +50,16 @@ public class TopJsonRestClient {
 		return client.execute(request, new ListJsonParser<Area>(Area.class), session);
 	}
 
+	/** TOP API: taobao.delivery.cod.send **/
+	public Shipping deliveryCodSend(DeliveryCodSendRequest request) {
+		return client.execute(request, new ObjectJsonParser<Shipping>(Shipping.class));
+	}
+
+	/** TOP API: taobao.delivery.cod.send **/
+	public Shipping deliveryCodSend(DeliveryCodSendRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<Shipping>(Shipping.class), session);
+	}
+
 	/** TOP API: taobao.delivery.send **/
 	public Shipping deliverySend(DeliverySendRequest request) {
 		return client.execute(request, new ObjectJsonParser<Shipping>(Shipping.class));
@@ -60,24 +70,104 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectJsonParser<Shipping>(Shipping.class), session);
 	}
 
-	/** TOP API: taobao.icp.id.submit **/
-	public void icpIdSubmit(IcpIdSubmitRequest request) {
+	/** TOP API: taobao.favorite.add **/
+	public void favoriteAdd(FavoriteAddRequest request) {
 		client.execute(request, new StringParser());
 	}
 
-	/** TOP API: taobao.icp.id.submit **/
-	public void icpIdSubmit(IcpIdSubmitRequest request, String session) {
+	/** TOP API: taobao.favorite.add **/
+	public void favoriteAdd(FavoriteAddRequest request, String session) {
 		client.execute(request, new StringParser(), session);
 	}
 
-	/** TOP API: taobao.icp.submit **/
-	public void icpSubmit(IcpSubmitRequest request) {
-		client.execute(request, new StringParser());
+	/** TOP API: taobao.favorite.search **/
+	public PageList<CollectItem> favoriteSearch(FavoriteSearchRequest request) {
+		return client.execute(request, new ListJsonParser<CollectItem>(CollectItem.class));
 	}
 
-	/** TOP API: taobao.icp.submit **/
-	public void icpSubmit(IcpSubmitRequest request, String session) {
-		client.execute(request, new StringParser(), session);
+	/** TOP API: taobao.favorite.search **/
+	public PageList<CollectItem> favoriteSearch(FavoriteSearchRequest request, String session) {
+		return client.execute(request, new ListJsonParser<CollectItem>(CollectItem.class), session);
+	}
+
+	/** TOP API: taobao.increment.app.subscribe **/
+	public SubscribeMessage incrementAppSubscribe(IncrementAppSubscribeRequest request) {
+		return client.execute(request, new ObjectJsonParser<SubscribeMessage>(SubscribeMessage.class));
+	}
+
+	/** TOP API: taobao.increment.app.subscribe **/
+	public SubscribeMessage incrementAppSubscribe(IncrementAppSubscribeRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<SubscribeMessage>(SubscribeMessage.class), session);
+	}
+
+	/** TOP API: taobao.increment.authorizemessages.get **/
+	public PageList<AuthorizeMessage> incrementAuthorizemessagesGet(IncrementAuthorizemessagesGetRequest request) {
+		return client.execute(request, new ListJsonParser<AuthorizeMessage>(AuthorizeMessage.class));
+	}
+
+	/** TOP API: taobao.increment.authorizemessages.get **/
+	public PageList<AuthorizeMessage> incrementAuthorizemessagesGet(IncrementAuthorizemessagesGetRequest request, String session) {
+		return client.execute(request, new ListJsonParser<AuthorizeMessage>(AuthorizeMessage.class), session);
+	}
+
+	/** TOP API: taobao.increment.items.get **/
+	public PageList<NotifyItem> incrementItemsGet(IncrementItemsGetRequest request) {
+		return client.execute(request, new ListJsonParser<NotifyItem>(NotifyItem.class));
+	}
+
+	/** TOP API: taobao.increment.items.get **/
+	public PageList<NotifyItem> incrementItemsGet(IncrementItemsGetRequest request, String session) {
+		return client.execute(request, new ListJsonParser<NotifyItem>(NotifyItem.class), session);
+	}
+
+	/** TOP API: taobao.increment.refunds.get **/
+	public PageList<NotifyRefund> incrementRefundsGet(IncrementRefundsGetRequest request) {
+		return client.execute(request, new ListJsonParser<NotifyRefund>(NotifyRefund.class));
+	}
+
+	/** TOP API: taobao.increment.refunds.get **/
+	public PageList<NotifyRefund> incrementRefundsGet(IncrementRefundsGetRequest request, String session) {
+		return client.execute(request, new ListJsonParser<NotifyRefund>(NotifyRefund.class), session);
+	}
+
+	/** TOP API: taobao.increment.subscribemessage.get **/
+	public SubscribeMessage incrementSubscribemessageGet(IncrementSubscribemessageGetRequest request) {
+		return client.execute(request, new ObjectJsonParser<SubscribeMessage>(SubscribeMessage.class));
+	}
+
+	/** TOP API: taobao.increment.subscribemessage.get **/
+	public SubscribeMessage incrementSubscribemessageGet(IncrementSubscribemessageGetRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<SubscribeMessage>(SubscribeMessage.class), session);
+	}
+
+	/** TOP API: taobao.increment.trades.get **/
+	public PageList<NotifyTrade> incrementTradesGet(IncrementTradesGetRequest request) {
+		return client.execute(request, new ListJsonParser<NotifyTrade>(NotifyTrade.class));
+	}
+
+	/** TOP API: taobao.increment.trades.get **/
+	public PageList<NotifyTrade> incrementTradesGet(IncrementTradesGetRequest request, String session) {
+		return client.execute(request, new ListJsonParser<NotifyTrade>(NotifyTrade.class), session);
+	}
+
+	/** TOP API: taobao.increment.user.authorize **/
+	public AuthorizeMessage incrementUserAuthorize(IncrementUserAuthorizeRequest request) {
+		return client.execute(request, new ObjectJsonParser<AuthorizeMessage>(AuthorizeMessage.class));
+	}
+
+	/** TOP API: taobao.increment.user.authorize **/
+	public AuthorizeMessage incrementUserAuthorize(IncrementUserAuthorizeRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<AuthorizeMessage>(AuthorizeMessage.class), session);
+	}
+
+	/** TOP API: taobao.increment.xiaoer.subscribe **/
+	public SubscribeMessage incrementXiaoerSubscribe(IncrementXiaoerSubscribeRequest request) {
+		return client.execute(request, new ObjectJsonParser<SubscribeMessage>(SubscribeMessage.class));
+	}
+
+	/** TOP API: taobao.increment.xiaoer.subscribe **/
+	public SubscribeMessage incrementXiaoerSubscribe(IncrementXiaoerSubscribeRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<SubscribeMessage>(SubscribeMessage.class), session);
 	}
 
 	/** TOP API: taobao.item.add **/
@@ -550,76 +640,6 @@ public class TopJsonRestClient {
 		return client.execute(request, new ListJsonParser<Shipping>(Shipping.class), session);
 	}
 
-	/** TOP API: taobao.notify.app.subscribe **/
-	public SubscribeMessage notifyAppSubscribe(NotifyAppSubscribeRequest request) {
-		return client.execute(request, new ObjectJsonParser<SubscribeMessage>(SubscribeMessage.class));
-	}
-
-	/** TOP API: taobao.notify.app.subscribe **/
-	public SubscribeMessage notifyAppSubscribe(NotifyAppSubscribeRequest request, String session) {
-		return client.execute(request, new ObjectJsonParser<SubscribeMessage>(SubscribeMessage.class), session);
-	}
-
-	/** TOP API: taobao.notify.authorizemessages.get **/
-	public PageList<AuthorizeMessage> notifyAuthorizemessagesGet(NotifyAuthorizemessagesGetRequest request) {
-		return client.execute(request, new ListJsonParser<AuthorizeMessage>(AuthorizeMessage.class));
-	}
-
-	/** TOP API: taobao.notify.authorizemessages.get **/
-	public PageList<AuthorizeMessage> notifyAuthorizemessagesGet(NotifyAuthorizemessagesGetRequest request, String session) {
-		return client.execute(request, new ListJsonParser<AuthorizeMessage>(AuthorizeMessage.class), session);
-	}
-
-	/** TOP API: taobao.notify.items.get **/
-	public PageList<NotifyItem> notifyItemsGet(NotifyItemsGetRequest request) {
-		return client.execute(request, new ListJsonParser<NotifyItem>(NotifyItem.class));
-	}
-
-	/** TOP API: taobao.notify.items.get **/
-	public PageList<NotifyItem> notifyItemsGet(NotifyItemsGetRequest request, String session) {
-		return client.execute(request, new ListJsonParser<NotifyItem>(NotifyItem.class), session);
-	}
-
-	/** TOP API: taobao.notify.refunds.get **/
-	public PageList<NotifyRefund> notifyRefundsGet(NotifyRefundsGetRequest request) {
-		return client.execute(request, new ListJsonParser<NotifyRefund>(NotifyRefund.class));
-	}
-
-	/** TOP API: taobao.notify.refunds.get **/
-	public PageList<NotifyRefund> notifyRefundsGet(NotifyRefundsGetRequest request, String session) {
-		return client.execute(request, new ListJsonParser<NotifyRefund>(NotifyRefund.class), session);
-	}
-
-	/** TOP API: taobao.notify.subscribemessage.get **/
-	public SubscribeMessage notifySubscribemessageGet(NotifySubscribemessageGetRequest request) {
-		return client.execute(request, new ObjectJsonParser<SubscribeMessage>(SubscribeMessage.class));
-	}
-
-	/** TOP API: taobao.notify.subscribemessage.get **/
-	public SubscribeMessage notifySubscribemessageGet(NotifySubscribemessageGetRequest request, String session) {
-		return client.execute(request, new ObjectJsonParser<SubscribeMessage>(SubscribeMessage.class), session);
-	}
-
-	/** TOP API: taobao.notify.trades.get **/
-	public PageList<NotifyTrade> notifyTradesGet(NotifyTradesGetRequest request) {
-		return client.execute(request, new ListJsonParser<NotifyTrade>(NotifyTrade.class));
-	}
-
-	/** TOP API: taobao.notify.trades.get **/
-	public PageList<NotifyTrade> notifyTradesGet(NotifyTradesGetRequest request, String session) {
-		return client.execute(request, new ListJsonParser<NotifyTrade>(NotifyTrade.class), session);
-	}
-
-	/** TOP API: taobao.notify.user.authorize **/
-	public AuthorizeMessage notifyUserAuthorize(NotifyUserAuthorizeRequest request) {
-		return client.execute(request, new ObjectJsonParser<AuthorizeMessage>(AuthorizeMessage.class));
-	}
-
-	/** TOP API: taobao.notify.user.authorize **/
-	public AuthorizeMessage notifyUserAuthorize(NotifyUserAuthorizeRequest request, String session) {
-		return client.execute(request, new ObjectJsonParser<AuthorizeMessage>(AuthorizeMessage.class), session);
-	}
-
 	/** TOP API: taobao.picture.category.add **/
 	public void pictureCategoryAdd(PictureCategoryAddRequest request) {
 		client.execute(request, new StringParser());
@@ -890,6 +910,16 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectJsonParser<SellerCat>(SellerCat.class), session);
 	}
 
+	/** TOP API: taobao.shipping.address.add **/
+	public ShippingAddress shippingAddressAdd(ShippingAddressAddRequest request) {
+		return client.execute(request, new ObjectJsonParser<ShippingAddress>(ShippingAddress.class));
+	}
+
+	/** TOP API: taobao.shipping.address.add **/
+	public ShippingAddress shippingAddressAdd(ShippingAddressAddRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<ShippingAddress>(ShippingAddress.class), session);
+	}
+
 	/** TOP API: taobao.shipping.addresses.get **/
 	public PageList<ShippingAddress> shippingAddressesGet(ShippingAddressesGetRequest request) {
 		return client.execute(request, new ListJsonParser<ShippingAddress>(ShippingAddress.class));
@@ -970,6 +1000,16 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectJsonParser<TaobaokeItem>(TaobaokeItem.class), session);
 	}
 
+	/** TOP API: taobao.taobaoke.interval.report.get **/
+	public TaobaokeReport taobaokeIntervalReportGet(TaobaokeIntervalReportGetRequest request) {
+		return client.execute(request, new ObjectJsonParser<TaobaokeReport>(TaobaokeReport.class));
+	}
+
+	/** TOP API: taobao.taobaoke.interval.report.get **/
+	public TaobaokeReport taobaokeIntervalReportGet(TaobaokeIntervalReportGetRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<TaobaokeReport>(TaobaokeReport.class), session);
+	}
+
 	/** TOP API: taobao.taobaoke.items.convert **/
 	public PageList<TaobaokeItem> taobaokeItemsConvert(TaobaokeItemsConvertRequest request) {
 		return client.execute(request, new ListJsonParser<TaobaokeItem>(TaobaokeItem.class));
@@ -1030,6 +1070,16 @@ public class TopJsonRestClient {
 		return client.execute(request, new ListJsonParser<TaobaokeShop>(TaobaokeShop.class), session);
 	}
 
+	/** TOP API: taobao.time.get **/
+	public void timeGet(TimeGetRequest request) {
+		client.execute(request, new StringParser());
+	}
+
+	/** TOP API: taobao.time.get **/
+	public void timeGet(TimeGetRequest request, String session) {
+		client.execute(request, new StringParser(), session);
+	}
+
 	/** TOP API: taobao.trade.close **/
 	public Trade tradeClose(TradeCloseRequest request) {
 		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class));
@@ -1048,6 +1098,16 @@ public class TopJsonRestClient {
 	/** TOP API: taobao.trade.confirmfee.get **/
 	public TradeConfirmFee tradeConfirmfeeGet(TradeConfirmfeeGetRequest request, String session) {
 		return client.execute(request, new ObjectJsonParser<TradeConfirmFee>(TradeConfirmFee.class), session);
+	}
+
+	/** TOP API: taobao.trade.forum.add **/
+	public Trade tradeForumAdd(TradeForumAddRequest request) {
+		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class));
+	}
+
+	/** TOP API: taobao.trade.forum.add **/
+	public Trade tradeForumAdd(TradeForumAddRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class), session);
 	}
 
 	/** TOP API: taobao.trade.fullinfo.get **/
@@ -1090,6 +1150,16 @@ public class TopJsonRestClient {
 		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class), session);
 	}
 
+	/** TOP API: taobao.trade.open.add **/
+	public Trade tradeOpenAdd(TradeOpenAddRequest request) {
+		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class));
+	}
+
+	/** TOP API: taobao.trade.open.add **/
+	public Trade tradeOpenAdd(TradeOpenAddRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class), session);
+	}
+
 	/** TOP API: taobao.trade.ordersku.update **/
 	public Order tradeOrderskuUpdate(TradeOrderskuUpdateRequest request) {
 		return client.execute(request, new ObjectJsonParser<Order>(Order.class));
@@ -1098,6 +1168,16 @@ public class TopJsonRestClient {
 	/** TOP API: taobao.trade.ordersku.update **/
 	public Order tradeOrderskuUpdate(TradeOrderskuUpdateRequest request, String session) {
 		return client.execute(request, new ObjectJsonParser<Order>(Order.class), session);
+	}
+
+	/** TOP API: taobao.trade.price.update **/
+	public Trade tradePriceUpdate(TradePriceUpdateRequest request) {
+		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class));
+	}
+
+	/** TOP API: taobao.trade.price.update **/
+	public Trade tradePriceUpdate(TradePriceUpdateRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class), session);
 	}
 
 	/** TOP API: taobao.trade.shippingaddress.update **/
@@ -1117,6 +1197,16 @@ public class TopJsonRestClient {
 
 	/** TOP API: taobao.trade.snapshot.get **/
 	public Trade tradeSnapshotGet(TradeSnapshotGetRequest request, String session) {
+		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class), session);
+	}
+
+	/** TOP API: taobao.trade.vip.add **/
+	public Trade tradeVipAdd(TradeVipAddRequest request) {
+		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class));
+	}
+
+	/** TOP API: taobao.trade.vip.add **/
+	public Trade tradeVipAdd(TradeVipAddRequest request, String session) {
 		return client.execute(request, new ObjectJsonParser<Trade>(Trade.class), session);
 	}
 

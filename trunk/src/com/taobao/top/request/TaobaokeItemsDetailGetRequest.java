@@ -15,6 +15,7 @@ public class TaobaokeItemsDetailGetRequest implements TopRequest {
 	private String fields;
 	private String nick;
 	private String numIids;
+	private String outerCode;
 
 	public void setFields(String fields) {
 		this.fields = fields;
@@ -24,6 +25,9 @@ public class TaobaokeItemsDetailGetRequest implements TopRequest {
 	}
 	public void setNumIids(String numIids) {
 		this.numIids = numIids;
+	}
+	public void setOuterCode(String outerCode) {
+		this.outerCode = outerCode;
 	}
 
 	public String getApiName() {
@@ -35,6 +39,7 @@ public class TaobaokeItemsDetailGetRequest implements TopRequest {
 		params.put("fields", this.fields);
 		params.put("nick", this.nick);
 		params.put("num_iids", this.numIids);
+		params.put("outer_code", this.outerCode);
 		return params;
 	}
 
