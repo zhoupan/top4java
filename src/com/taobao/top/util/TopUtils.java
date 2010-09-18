@@ -148,7 +148,7 @@ public abstract class TopUtils {
 
 		BASE64Decoder decoder = new BASE64Decoder();
 		byte[] buffer = decoder.decodeBuffer(params);
-		String decodedParams = new String(buffer, Constants.CHARSET_UTF8);
+		String decodedParams = new String(buffer, charset);
 
 		return WebUtils.splitUrlQuery(decodedParams);
 	}

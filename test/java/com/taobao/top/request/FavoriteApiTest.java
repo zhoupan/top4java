@@ -5,6 +5,7 @@ import org.junit.Test;
 import com.taobao.top.TopJsonRestClient;
 import com.taobao.top.domain.CollectItem;
 import com.taobao.top.domain.PageList;
+import com.taobao.top.domain.Shop;
 import com.taobao.top.util.TestUtils;
 
 /**
@@ -21,7 +22,7 @@ public class FavoriteApiTest {
 	public void searchFavorite() {
 		FavoriteSearchRequest req = new FavoriteSearchRequest();
 		req.setUserNick("我的小天天宝贝");
-		req.setCollectType("SHOP");
+		req.setCollectType("ITEM");
 		req.setPageNo(1);
 		PageList<CollectItem> cis = client.favoriteSearch(req);
 		if (!cis.isEmpty()) {
@@ -29,6 +30,15 @@ public class FavoriteApiTest {
 				System.out.println(ci.getItemNumid());
 			}
 		}
+	}
+
+	@Test
+	public void getShop() {
+		ShopGetRequest req = new ShopGetRequest();
+		req.setFields("sid,bulletin");
+		req.setNick("mg百库专卖店");
+		Shop shop = client.shopGet(req);
+		System.out.println(shop.getBulletin() + ":" + shop.getSid());
 	}
 
 }
