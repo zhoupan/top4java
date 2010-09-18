@@ -12,11 +12,11 @@ import com.taobao.top.util.TopHashMap;
  */
 public class FavoriteSearchRequest implements TopRequest {
 
-	private Integer collectType;
+	private String collectType;
 	private Integer pageNo;
 	private String userNick;
 
-	public void setCollectType(Integer collectType) {
+	public void setCollectType(String collectType) {
 		this.collectType = collectType;
 	}
 	public void setPageNo(Integer pageNo) {
