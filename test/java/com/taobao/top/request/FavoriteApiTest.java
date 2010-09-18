@@ -22,7 +22,7 @@ public class FavoriteApiTest {
 	public void searchFavorite() {
 		FavoriteSearchRequest req = new FavoriteSearchRequest();
 		req.setUserNick("我的小天天宝贝");
-		req.setCollectType("ITEM");
+		req.setCollectType("SHOP");
 		req.setPageNo(1);
 		PageList<CollectItem> cis = client.favoriteSearch(req);
 		if (!cis.isEmpty()) {
