@@ -59,7 +59,7 @@ public class TopRestClient implements TopClient {
 		textParams.put(VERSION, "2.0");
 		textParams.put(APP_KEY, appKey);
 		textParams.put(FORMAT, format);
-		textParams.put(PARTNER_ID, "911");
+		textParams.put(PARTNER_ID, "120");
 		textParams.put(TIMESTAMP, new Date());
 		textParams.put(SESSION, session);
 
