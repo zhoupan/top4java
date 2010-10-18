@@ -21,13 +21,13 @@ public class FavoriteApiTest {
 	@Test
 	public void searchFavorite() {
 		FavoriteSearchRequest req = new FavoriteSearchRequest();
-		req.setUserNick("我的小天天宝贝");
+		req.setUserNick("驴友之家");
 		req.setCollectType("SHOP");
 		req.setPageNo(1);
 		PageList<CollectItem> cis = client.favoriteSearch(req);
 		if (!cis.isEmpty()) {
 			for (CollectItem ci : cis.getContent()) {
-				System.out.println(ci.getItemNumid());
+				System.out.println(ci.getItemNumid() + "=" + ci.getTitle());
 			}
 		}
 	}

@@ -6,7 +6,7 @@ import com.taobao.top.mapping.ApiListClass;
 
 /**
  * CollectItem Data Structure.
- *
+ * 
  * @author carver.gu
  * @since 1.0, Apr 11, 2010
  */
@@ -19,11 +19,20 @@ public class CollectItem extends BaseObject {
 	@ApiField("item_numid")
 	private Long itemNumid;
 
+	@ApiField("title")
+	private String title;
+
 	public Long getItemNumid() {
 		return this.itemNumid;
 	}
 	public void setItemNumid(Long itemNumid) {
 		this.itemNumid = itemNumid;
+	}
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 }
