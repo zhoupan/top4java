@@ -42,17 +42,13 @@ public class Converters {
 
 		try {
 			rsp = clazz.newInstance();
-			BeanInfo beanInfo = Introspector.getBeanInfo(clazz);
+			BeanInfo beanInfo = Introspector.getBeanInfo(clazz, Object.class);
 			PropertyDescriptor[] pds = beanInfo.getPropertyDescriptors();
 
 			for (PropertyDescriptor pd : pds) {
 				Method method = pd.getWriteMethod();
 				String itemName = pd.getName();
 				String listName = null;
-
-				if ("class".equals(itemName)) {
-					continue; // ignore class field
-				}
 
 				Field field = clazz.getDeclaredField(itemName);
 				ApiField jsonField = field.getAnnotation(ApiField.class);
